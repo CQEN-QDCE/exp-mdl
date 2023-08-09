@@ -44,6 +44,9 @@ Support du standard ISO 18013-5 “Mobile driving licence (mDL) application” s
 https://android-developers.googleblog.com/2020/11/privacy-preserving-features-in-mobile.html
 
 
+Anouncement: NorthernBlock Unifying mDLs & Verifiable Credentials for Canadians  
+https://northernblock.io/announcement/unifying-mdls-and-verifiable-credentials/
+
 
 ###  Trust Over IP Trust Registry Task Force 
 
