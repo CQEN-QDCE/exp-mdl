@@ -28,3 +28,18 @@ print(encoded.hex())
 
 # a5636e616d65654a6f686e20446f656269640f3039ca010a005994010f
 ```
+* Nous commençons par un dict Python avec des types de données mixtes comme des chaînes, des entiers, des listes et des booléens.
+* cbor2.dumps() encode le dict Python en un objet CBOR bytes.
+* Lorsqu'il est imprimé en hexadécimal, nous pouvons voir l'encodage CBOR compact :
+a5 - carte de 5 paires
+63 6e616d65 - chaîne de texte "nom"
+65 4a6f686e20446f65 - chaîne de texte "John Doe"
+69 64 - chaîne de texte "id"
+0f 3039 - nombre entier 12345
+ca - balise indiquant que l'élément suivant est un tableau
+01 - tableau de 3 éléments
+0a - nombre entier 90
+00 - nombre entier 80
+59 - nombre entier 95
+94 - balise indiquant que l'élément suivant est un booléen
+01 - valueur booléenne 'vrai'
