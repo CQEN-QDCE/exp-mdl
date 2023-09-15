@@ -1,3 +1,17 @@
+[![img](https://img.shields.io/badge/Cycle%20de%20Vie-Phase%20d%C3%A9couverte-339999)](https://www.quebec.ca/gouv/politiques-orientations/vitrine-numeriqc/accompagnement-des-organismes-publics/demarche-conception-services-numeriques)
+[![License](https://img.shields.io/badge/Licence-LiLiQ--R-blue)](LICENSE)
+
+---
+
+<div>
+    <img src="https://github.com/CQEN-QDCE/.github/blob/main/images/mcn.png" />
+</div>
+
+# Notes sur références à mDL autour du monde
+
+Transportation Security Administration seeks comments on proposed regulation regarding mobile driver’s licenses and REAL ID-compliant identification   
+https://www.tsa.gov/news/press/releases/2023/08/30/transportation-security-administration-seeks-comments-proposed-0
+
 THALES: The Mobile Driver’s License is here
 https://www.thalesgroup.com/en/markets/digital-identity-and-security/government/mobile-driver-licence
 
@@ -26,8 +40,6 @@ https://idscan.net/mobile-drivers-licenses-mdl-state-adoption/
 Verifiable Credentials and ISO/IEC 18013-5 Based Credentials
 https://collateral-library-production.s3.amazonaws.com/uploads/asset_file/attachment/36416/CS676613_-_Digital_Credentials_promotion_campaign-White_Paper_R3.pdf
 
-
-
 SpruceId - SpruceKit
 https://blog.spruceid.com/introducing-sprucekit/
 
@@ -44,6 +56,9 @@ Support du standard ISO 18013-5 “Mobile driving licence (mDL) application” s
 https://android-developers.googleblog.com/2020/11/privacy-preserving-features-in-mobile.html
 
 
+Anouncement: NorthernBlock Unifying mDLs & Verifiable Credentials for Canadians  
+https://northernblock.io/announcement/unifying-mdls-and-verifiable-credentials/
+
 
 ###  Trust Over IP Trust Registry Task Force 
 
@@ -59,3 +74,29 @@ Le fichier est déposé sur l'adresse suivante: `./resources/Multi Credential Pr
 
 <!-- [Slides multi credential presentations](./resources/Multi Credential Presentations MB.pptm) -->
 
+
+## Sécurité de la cryptographie 
+
+Les informations ci-dessous, retirées du document `Cryptographic Module Validation Program`, référé ci-dessous. Elles sont rélevantes pour le projet mDL, mais aussi pour tout autre projet qui puisse avoir un lien avec le fédéral, comme SQIN. 
+
+
+    Le 17 juillet 1995, le NIST a établi le programme `Cryptographic Module Validation Program (CMVP)` que valide les modules cryptographiques utilisés par le `Federal Information Processing Standards (FIPS)140-1`, requis de sécurité pour modules cryptographiques et autres standards basés sur FIPS. 
+
+    FIPS 140-2, a été déployé le 25 mai 2001 et remplace FIPS 140-1. Le CMVP est un effort conjoint entre le NIST et le `Centre canadien pour la cybersécurité (CCCS)`, une branche du `Centre de la sécurité des communications (CSE)`. 
+
+    Les modules validés comme conformes à la norme FIPS 140-2 sont **acceptés par les agences fédérales des deux pays** pour la protection des informations sensibles.
+
+
+**Liste de docs relevants:**
+
+FIPS 140-2 : Security Requirements for Cryptographic Modules   
+https://csrc.nist.rip/publications/detail/fips/140/2/final
+
+Cryptographic Module Validation Program  
+https://csrc.nist.rip/projects/cryptographic-module-validation-program
+
+Ursa Library Motivation - Point #5   
+https://wiki.hyperledger.org/display/ursa/Ursa+Library+Motivation  
+
+Blockchain Compliance with Federal Cryptographic Information Processing Standards   
+https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3381692
