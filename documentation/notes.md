@@ -1,3 +1,17 @@
+[![img](https://img.shields.io/badge/Cycle%20de%20Vie-Phase%20d%C3%A9couverte-339999)](https://www.quebec.ca/gouv/politiques-orientations/vitrine-numeriqc/accompagnement-des-organismes-publics/demarche-conception-services-numeriques)
+[![License](https://img.shields.io/badge/Licence-LiLiQ--R-blue)](LICENSE)
+
+---
+
+<div>
+    <img src="https://github.com/CQEN-QDCE/.github/blob/main/images/mcn.png" />
+</div>
+
+# Notes sur références à mDL autour du monde
+
+Transportation Security Administration seeks comments on proposed regulation regarding mobile driver’s licenses and REAL ID-compliant identification   
+https://www.tsa.gov/news/press/releases/2023/08/30/transportation-security-administration-seeks-comments-proposed-0
+
 THALES: The Mobile Driver’s License is here
 https://www.thalesgroup.com/en/markets/digital-identity-and-security/government/mobile-driver-licence
 
@@ -25,8 +39,6 @@ https://idscan.net/mobile-drivers-licenses-mdl-state-adoption/
 
 Verifiable Credentials and ISO/IEC 18013-5 Based Credentials
 https://collateral-library-production.s3.amazonaws.com/uploads/asset_file/attachment/36416/CS676613_-_Digital_Credentials_promotion_campaign-White_Paper_R3.pdf
-
-
 
 SpruceId - SpruceKit
 https://blog.spruceid.com/introducing-sprucekit/
