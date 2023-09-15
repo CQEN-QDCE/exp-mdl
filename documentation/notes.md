@@ -62,3 +62,25 @@ Le fichier est déposé sur l'adresse suivante: `./resources/Multi Credential Pr
 
 <!-- [Slides multi credential presentations](./resources/Multi Credential Presentations MB.pptm) -->
 
+
+## Sécurité de la cryptographie 
+
+On July 17, 1995, NIST established the Cryptographic Module Validation Program (CMVP) that validates cryptographic modules to Federal Information Processing Standards (FIPS)140-1, Security Requirements for Cryptographic Modules, and other FIPS cryptography based standards. FIPS 140-2, Security Requirements for Cryptographic Modules, was released on May 25, 2001 and supersedes FIPS 140-1. The CMVP is a joint effort between NIST and the `Canadian Centre fo Cyber Security (CCCS)`, a branch of the `Communications Security Establishment (CSE)`.
+
+Modules validated as conforming to FIPS 140-2 are **accepted by the Federal Agencies of both countries** for the protection of sensitive information.
+
+Les informations ci-dessus, retirées du document `Cryptographic Module Validation Program`, référé ci-dessous. Elles sont rélevantes pour le projet mDL, mais aussi pour tout autre projet qui puisse avoir un lien avec le fédéral, comme SQIN. 
+
+**Liste de docs relevants:**
+
+FIPS 140-2 : Security Requirements for Cryptographic Modules   
+https://csrc.nist.rip/publications/detail/fips/140/2/final
+
+Cryptographic Module Validation Program  
+https://csrc.nist.rip/projects/cryptographic-module-validation-program
+
+Ursa Library Motivation - Point #5   
+https://wiki.hyperledger.org/display/ursa/Ursa+Library+Motivation  
+
+Blockchain Compliance with Federal Cryptographic Information Processing Standards   
+https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3381692
