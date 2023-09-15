@@ -77,11 +77,15 @@ Le fichier est déposé sur l'adresse suivante: `./resources/Multi Credential Pr
 
 ## Sécurité de la cryptographie 
 
-On July 17, 1995, NIST established the Cryptographic Module Validation Program (CMVP) that validates cryptographic modules to Federal Information Processing Standards (FIPS)140-1, Security Requirements for Cryptographic Modules, and other FIPS cryptography based standards. FIPS 140-2, Security Requirements for Cryptographic Modules, was released on May 25, 2001 and supersedes FIPS 140-1. The CMVP is a joint effort between NIST and the `Canadian Centre fo Cyber Security (CCCS)`, a branch of the `Communications Security Establishment (CSE)`.
+Les informations ci-dessous, retirées du document `Cryptographic Module Validation Program`, référé ci-dessous. Elles sont rélevantes pour le projet mDL, mais aussi pour tout autre projet qui puisse avoir un lien avec le fédéral, comme SQIN. 
 
-Modules validated as conforming to FIPS 140-2 are **accepted by the Federal Agencies of both countries** for the protection of sensitive information.
 
-Les informations ci-dessus, retirées du document `Cryptographic Module Validation Program`, référé ci-dessous. Elles sont rélevantes pour le projet mDL, mais aussi pour tout autre projet qui puisse avoir un lien avec le fédéral, comme SQIN. 
+    Le 17 juillet 1995, le NIST a établi le programme `Cryptographic Module Validation Program (CMVP)` que valide les modules cryptographiques utilisés par le `Federal Information Processing Standards (FIPS)140-1`, requis de sécurité pour modules cryptographiques et autres standards basés sur FIPS. 
+
+    FIPS 140-2, a été déployé le 25 mai 2001 et remplace FIPS 140-1. Le CMVP est un effort conjoint entre le NIST et le `Centre canadien pour la cybersécurité (CCCS)`, une branche du `Centre de la sécurité des communications (CSE)`. 
+
+    Les modules validés comme conformes à la norme FIPS 140-2 sont **acceptés par les agences fédérales des deux pays** pour la protection des informations sensibles.
+
 
 **Liste de docs relevants:**
 
