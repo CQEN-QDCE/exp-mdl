@@ -1,3 +1,4 @@
+# Ignore les objets generés par la PKI
 ACRacine/
 ACIntermediaire/
 ACSAAQ/
