@@ -1,0 +1,13 @@
+Requests for Comments 
+======================
+RFC 3339 - Date and time on the Internet : Timestamps 
+RFC 4648 - The Base16, Base32, and Base64 Data Encodings
+RFC 7049 - Concise Binary Objet Representation (CBOR)
+RFC 8152 - CBOR Object Signing and Encryption (COSE)
+RFC 8259 - The JavaScript Object Notation (JSON) Data Interchange Format
+RFC 8610 - Concise Data Definition Language
+RFC 8943 - Concise Binary Object Representation (CBOR) Tags for Date 
+
+ISO Standards
+==============
+ISO/IEC 18004 - Automatic identification and data capture techniques. QR Code bar code symbology specification. 
