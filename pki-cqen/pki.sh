@@ -32,7 +32,7 @@ cp ACRacineCQENExpV1.cnf ./ACRacine/etc/
 echo "\e[32m[+] Configuration de la structure de l'AC Intermediaire \e[39m"
 cd $BASE
 mkdir -p $BASE/ACIntermediaire
-cp ./remove.sh ./ACIntermediaire
+cp ./remove.sh             ./ACIntermediaire
 cp ./setupIntermediaire.sh ./ACIntermediaire
 cp ./usager.sh             ./ACIntermediaire
 
@@ -45,8 +45,10 @@ echo "[.] Créér structure ..."
 echo "\e[32m[+] Configuration de la structure de l'AC SAAQ mDL \e[39m"
 cd $BASE 
 mkdir -p $BASE/ACSAAQ
-cp ./remove.sh ./ACSAAQ
-cp ./setupSAAQmDL.sh ./ACSAAQ
+cp ./remove.sh         ./ACSAAQ
+cp ./setupSAAQmDL.sh   ./ACSAAQ
+cp ./mdl.sh            ./ACSAAQ
+
 cd $BASE/ACSAAQ
 echo "[.] Clean ..."
 ./remove.sh
@@ -61,7 +63,7 @@ cp ACIntermediaireCQENExpV1.cnf    ./ACIntermediaire/etc/
 cp ACSAAQmDLExpV1.cnf              ./ACRacine/etc/
 cp ACSAAQmDLExpV1.cnf              ./ACSAAQ/etc/
 cp usager.cnf                      ./ACIntermediaire/etc/
-cp usager.cnf                      ./ACSAAQ/etc/
+cp mdl.cnf                         ./ACSAAQ/etc/
 
 echo "[+] Émission des certificats des autorités de certification ..."
 
