@@ -20,7 +20,7 @@
 # advance the user is prompted for DN information.
 
 [ default ]
-# dir                     = /home/torjc01/CQEN-MCN/code/ongoing/pki-cqen/ACRacine # Top dir - en prod, changer par le path absolu de l'AC. 
+# dir                   = /home/ac/pki-cqen/AIntermediaire # Top dir - en prod, changer par le path absolu de l'AC. 
 dir                     = .                     # Top dir - en prod, changer par le path absolu de l'AC. 
 ca                      = ACIntermediaireCQEN   # Nom court de l'AC
 env                     = Exp                   # Environnement
