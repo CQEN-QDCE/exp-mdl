@@ -154,6 +154,6 @@ et prête à être utilisée.
 Il est conseillé d'enregistrer les mots de passe créés pour chaque AC dans un programme gestionnaire de mot de passe, et 
 ne pas les enregistrer dans code. S'il faut les utiliser dans des applications ou dans des automatisations, utilisez la 
 structure de secrets de votre plateforme (Secrets d'Openshift, par exemple), ou crééz des fichiers d'environnement, en 
-s'assurant qu'ils ne seront jamais commités dans une dépôt de code. Regardez l'article de [Bruce Schneider](01) sur le sujet. 
+s'assurant qu'ils ne seront jamais commités dans une dépôt de code. Regardez l'article de ([Bruce Schneider])[01] sur le sujet. 
 
 [01]: https://www.schneier.com/blog/archives/2005/06/write_down_your.html "Write down you passwords"
