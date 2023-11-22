@@ -21,7 +21,8 @@
 # than one openssl command.
 
 [ default ]
-dir                     = /home/torjc01/CQEN-MCN/code/ongoing/pki-cqen/ACRacine # Top dir - em producao, trocar pelo caminho absoluto da AC
+# dir                   = /home/torjc01/CQEN-MCN/code/ongoing/pki-cqen/ACRacine # Top dir - em producao, trocar pelo caminho absoluto da AC
+dir                     = . # Top dir - em producao, trocar pelo caminho absoluto da AC
 ca                      = ACRacineCQEN          # Nome curto da AC
 env                     = Exp                   # Ambiente
 ver                     = V1                    # Versão
