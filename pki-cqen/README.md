@@ -1,6 +1,6 @@
-# PKI Interne de Développement CQEN Dev V1
+# PKI Interne de Développement CQEN Exp V1
 
-La PKI Interne de Déeveloppement CQEN Dev V1 est créé pour donner support aux activités 
+La PKI Interne de Déeveloppement CQEN Exp V1 est créé pour donner support aux activités 
 de développement dans un contexte d'expérimentation qui ont besoin d'une PKI fonctionnelle. 
 
 Dans un premier temps, elle servira à fournir la infrastructure de certification nécessaire
@@ -53,7 +53,7 @@ d'émission des certificats des autorités de certification de cette PKI.
 
 Après la création de la structure de répertoires, le script va faire la génération des clés et le la demande d'émission de 
 certificat (CSR). Au prompt `Enter PEM pass phrase` rentrez et confirmez le mot de passe qui protegera la clé privée; ensuite, à la demande
-`Enter pass phrase for ACRacineCQENDevV1.key`, rentrez à nouveau ce même mot de passe; il est utilisé pour signer l'émission 
+`Enter pass phrase for ACRacineCQENExpV1.key`, rentrez à nouveau ce même mot de passe; il est utilisé pour signer l'émission 
 du certificat de l'AC Racine:  
 
 ```
@@ -62,8 +62,8 @@ du certificat de l'AC Racine:
 Enter PEM pass phrase:
 Verifying - Enter PEM pass phrase:
 -----
-Using configuration from etc/ACRacineCQENDevV1.cnf
-Enter pass phrase for /home/torjc01/CQEN-MCN/code/ongoing/pki-mdl/ACRacine/ca/private/ACRacineCQENDevV1.key:
+Using configuration from etc/ACRacineCQENExpV1.cnf
+Enter pass phrase for /home/torjc01/CQEN-MCN/code/ongoing/pki-mdl/ACRacine/ca/private/ACRacineCQENExpV1.key:
 
 Check that the request matches the signature
 Signature ok
@@ -79,7 +79,7 @@ Certificate Details:
             localityName              = Quebec City
             organizationName          = Centre Quebecois d'Excellence Numerique
             organizationalUnitName    = AC CQEN
-            commonName                = Autorite de Certification Racine CQEN Dev V1
+            commonName                = Autorite de Certification Racine CQEN Exp V1
         X509v3 extensions:
             X509v3 Key Usage: critical
                 Certificate Sign, CRL Sign
@@ -100,7 +100,7 @@ Répondez `y` aux demandes de confirmation.
 
 Ensuite, on fera l'émission des certificats des ACs de deuxième niveau: CQEN et SAAQ. Le processus est le même 
 pour les deux ACs.  Au prompt `Enter PEM pass phrase` rentrez et confirmez un nouveau mot de passe qui protegera la clé
-privée **de l'AC intermediaire**; ensuite, à la demande `Enter pass phrase for ACRacineCQENDevV1.key`, attention, rentrez le mot de 
+privée **de l'AC intermediaire**; ensuite, à la demande `Enter pass phrase for ACRacineCQENExpV1.key`, attention, rentrez le mot de 
 passe créé pour **l'AC Racine**; ce mot de passe est utilisé par l'AC Racine pour signer l'émission du certificat de l'AC intermediaire.  
 
 ```
@@ -110,8 +110,8 @@ AC Intermediaire:  /home/torjc01/CQEN-MCN/code/ongoing/pki-mdl/ACIntermediaire
 Enter PEM pass phrase:
 Verifying - Enter PEM pass phrase:
 -----
-Using configuration from etc/ACRacineCQENDevV1.cnf
-Enter pass phrase for /home/torjc01/CQEN-MCN/code/ongoing/pki-mdl/ACRacine/ca/private/ACRacineCQENDevV1.key:
+Using configuration from etc/ACRacineCQENExpV1.cnf
+Enter pass phrase for /home/torjc01/CQEN-MCN/code/ongoing/pki-mdl/ACRacine/ca/private/ACRacineCQENExpV1.key:
 Check that the request matches the signature
 Signature ok
 Certificate Details:
@@ -126,7 +126,7 @@ Certificate Details:
             localityName              = Quebec City
             organizationName          = Centre Quebecois d'Excellence Numerique
             organizationalUnitName    = AC CQEN
-            commonName                = Autorite de Certification Intermediaire CQEN Dev V1
+            commonName                = Autorite de Certification Intermediaire CQEN Exp V1
         X509v3 extensions:
             X509v3 Key Usage: critical
                 Certificate Sign, CRL Sign

@@ -10,7 +10,7 @@
 #.include filename
 #
 # ************************************************************ 
-# *** Autorité de Certification Racine CQEN Dev V1         ***
+# *** Autorité de Certification Racine CQEN Exp V1         ***
 # ************************************************************
 # Genère la demande d'émission et émet le certificat de l'AC Racine. 
 # Autor: Julio Cesar Torres (@torjc01)

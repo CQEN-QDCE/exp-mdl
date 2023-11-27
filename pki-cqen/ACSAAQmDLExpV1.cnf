@@ -10,7 +10,7 @@
 #.include filename
 #
 # ************************************************************ 
-# *** Autorité de Certification Intermediaire SAAQ Dev V1  ***
+# *** Autorité de Certification SAAQ mDL Exp V1            ***
 # ************************************************************ 
 # Genère la demande d'émission et émet le certificat de l'AC intermediaire de la SAAQ. 
 # Autor: Julio Cesar Torres (@torjc01)

@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # ************************************************************
-# *** Autorité de Certification CQEN Dev V1                ***
+# *** Autorité de Certification CQEN Exp V1                ***
 # ************************************************************
 # Reinitialize la structure de la PKI CQEN. 
 # Environnement de développement.

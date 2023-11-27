@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # ************************************************************
-# *** Autorité de Certification CQEN Dev V1                ***
+# *** Autorité de Certification CQEN Exp V1                ***
 # ************************************************************
 # Remove e nettoye la structure de l'AC Racine.
 # Autor: Julio Cesar Torres (@torjc01)

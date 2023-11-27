@@ -10,7 +10,7 @@
 #.include filename
 #
 # ************************************************************ 
-# *** Autorité de Certification Intermediaire CQEN Dev V1  ***
+# *** Autorité de Certification Intermediaire CQEN Exp V1  ***
 # ************************************************************ 
 # Genère la demande d'émission de certificat (CSR) et émet le certificat de l'AC Intermediaire CQEN. 
 # Autor: Julio Cesar Torres (@torjc01)
