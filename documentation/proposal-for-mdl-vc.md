@@ -1,10 +1,10 @@
-* ISO/IEC 18013-5 contre l'identité autosouverraine (SSI)
-** Une proposition pour une attestation vérifiable mDL
+# ISO/IEC 18013-5 contre l'identité autosouverraine (SSI)
+## Une proposition pour une attestation vérifiable mDL
 En Europe, les travaux sur eIDAS 2.0 visent à catalyser la prochaine génération d'identité numérique sur le continent. Simultanément, en ce qui concerne la mobilité numérique, la déclaration de Passau a vu les ministres des transports de l'UE et de l'AELE se réunir pour établir la feuille de route du secteur de la mobilité du futur en Europe. En conséquence, la 13e mise à jour de la directive européenne sur les permis de conduire, dont le lancement est prévu pour l'été 2022, devrait jeter les bases de la reconnaissance transfrontalière des permis de conduire mobiles (mDL) sur le continent.
 
 Pour qu'un portefeuille européen d'identité numérique et les permis de conduire mobiles deviennent une réalité, il faut toutefois s'entendre sur les normes techniques qui sont une condition préalable à l'interopérabilité transfrontalière. La norme ISO/IEC 18013-5 (ci-après "18013-5" pour simplifier) et l'identité autosouveraine (SSI) telle qu'elle est décrite par le W3C se sont imposées comme les deux normes dominantes qui façonnent l'avenir de l'identité numérique en Europe et au-delà. Les permis de conduire numériques ont été reconnus comme un cas d'utilisation prioritaire dans le cadre européen de l'identité numérique. Pourtant, d'un point de vue technique, les normes 18013-5 et SSI semblent incompatibles. En combinant notre expertise unique avec les deux normes, nous proposons des solutions possibles qui réconcilient le mDL conforme à l'ISO avec les protections de la vie privée offertes par les attestations vérifiables.
 
-## Principaux points de différence entre la norme ISO/IEC 18013-5 (mDL) et l'identité autosouveraine (SSI)
+### Principaux points de différence entre la norme ISO/IEC 18013-5 (mDL) et l'identité autosouveraine (SSI)
 
 Bien qu'une comparaison directe de la norme 18013-5 avec les spécifications SSI (Verifiable Credentials & Decentralized Identifiers du W3C) ne soit pas tout à fait appropriée, dans le contexte des programmes d'identité gouvernementaux, nous estimons qu'il est utile de les comparer sur les paramètres suivants : contexte, modèle de données, source de confiance et protocoles de transmission.
 
@@ -33,7 +33,7 @@ Dans le cas des SSI, le protocole de transmission le plus utilisé est la messag
 
 La récupération à partir d'un serveur selon la norme mDL présente un risque pour la vie privée du détenteur en permettant à l'autorité émettrice d'avoir une visibilité complète sur tous les services auxquels une mDL peut être utilisée pour s'authentifier. Si cela peut sembler banal dans le contexte actuel, dans un monde futur où les attestations vérifiables d'identité numérique seront largement utilisés pour accéder à une pléthore de services des secteurs public et privé, cela permettrait aux autorités émettrices d'établir des profils utilisateurs complets des détenteurs. Les attaquants disposeraient ainsi d'un véritable pot de miel et, pire encore, des acteurs politiquement motivés pourraient s'en servir comme d'une arme de discrimination, sapant ainsi les fondements mêmes de notre société.
 
-## ISO/IEC 18013-5 vs SSI : Avantages et inconvénients en bref
+### ISO/IEC 18013-5 vs SSI : Avantages et inconvénients en bref
 
 En conclusion, les deux normes présentent chacune des avantages et des inconvénients, qui sont résumés ci-dessous.
 
@@ -42,7 +42,7 @@ En conclusion, les deux normes présentent chacune des avantages et des inconvé
 | Avantages     | <ul><li>Protocoles bien définis pour l'engagement entre appareils et la récupération des données</li><li>Basé sur des technologies matures qui peuvent être déployées à grande échelle dès aujourd'hui</li></ul> | <ul><li>Attestations vérifiables ne peuvent pas être corrélées</li><li>Grande communauté de développeurs en logiciels libres</li></ul> |
 | Inconvénients | <ul><li>Coorélation entre les attestations</li><li>Dépendance sur l'infrastructure de l'autorité émettrice pour une récupération à partir d'un serveur</li><li>Écosystème de solutions propriétaire</li></ul> | <ul><li>Encore à un stade précoce de développement mais évolue rapidement</li><li>L'ouverture des normes a conduit à des implémentations divergentes</li></ul> |
 
-## Réconciliation de la norme ISO/IEC 18013-5 avec la SSI : délivrance d'un mDL en tant qu'attestation vérifiable Anoncreds
+### Réconciliation de la norme ISO/IEC 18013-5 avec la SSI : délivrance d'un mDL en tant qu'attestation vérifiable Anoncreds
 
 En combinant les avantages offerts par les deux normes, la proposition de Procivis pour une attestation vérifiable mDL conforme à la norme ISO est la suivante :
 
