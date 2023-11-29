@@ -35,7 +35,7 @@ La récupération à partir d'un serveur selon la norme mDL présente un risque 
 
 En conclusion, les deux normes présentent chacune des avantages et des inconvénients, qui sont résumés ci-dessous.
 
-|               | ISO/IEC 18013-5 | SSI |
+| Test              | ISO/IEC 18013-5 | SSI |
 | ------------- | ------- | -- |
 | Avantages     | $250 | |
 | Inconvénients | $80 | |
