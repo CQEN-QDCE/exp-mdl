@@ -38,7 +38,7 @@ En conclusion, les deux normes présentent chacune des avantages et des inconvé
 | &nbsp;        | ISO/IEC 18013-5 | SSI |
 | ------------- | ------- | -- |
 | Avantages     | $250 | |
-| Inconvénients | $80 | |
+| Inconvénients | <ul><li>item1</li><li>item2</li></ul> | |
 
 ## Réconciliation de la norme ISO/IEC 18013-5 avec la SSI : délivrance d'un mDL en tant qu'attestation vérifiable Anoncreds
 
