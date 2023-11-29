@@ -1,4 +1,4 @@
-# [ISO/IEC 18013-5](https://www.iso.org/fr/standard/69084.html) contre [l'identité auto-souverraine (SSI)](https://en.wikipedia.org/wiki/Self-sovereign_identity) : Une proposition pour une attestation vérifiable mDL
+# [ISO/IEC 18013-5](https://www.iso.org/fr/standard/69084.html) vs [Identité auto-souverraine (SSI)](https://en.wikipedia.org/wiki/Self-sovereign_identity) : Une proposition pour une attestation vérifiable mDL
 ### Proposition pour une attestation vérifiable mDL
 En Europe, les travaux sur eIDAS 2.0 visent à catalyser la prochaine génération d'identité numérique sur le continent. Simultanément, en ce qui concerne la mobilité numérique, la déclaration de Passau a vu les ministres des transports de l'UE et de l'AELE se réunir pour établir la feuille de route du secteur de la mobilité du futur en Europe. En conséquence, la 13e mise à jour de la directive européenne sur les permis de conduire, dont le lancement est prévu pour l'été 2022, devrait jeter les bases de la reconnaissance transfrontalière des permis de conduire mobiles (mDL) sur le continent.
 
