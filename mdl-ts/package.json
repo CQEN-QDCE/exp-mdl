@@ -1,0 +1,25 @@
+{
+  "name": "mdl-ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.8.10",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@peculiar/webcrypto": "^1.4.3",
+    "@peculiar/x509": "^1.9.5",
+    "@types/crypto-js": "^4.2.1",
+    "crypto-js": "^4.2.0",
+    "i": "^0.3.7",
+    "npm": "^10.2.3"
+  }
+}
