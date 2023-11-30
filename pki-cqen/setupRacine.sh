@@ -35,7 +35,7 @@ mkdir -p ca certs certs/users crl etc ca/csr ca/db ca/private
 cp /dev/null ca/db/$AC_SIGLA.db
 cp /dev/null ca/db/$AC_SIGLA.db.attr
 cp /dev/null ca/db/$AC_SIGLA.crt.srl 
-echo "01"    ca/db/$AC_SIGLA.crl.srl
+# echo "01"    ca/db/$AC_SIGLA.crl.srl
 
 # Pour faire la génération du numéro de série initial, on calcule le hash du nom de l'AC, et l'on 
 # copie dans le fichier de serial number. Ceci est la façon d'avoir un serial number qui soit suffisament 
@@ -44,14 +44,14 @@ echo "01"    ca/db/$AC_SIGLA.crl.srl
 
 case $SO in
         1 | 2)
-            echo "Configure le système d'explotation: Win / Linux"
+            echo "[..] Configure le système d'explotation: Win / Linux"
             SERNUM=$(openssl dgst -sha1 <<< $AC_SIGLA)
             read -ra TEMP <<< $SERNUM
-            echo ${TEMP[1]} > $AC_SIGLA.crt.srl
+            # echo ${TEMP[1]} > $AC_SIGLA.crt.srl
             SERNUM=${TEMP[1]}
             ;;
         3)
-            echo "Configure le système d'explotation: Mac"
+            echo "[..] Configure le système d'explotation: Mac"
             SERNUM=$(openssl dgst -sha1 <<< $AC_SIGLA)
             ;;
 esac
