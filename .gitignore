@@ -2,3 +2,9 @@
 ACRacine/
 ACIntermediaire/
 ACSAAQ/
+ACXRoad/
+
+node_modules/
+
+*.crt 
+*.key
