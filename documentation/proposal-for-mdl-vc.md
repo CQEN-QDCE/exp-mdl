@@ -54,3 +54,4 @@ En combinant les avantages offerts par les deux normes, la proposition de Prociv
 
 En combinant les propriétés mentionnées ci-dessus, le détenteur d'un portefeuille SSI serait en mesure de présenter des attestations vérifiables mDL à un lecteur mDL conforme à la norme 18013-5.
 
+source https://www.procivis.ch/post/iso-iec-18013-5-vs-self-sovereign-identity-a-proposal-for-an-mdl-verifiable-credential
