@@ -24,7 +24,7 @@ cd $BASE/ACIntermediaire
 ./remove.sh
 
 echo "Remove objets de l'SAAQ"
-cd $BASE/ACISAAQ
+cd $BASE/ACSAAQ
 ./remove.sh
 
 cd $BASE

@@ -41,5 +41,5 @@ ACXROAD_HOME=$(cd ../ && pwd)/ACXRoad
     cp certs/$ACXROAD.crt        $ACXROAD_HOME/certs/$ACXROAD.crt            # Certificat
     cp certs/$ACINTERNE.crt      $ACXROAD_HOME/certs/$ACINTERNE.crt          # Certificat racine
     cp certs/$ACXROAD-chain.p7s  $ACXROAD_HOME/certs/$ACXROAD-chain.p7s      # Certificat racine
-
+#
 # EOF

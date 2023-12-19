@@ -11,8 +11,8 @@
 set -e
 
 SCRIPT_HOME="$(cd "$(dirname "$0")" && pwd)"
-ACRACINE="ACRacineCQENExpV1"
-  ACSAAQ="ACSAAQmDLExpV1"
+ACINTER="ACIntermediaireCQENExpV1"
+ACSAAQ="ACSAAQmDLExpV1"
 
 # Determine le type de sistème d'explotation 
 case $OSTYPE in 
@@ -42,6 +42,9 @@ usage() {
 
           demande <nom>
               Créér une CSR pour la demande d'un nouvel certificat.
+
+          ec_demande <nom>
+              Créér une CSR pour la demande d'un nouvel certificat, qui utilise un pair de clés ECDSA.
           
           emettre <nom> 
               Genèrer un numéro de série et emet le certificat.
@@ -64,9 +67,21 @@ EOF
 demande(){
 # Créér une CSR pour la demande d'un nouvel certificat.
     echo "Générer demande de certificat pour " $PARM
-    # openssl req -new -utf8 -config etc/usager.cnf -out ./ca/csr/$PARM.csr -keyout ./ca/private/$PARM.key
-    openssl req -new -config etc/mdl.cnf -out ./ca/csr/$PARM.csr -keyout ./ca/private/$PARM.key -utf8 \
-          -subj "/C=CA/ST=Quebec/L=Quebec City/O=Centre Quebecois d'Excellence Numerique/OU=Autorite de Certification Intermediaire CQEN Exp V1/CN=$(toUpper ${PARM})/email=${EMAIL}" 
+    openssl req -new -utf8 -config etc/usager.cnf -out ./ca/csr/$PARM.csr -keyout ./ca/private/$PARM.key
+}
+
+ec_demande(){
+# Créér une CSR pour la demande d'un nouvel certificat.
+    echo "Génération du pair de clés ECDSA"
+    openssl ecparam -genkey -name secp256k1 -noout -out ./ca/private/$PARM.pem
+    openssl ec -in ./ca/private/$PARM.pem -out ./ca/private/$PARM.key -aes256
+    
+    echo "Génération de la demande de certificat (CSR)"
+    openssl req -new -utf8 -config etc/usager.cnf -out ./ca/csr/$PARM.csr -sha256 -key ./ca/private/$PARM.key 
+
+    # Clean-up de la clé privée non chiffrée
+    echo "Nettoyage: remove le fichier de clés non chiffré"
+    rm ./ca/private/$PARM.pem
 }
 
 emettre(){
@@ -76,26 +91,26 @@ emettre(){
     echo "Calcule le serial number du certificat, basé sur la CSR"
     getSerialNumberHash
 
-    openssl ca -create_serial -config etc/mdl.cnf -in ca/csr/$PARM.csr -out certs/users/$PARM.crt -extensions usuario_reqext
+    openssl ca -create_serial -config etc/usager.cnf -in ca/csr/$PARM.csr -out certs/users/$PARM.crt -extensions usuario_reqext
 
-    openssl crl2pkcs7 -nocrl -certfile certs/users/$PARM.crt -certfile certs/$ACSAAQ.crt -certfile certs/$ACRACINE.crt -out certs/users/$PARM-chain.p7s -outform der
+    openssl crl2pkcs7 -nocrl -certfile certs/users/$PARM.crt -certfile certs/$ACINTER.crt -certfile certs/$ACRACINE.crt -out certs/users/$PARM-chain.p7s -outform der
 
 }
 
 getSerialNumberHash(){
-  case $SO in
-          1 | 2)
-              SERNUM=$(openssl dgst -sha1 <<< ca/csr/$PARM.csr)
-              read -ra TEMP <<< $SERNUM
-              echo ${TEMP[1]} > $AC_SIGLA.crt.srl
-              SERNUM=${TEMP[1]}
-              ;;
-          3)
-              SERNUM=$(openssl dgst -sha1 <<< ca/csr/$PARM.csr)
-              ;;
-  esac
+    case $SO in
+            1 | 2)
+                SERNUM=$(openssl dgst -sha1 <<< ca/csr/$PARM.csr)
+                read -ra TEMP <<< $SERNUM
+                echo ${TEMP[1]} > $AC_SIGLA.crt.srl
+                SERNUM=${TEMP[1]}
+                ;;
+            3)
+                SERNUM=$(openssl dgst -sha1 <<< ca/csr/$PARM.csr)
+                ;;
+    esac
 
-  echo $SERNUM > ca/db/$AC_SIGLA.crt.srl
+    echo $SERNUM > ca/db/$AC_SIGLA.crt.srl
 }
 
 toLower() {
@@ -113,6 +128,9 @@ else
     case "$COMMAND" in 
     demande)
       demande
+      ;;
+    ec_demande)
+      ec_demande
       ;;
     emettre)
       emettre

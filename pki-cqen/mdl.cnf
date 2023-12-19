@@ -25,7 +25,7 @@ dir                     = .                     # Top dir - en prod, changer par
 ca                      = ACSAAQmDL             # Nom court de l'AC
 env                     = Exp                   # Environnement
 ver                     = V1                    # Version
-crl_link                = http://www.quebec.ca/crl/exp/intermediaire/v1/LatestSAAQExpV1.crl
+crl_link                = http://www.quebec.ca/crl/exp/SAAQmDL/v1/LatestSAAQmDLExpV1.crl
 
 [ ca ]
 default_ca              = signing_ca                       # The default CA section
@@ -41,7 +41,7 @@ unique_subject          = no                               # Require unique subj
 default_days            = 1095                             # How long to certify for
 default_md              = sha256                           # MD to use
 policy                  = match_pol                        # Default naming policy
-email_in_dn             = no                               # Add email to cert DN
+email_in_dn             = yes                               # Add email to cert DN
 preserve                = no                               # Keep passed DN ordering
 name_opt                = ca_default                       # Subject DN display options
 cert_opt                = ca_default                       # Certificate display options
@@ -101,3 +101,7 @@ commonName_max = 64
 
 emailAddress = Email address 
 emailAddress_max = 64
+
+[ crl_ext ]
+authorityKeyIdentifier  = keyid:always
+crlDistributionPoints   = URI:$crl_link

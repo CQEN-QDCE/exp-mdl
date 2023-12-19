@@ -29,13 +29,13 @@ case $OSTYPE in
 esac 
 
 # Créé la structure de repertoires de l'AC
-mkdir -p ca certs certs/users crl etc ca/csr ca/db ca/private
+mkdir -p ca certs certs/users ca/crl etc ca/csr ca/db ca/private
 
 # Initialise elements de données 
 cp /dev/null ca/db/$AC_SIGLA.db
 cp /dev/null ca/db/$AC_SIGLA.db.attr
 cp /dev/null ca/db/$AC_SIGLA.crt.srl 
-# echo "01"    ca/db/$AC_SIGLA.crl.srl
+echo "01" >  ca/db/$AC_SIGLA.crl.srl
 
 # Pour faire la génération du numéro de série initial, on calcule le hash du nom de l'AC, et l'on 
 # copie dans le fichier de serial number. Ceci est la façon d'avoir un serial number qui soit suffisament 

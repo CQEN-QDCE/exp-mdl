@@ -42,6 +42,9 @@ usage() {
 
           demande <nom>
               Créér une CSR pour la demande d'un nouvel certificat.
+
+          ec_demande <nom>
+              Créér une CSR pour la demande d'un nouvel certificat, qui utilise un pair de clés ECDSA.
           
           emettre <nom> 
               Genèrer un numéro de série et emet le certificat.
@@ -67,6 +70,20 @@ demande(){
     openssl req -new -utf8 -config etc/usager.cnf -out ./ca/csr/$PARM.csr -keyout ./ca/private/$PARM.key
 }
 
+ec_demande(){
+# Créér une CSR pour la demande d'un nouvel certificat.
+    echo "Génération du pair de clés ECDSA"
+    openssl ecparam -genkey -name secp256k1 -noout -out ./ca/private/$PARM.pem
+    openssl ec -in ./ca/private/$PARM.pem -out ./ca/private/$PARM.key -aes256
+    
+    echo "Génération de la demande de certificat (CSR)"
+    openssl req -new -utf8 -config etc/usager.cnf -out ./ca/csr/$PARM.csr -sha256 -key ./ca/private/$PARM.key 
+
+    # Clean-up de la clé privée non chiffrée
+    echo "Nettoyage: remove le fichier de clés non chiffré"
+    rm ./ca/private/$PARM.pem
+}
+
 emettre(){
 # Genèrer un numéro de série et emet le certificat.
     echo "Emettre certificat pour " $PARM
@@ -81,19 +98,19 @@ emettre(){
 }
 
 getSerialNumberHash(){
-  case $SO in
-          1 | 2)
-              SERNUM=$(openssl dgst -sha1 <<< ca/csr/$PARM.csr)
-              read -ra TEMP <<< $SERNUM
-              echo ${TEMP[1]} > $AC_SIGLA.crt.srl
-              SERNUM=${TEMP[1]}
-              ;;
-          3)
-              SERNUM=$(openssl dgst -sha1 <<< ca/csr/$PARM.csr)
-              ;;
-  esac
+    case $SO in
+            1 | 2)
+                SERNUM=$(openssl dgst -sha1 <<< ca/csr/$PARM.csr)
+                read -ra TEMP <<< $SERNUM
+                echo ${TEMP[1]} > $AC_SIGLA.crt.srl
+                SERNUM=${TEMP[1]}
+                ;;
+            3)
+                SERNUM=$(openssl dgst -sha1 <<< ca/csr/$PARM.csr)
+                ;;
+    esac
 
-  echo $SERNUM > ca/db/$AC_SIGLA.crt.srl
+    echo $SERNUM > ca/db/$AC_SIGLA.crt.srl
 }
 
 toLower() {
@@ -111,6 +128,9 @@ else
     case "$COMMAND" in 
     demande)
       demande
+      ;;
+    ec_demande)
+      ec_demande
       ;;
     emettre)
       emettre
