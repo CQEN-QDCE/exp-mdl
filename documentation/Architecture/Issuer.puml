@@ -30,7 +30,8 @@ rectangle "Environnement d'exécution - Execution environment" as envExecution #
 
         rectangle "ACA-PY (Rest-API)" as issuerACAPY #Black;line:White;line.dotted;text:White {
             agent "Serveur admin - Admin server" as issuerAdmin
-            agent "W3C Verifiable Credential" as issuerW3CVC #LightBlue
+            agent "Anoncred Verifiable Credential" as issuerAnoncred #LightBlue
+            agent "SD-JWT Verifiable Credential" as issuerW3CVC #LightBlue
             agent "mDL (mDoc/CBOR)" as issuerMdl #LightBlue
             
             node "OIDC4VCI (Plugin)" as issuerPlugin #LightGreen {
@@ -65,6 +66,7 @@ end note
 issuerPluginPublic -left- issuerCredentialType : Device binding
 issuerPluginAdmin -right- issuerCredentialType : Data exchange
 issuerCredentialType -up- issuerW3CVC : W3C VC
+issuerCredentialType -up- issuerAnoncred : Anoncred VC
 issuerCredentialType -up- issuerMdl : mDL
 
 note right
