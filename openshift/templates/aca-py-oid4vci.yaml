@@ -211,56 +211,111 @@ objects:
           app: ${ACA_PY_OID4VCI_NAME}
       spec:
         containers:
-        - env:
-          - name: MODE
-            value: DEV
-          - name: PORT
-            value: "3000"
-          - name: POSTGRES_DATABASE
-            valueFrom:
-              secretKeyRef:
-                name: ${POSTGRESQL_NAME}
-                key: database-name
-          - name: POSTGRES_HOST
-            value: ${POSTGRESQL_NAME}
-          - name: POSTGRES_PASSWORD
-            valueFrom:
-              secretKeyRef:
-                name: ${POSTGRESQL_NAME}
-                key: database-password
-          - name: POSTGRES_PORT
-            value: "5432"
-          - name: POSTGRES_USER
-            valueFrom:
-              secretKeyRef:
-                name: ${POSTGRESQL_NAME}
-                key: database-user
-          - name: RUN_MIGRATIONS
-            value: "false"
-          - name: KEYCLOAK_URL
-            value: https://${KEYCLOAK_SUBDOMAIN}.${APP_DOMAIN}
-          - name: KEYCLOAK_REALM
-            value: ${KEYCLOAK_REALM}
-          - name: KEYCLOAK_CLIENT_ID
-            value: ${KEYCLOAK_CLIENT_ID}
-          name: ${ACA_PY_OID4VCI_NAME}
-          image: " "
-          ports:
-            - containerPort: 3000
-              protocol: TCP
-          resources: {}
-          terminationMessagePath: /dev/termination-log
-          terminationMessagePolicy: File
-          imagePullPolicy: Always
-        initContainers:
-        - name: init-db
-          image: busybox
-          command: ['sh', '-c', 'until nc -z ${POSTGRESQL_NAME}:${POSTGRESQL_PORT}; do echo waiting for db; sleep 2; done;']
+          - name: ${ACA_PY_OID4VCI_NAME}
+            command:
+              - bash
+              - -c
+              - $(echo aca-py start
+                --inbound-transport http '0.0.0.0' ${HTTP_INTERFACE_PORT}
+                --outbound-transport http
+                --admin 0.0.0.0 ${ADMIN_INTERFACE_PORT}
+                --endpoint https://${AGENT_SUBDOMAIN}.${APP_DOMAIN}
+                --genesis-url "${GENESIS_FILE_URL}"
+                --auto-accept-invites
+                --auto-accept-requests
+                --auto-provision
+                --wallet-type '${WALLET_TYPE}'
+                --wallet-name "$(echo ${WALLET_NAME} | tr '[:upper:]' '[:lower:]' | sed "s~-~_~g")"
+                --wallet-key "${WALLET_ENCRYPTION_KEY}"
+                --wallet-storage-type "${WALLET_STORAGE_TYPE}"
+                --wallet-storage-config "$(eval echo \"${WALLET_STORAGE_CONFIGURATION}\")"
+                --wallet-storage-creds "$(eval echo \"${WALLET_STORAGE_CREDENTIALS}\")"
+                $([ ! -z "${WEBHOOK_URL}" ] && echo "--webhook-url ${WEBHOOK_URL}" || echo "")
+                $([ ! -z "${AGENT_ADMIN_API_KEY}" ] && echo "--admin-api-key ${AGENT_ADMIN_API_KEY}" || echo "--admin-insecure-mode")
+                --plugin 'oid4vci'
+                --log-level ${AGENT_LOG_LEVEL});
+            env:
+              - name: ACAPY_LABEL
+                value: ${ACAPY_LABEL}
+              - name: ACAPY_IMAGE_URL
+                value: ${ACAPY_IMAGE_URL}               
+              - name: ACAPY_AUTO_ACCEPT_INVITES
+                value: ${ACAPY_AUTO_ACCEPT_INVITES}
+              - name: GENESIS_FILE_URL
+                value: ${GENESIS_FILE_URL}
+              - name: WEBHOOK_URL
+                value: ${WEBHOOK_URL}
+# le caractère underscore n'est pas accepté comme valeur pour le Wallet Name.
+              - name: WALLET_NAME
+                value: ${APP_NAME}
+              - name: WALLET_STORAGE_TYPE
+                value: ${WALLET_STORAGE_TYPE}
+              - name: WALLET_STORAGE_CONFIGURATION
+                value: ${WALLET_STORAGE_CONFIG}
+              - name: WALLET_STORAGE_CREDENTIALS
+                value: ${WALLET_STORAGE_CREDS}
+              - name: POSTGRESQL_NAME
+                value: ${POSTGRESQL_NAME}
+              - name: POSTGRESQL_PORT
+                value: ${POSTGRESQL_PORT}
+              - name: POSTGRESQL_USER
+                valueFrom:
+                  secretKeyRef:
+                    name: ${POSTGRESQL_NAME}
+                    key: database-user
+              - name: POSTGRESQL_PASSWORD
+                valueFrom:
+                  secretKeyRef:
+                    name: ${POSTGRESQL_NAME}
+                    key: database-password
+              - name: POSTGRESQL_ADMIN_USER
+                valueFrom:
+                  secretKeyRef:
+                    name: ${POSTGRESQL_NAME}
+                    key: database-admin-user
+              - name: POSTGRESQL_ADMIN_PASSWORD
+                valueFrom:
+                  secretKeyRef:
+                    name: ${POSTGRESQL_NAME}
+                    key: database-admin-password
+              - name: WALLET_ENCRYPTION_KEY
+                valueFrom:
+                  secretKeyRef:
+                    name: ${ACA_PY_OID4VCI_NAME}
+                    key: master-key
+              - name: HTTP_INTERFACE_PORT
+                value: ${AGENT_HTTP_PORT}
+              - name: ADMIN_INTERFACE_PORT
+                value: ${AGENT_ADMIN_PORT}
+              - name: AGENT_ADMIN_API_KEY
+                valueFrom:
+                  secretKeyRef:
+                    name: ${ACA_PY_OID4VCI_NAME}
+                    key: admin-api-key
+              - name: ACAPY_LABEL
+                value: ${ACAPY_LABEL}
+              - name: AGENT_LOG_LEVEL
+                value: ${LOG_LEVEL}
+            image: " "
+            ports:
+              - containerPort: ${{AGENT_ADMIN_PORT}}
+                protocol: TCP
+              - containerPort: ${{AGENT_HTTP_PORT}}
+                protocol: TCP
+            resources: {}
+            terminationMessagePath: /dev/termination-log
+            terminationMessagePolicy: File
+            imagePullPolicy: Always
+            resources:
+              limits:
+                cpu: ${CPU_LIMIT}
+                memory: ${MEMORY_LIMIT}
+              requests:
+                cpu: ${CPU_REQUEST}
+                memory: ${MEMORY_REQUEST}
         restartPolicy: Always
-        terminationGracePeriodSeconds: 30
-        dnsPolicy: ClusterFirst
-        securityContext: {}
-        schedulerName: default-scheduler
+        serviceAccountName: ""
+  status: {}
 - kind: Service
   apiVersion: v1
   metadata:
@@ -269,10 +324,91 @@ objects:
     selector:
       app: ${ACA_PY_OID4VCI_NAME}
     ports:
-      - name: "3000"
+      - name: '3000'
         protocol: TCP
-        port: 3000
-        targetPort: 3000
+        port: ${{AGENT_ADMIN_PORT}}
+        targetPort: ${{AGENT_ADMIN_PORT}}
+      - name: '8000'
+        protocol: TCP
+        port: ${{AGENT_HTTP_PORT}}
+        targetPort: ${{AGENT_HTTP_PORT}}
+- kind: Route
+  apiVersion: v1
+  metadata:
+    name: ${ACA_PY_OID4VCI_NAME}
+    labels:
+      name: ${ACA_PY_OID4VCI_NAME}-http
+    annotations:
+      haproxy.router.openshift.io/timeout: ${ROUTE_TIMEOUT}
+  spec:
+    host: ${AGENT_SUBDOMAIN}.${APP_DOMAIN}
+    to:
+      kind: Service
+      name: ${ACA_PY_OID4VCI_NAME}
+      weight: 100
+    port:
+      targetPort: ${{AGENT_HTTP_PORT}}
+    tls:
+      termination: edge
+      insecureEdgeTerminationPolicy: None
+    wildcardPolicy: None
+  status:
+    ingress:
+      - host: ${AGENT_SUBDOMAIN}.${APP_DOMAIN}
+        routerName: default
+        conditions:
+          - type: Admitted
+            status: 'True'
+        wildcardPolicy: None
+        routerCanonicalHostname: ${APP_DOMAIN}
+
+- kind: Route
+  apiVersion: v1
+  metadata:
+    name: ${ACA_PY_OID4VCI_NAME}-admin
+    labels:
+      name: ${ACA_PY_OID4VCI_NAME}-admin
+    annotations:
+      haproxy.router.openshift.io/timeout: ${ROUTE_TIMEOUT}
+  spec:
+    host: ${AGENT_SUBDOMAIN}-admin.${APP_DOMAIN}
+    to:
+      kind: Service
+      name: ${ACA_PY_OID4VCI_NAME}
+      weight: 100
+    port:
+      targetPort: ${{AGENT_ADMIN_PORT}}
+    tls:
+      termination: edge
+      insecureEdgeTerminationPolicy: None
+    wildcardPolicy: None
+  status:
+    ingress:
+      - host: ${AGENT_SUBDOMAIN}-admin.${APP_DOMAIN}
+        routerName: default
+        conditions:
+          - type: Admitted
+            status: 'True'
+        wildcardPolicy: None
+        routerCanonicalHostname: ${APP_DOMAIN}
+######################################################################
+# Secrets
+######################################################################
+- kind: Secret
+  apiVersion: v1
+  metadata:
+    name: ${ACA_PY_OID4VCI_NAME}
+    labels:
+      name: ${ACA_PY_OID4VCI_NAME}
+    annotations:
+      template.openshift.io/expose-master-key: "{.data['master-key']}"
+      template.openshift.io/expose-admin-api-key: "{.data['admin-api-key']}"
+      template.openshift.io/expose-webhook-url: "{.data['webhook-url']}"
+  stringData:
+    master-key: "${WALLET_ENCRYPTION_KEY}"
+    admin-api-key: ${ADMIN_API_KEY}
+    webhook-url: ${WEBHOOK_URL}
+  type: Opaque
 ######################################################################
 # Parameters
 ######################################################################
@@ -300,6 +436,11 @@ parameters:
   required: true
   generate: "expression"
   from: "[a-zA-Z0-9]{16}"
+- name: WALLET_STORAGE_TYPE
+  displayName: Wallet storage type
+  description: The wallet storage type. Possible values are 'postgres_storage' or 'sqlite_storage' at the moment.  If not defined, defaults to 'sqlite_storage' for compatibility.
+  required: false
+  value: 'postgres_storage'
 - name: POSTGRESQL_ADMIN_USERNAME
   fdisplayName: PostgreSQL administrator username
   description: Username for the PostgreSQL administrative account.
@@ -345,3 +486,80 @@ parameters:
   description: URI of the GitHub repository.
   required: true
   value: "https://github.com/CQEN-QDCE/exp-mdl.git"
+- name: CPU_REQUEST
+  displayName: Resources CPU Request
+  description: The resources CPU request (in cores) for this build.
+  required: true
+  value: 100m
+- name: CPU_LIMIT
+  displayName: Resources CPU Limit
+  description: The resources CPU limit (in cores) for this build.
+  required: true
+  value: 250m
+- name: MEMORY_REQUEST
+  displayName: Resources Memory Request
+  description: The resources Memory request (in Mi, Gi, etc) for this build.
+  required: true
+  value: 128Mi
+- name: MEMORY_LIMIT
+  displayName: Resources Memory Limit
+  description: The resources Memory limit (in Mi, Gi, etc) for this build.
+  required: true
+  value: 256Mi
+- name: ACAPY_LABEL
+  displayName: ACA-Py label
+  description: Label of the agent.
+  required: true
+  value: 'OID4VCI mDL issuer'
+- name: GENESIS_FILE_URL
+  displayName: Genesis file URL
+  description: The URL from which the genesis file can be downloaded.
+  required: true
+- name: LOG_LEVEL
+  displayName: Log Level
+  description: The logging level of the issuer agent.
+  required: true
+  value: 'DEBUG'
+- name: AGENT_HTTP_PORT
+  displayName: Agent HTTP port
+  description: The HTTP port on which the agent will listen.
+  required: true
+  value: '8000'
+- name: WALLET_TYPE
+  displayName: Wallet type
+  description: The wallet type. Supported internal storage types are 'basic' (memory), 'indy', and 'askar'.
+  required: true
+  value: 'askar'
+- name: WALLET_STORAGE_CONFIG
+  displayName: Wallet storage configuration
+  required: true
+  description: The wallet storage configuration.
+  value: '{\"url\":\"${POSTGRESQL_NAME}:${POSTGRESQL_PORT}\",\"max_connections\":5,\"wallet_scheme\":\"MultiWalletSingleTableSharedPool\"}'
+- name: WALLET_STORAGE_CREDS
+  displayName: Wallet storage credentials
+  required: true
+  description: The wallet storage credentials.
+  value: '{\"account\":\"${POSTGRESQL_ADMIN_USER}\",\"password\":\"${POSTGRESQL_ADMIN_PASSWORD}\",\"admin_account\":\"${POSTGRESQL_ADMIN_USER}\",\"admin_password\":\"${POSTGRESQL_ADMIN_PASSWORD}\"}'
+- name: WALLET_ENCRYPTION_KEY
+  displayName: Wallet encryption key
+  description: The encryption key to be used to encrypt the agent wallet.
+  required: true
+- name: ACAPY_AUTO_ACCEPT_INVITES
+  displayName: ACAPy auto accept invites
+  description: ACAPY_AUTO_ACCEPT_INVITES
+  required: true
+  value: 'false'
+- name: ADMIN_API_KEY
+  displayName: Admin API key
+  description: The key used to authenticate client requests to the admin api.
+  required: false
+  value: ''
+- name: AGENT_ADMIN_PORT
+  displayName: Agent Admin Port
+  description: The port on which the agent will listen for the admin API.
+  required: true
+  value: '3000'
+- name: AGENT_SUBDOMAIN
+  description: The external subdomain to access Aries issuer.
+  required: true
+  value: 'mdl-issuer'
