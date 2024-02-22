@@ -9,4 +9,4 @@ RUN pip install git+https://github.com/hyperledger/aries-acapy-plugins@main#subd
 USER $user
 COPY ./configs configs
 
-CMD ["aca-py"]
+#CMD ["aca-py"]

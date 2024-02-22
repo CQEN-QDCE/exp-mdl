@@ -157,9 +157,10 @@ objects:
         kind: ImageStreamTag
         name: ${ACA_PY_OID4VCI_NAME}:latest
     source:
-      contextDir: backend
+      contextDir: aca-py-oid4vci
       git:
         uri: ${GITHUB_REPOSITORY_URI}
+        ref: dev
       type: Git
     strategy:
       dockerStrategy:
