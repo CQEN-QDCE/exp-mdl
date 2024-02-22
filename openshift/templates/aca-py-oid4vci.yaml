@@ -235,6 +235,8 @@ objects:
                 --plugin 'oid4vci'
                 --log-level ${AGENT_LOG_LEVEL});
             env:
+              - name: OID4VCI_PORT
+                value: ${OID4VCI_PLUGIN_HTTP_PORT}
               - name: ACAPY_LABEL
                 value: ${ACAPY_LABEL}
               - name: ACAPY_IMAGE_URL
@@ -245,7 +247,6 @@ objects:
                 value: ${GENESIS_FILE_URL}
               - name: WEBHOOK_URL
                 value: ${WEBHOOK_URL}
-# le caractère underscore n'est pas accepté comme valeur pour le Wallet Name.
               - name: WALLET_NAME
                 value: ${APP_NAME}
               - name: WALLET_STORAGE_TYPE
@@ -332,6 +333,10 @@ objects:
         protocol: TCP
         port: ${{AGENT_HTTP_PORT}}
         targetPort: ${{AGENT_HTTP_PORT}}
+      - name: '8081'
+        protocol: TCP
+        port: ${{OID4VCI_PLUGIN_HTTP_PORT}}
+        targetPort: ${{OID4VCI_PLUGIN_HTTP_PORT}}
 - kind: Route
   apiVersion: v1
   metadata:
@@ -385,6 +390,35 @@ objects:
   status:
     ingress:
       - host: ${AGENT_SUBDOMAIN}-admin.${APP_DOMAIN}
+        routerName: default
+        conditions:
+          - type: Admitted
+            status: 'True'
+        wildcardPolicy: None
+        routerCanonicalHostname: ${APP_DOMAIN}
+- kind: Route
+  apiVersion: v1
+  metadata:
+    name: ${ACA_PY_OID4VCI_NAME}-oid4vci
+    labels:
+      name: ${ACA_PY_OID4VCI_NAME}-oid4vci
+    annotations:
+      haproxy.router.openshift.io/timeout: ${ROUTE_TIMEOUT}
+  spec:
+    host: ${AGENT_SUBDOMAIN}-oid4vci.${APP_DOMAIN}
+    to:
+      kind: Service
+      name: ${ACA_PY_OID4VCI_NAME}
+      weight: 100
+    port:
+      targetPort: ${{OID4VCI_PLUGIN_HTTP_PORT}}
+    tls:
+      termination: edge
+      insecureEdgeTerminationPolicy: None
+    wildcardPolicy: None
+  status:
+    ingress:
+      - host: ${AGENT_SUBDOMAIN}-oid4vci.${APP_DOMAIN}
         routerName: default
         conditions:
           - type: Admitted
@@ -563,3 +597,9 @@ parameters:
   description: The external subdomain to access Aries issuer.
   required: true
   value: 'mdl-issuer'
+- name: OID4VCI_PLUGIN_HTTP_PORT
+  displayName: Agent Admin Port
+  description: The port on which the agent will listen for the admin API.
+  required: true
+  value: '8081'
+  
