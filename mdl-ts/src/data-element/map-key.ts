@@ -2,7 +2,7 @@ import { MapKeyType } from "./map-key-type.enum";
 
 export class MapKey {
     private key: string | number;
-    private type: MapKeyType = MapKeyType.string;
+    type: MapKeyType = MapKeyType.string;
     constructor(key: string | number) {
         if (typeof key === 'string') this.type = MapKeyType.string;
         if (typeof key === 'number') this.type = MapKeyType.int;

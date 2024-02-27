@@ -1,58 +1,136 @@
-import { ByteStringElement } from "../data-element/byte-string-element";
-import { DataElement } from "../data-element/data-element";
+import { Crypto } from "@peculiar/webcrypto";
+import { CborByteString } from "../data-element/cbor-byte-string";
+import { CborDataItem2 } from "../data-element/cbor-data-item2";
+import { CborEncoder } from "../cbor/cbor-encoder";
 import { ListElement } from "../data-element/list-element";
 import { MapElement } from "../data-element/map-element";
 import { MapKey } from "../data-element/map-key";
-import { NullElement } from "../data-element/null-element";
-import { NumberElement } from "../data-element/number-element";
-import { StringElement } from "../data-element/string-element";
-import { COSEConstants } from "./cose-constants";
-import { COSESimpleBase } from "./cose-simple-base";
-import CryptoJS from 'crypto-js';
-import Base64 from 'crypto-js/enc-base64';
+import { CborNumber } from "../data-element/cbor-number";
+import { CborTextString } from "../data-element/cbor-text-string";
+import { ArrayBufferComparer } from "../utils/array-buffer-comparer";
+import { CoseHeaderLabel } from "./cose-header-label.enum";
+import { COSEObject } from "./cose-object";
+import { CoseAlgorithm } from "./cose-algorithm.enum";
+import { CborDecoder } from "../cbor/cbor-decoder";
+import { CborConvertable } from "../cbor/cbor-convertable";
 
-export class COSEMac0 extends COSESimpleBase<COSEMac0> {
+export class COSEMac0 extends COSEObject<COSEMac0> implements CborConvertable {
    
-    constructor(dataElements: DataElement[]) {
-        super(dataElements);
+    private readonly context = 'MAC0';
+
+    private digest: ArrayBuffer | null = null;
+
+    constructor() {
+        super();
+        this.headers.algorithm.value = CoseAlgorithm.HMAC256;
     }
 
     detachPayload(): COSEMac0 {
-        return new COSEMac0(this.replacePayload(new NullElement()));
+        this.content = null;
+        return this;
     }
 
-    attachPayload(payload: Buffer): COSEMac0 {
-        return new COSEMac0(this.replacePayload(new ByteStringElement(payload)));
+    attachPayload(payload: ArrayBuffer): COSEMac0 {
+        this.content = payload;
+        return this;
     }
 
-    verify(sharedSecret: Buffer, externalData: Buffer = Buffer.alloc(0)): boolean {
+    public async mac(secret: ArrayBuffer, externalData: ArrayBuffer = new ArrayBuffer(0)): Promise<void> {
+        
+        const crypto = new Crypto();
+        
+        const algorithm = CoseAlgorithm.toSubtleCryptoAlgorithm(this.headers.algorithm.value);
+
+        const key = await crypto.subtle.importKey('raw', secret, algorithm, false, ["sign", "verify"]);
+
+        const cborArray = [];
+        cborArray.push(new CborTextString(this.context));
+        cborArray.push(new CborByteString(this.encodeProtectedHeaders()));
+        cborArray.push(new CborByteString(externalData));
+        cborArray.push(new CborByteString(this.content));
+        //cborArray.push(new StringElement(Buffer.from(this.content).toString("base64")));
+        const data = CborEncoder.encode(new ListElement(cborArray));
+
+        this.digest = await crypto.subtle.sign(algorithm, key, data);
+    }
+
+    get tag(): ArrayBuffer {
+        return this.digest;
+    }
+
+    public async verify(sharedSecret: ArrayBuffer, externalData: ArrayBuffer = new ArrayBuffer(0)): Promise<boolean> {
+        
         if (!this.payload) throw 'No payload given.';
-        let mac0Content = COSEMac0.createMacStructure(this.protectedHeader, this.payload, externalData).toCBOR();
-        if (this.algorithm !== COSEConstants.HMAC256) throw 'Algorithm currently not supported, only supported algorithm is HMAC256.';
-        let tag = Buffer.from(Base64.stringify(CryptoJS.HmacSHA256(mac0Content.toString(), sharedSecret.toString())), 'utf-8');
-        return this.signatureOrTag.equals(tag);
+        
+        if (this.headers.algorithm.value !== CoseAlgorithm.HMAC256_64 && 
+            this.headers.algorithm.value !== CoseAlgorithm.HMAC256) throw 'Algorithm currently not supported, only supported algorithm is HMAC256.';
+        
+        const crypto = new Crypto();
+
+        const algorithm = CoseAlgorithm.toSubtleCryptoAlgorithm(this.headers.algorithm.value);
+
+        const key = await crypto.subtle.importKey('raw', sharedSecret, algorithm, false, ["sign", "verify"]);
+
+        const cborArray = [];
+        cborArray.push(new CborTextString(this.context));
+        cborArray.push(new CborByteString(this.encodeProtectedHeaders()));
+        cborArray.push(new CborByteString(externalData));
+        cborArray.push(new CborByteString(this.content));
+        const data = CborEncoder.encode(new ListElement(cborArray));
+
+        const tag = await crypto.subtle.sign(algorithm, key, data);
+        return ArrayBufferComparer.equals(this.tag, tag);
     }
 
-    static createWithHMAC256(payload: Buffer, sharedSecret: Buffer, externalData: Buffer = Buffer.alloc(0)): COSEMac0 {
-        let protectedHeaderMap = new Map<MapKey, NumberElement>();
-        protectedHeaderMap.set(new MapKey(COSEConstants.ALG_LABEL), new NumberElement(COSEConstants.HMAC256));
-        let protectedHeaderData = new MapElement(protectedHeaderMap).toCBOR();
-        let mac0Content = COSEMac0.createMacStructure(protectedHeaderData, payload, externalData).toCBOR();
-        let tag = Buffer.from(Base64.stringify(CryptoJS.HmacSHA256(mac0Content.toString(), sharedSecret.toString())), 'utf-8');
-        let dataElements: DataElement[] = [];
-        dataElements.push(new ByteStringElement(protectedHeaderData));
-        dataElements.push(new MapElement(new Map<MapKey, DataElement>()))
-        dataElements.push(new ByteStringElement(payload))
-        dataElements.push(new ByteStringElement(tag))
-        return new COSEMac0(dataElements);
+    private encodeProtectedHeaders(): ArrayBuffer {
+        let map = new Map<MapKey, CborDataItem2>();
+        map.set(new MapKey(CoseHeaderLabel.ALG), new CborNumber(this.headers.algorithm.value));
+        return CborEncoder.encode(new MapElement(map));
     }
 
-    private static createMacStructure(protectedHeaderData: Buffer, payload: Buffer, externalData: Buffer): ListElement {
-        let dataElements: DataElement[] = [];
-        dataElements.push(new StringElement('MAC0'));
-        dataElements.push(new ByteStringElement(protectedHeaderData));
-        dataElements.push(new ByteStringElement(externalData));
-        dataElements.push(new ByteStringElement(payload));
-        return new ListElement(dataElements);
+    private decodeProtectedHeaders(protectedHeaders: CborByteString, message: COSEMac0): void {
+        for(const [key, value] of CborDecoder.decode(protectedHeaders.getValue()).getValue()) {
+            switch(key.int) {
+                case CoseHeaderLabel.ALG:
+                    message.headers.algorithm.value = <CoseAlgorithm>value.asValue();
+                    break;
+            }
+        };
+    }
+
+    private decodeUnprotectedHeaders(unprotectedHeaders: MapElement, message: COSEMac0): void {
+        for(const [key, value] of unprotectedHeaders.getValue()) {
+            switch(key.int) {
+                case CoseHeaderLabel.ALG:
+                    throw new Error('Algorithm must be in protected headers');
+                 case CoseHeaderLabel.X5_CHAIN:
+                    message.headers.x5Chain.value = value.getValue();
+                    break;
+                }
+        };
+    }
+
+    fromCborDataItem(dataItem: CborDataItem2): COSEMac0 {
+        const cborArray = <ListElement>dataItem;
+        const message = new COSEMac0();
+        this.decodeProtectedHeaders(cborArray.getValue()[0], message);
+        this.decodeUnprotectedHeaders(<MapElement>cborArray.getValue()[1], message);
+        message.dataElements = cborArray.getValue();
+        message.content = cborArray.getValue()[2].getValue();
+        message.digest = cborArray.getValue()[3].getValue();
+        return message;
+    }
+
+    toCborDataItem(): CborDataItem2 {
+        let list: CborDataItem2[] = [];
+        list.push(new CborByteString(this.encodeProtectedHeaders()));
+        let map = new Map<MapKey, CborDataItem2>();
+        if (this.headers.x5Chain.value) {
+            map.set(new MapKey(CoseHeaderLabel.X5_CHAIN), new CborByteString(this.headers.x5Chain.value));
+        }
+        list.push(new MapElement(new Map<MapKey, CborDataItem2>()));
+        list.push(new CborByteString(this.content));
+        list.push(new CborByteString(this.tag));
+        return new ListElement(list);
     }
 }

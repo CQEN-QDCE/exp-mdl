@@ -1,59 +1,41 @@
-import * as x509 from "@peculiar/x509";
-import { Crypto } from "@peculiar/webcrypto";
+import express, { Application, Request, Response, NextFunction } from "express";
+import { router as userRoutes } from "./oidc4vci/oid4vc-routes";
+import { IssuerService } from "./oidc4vci/issuer-service";
 
-async function createMdl() {
+const app: Application = express();
 
-    const crypto = new Crypto();
+app.use(express.json());
+app.use(express.urlencoded());
+app.use(userRoutes);
 
-    x509.cryptoProvider.set(crypto);
+app.use("/.well-known/openid-credential-issuer", (req: Request, res: Response, next: NextFunction): void => {
+  let test = new IssuerService();
+  let issuerMetaData = test.issuerMetadata2;
+  let issuerMetadataJson:any = {};
+  issuerMetadataJson.issuer = issuerMetaData.issuer;
 
-    const alg = {
-        name: "ECDSA",
-        namedCurve: "P-256",
-        hash: "SHA-256"
-    };
-    
-    const caKeyPair = await crypto.subtle.generateKey(alg, false, ["sign", "verify"]);
-    const issuerKeyPair = await crypto.subtle.generateKey(alg, false, ["sign", "verify"]);
-    const deviceKeyPair = await crypto.subtle.generateKey(alg, false, ["sign", "verify"]);
-    const readerKeyPair = await crypto.subtle.generateKey(alg, false, ["sign", "verify"]);
+  issuerMetadataJson.credential_issuer = issuerMetaData.credentialIssuer;
+  issuerMetadataJson.authorization_server = issuerMetaData.authorizationServer;
+  issuerMetadataJson.credential_endpoint = issuerMetaData.credentialEndpointUrl;
+  issuerMetadataJson.token_endpoint = issuerMetaData.tokenEndpointUrl;
+  issuerMetadataJson.jwks_uri = issuerMetaData.jsonWebKeySetUrl;
+  issuerMetadataJson.authorization_endpoint = issuerMetaData.authorizationEndpointUrl;
+  issuerMetadataJson.batch_credential_endpoint = issuerMetaData.batchCredentialEndpointUrl;
+  issuerMetadataJson.display = issuerMetaData.displayProperties;
+  issuerMetadataJson.response_types_supported = issuerMetaData.responseTypesSupported;
+  issuerMetadataJson.scopes_supported = issuerMetaData.scopesSupported;
+  issuerMetadataJson.subject_types_supported = issuerMetaData.subjectTypesSupported;
+  issuerMetadataJson.id_token_signing_alg_values_supported = issuerMetaData.idTokenSigningAlgorithmsSupported;
+  issuerMetadataJson.request_object_signing_alg_values_supported = issuerMetaData.requestObjectSigningAlgorithmsSupported;
+  issuerMetadataJson.subject_syntax_types_supported = issuerMetaData.subjectSyntaxTypesSupported;
+  issuerMetadataJson.id_token_types_supported = issuerMetaData.idTokenTypesSupported;
+  issuerMetadataJson.presentation_definition_uri_supported = issuerMetaData.presentationDefinitionUriSupported;
+  issuerMetadataJson.vp_formats_supported = issuerMetaData.vpFormatsSupported;
+  issuerMetadataJson.client_id_schemes_supported = issuerMetaData.clientIdSchemesSupported;
 
-    const caCertificate = await x509.X509CertificateGenerator.createSelfSigned(
-        {
-            serialNumber: "01",
-            name: "CN=MDOC Test CA",
-            notBefore: new Date("2023/01/01"),
-            notAfter: new Date("2025/01/01"),
-            signingAlgorithm: alg,
-            keys: caKeyPair,
-            extensions: [
-                new x509.BasicConstraintsExtension(true, 2, true),
-                new x509.ExtendedKeyUsageExtension(["1.2.3.4.5.6.7", "2.3.4.5.6.7.8"], true),
-                new x509.KeyUsagesExtension(x509.KeyUsageFlags.keyCertSign | x509.KeyUsageFlags.cRLSign, true),
-                await x509.SubjectKeyIdentifierExtension.create(caKeyPair.publicKey),
-            ]
-        });
-    
-        const issuerCertificate = await x509.X509CertificateGenerator.createSelfSigned(
-            {
-                serialNumber: "02",
-                name: "CN=MDOC Test Issuer",
-                notBefore: new Date("2023/01/01"),
-                notAfter: new Date("2025/01/01"),
-                signingAlgorithm: alg,
-                keys: caKeyPair,
-                extensions: [
-                    new x509.BasicConstraintsExtension(true, 2, true),
-                    new x509.ExtendedKeyUsageExtension(["1.2.3.4.5.6.7", "2.3.4.5.6.7.8"], true),
-                    new x509.KeyUsagesExtension(x509.KeyUsageFlags.keyCertSign | x509.KeyUsageFlags.cRLSign, true),
-                    await x509.SubjectKeyIdentifierExtension.create(caKeyPair.publicKey),
-                ]
-            });
-    
-    console.log(caCertificate.toString("pem"));
-    return;
-}
+  res.json(issuerMetadataJson);
+});
 
-createMdl();
-  
-  //console.log(cert.toString("pem")); // Certificate in PEM format
+const PORT: Number = 5050;
+
+app.listen(PORT, (): void => console.log(`running on port ${PORT}`));

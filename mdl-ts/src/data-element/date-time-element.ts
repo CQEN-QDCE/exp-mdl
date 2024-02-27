@@ -1,8 +1,13 @@
-import { DataElement } from "./data-element";
+import { CborDataItem2 } from "./cbor-data-item2";
 
-export class DateTimeElement extends DataElement<Date> {
+export class DateTimeElement extends CborDataItem2 {
 
-    constructor(value: Date, subType: DataElement.DateTimeMode = DataElement.DateTimeMode.tdate) {
-        super(value, new DataElement.DatetimeAttribute(subType));
+    constructor(private value: Date, subType: CborDataItem2.DateTimeMode = CborDataItem2.DateTimeMode.tdate) {
+        super(new CborDataItem2.DatetimeAttribute(subType));
     }
+
+    public getValue(): Date {
+        return this.value;
+    }
+
 }
