@@ -25,7 +25,7 @@ export class SimpleCOSECryptoProvider implements COSECryptoProvider {
         const coseSign1 = new COSESign1();
         coseSign1.headers.algorithm.value = CoseAlgorithm.ES256;
         coseSign1.headers.x5Chain.value = new x509.X509Certificates(keyInfo.x5Chain).export('raw');
-        coseSign1.setContent(payload);
+        coseSign1.attachPayload(payload);
         await coseSign1.sign(keyInfo.privateKey);
         return coseSign1;
 

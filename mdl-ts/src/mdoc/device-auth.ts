@@ -1,13 +1,12 @@
-import { Cbor } from "../cbor/cbor";
 import { COSEMac0 } from "../cose/cose-mac-0";
 import { COSESign1 } from "../cose/cose-sign-1";
-import { CborDataItem2 } from "../data-element/cbor-data-item2";
-import { ListElement } from "../data-element/list-element";
-import { MapElement } from "../data-element/map-element";
-import { MapKey } from "../data-element/map-key";
+import { CborArray } from "../cbor/types/cbor-array";
+import { CborDataItem } from "../cbor/cbor-data-item";
+import { CborMap } from "../cbor/types/cbor-map";
+import { CborConvertible } from "../cbor/cbor-convertible";
 
-export class DeviceAuth {
-
+export class DeviceAuth implements CborConvertible {
+ 
     deviceMac: COSEMac0;
 
     deviceSignature: COSESign1;
@@ -16,20 +15,21 @@ export class DeviceAuth {
         this.deviceMac = deviceMac;
         this.deviceSignature = deviceSignature;
     }
-
-    toMapElement(): MapElement {
-        const map = new Map<MapKey, CborDataItem2>();
-        if (this.deviceMac) map.set(new MapKey('deviceMac'), CborDataItem2.from(this.deviceMac));
-        if (this.deviceSignature) map.set(new MapKey('deviceSignature'), CborDataItem2.from(this.deviceSignature));
-        return new MapElement(map);
+    
+    fromCborDataItem(dataItem: CborDataItem): DeviceAuth {
+        const cborMap = <CborMap>dataItem;
+        let deviceMac = cborMap.get('deviceMac');
+        if (!deviceMac) deviceMac = null;
+        let deviceSignature = cborMap.get('deviceSignature');
+        if (!deviceSignature) deviceSignature = null;
+        return new DeviceAuth(CborDataItem.to(COSEMac0, <CborArray>deviceMac), 
+                              deviceSignature ? CborDataItem.to(COSESign1, <CborArray>deviceSignature) : null);
     }
 
-    static fromMapElement(mapElement: MapElement): DeviceAuth {
-        let deviceMac = mapElement.get(new MapKey('deviceMac'));
-        if (!deviceMac) deviceMac = null;
-        let deviceSignature = mapElement.get(new MapKey('deviceSignature'));
-        if (!deviceSignature) deviceSignature = null;
-        return new DeviceAuth(CborDataItem2.to(COSEMac0, new ListElement(deviceMac.getValue())), 
-                              deviceSignature ? CborDataItem2.to(COSESign1, new ListElement(deviceSignature.getValue())) : null);
+    toCborDataItem(): CborDataItem {
+        const cborMap = new CborMap();
+        if (this.deviceMac) cborMap.set('deviceMac', CborDataItem.from(this.deviceMac));
+        if (this.deviceSignature) cborMap.set('deviceSignature', CborDataItem.from(this.deviceSignature));
+        return new CborMap(cborMap);
     }
 }

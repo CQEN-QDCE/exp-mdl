@@ -1,22 +1,21 @@
 import cbor, { Tagged } from 'cbor';
-import { MapElement } from '../data-element/map-element';
-import { CborDataItem2 } from '../data-element/cbor-data-item2';
-import { ListElement } from '../data-element/list-element';
-import { MapKeyType } from '../data-element/map-key-type.enum';
-import { CborEncodedDataItem } from '../data-element/cbor-encoded-data-item';
-import { TDateElement } from '../data-element/tdate-element';
+import { CborMap } from './types/cbor-map';
+import { CborDataItem } from './cbor-data-item';
+import { CborEncodedDataItem } from './types/cbor-encoded-data-item';
+import { TDateElement } from './types/tdate-element';
+import { CborArray } from './types/cbor-array';
 
 export class CborEncoder {
 
-    static encode(dataItem: CborDataItem2): ArrayBuffer {
+    static encode(dataItem: CborDataItem): ArrayBuffer {
         const object: unknown = CborEncoder.convertToPlainObject(dataItem);
         return cbor.encode(object);
     }
 
-    private static convertToPlainObject(dataItem: CborDataItem2): any {
-        if (dataItem instanceof MapElement) {
+    private static convertToPlainObject(dataItem: CborDataItem): any {
+        if (dataItem instanceof CborMap) {
             return CborEncoder.convertToMap(dataItem);
-        } else if (dataItem instanceof ListElement) {
+        } else if (dataItem instanceof CborArray) {
             return CborEncoder.convertToArray(dataItem);
         } else if (dataItem instanceof CborEncodedDataItem) {
             return new EncodedCBOR(dataItem.getValue());
@@ -27,20 +26,19 @@ export class CborEncoder {
         }
     }
 
-    private static convertToMap(cborMap: MapElement): Map<string | number, any> {
+    private static convertToMap(cborMap: CborMap): Map<string | number, any> {
         const map = new Map<string | number, any>();
-        for (const [mapKey, dataElement] of cborMap.getValue()) {
-            if (dataElement === null) continue;
-            if (mapKey.type == MapKeyType.string) map.set(mapKey.str, CborEncoder.convertToPlainObject(dataElement));
-            if (mapKey.type == MapKeyType.int) map.set(mapKey.int, CborEncoder.convertToPlainObject(dataElement));
+        for (const [key, dataItem] of cborMap) {
+            if (dataItem === null) continue;
+            map.set(key, CborEncoder.convertToPlainObject(dataItem));
         }
         return map;
     }
 
-    private static convertToArray(listElement: ListElement): any[] {
+    private static convertToArray(cborArray: CborArray): any[] {
         const array: any[] = [];
-        for (const dataElement of listElement.getValue()) {
-            array.push(CborEncoder.convertToPlainObject(dataElement));
+        for (const cborDataItem of cborArray) {
+            array.push(CborEncoder.convertToPlainObject(cborDataItem));
         }
         return array;
     }

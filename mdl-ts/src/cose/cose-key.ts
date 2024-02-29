@@ -1,14 +1,13 @@
 import { Crypto } from "@peculiar/webcrypto";
 import { KeyKeys } from "../../key-keys.enum";
 import { Base64 } from '../utils/base64';
-import { MapElement } from '../data-element/map-element';
-import { CborDataItem2 } from '../data-element/cbor-data-item2';
-import { MapKey } from '../data-element/map-key';
-import { CborNumber } from '../data-element/cbor-number';
-import { CborByteString } from '../data-element/cbor-byte-string';
-import { CborConvertable } from "../cbor/cbor-convertable";
+import { CborMap } from '../cbor/types/cbor-map';
+import { CborDataItem } from '../cbor/cbor-data-item';
+import { CborNumber } from '../cbor/types/cbor-number';
+import { CborByteString } from '../cbor/types/cbor-byte-string';
+import { CborConvertible } from "../cbor/cbor-convertible";
 
-export class CoseKey implements CborConvertable {
+export class CoseKey implements CborConvertible {
 
     private keyMap: Map<number, number | ArrayBuffer>;
 
@@ -16,21 +15,21 @@ export class CoseKey implements CborConvertable {
         this.keyMap = keyMap;
     }
 
-    fromCborDataItem(dataItem: CborDataItem2): CoseKey {
-        const cborMap = <MapElement>dataItem;
+    fromCborDataItem(dataItem: CborDataItem): CoseKey {
+        const cborMap = <CborMap>dataItem;
         const keyMap = new Map<number, number | ArrayBuffer>();
         cborMap.getValue().forEach((value, key) => {
-            keyMap.set(key.int, value.getValue());
+            keyMap.set(key as number, value.getValue());
         });
         return new CoseKey(keyMap);
     }
 
-    toCborDataItem(): CborDataItem2 {
-        const keyMap = new Map<MapKey, CborDataItem2>();
+    toCborDataItem(): CborDataItem {
+        const cborMap = new CborMap();
         for (const [key, value] of this.keyMap) {
-            keyMap.set(new MapKey(key), typeof value === 'number' ? new CborNumber(value) : new CborByteString(value));
+            cborMap.set(key, typeof value === 'number' ? new CborNumber(value) : new CborByteString(value));
         }
-        return new MapElement(keyMap);
+        return cborMap;
     }
 
     static async new(publicKey: CryptoKey | null = null, privateKey: CryptoKey | null = null): Promise<CoseKey> {

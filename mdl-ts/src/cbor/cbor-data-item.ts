@@ -1,39 +1,37 @@
-import { CborConvertable } from "../cbor/cbor-convertable";
+import { CborConvertible } from "./cbor-convertible";
 
-export abstract class CborDataItem2 {
+export interface CborDataItem {
+    readonly majorType: number;
+    get type(): CborDataItem.Type;
+    getValue(): any;
+}
 
-    protected attribute: CborDataItem2.Attribute;
+export abstract class CborDataItem {
 
-    constructor(attribute: CborDataItem2.Attribute) {
-        this.attribute = attribute;
+//    protected attribute: CborDataItem.Attribute;
+
+//    constructor(attribute: CborDataItem.Attribute) {
+//        this.attribute = attribute;
+//    }
+
+    public static from(object: CborConvertible): CborDataItem {
+        return (<CborConvertible>object).toCborDataItem();
     }
 
-    public static from(object: CborConvertable): CborDataItem2 {
-        return (<CborConvertable>object).toCborDataItem();
-    }
-
-    public static to<T extends CborConvertable>(type: Constructable<T>, dataItem: CborDataItem2): T {
+    public static to<T extends CborConvertible>(type: Constructable<T>, dataItem: CborDataItem): T {
         const unInitializedIntance = new type();
         const instance = <T>unInitializedIntance.fromCborDataItem(dataItem);
         if (instance === unInitializedIntance) throw new Error("Invalid data item");
         return instance;
     }
 
-    get type(): CborDataItem2.Type {
-        return this.attribute.type;
-    }
-
-    public abstract getValue(): any;
-
-    equals(other: any): boolean {
-        if (!other) return false;
-        if (other instanceof CborDataItem2)
-        return true;
-    }
+//    get type(): CborDataItem.Type {
+//        return this.attribute.type;
+//    }
 
 }
 
-export module CborDataItem2 {
+export module CborDataItem {
 
     export enum Type {
         number,     // #0, #1, #7.25, #7.26, #7.27

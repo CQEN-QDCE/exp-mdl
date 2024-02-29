@@ -1,3 +1,59 @@
+export interface SerializableStatic {
+  new (...args: any[]): any
+  fromObject(data: Record<string, unknown>): InstanceType<this>
+}
+
+export interface Serializable {
+  id: string
+  toJSON(): string
+}
+
+//class Person implements Serializable {
+  // ...
+//}
+
+class Database<S extends SerializableStatic, I extends Serializable = InstanceType<S>> {
+  #dbPath: string
+  #data: Map<string, I> = new Map()
+  #entity: S
+
+  constructor(entity: S) {
+//    this.#dbPath = resolve(dirname(import.meta.url), `.data/${entity.name.toLowerCase()}.json`)
+    this.#entity = entity
+    this.#initialize()
+  }
+
+  #initialize() {
+//    if (existsSync(this.#dbPath)) {
+      const data: [string, Record<string, unknown>][] = [];// = JSON.parse(readFileSync(this.#dbPath, 'utf-8'))
+      for (const [key, value] of data) {
+        this.#data.set(key, this.#entity.fromObject(value))
+      }
+      return
+//    }
+   // this.#updateFile()
+  }
+
+  get(id: string): I | undefined {
+    return this.#data.get(id)
+  }
+  
+  getAll(): I[] {
+    return [...this.#data.values()]
+  }
+  
+  save(entity: I): this {
+    this.#data.set(entity.id, entity)
+   // return this.#updateFile()
+   return null;
+  }
+}
+
+//const db = new Database(Person)
+//const all = db.getAll() // Person[]
+//const oneOrNone = db.get(1) // Person | undefined
+//db.save(new Person())
+
 /*
 interface IObject {
     id: number;
@@ -363,4 +419,150 @@ test.push(true);
 
 
 */
+
+
+/*
+declare const cborNumber: unique symbol;
+
+declare const cborBoolean: unique symbol;
+
+declare const cborTextString: unique symbol;
+
+declare const cborByteString: unique symbol;
+
+declare const cborEncodedDataItem: unique symbol;
+
+declare const cborNil: unique symbol;
+
+interface CborDataItem { readonly majorType: number | undefined; }
+
+export type CborNumber = number & { readonly [cborNumber]: 'CborNumber'; majorType: undefined } & CborDataItem;
+
+export type CborBoolean = boolean & { readonly [cborBoolean]: 'CborBoolean'; majorType: 7 } & CborDataItem;
+
+export type CborNil = { readonly [cborNil]: 'CborNil'; majorType: 7} & CborDataItem;
+
+export type CborTextString = string & { readonly [cborTextString]: 'CborTextString'; majorType: 3 } & CborDataItem;
+
+export type CborByteString = ArrayBuffer & { readonly [cborByteString]: 'CborByteString'; majorType: 2 } & CborDataItem;
+
+export type CborEncodedDataItem = ArrayBuffer & { readonly [cborEncodedDataItem]: 'CborEncodedDataItem'; majorType: undefined } & CborDataItem;
+
+export class CborArray extends Array<CborDataItem> implements CborDataItem {
+    readonly majorType: 4;
+}
+
+
+
+export class CborMap extends Map<number | string, CborDataItem> implements CborDataItem {
+    readonly majorType: 5;
+}
+
+
+/*
+export enum Type {
+    number,     // #0, #1, #7.25, #7.26, #7.27
+    boolean,    // #7.20, #7.21
+    textString, // #3
+    byteString, // #2
+    nil,        // #7.22
+    dateTime,   // #6.0, #6.1
+    fullDate,   // #6.1004, #6.100
+    list,       // #4
+    map,        // #5,
+    encodedCbor // #6.24
+}
+
+export abstract class CborDataItem<T = unknown> { 
+    public readonly majorType: number | undefined; 
+    public readonly value: T;
+    protected constructor(majorType: number, value: T) {
+        this.majorType = majorType;
+        this.value = value;
+    }
+}
+
+export class CborArray implements CborDataItem<CborDataItem[]> {
+    value: CborDataItem[];
+    readonly majorType: 4;
+}
+
+export class CborNil extends CborDataItem<null> {
+    constructor() {
+        super(7, null);
+    }
+}
+
+export class CborTextString extends CborDataItem<string> {
+    constructor(value: string) {
+        super(3, value);
+    }
+}
+
+export class CborByteString extends CborDataItem<ArrayBuffer> {
+    constructor(value: ArrayBuffer) {
+        super(2, value);
+    }
+}
+
+export class CborEncodedDataItem extends CborDataItem<ArrayBuffer> {
+    constructor(value: ArrayBuffer) {
+        super(undefined, value);
+    }
+}
+
+export class CborBoolean extends CborDataItem<boolean> {
+    constructor(value: boolean) {
+        super(7, value);
+    }
+}
+
+export class CborNumber extends CborDataItem<number> {
+    constructor(value: number) {
+        super(value >= 0 ? 0 : 1, value);
+    }
+}
+
+
+//export class CborMap extends Map<number | string, CborDataItem> implements CborDataItem {
+//    constructor() { }
+//    get majorType(): number { return 5; }
+//}
+*/
+
+export type Brand<
+  Base,
+  Branding,
+  ReservedName extends string = '__type__',
+> = Base & {[K in ReservedName]: Branding} & {__witness__: Base};
+
+export type AnyBrand = Brand<unknown, any>;
+
+export type BaseOf<B extends AnyBrand> = B['__witness__'];
+
+export type Brander<B extends AnyBrand> = (underlying: BaseOf<B>) => B;
+
+export function identity<B extends AnyBrand>(underlying: BaseOf<B>): B {
+  return underlying as B;
+}
+
+export function make<B extends AnyBrand>(): Brander<B> {
+  return identity;
+}
+
+export type CborNumber = Brand<number, 'CborNumber'>;
+export const CborNumber = make<CborNumber>();
+
+type CborBoolean = Brand<boolean, 'CborBoolean'>;
+export const CborBoolean = make<CborBoolean>();
+
+
+type CborArray = Brand<Array<CborNumber | CborBoolean>, 'CborArray'>;
+export const CborArray = make<CborArray>();
+
+
+export class CborTest {
+    public fun(num: CborNumber) {}
+}
+
 

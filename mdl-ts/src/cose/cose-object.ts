@@ -1,16 +1,14 @@
-import { CborByteString } from "../data-element/cbor-byte-string";
-import { CborDataItem2 } from "../data-element/cbor-data-item2";
+import { CborByteString } from "../cbor/types/cbor-byte-string";
+import { CborDataItem } from "../cbor/cbor-data-item";
 import { CborDecoder } from "../cbor/cbor-decoder";
-import { ListElement } from "../data-element/list-element";
-import { MapElement } from "../data-element/map-element";
-import { MapKey } from "../data-element/map-key";
-import { CborNumber } from "../data-element/cbor-number";
+import { CborMap } from "../cbor/types/cbor-map";
+import { CborNumber } from "../cbor/types/cbor-number";
 import { CoseHeaderLabel } from "./cose-header-label.enum";
 import { CoseHeaders } from "./cose-headers";
 
 export abstract class COSEObject<T> {
 
-    protected dataElements: CborDataItem2[] = [];
+    protected dataElements: CborDataItem[] = [];
 
     protected readonly coseHeaders = new CoseHeaders();
 
@@ -21,10 +19,6 @@ export abstract class COSEObject<T> {
 
     get headers(): CoseHeaders {
         return this.coseHeaders;
-    }
-
-    public setContent(content: ArrayBuffer): void {
-        this.content = content;
     }
 
     get payload(): ArrayBuffer | null {
@@ -42,8 +36,8 @@ export abstract class COSEObject<T> {
 
     get algorithm(): number {
         if (this.dataElements.length !== 4) throw 'Invalid COSE_Sign1/COSE_Mac0 array.';
-        const protectedHeaderMapElement = <MapElement>CborDecoder.decode(this.protectedHeader);
-        const numberElement = <CborNumber>protectedHeaderMapElement.get(new MapKey(CoseHeaderLabel.ALG));
+        const protectedHeaderMapElement = <CborMap>CborDecoder.decode(this.protectedHeader);
+        const numberElement = <CborNumber>protectedHeaderMapElement.get(CoseHeaderLabel.ALG);
         return numberElement.getValue();
     }
 
@@ -52,8 +46,8 @@ export abstract class COSEObject<T> {
         return (<CborByteString>this.dataElements[3]).getValue();
     }
 
-    protected replacePayload(payloadElement: CborDataItem2): CborDataItem2[] {
-        const newData: CborDataItem2[] = [];
+    protected replacePayload(payloadElement: CborDataItem): CborDataItem[] {
+        const newData: CborDataItem[] = [];
         for (let i = 0; i < this.dataElements.length; i++) {
             if (i === 2) {
                 newData.push(payloadElement);

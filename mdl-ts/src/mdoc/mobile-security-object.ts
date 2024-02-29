@@ -1,9 +1,8 @@
-import { CborByteString } from "../data-element/cbor-byte-string";
-import { CborDataItem2 } from "../data-element/cbor-data-item2";
-import { CborEncodedDataItem } from "../data-element/cbor-encoded-data-item";
-import { MapElement } from "../data-element/map-element";
-import { MapKey } from "../data-element/map-key";
-import { CborTextString } from "../data-element/cbor-text-string";
+import { CborByteString } from "../cbor/types/cbor-byte-string";
+import { CborDataItem } from "../cbor/cbor-data-item";
+import { CborEncodedDataItem } from "../cbor/types/cbor-encoded-data-item";
+import { CborMap } from "../cbor/types/cbor-map";
+import { CborTextString } from "../cbor/types/cbor-text-string";
 import { DeviceKeyInfo } from "../mso/device-key-info";
 import { IssuerSignedItem } from "../issuer-signed/issuer-signed-item";
 import { ValidityInfo } from "../mso/validity-info";
@@ -11,9 +10,10 @@ import { DigestAlgorithm } from "./digest-algorithm.enum";
 import { Crypto } from "@peculiar/webcrypto";
 import { CborEncoder } from "../cbor/cbor-encoder";
 import { ArrayBufferComparer } from "../utils/array-buffer-comparer";
+import { CborConvertible } from "../cbor/cbor-convertible";
 
 // Mobile security object (MSO), representing the payload of the issuer signature, for the issuer signed part of the mdoc.
-export class MobileSecurityObject {
+export class MobileSecurityObject implements CborConvertible {
 
     public readonly version: string;
     public readonly digestAlgorithm: DigestAlgorithm;
@@ -25,7 +25,7 @@ export class MobileSecurityObject {
     public readonly validity: ValidityInfo;
     private readonly deviceKeyInfo: DeviceKeyInfo;
 
-    private constructor(version: string, 
+    public constructor(version: string, 
                         digestAlgorithm: DigestAlgorithm,
                         valueDigests: Map<string, Map<number, ArrayBuffer>>,
                         deviceKeyInfo: DeviceKeyInfo,
@@ -60,23 +60,24 @@ export class MobileSecurityObject {
         return mso;
     }
 
-    static fromMapElement(mapElement: MapElement): MobileSecurityObject {
-        const version = <CborTextString>mapElement.get(new MapKey('version'));
-        const digestAlgorithm = <CborTextString>mapElement.get(new MapKey('digestAlgorithm'));
-        const valueDigests = <MapElement>mapElement.get(new MapKey('valueDigests'));
-        const deviceKeyInfo = DeviceKeyInfo.fromMapElement(<MapElement>mapElement.get(new MapKey('deviceKeyInfo')));
-        const docType = <CborTextString>mapElement.get(new MapKey('docType'));
-        const validityInfo = ValidityInfo.fromMapElement(<MapElement>mapElement.get(new MapKey('validityInfo')));
+    fromCborDataItem(dataItem: CborDataItem): MobileSecurityObject {
+        const cborMap = <CborMap>dataItem;
+        const version = <CborTextString>cborMap.get('version');
+        const digestAlgorithm = <CborTextString>cborMap.get('digestAlgorithm');
+        const valueDigests = <CborMap>cborMap.get('valueDigests');
+        const deviceKeyInfo = DeviceKeyInfo.fromMapElement(<CborMap>cborMap.get('deviceKeyInfo'));
+        const docType = <CborTextString>cborMap.get('docType');
+        const validityInfo = ValidityInfo.fromMapElement(<CborMap>cborMap.get('validityInfo'));
 
         let valueDigests2 = new Map<string, Map<number, ArrayBuffer>>;
         for(const [key, value] of valueDigests.getValue()) {
             const digestMap = new Map<number, ArrayBuffer>();
-            for (const [key2, value2] of (<MapElement>value).getValue()) {
+            for (const [key2, value2] of (<CborMap>value).getValue()) {
                 if (value2 instanceof CborByteString) {
-                    digestMap.set(key2.int, value2.getValue());
+                    digestMap.set(key2 as number, value2.getValue());
                 }
             }
-            valueDigests2.set(key.str, digestMap);
+            valueDigests2.set(key as string, digestMap);
         }
 
         return new MobileSecurityObject(version.getValue(), 
@@ -87,23 +88,23 @@ export class MobileSecurityObject {
                                         validityInfo);
     }
 
-    toMapElement(): MapElement {
-        const valueDigestNamespaces = new Map<MapKey, CborDataItem2>();
+    toCborDataItem(): CborDataItem {
+        const valueDigestNamespaces = new Map<string | number, CborDataItem>();
         for (const [namespace, valueDigests2] of this.valueDigests) {
-            const nameSpaceDigests = new Map<MapKey, CborDataItem2>();
+            const nameSpaceDigests = new Map<string | number, CborDataItem>();
             for (const [digestID, valueDigest] of valueDigests2) {
-                nameSpaceDigests.set(new MapKey(digestID), new CborByteString(valueDigest));
+                nameSpaceDigests.set(digestID, new CborByteString(valueDigest));
             }
-            valueDigestNamespaces.set(new MapKey(namespace), new MapElement(nameSpaceDigests));
+            valueDigestNamespaces.set(namespace, new CborMap(nameSpaceDigests));
         }
-        const map = new Map<MapKey, CborDataItem2>();
-        map.set(new MapKey('version'), new CborTextString(this.version));
-        map.set(new MapKey('digestAlgorithm'), new CborTextString(this.digestAlgorithm));
-        map.set(new MapKey('valueDigests'), new MapElement(valueDigestNamespaces));
-        map.set(new MapKey('deviceKeyInfo'), this.deviceKeyInfo.toMapElement());
-        map.set(new MapKey('docType'), new CborTextString(this.docType));
-        map.set(new MapKey('validityInfo'), this.validity.toMapElement());
-        return new MapElement(map);
+        const cborMap = new CborMap();
+        cborMap.set('version', new CborTextString(this.version));
+        cborMap.set('digestAlgorithm', new CborTextString(this.digestAlgorithm));
+        cborMap.set('valueDigests', new CborMap(valueDigestNamespaces));
+        cborMap.set('deviceKeyInfo', this.deviceKeyInfo.toMapElement());
+        cborMap.set('docType', new CborTextString(this.docType));
+        cborMap.set('validityInfo', this.validity.toMapElement());
+        return cborMap;
     }
 
     public async verifySignedItems(namespace: string, issuerSignedItems: IssuerSignedItem[]): Promise<boolean> {

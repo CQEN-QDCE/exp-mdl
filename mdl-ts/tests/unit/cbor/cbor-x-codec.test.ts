@@ -1,22 +1,47 @@
-import { CborArray } from "../../../src/data-element/cbor-array";
-import { CborBoolean } from "../../../src/data-element/cbor-boolean";
-import { CborByteString } from "../../../src/data-element/cbor-byte-string";
-import { CborDataItem2 } from "../../../src/data-element/cbor-data-item2";
+import { CborArray } from "../../../src/cbor/types/cbor-array";
+import { CborBoolean } from "../../../src/cbor/types/cbor-boolean";
+import { CborByteString } from "../../../src/cbor/types/cbor-byte-string";
+import { CborDataItem } from "../../../src/cbor/cbor-data-item";
+import { ExtendedArray } from "../../../src/data-element/test";
+import { CborArray2, CborBoolean2, CborDataItem2, CborNumber2 } from "../../../src/cbor/cbor-types";
 
 describe('testing CborXCodec', () => {
     test('Serialization', async () => {
         let cborBoolean = new CborBoolean(true);
         let cborArray = new CborArray();
-        cborArray.add(cborBoolean);
-        cborArray.add(cborBoolean);
+
+        let cborNumber2 = new CborNumber2(4);
+        let cborBoolean2 = new CborBoolean2(true);
+        let dataItem2: CborDataItem2 = cborBoolean2;
+        if (dataItem2 instanceof CborBoolean2) {
+            let t = 1;
+        }
+        let cborArray2 = new CborArray2(cborNumber2, cborNumber2, cborBoolean2);
+        cborArray2[100] = cborNumber2;
+        //cborArray2.push(9)
+        
+        let myProxy = new ExtendedArray();
+        myProxy[5] = 7;
+        
+        if (cborArray instanceof CborDataItem) {
+            let t = 1;
+        
+        }
+        cborArray.push(cborBoolean);
+        cborArray.push(cborBoolean);
+        cborArray[1] = cborBoolean;
         for (let i of cborArray) {
             let t = i;
         }
+
+        let plan = [];
+        plan[10] = 1;
+
         let vrai = ['test', 'test4'];
 
-        let value = cborArray.get<CborBoolean>(0);
+        //let value = cborArray.get<CborBoolean>(0);
         let value2 = cborArray[0] as CborBoolean;
-        let g = cborArray as CborDataItem2;
+        let g = cborArray as CborDataItem;
         let x= new Number(0);
         cborBoolean.getValue();
         cborArray[1] = cborBoolean;

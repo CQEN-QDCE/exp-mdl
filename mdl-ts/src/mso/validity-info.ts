@@ -1,7 +1,5 @@
-import { CborDataItem2 } from "../data-element/cbor-data-item2";
-import { MapElement } from "../data-element/map-element";
-import { MapKey } from "../data-element/map-key";
-import { TDateElement } from "../data-element/tdate-element";
+import { CborMap } from "../cbor/types/cbor-map";
+import { TDateElement } from "../cbor/types/tdate-element";
 
 export class ValidityInfo {
 
@@ -20,20 +18,20 @@ export class ValidityInfo {
         this.expectedUpdate = expectedUpdate ? new TDateElement(expectedUpdate) : null;
     }
     
-    static fromMapElement(element: MapElement): ValidityInfo {
-        const signed = element.get(new MapKey('signed'));
-        const validFrom = element.get(new MapKey('validFrom'));
-        const validUntil = element.get(new MapKey('validUntil'));
-        const expectedUpdate = element.get(new MapKey('expectedUpdate'));
+    static fromMapElement(cborMap: CborMap): ValidityInfo {
+        const signed = cborMap.get('signed');
+        const validFrom = cborMap.get('validFrom');
+        const validUntil = cborMap.get('validUntil');
+        const expectedUpdate = cborMap.get('expectedUpdate');
         return new ValidityInfo((<TDateElement>signed).getValue(), (<TDateElement>validFrom).getValue(), (<TDateElement>validUntil).getValue(), expectedUpdate ? (<TDateElement>expectedUpdate).getValue() : null);
     }
 
-    toMapElement(): MapElement {
-        const map = new Map<MapKey, CborDataItem2>();
-        map.set(new MapKey('signed'), this.signed);
-        map.set(new MapKey('validFrom'), this.validFrom);
-        map.set(new MapKey('validUntil'), this.validUntil);
-        if (this.expectedUpdate) map.set(new MapKey('expectedUpdate'), this.expectedUpdate);
-        return new MapElement(map);
+    toMapElement(): CborMap {
+        const cborMap = new CborMap();
+        cborMap.set('signed', this.signed);
+        cborMap.set('validFrom', this.validFrom);
+        cborMap.set('validUntil', this.validUntil);
+        if (this.expectedUpdate) cborMap.set('expectedUpdate', this.expectedUpdate);
+        return cborMap;
     }
 }

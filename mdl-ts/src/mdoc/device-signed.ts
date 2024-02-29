@@ -1,11 +1,10 @@
-import { CborConvertable } from "../cbor/cbor-convertable";
-import { CborDataItem2 } from "../data-element/cbor-data-item2";
-import { CborEncodedDataItem } from "../data-element/cbor-encoded-data-item";
-import { MapElement } from "../data-element/map-element";
-import { MapKey } from "../data-element/map-key";
+import { CborConvertible } from "../cbor/cbor-convertible";
+import { CborDataItem } from "../cbor/cbor-data-item";
+import { CborEncodedDataItem } from "../cbor/types/cbor-encoded-data-item";
+import { CborMap } from "../cbor/types/cbor-map";
 import { DeviceAuth } from "./device-auth";
 
-export class DeviceSigned implements CborConvertable {
+export class DeviceSigned implements CborConvertible {
     
     private nameSpaces: CborEncodedDataItem;
     
@@ -16,18 +15,18 @@ export class DeviceSigned implements CborConvertable {
         this.deviceAuth = deviceAuth;
     }
 
-    fromCborDataItem(dataItem: CborDataItem2): DeviceSigned {
-        const mapElement = <MapElement>dataItem;
-        const nameSpaces = mapElement.get(new MapKey('nameSpaces')) as CborEncodedDataItem;
-        const deviceAuth = mapElement.get(new MapKey('deviceAuth'));
-        return new DeviceSigned(nameSpaces, DeviceAuth.fromMapElement(<MapElement>deviceAuth));
+    fromCborDataItem(dataItem: CborDataItem): DeviceSigned {
+        const mapElement = <CborMap>dataItem;
+        const nameSpaces = mapElement.get('nameSpaces') as CborEncodedDataItem;
+        const deviceAuth = mapElement.get('deviceAuth');
+        return new DeviceSigned(nameSpaces, CborDataItem.to(DeviceAuth, <CborMap>deviceAuth));
     }
 
-    toCborDataItem(): CborDataItem2 {
-        const map = new Map<MapKey, CborDataItem2>();
-        map.set(new MapKey('nameSpaces'), this.nameSpaces);
-        map.set(new MapKey('deviceAuth'), this.deviceAuth.toMapElement());
-        return new MapElement(map);
+    toCborDataItem(): CborDataItem {
+        const cborMap = new CborMap();
+        cborMap.set('nameSpaces', this.nameSpaces);
+        cborMap.set('deviceAuth', CborDataItem.from(this.deviceAuth));
+        return cborMap;
     }
 
 }

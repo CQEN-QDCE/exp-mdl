@@ -1,42 +1,60 @@
-import { CborByteString } from "../data-element/cbor-byte-string";
-import { CborDataItem2 } from "../data-element/cbor-data-item2";
-import { MapElement } from "../data-element/map-element";
-import { MapKey } from "../data-element/map-key";
-import { CborNumber } from "../data-element/cbor-number";
-import { CborTextString } from "../data-element/cbor-text-string";
+import { CborByteString } from "../cbor/types/cbor-byte-string";
+import { CborDataItem } from "../cbor/cbor-data-item";
+import { CborMap } from "../cbor/types/cbor-map";
+import { CborNumber } from "../cbor/types/cbor-number";
+import { CborTextString } from "../cbor/types/cbor-text-string";
 import { SecureRandom } from "../utils/secure-random";
+import { CborConvertible } from "../cbor/cbor-convertible";
 
 
-export class IssuerSignedItem {
+export class IssuerSignedItem implements CborConvertible {
 
-    private constructor(public readonly digestID: number, 
+    public constructor(public readonly digestID: number, 
                         public readonly randomSalt: ArrayBuffer, 
                         public readonly elementIdentifier: string, 
-                        public readonly elementValue: CborDataItem2) {
+                        public readonly elementValue: CborDataItem) {
     }
 
-    public static build(digestID: number, elementIdentifier: string, elementValue: CborDataItem2): IssuerSignedItem {
+    public static build(digestID: number, elementIdentifier: string, elementValue: CborDataItem): IssuerSignedItem {
         return new IssuerSignedItem(digestID, 
                                     new Uint8Array(new TextEncoder().encode(SecureRandom.generate(16))).buffer, 
                                     elementIdentifier, 
                                     elementValue);
     }
     
-    toMapElement(): MapElement {
-        const map = new Map<MapKey, CborDataItem2>();
-        map.set(new MapKey('digestID'), new CborNumber(this.digestID));
-        map.set(new MapKey('random'), new CborByteString(this.randomSalt));
-        map.set(new MapKey('elementIdentifier'), new CborTextString(this.elementIdentifier));
-        map.set(new MapKey('elementValue'), this.elementValue);
-        return new MapElement(map);
+    toMapElement(): CborMap {
+        const cborMap = new CborMap();
+        cborMap.set('digestID', new CborNumber(this.digestID));
+        cborMap.set('random', new CborByteString(this.randomSalt));
+        cborMap.set('elementIdentifier', new CborTextString(this.elementIdentifier));
+        cborMap.set('elementValue', this.elementValue);
+        return cborMap;
     }
 
-    static fromMapElement(element: MapElement): IssuerSignedItem {
-        const digestID = element.get(new MapKey('digestID'));
-        const random = element.get(new MapKey('random'));
-        const elementIdentifier = element.get(new MapKey('elementIdentifier'));
-        const elementValue = element.get(new MapKey('elementValue'));
+    static fromMapElement(cborMap: CborMap): IssuerSignedItem {
+        const digestID = cborMap.get('digestID');
+        const random = cborMap.get('random');
+        const elementIdentifier = cborMap.get('elementIdentifier');
+        const elementValue = cborMap.get('elementValue');
         return new IssuerSignedItem(digestID.getValue(), random.getValue(), elementIdentifier.getValue(), elementValue);
+    }
+
+    fromCborDataItem(dataItem: CborDataItem): IssuerSignedItem {
+        const cborMap = <CborMap>dataItem;
+        const digestID = cborMap.get('digestID');
+        const random = cborMap.get('random');
+        const elementIdentifier = cborMap.get('elementIdentifier');
+        const elementValue = cborMap.get('elementValue');
+        return new IssuerSignedItem(digestID.getValue(), random.getValue(), elementIdentifier.getValue(), elementValue);
+    }
+
+    toCborDataItem(): CborDataItem {
+        const cborMap = new CborMap();
+        cborMap.set('digestID', new CborNumber(this.digestID));
+        cborMap.set('random', new CborByteString(this.randomSalt));
+        cborMap.set('elementIdentifier', new CborTextString(this.elementIdentifier));
+        cborMap.set('elementValue', this.elementValue);
+        return cborMap;
     }
 
 }
