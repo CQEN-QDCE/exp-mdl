@@ -1,0 +1,81 @@
+@startuml
+allow_mixing
+ 
+title
+    Phase découverte pour le permis de conduire numérique.
+end title
+
+caption Architecture de l'émetteur de permis de conduire numérique.
+
+'Références graphique
+!define AWSPuml https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/v17.0/dist
+!define AzurePuml https://raw.githubusercontent.com/plantuml-stdlib/Azure-PlantUML/release/2-1/dist
+!define ICONURL https://raw.githubusercontent.com/Roemer/plantuml-office/master/office2014
+
+'Composants graphique
+!includeurl AzurePuml/AzureCommon.puml
+!includeurl AzurePuml/AzureSimplified.puml
+!includeurl AWSPuml/AWSCommon.puml
+!includeurl AWSPuml/AWSSimplified.puml
+!includeurl AWSPuml/General/Users.puml
+!includeurl AWSPuml/General/Mobileclient.puml
+!includeurl AWSPuml/General/Client.puml
+!includeurl ICONURL/Concepts/link.puml
+
+'Environnement d'exécution
+rectangle "Environnement d'exécution - Execution environment" as envExecution #Black {
+
+    rectangle "Émetteur - Issuer" as issuer #Black {
+        agent "Controlleur - Controller (Web)" as issuerController #LightBlue
+
+        rectangle "ACA-PY (Rest-API)" as issuerACAPY #Black;line:White;line.dotted;text:White {
+            agent "Serveur admin - Admin server" as issuerAdmin
+            agent "Anoncred Verifiable Credential" as issuerAnoncred #LightBlue
+            agent "SD-JWT Verifiable Credential" as issuerW3CVC #LightBlue
+            agent "mDL (mDoc/CBOR)" as issuerMdl #LightBlue
+            
+            node "OIDC4VCI (Plugin)" as issuerPlugin #LightGreen {
+                agent "Plugin Admin routes" as issuerPluginAdmin
+                agent "Plugin Public routes" as issuerPluginPublic
+                agent "Type de l'attestation - Credential type" as issuerCredentialType #LightBlue
+            }
+        }
+    }
+
+    rectangle "Réseau de confiance numérique mDL" as networkTrusted #Black {
+        agent "PKI" as pkiInfrastructure #LightBlue
+        agent "VICAL" as vicalNetwork #LightBlue
+    }
+}
+
+ node "Détenteur - Holder" as Citizen #LightBlue {
+'    Mobileclient(cellC, "Mobile citoyen", "appareil citoyen") #LightBlue
+'    Users(UserC, "Citoyens", "Citoyens SAAQ")
+'    Users(EmployeSAAQ, "Controlleurs", "Employés SAAQ")
+}
+
+'DÉFINITION DES LIENS
+issuerController -up- issuerPluginAdmin
+issuerAdmin -up- pkiInfrastructure
+issuerAdmin -down- issuerPluginAdmin : Routes registered
+
+note right
+    https://github.com/hyperledger/aries-acapy-plugins/tree/main/oid4vci
+end note
+
+issuerPluginPublic -left- issuerCredentialType : Device binding
+issuerPluginAdmin -right- issuerCredentialType : Data exchange
+issuerCredentialType -up- issuerW3CVC : W3C VC
+issuerCredentialType -up- issuerAnoncred : Anoncred VC
+issuerCredentialType -up- issuerMdl : mDL
+
+note right
+    https://github.com/IdentityPython/pyMDOC-CBOR
+end note
+
+
+Citizen <-up-> issuerPluginPublic : OIDC4VCI Protocol
+Citizen -up-> issuerController : Initiates Exchange
+issuerController -down-> Citizen : Credential offer (QR code, etc)
+
+@enduml

@@ -1,0 +1,40 @@
+{
+    "@context": [
+      "https://www.w3.org/2018/credentials/v1",
+      "https://www.w3.org/2018/credentials/examples/v1"
+    ],
+    "type": ["VerifiableCredential", "GovernmentPermit"],
+    "id": "urn:uuid:398a5b84-0c59-48ed-9620-3d66f0ce8516",
+    "issuer": "urn:uuid:1234abcd-5678-efgh-9012-3456ijklmno7",
+     "issuanceDate": "2023-12-06",
+    "expirationDate": "2024-12-07",
+    "credentialSubject": {
+      "id": "did:example:ebfeb1f712ebc6f1c276e12ec21",
+      "type": "Permis de conduire",
+      "licenseNumber": "L1531-171274-08",
+       "givenName": "Anne-Marie",
+      "familyName": "Lapointe",
+      "birthDate": "1974-12-17",
+      "gender": "F",
+      "height": "5.2",
+      "eyeColor": "Bleu",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "333 Boulevard Jean-Lesage",
+        "addressLocality": "Québec",
+        "postalCode": "G1K8J6",
+        "addressRegion": "Province"
+      },
+      "licenseClass": "1,2,3,4A,4B,4C,5, 6A",
+      "associatedConditions": "A C",
+      "referenceNumber": "PBMH92V70"
+    },
+    "proof": {
+      "type": "ProofType",
+      "created": "2020-01-01T19:73:24Z",
+      "proofPurpose": "assertionMethod",
+      "verificationMethod": "https://example.com/credentials/3732",
+      "jws": "signature..."
+    }
+  }
+  
