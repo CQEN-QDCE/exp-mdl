@@ -238,7 +238,7 @@ objects:
               - name: OID4VCI_PORT
                 value: ${OID4VCI_PLUGIN_HTTP_PORT}
               - name: OID4VCI_ENDPOINT
-                value: ${ACA_PY_OID4VCI_NAME}-oid4vci
+                value: https://${ACA_PY_OID4VCI_NAME}-oid4vci.${APP_DOMAIN}
               - name: ACAPY_LABEL
                 value: ${ACAPY_LABEL}
               - name: ACAPY_IMAGE_URL
