@@ -21,3 +21,17 @@ build/
 # Fichiers de dépendances
 package-lock.json
 yarn.lock
+
+# Fichiers de configuration
+keys/
+csr/
+
+# Fichiers macOS
+.DS_Store
+
+# FIchiers de cache python
+__pycache__/
+*.pyc
+
+# Fichier d'environnement
+.env
