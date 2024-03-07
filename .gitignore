@@ -21,3 +21,13 @@ build/
 # Fichiers de dépendances
 package-lock.json
 yarn.lock
+
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# Local History for Visual Studio Code
+.history/
