@@ -106,6 +106,19 @@ poetry shell
 code . 
 ```
 
+Dans la dépendence `askar` il faut aussi ajouter du code pour supporter l'émission de clés avec les nouveaux algorithmes. 
+
+`aries-askar/types.py` il faut rajouter les lignes suivantes dans la classe `KeyAlg`:
+```python 
+ECDSAP256 = "p256"
+ECDSAP384 = "p384"
+ECDSAP521 = "p521"
+```
+
+Probablement il y a du changement ailleurs dans ce package. Rechercher ce qu'il faut. 
+
+
+
 Un fois VSCode lancé, l'environnement et le degub sont prêts. 
 
 ## Implementation 
