@@ -1,9 +1,13 @@
-#Stage 1
-FROM node:17-alpine AS builder
-WORKDIR /app
-COPY package*.json ./
+# Stage 1: Use yarn to build the app
+FROM node:14 as builder
+WORKDIR /usr/src/app
+COPY package.json ./
 RUN npm install
-COPY . .
+COPY . ./
 RUN npm run build
-EXPOSE 3000
-CMD [ "npm", "start" ]
+
+# Stage 2: Copy the JS React SPA into the Nginx HTML directory
+FROM bitnami/nginx:1.21.6
+COPY --from=builder /usr/src/app/build /app
+EXPOSE 8080
+CMD ["nginx", "-g", "daemon off;"]
