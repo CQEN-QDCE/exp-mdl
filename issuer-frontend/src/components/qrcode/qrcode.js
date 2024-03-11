@@ -61,7 +61,7 @@ const Qrcode = () => {
             <div className="row">
               <div className="col-md"></div>
               <div className="col-md input-form" style={{ backgroundColor: "white", padding: "3px 5px" }}>
-                <QRCode value={qrData} />
+                <QRCode value={qrData} size={300} />
               </div>
 	          <div className="col-md"></div>
 	        </div>

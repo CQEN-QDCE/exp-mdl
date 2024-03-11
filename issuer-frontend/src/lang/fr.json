@@ -1,5 +1,5 @@
 {
-    "app.title": "Driver License",
+    "app.title": "Permis de Conduire",
     "app.header" : "Modifiez <code>{fileName}</code> et enregistrez-les pour recharger" ,
     "app.header.pass.content" : "Passer au contenu",
     "app.header.logo.gob.qc": "Site Web du Gouvernement du Québec.",
@@ -34,7 +34,7 @@
     "app.form.address" : "Adresse",
     "app.form.license.class" : "Classe de License",
     "app.form.fieldset.license" : "Information de License",
-    "app.form.fieldset.person" : "Characteristiques Physiques",
+    "app.form.fieldset.person" : "Caractéristiques Physiques",
     "app.form.associated.conditions" : "Conditions Associées",
     "app.form.reference.number" : "Numéro de Réference",   
     "app.form.message.error": "SVP, entrez les champs requis (*)",
