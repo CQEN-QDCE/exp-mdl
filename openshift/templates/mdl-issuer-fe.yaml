@@ -1,0 +1,189 @@
+###################################################################################################
+# oc process -f ./mdl-issuer-fe.yaml --param-file ./mdl-issuer-fe.dev.params  | oc apply -f -
+###################################################################################################
+apiVersion: template.openshift.io/v1
+kind: Template
+objects:
+- kind: ConfigMap
+  apiVersion: v1
+  metadata:
+    name: ${NAME}
+  data:
+    environment.js: |
+      // set some defaults here
+      window.FAVOURITE_SONG = "The Locomotion"
+      window.FAVOURITE_ERA = "Mid-90s Nick Cave Kylie"
+- kind: BuildConfig
+  apiVersion: build.openshift.io/v1  
+  metadata:
+    labels:
+      app: ${NAME}
+      app.kubernetes.io/component: react-app
+      app.kubernetes.io/instance: ${NAME}
+    name: ${NAME}
+  spec:
+    output:
+      to:
+        kind: ImageStreamTag
+        name: ${NAME}:latest
+    source:
+      contextDir: ${CONTEXT_DIR}
+      git:
+        uri: ${SOURCE_REPOSITORY_URL}
+        ref: ${SOURCE_REPOSITORY_REF}
+      type: Git
+    strategy:
+      dockerStrategy:
+        from:
+          kind: ImageStreamTag
+          name: nginx:latest
+      type: Docker
+    triggers:
+    - type: ConfigChange
+    - type: ImageChange
+- kind: DeploymentConfig
+  apiVersion: apps.openshift.io/v1
+  metadata:
+    labels:
+      app: ${NAME}
+      app.kubernetes.io/component: react-app
+      app.kubernetes.io/instance: ${NAME}
+    name: ${NAME}
+  spec:
+    replicas: 1
+    selector:
+      deploymentconfig: ${NAME}
+    template:
+      metadata:
+        labels:
+          deploymentconfig: ${NAME}
+      spec:
+        containers:
+        - image: ${NAME}
+          imagePullPolicy: Always
+          name: react-app
+          env:
+            - name: REACT_APP_ISSUER_API_BASE_URL
+              value: ${REACT_APP_ISSUER_API_BASE_URL}
+            - name: REACT_APP_OID4VCI_SUPPORTED_CREDENTIAL_ID
+              value: ${REACT_APP_OID4VCI_SUPPORTED_CREDENTIAL_ID}
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          volumeMounts:
+            - name: app-config-volume
+              mountPath: /app/environment.js
+              subPath: environment.js
+        volumes:
+          - name: app-config-volume
+            configMap:
+              name: ${NAME}
+    triggers:
+    - type: ConfigChange
+    - type: ImageChange
+      imageChangeParams:
+        automatic: true
+        containerNames:
+        - react-app
+        from:
+          kind: ImageStreamTag
+          name: ${NAME}:latest
+- kind: Service
+  apiVersion: v1
+  metadata:
+    labels:
+      app: ${NAME}
+      app.kubernetes.io/component: react-app
+      app.kubernetes.io/instance: ${NAME}
+    name: ${NAME}
+  spec:
+    ports:
+    - name: 8080-tcp
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+    selector:
+      deploymentconfig: ${NAME}
+    type: ClusterIP
+- kind: ImageStream
+  apiVersion: image.openshift.io/v1  
+  metadata:
+    labels:
+      app: ${NAME}
+      app.kubernetes.io/component: react-app
+      app.kubernetes.io/instance: ${NAME}
+    name: nginx
+  spec:
+    lookupPolicy:
+      local: false
+    tags:
+    - name: latest
+      from:
+        kind: DockerImage
+        name: bitnami/nginx:latest
+      annotations:
+        openshift.io/imported-from: bitnami/nginx:latest
+      referencePolicy:
+        type: Source
+- kind: ImageStream
+  apiVersion: image.openshift.io/v1  
+  metadata:
+    labels:
+      app: ${NAME}
+      app.kubernetes.io/component: react-app
+      app.kubernetes.io/instance: ${NAME}
+    name: ${NAME}
+  spec:
+    lookupPolicy:
+      local: false
+- kind: Route
+  apiVersion: route.openshift.io/v1  
+  metadata:
+    labels:
+      app: ${NAME}
+      app.kubernetes.io/component: react-app
+      app.kubernetes.io/instance: ${NAME}
+    name: ${NAME}
+  spec:
+    port:
+      targetPort: 8080-tcp      
+    to:
+      kind: Service
+      name: ${NAME}
+      weight: 100
+    wildcardPolicy: None
+    tls:
+      termination: Edge
+      insecureEdgeTerminationPolicy: None      
+######################################################################
+# Parameters
+######################################################################      
+parameters:
+- description: The name assigned to all of the frontend objects defined in this template.
+  displayName: Name
+  name: NAME
+  required: true
+  value: react-app
+- description: The URL of the repository with your application source code.
+  displayName: Git Repository URL
+  name: SOURCE_REPOSITORY_URL
+  required: true
+  value: https://github.com/CQEN-QDCE/exp-mdl.git
+- description: Set this to a branch name, tag or other ref of your repository if you
+    are not using the default branch.
+  displayName: Git Reference
+  name: SOURCE_REPOSITORY_REF
+  value: feature/issuer-fe
+- description: Set this to the relative path to your project if it is not in the root
+    of your repository.
+  displayName: Context Directory
+  name: CONTEXT_DIR
+  value: issuer-frontend
+- name: REACT_APP_ISSUER_API_BASE_URL
+  displayName: URL for the issuer API
+  description: The URL for the issuer API.
+  value: https://mdl-issuer-admin.apps.exp.openshift.cqen.ca
+- name: REACT_APP_OID4VCI_SUPPORTED_CREDENTIAL_ID
+  displayName: OID4VCI supported credential ID
+  description: The OID4VCI supported credential ID.
+  value: env-value

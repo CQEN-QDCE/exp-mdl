@@ -1,0 +1,5 @@
+NAME=mdl-issuer-fe
+SOURCE_REPOSITORY_REF=feature/issuer-fe
+CONTEXT_DIR=issuer-frontend
+REACT_APP_ISSUER_API_BASE_URL=https://mdl-issuer-admin.apps.exp.openshift.cqen.ca
+REACT_APP_OID4VCI_SUPPORTED_CREDENTIAL_ID=0bf0348e-49ec-4a28-81d5-97ce57431b57

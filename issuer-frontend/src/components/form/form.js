@@ -154,7 +154,7 @@ export default function Form(props) {
       };       
       
       const handleRegistration = async () => {
-        console.log("handleRegistration");
+        console.log("handleRegistration, api base url: ", API_BASE_URL);
         if(handleValidation()) {
           try {
             console.log("call to createDidUrl: ", createDidUrl());
