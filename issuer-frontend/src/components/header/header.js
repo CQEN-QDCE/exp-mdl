@@ -55,7 +55,7 @@ export default function Header(props) {
           </div>
           <div className="row" id="entetePiv">
             <div className="col-4 d-flex align-items-center container_piv" lang="fr">
-              <a tabIndex="5" data-evenement="click" href="/">
+              <a tabIndex="5" data-evenement="click" href="https://www.quebec.ca">
                 <img id="pivImage" alt="Site Web du Gouvernement du Québec." src={signature} width="463" height="91"/>
                 </a>
                 <img id="pivImagePrint" alt="Site Web du Gouvernement du Québec." src={logo} width="199" height="60"></img>

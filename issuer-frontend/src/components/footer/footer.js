@@ -40,17 +40,17 @@ function LangFooter(context) {
   return (    
     <ul className="list-inline mx-auto justify-content-center">
       <li>
-        <a href="https://quebec.ca/accessibilite">
+        <a href="https://www.quebec.ca/en/accessibility">
           <FormattedMessage id="app.footer.accessibility"/>
         </a>
       </li>
       <li>
-        <a href="https://quebec.ca/acces-information">
+        <a href="https://www.quebec.ca/en/access-information">
           <FormattedMessage id="app.footer.information"/>
         </a>
       </li>
       <li>
-        <a href="https://quebec.ca/politique-confidentialite">                      
+        <a href="https://www.quebec.ca/en/privacy-policy">                      
           <FormattedMessage id="app.footer.privacy"/>
         </a>
       </li>                  
@@ -82,7 +82,7 @@ export default function Footer(props) {
             </div>
             <div className="col-12 d-flex align-items-center justify-content-center">
               <p>
-                <a href="https://quebec.ca/droit-auteur">
+                <a href={context.locale === 'fr' ? 'https://quebec.ca/droit-auteur' : 'https://www.quebec.ca/en/copyright'}>
                   <FormattedMessage id="app.footer.copyright" defaultMessage={"© Gouvernement du Québec, 2024"} />                  
                 </a>
               </p>

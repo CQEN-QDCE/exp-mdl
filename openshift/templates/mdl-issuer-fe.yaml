@@ -1,13 +1,18 @@
 ###################################################################################################
 # oc process -f ./mdl-issuer-fe.yaml --param-file ./mdl-issuer-fe.dev.params  | oc apply -f -
 ###################################################################################################
-apiVersion: template.openshift.io/v1
 kind: Template
+apiVersion: template.openshift.io/v1
+metadata:
+  name: ${APP_NAME}
+  annotations:
+    description: Application frontend pour l'expérimentation d'intégration du standard (ISO 18013-5) "Mobile driver's license" ou "mDl" aux attestations vérifiables.
+    tags: CQEN, ING, Hyperledger, ARIES, Indy, ISO 18013-5 (mDL), PostgreSql
 objects:
 - kind: ConfigMap
   apiVersion: v1
   metadata:
-    name: ${NAME}
+    name: ${APP_NAME}
   data:
     environment.js: |
       // set some defaults here
@@ -17,15 +22,15 @@ objects:
   apiVersion: build.openshift.io/v1  
   metadata:
     labels:
-      app: ${NAME}
+      app: ${APP_NAME}
       app.kubernetes.io/component: react-app
-      app.kubernetes.io/instance: ${NAME}
-    name: ${NAME}
+      app.kubernetes.io/instance: ${APP_NAME}
+    name: ${APP_NAME}
   spec:
     output:
       to:
         kind: ImageStreamTag
-        name: ${NAME}:latest
+        name: ${APP_NAME}:latest
     source:
       contextDir: ${CONTEXT_DIR}
       git:
@@ -37,36 +42,57 @@ objects:
         from:
           kind: ImageStreamTag
           name: nginx:latest
+        env:
+          - name: REACT_APP_ISSUER_API_BASE_URL
+            valueFrom:
+              secretKeyRef:
+                name: ${APP_NAME}
+                key: REACT_APP_ISSUER_API_BASE_URL
+          - name: REACT_APP_OID4VCI_SUPPORTED_CREDENTIAL_ID
+            valueFrom:
+              secretKeyRef:
+                name: ${APP_NAME}
+                key: REACT_APP_OID4VCI_SUPPORTED_CREDENTIAL_ID
       type: Docker
     triggers:
     - type: ConfigChange
     - type: ImageChange
 - kind: DeploymentConfig
-  apiVersion: apps.openshift.io/v1
+  apiVersion: v1
   metadata:
     labels:
-      app: ${NAME}
+      app: ${APP_NAME}
       app.kubernetes.io/component: react-app
-      app.kubernetes.io/instance: ${NAME}
-    name: ${NAME}
+      app.kubernetes.io/instance: ${APP_NAME}
+    name: ${APP_NAME}
   spec:
+    strategy:
+      type: Recreate
     replicas: 1
     selector:
-      deploymentconfig: ${NAME}
+      deploymentconfig: ${APP_NAME}
     template:
       metadata:
         labels:
-          deploymentconfig: ${NAME}
+          deploymentconfig: ${APP_NAME}
       spec:
         containers:
-        - image: ${NAME}
+        - image: ${APP_NAME}
           imagePullPolicy: Always
           name: react-app
           env:
+            - name: WEBHOOK_URL
+              value: ${WEBHOOK_URL}
             - name: REACT_APP_ISSUER_API_BASE_URL
-              value: ${REACT_APP_ISSUER_API_BASE_URL}
+              valueFrom:
+                  secretKeyRef:
+                    name: ${APP_NAME}
+                    key: REACT_APP_ISSUER_API_BASE_URL
             - name: REACT_APP_OID4VCI_SUPPORTED_CREDENTIAL_ID
-              value: ${REACT_APP_OID4VCI_SUPPORTED_CREDENTIAL_ID}
+              valueFrom:
+                  secretKeyRef:
+                    name: ${APP_NAME}
+                    key: REACT_APP_OID4VCI_SUPPORTED_CREDENTIAL_ID
           ports:
           - containerPort: 8080
             protocol: TCP
@@ -77,25 +103,29 @@ objects:
         volumes:
           - name: app-config-volume
             configMap:
-              name: ${NAME}
+              name: ${APP_NAME}
     triggers:
-    - type: ConfigChange
-    - type: ImageChange
-      imageChangeParams:
-        automatic: true
-        containerNames:
-        - react-app
-        from:
-          kind: ImageStreamTag
-          name: ${NAME}:latest
+      - type: GitHub
+        github:
+          secretReference:
+            name: ${APP_NAME}
+      - type: ConfigChange
+      - type: ImageChange
+        imageChangeParams:
+          automatic: true
+          containerNames:
+            - react-app
+          from:
+            kind: ImageStreamTag
+            name: ${APP_NAME}:latest
 - kind: Service
   apiVersion: v1
   metadata:
     labels:
-      app: ${NAME}
+      app: ${APP_NAME}
       app.kubernetes.io/component: react-app
-      app.kubernetes.io/instance: ${NAME}
-    name: ${NAME}
+      app.kubernetes.io/instance: ${APP_NAME}
+    name: ${APP_NAME}
   spec:
     ports:
     - name: 8080-tcp
@@ -103,15 +133,15 @@ objects:
       protocol: TCP
       targetPort: 8080
     selector:
-      deploymentconfig: ${NAME}
+      deploymentconfig: ${APP_NAME}
     type: ClusterIP
 - kind: ImageStream
   apiVersion: image.openshift.io/v1  
   metadata:
     labels:
-      app: ${NAME}
+      app: ${APP_NAME}
       app.kubernetes.io/component: react-app
-      app.kubernetes.io/instance: ${NAME}
+      app.kubernetes.io/instance: ${APP_NAME}
     name: nginx
   spec:
     lookupPolicy:
@@ -129,10 +159,10 @@ objects:
   apiVersion: image.openshift.io/v1  
   metadata:
     labels:
-      app: ${NAME}
+      app: ${APP_NAME}
       app.kubernetes.io/component: react-app
-      app.kubernetes.io/instance: ${NAME}
-    name: ${NAME}
+      app.kubernetes.io/instance: ${APP_NAME}
+    name: ${APP_NAME}
   spec:
     lookupPolicy:
       local: false
@@ -140,45 +170,60 @@ objects:
   apiVersion: route.openshift.io/v1  
   metadata:
     labels:
-      app: ${NAME}
+      app: ${APP_NAME}
       app.kubernetes.io/component: react-app
-      app.kubernetes.io/instance: ${NAME}
-    name: ${NAME}
+      app.kubernetes.io/instance: ${APP_NAME}
+    name: ${APP_NAME}
   spec:
     port:
       targetPort: 8080-tcp      
     to:
       kind: Service
-      name: ${NAME}
+      name: ${APP_NAME}
       weight: 100
     wildcardPolicy: None
     tls:
       termination: Edge
-      insecureEdgeTerminationPolicy: None      
+      insecureEdgeTerminationPolicy: None   
+- kind: Secret
+  apiVersion: v1
+  metadata:
+    name: ${APP_NAME}
+    labels:
+      name: ${APP_NAME}
+    annotations:
+      template.openshift.io/expose-REACT_APP_ISSUER_API_BASE_URL: "{.data['REACT_APP_ISSUER_API_BASE_URL']}"
+      template.openshift.io/expose-REACT_APP_OID4VCI_SUPPORTED_CREDENTIAL_ID: "{.data['REACT_APP_OID4VCI_SUPPORTED_CREDENTIAL_ID']}"
+      template.openshift.io/expose-webhook-url: "{.data['webhook-url']}"
+  stringData:
+    REACT_APP_ISSUER_API_BASE_URL: "${REACT_APP_ISSUER_API_BASE_URL}"
+    REACT_APP_OID4VCI_SUPPORTED_CREDENTIAL_ID: "${REACT_APP_OID4VCI_SUPPORTED_CREDENTIAL_ID}"
+    webhook-url: "${WEBHOOK_URL}"
+  type: Opaque
 ######################################################################
 # Parameters
 ######################################################################      
 parameters:
-- description: The name assigned to all of the frontend objects defined in this template.
+- name: APP_NAME
   displayName: Name
-  name: NAME
+  description: The name assigned to all of the frontend objects defined in this template.    
   required: true
-  value: react-app
-- description: The URL of the repository with your application source code.
+  value: "mdl-issuer-fe"
+- name: SOURCE_REPOSITORY_URL
   displayName: Git Repository URL
-  name: SOURCE_REPOSITORY_URL
+  description: The URL of the repository with your application source code.    
   required: true
-  value: https://github.com/CQEN-QDCE/exp-mdl.git
-- description: Set this to a branch name, tag or other ref of your repository if you
-    are not using the default branch.
-  displayName: Git Reference
-  name: SOURCE_REPOSITORY_REF
-  value: feature/issuer-fe
-- description: Set this to the relative path to your project if it is not in the root
-    of your repository.
+  value: "https://github.com/CQEN-QDCE/exp-mdl.git"
+- name: SOURCE_REPOSITORY_REF
+  displayName: Git Reference  
+  description: Set this to a branch name, tag or other ref of your repository if you
+    are not using the default branch.  
+  value: "feature/issuer-fe"
+- name: CONTEXT_DIR
   displayName: Context Directory
-  name: CONTEXT_DIR
-  value: issuer-frontend
+  description: Set this to the relative path to your project if it is not in the root
+    of your repository.  
+  value: "issuer-frontend"
 - name: REACT_APP_ISSUER_API_BASE_URL
   displayName: URL for the issuer API
   description: The URL for the issuer API.

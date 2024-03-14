@@ -19,6 +19,10 @@ export default function Form(props) {
       const [heightUnit, setHeightUnit] = useState("");
       const [eyeColor, setEyeColor] = useState("");
       const [address, setAddress] = useState("");
+      const [streetAddress, setStreetAddress] = useState("");
+      const [province, setProvince] = useState("");
+      const [postalCode, setPostalCode] = useState("");
+      const [addressRegion, setAddressRegion] = useState("Province");
       const [licenseClass, setLicenseClass] = useState("");
       const [associatedConditions, setAssociatedConditions] = useState("");
       const [referenceNumber, setReferenceNumber] = useState("");      
@@ -91,6 +95,26 @@ export default function Form(props) {
 
       const handleAddress = (e) => {
         setAddress(e.target.value);
+        setSubmitted(false);
+      };
+
+      const handleStreetAddress = (e) => {
+        setStreetAddress(e.target.value);
+        setSubmitted(false);
+      };
+      
+      const handleProvince = (e) => {
+        setProvince(e.target.value);
+        setSubmitted(false);
+      };
+      
+      const handlePostalCode = (e) => {
+        setPostalCode(e.target.value);
+        setSubmitted(false);
+      };
+      
+      const handleAddressRegion = (e) => {
+        setAddressRegion(e.target.value);
         setSubmitted(false);
       };
 
@@ -180,7 +204,13 @@ export default function Form(props) {
                   "gender":gender,
                   "height":height,
                   "eye_color":eyeColor,
-                  "address":address,
+                  "address": {
+                    "@type": "PostalAddress",
+                    "street_address":streetAddress,
+                    "address_locality":province,
+                    "postal_code":postalCode,
+                    "address_region":addressRegion
+                  },
                   "license_class":licenseClass,
                   "associated_conditions":associatedConditions,
                   "reference_number":referenceNumber
@@ -304,11 +334,38 @@ export default function Form(props) {
               </div>                           
             </div>
 
+            <br />
             <div className='service-fieldset'>
-              <label className="control-label">
-                <FormattedMessage id="app.form.fieldset.person" defaultMessage={"Person Characteristics"} />
-              </label> 
-              <button id='person' onClick={tooglePersonCharacteristicsVisible}> {personCharacteristicsVisible ? " <--" : " -->"}</button>
+              <div className='row'>
+                  <div className='col'>
+                      <label htmlFor='streetAddress' className='control-label'>
+                        <FormattedMessage id="app.form.address.street" defaultMessage={"Street Address"} />
+                      </label>
+                      <input type='text' id='streetAddress' value={streetAddress} onChange={handleStreetAddress} className='service-input form-control'/>
+                  </div>
+              </div>
+              <div className='row'>
+                  <div className='col'>
+                      <label htmlFor='postalCode' className='control-label'>
+                        <FormattedMessage id="app.form.address.postal.code" defaultMessage={"Postal Code"} />
+                      </label>
+                      <input type='text' id='postalCode' value={postalCode} onChange={handlePostalCode} className='service-input form-control'/>
+                  </div>           
+                  <div className='col'>         
+                      <label htmlFor='province' className='control-label'>
+                        <FormattedMessage id="app.form.address.province" defaultMessage={"Province"} />
+                      </label>
+                      <input type='text' id='province' value={province} onChange={handleProvince} className='service-input form-control'/>
+                  </div>
+              </div>                                       
+            </div>
+
+            <br />
+            <div className='service-fieldset' align='left'>
+              <a className='accordion-toogle' onClick={tooglePersonCharacteristicsVisible} role='button'>
+                <FormattedMessage id="app.form.fieldset.person" defaultMessage={"Person Characteristics"} />          
+                {personCharacteristicsVisible ? <span>&#9650;</span> : <span>&#9660;</span>}   
+              </a>
               <div id='personCharacteristics' style={{display: personCharacteristicsVisible ? 'block' : 'none'}}>
                 <div className='row'>
                   <div className='col'>
@@ -349,11 +406,12 @@ export default function Form(props) {
               </div>                                        
             </div>
 
-            <div className='service-fieldset'>
-              <label className="control-label">
+            <br />
+            <div className='service-fieldset' align='left'>
+              <a className='accordion-toogle' href='#' onClick={toogleLicenseInformationVisible} role='button'>
                 <FormattedMessage id="app.form.fieldset.license" defaultMessage={"License Information"} />
-              </label>
-              <button name='license' onClick={toogleLicenseInformationVisible}> {licenseInformationVisible ? " <--" : " -->"}</button>              
+                {licenseInformationVisible ? <span>&#9650;</span> : <span>&#9660;</span>}   
+              </a> 
               <div id='licenseInformation' style={{display: licenseInformationVisible ? 'block' : 'none'}}>
               <div className='row'>
                 <div className="col">
