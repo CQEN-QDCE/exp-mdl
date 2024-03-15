@@ -9,7 +9,14 @@ Ce dépôt contient les instructions nécessaires pour déployer ACA-py avec le 
 
 ## Paramètres du gabarit
 
-Tous les paramètres du gabarit sont obligatoires. La plupart d'entre eux ont des valeurs par défaut, mais certains n'en ont pas. Ils doivent être fournis lors de l'instanciation avec 'oc process'.
+Pour spécifier les paramètres requis manquants, créer un fichier nommé 'aca-py-oid4vci.dev.params' dans le même répertoire que celui du gabarit. Il doit contenir les paramètres suivants:
+
+| Paramètre | Description |
+| --------- | ----------- |
+| **APP_DOMAIN** | Le nom de domaine externe pour accéder à l'application. |
+| **WALLET_ENCRYPTION_KEY** | Clé de chiffrement du portefeuille de l'agent. |
+| **POSTGRESQL_PASSWORD** | Mot de passe utilisateur de la base de données PostgreSQL. |
+| **POSTGRESQL_ADMIN_PASSWORD** | Mot de passe administrateur de la base de données PostgreSQL. |
 
 Le fichier de paramètres permet la personnalisation de l'installation pour un environnement particulier (par exemple).
 
@@ -23,30 +30,6 @@ oc process -f ./aca-py-oid4vci.yaml --param-file=./aca-py-oid4vci.dev.params | o
 ```
 
 Une fois que tous les pods sont démarrés, vous pouvez accéder à l'OpenAPI du service à l'adresse https://mdl-issuer-admin.<APP_DOMAIN>.
-
-| Paramètre | Description | Défaut      |
-| --------- | ----------- | ----------- |
-| **APP_NAME** | Nom utilisé pour regrouper les composantes ensembles dans la console OpenShift. | exp-mdl |
-| **APP_DOMAIN** | Le nom de domaine externe pour accéder à l'application. | |
-| **APP_SUBDOMAIN** | Le nom de sous domaine pour accéder à l'application. | exp-mdl |
-| **POSTGRESQL_USERNAME** | Nom d'utilisateur PostgreSQL. | dbuser |
-| **POSTGRESQL_PASSWORD** | Mot de passe de l'utilisateur PostgreSQL. | {auto-généré} |
-| **POSTGRESQL_ADMIN_USERNAME** | Nom d'utilisateur de l'administrateur PostgreSQL. | postgres |
-| **POSTGRESQL_ADMIN_PASSWORD** | Mot de passe de l'utilisateur administrateur PostgreSQL. | {auto-généré} |
-| **POSTGRESQL_DATABASE_NAME** | Nom de la base de données de l'application. | mdl-issuer |
-| **POSTGRESQL_PORT** | Numéro de port sur lequel PostgreSQL écoute. | 5432 |
-| **POSTGRESQL_NAME** | Nom assigné à tous les objets PostgreSQL déployés par le gabarit. | postgres-database |
-| **WALLET_STORAGE_TYPE** | Type de stockage utilisé ('postgres_storage' or 'sqlite_storage'). | postgres_storage |
-| **POSTGRESQL_VOLUME_SIZE** | Capacité du volume persistant PostgreSQL. | 1Gi |
-| **STORAGE_CLASS_NAME** | Nom de la classe de stockage utilisé. | gp2 |
-| **ACA_PY_OID4VCI_NAME** | Nom assigné à tous les objets ACA-py déployés par le gabarit. | mdl-issuer |
-| **GITHUB_REPOSITORY_URI** | URI du dépôt GitHub. | https://github.com/CQEN-QDCE/exp-mdl.git |
-| **CPU_REQUEST** | CPU requis par le service. | 100m |
-| **CPU_LIMIT** | Limite de ressources CPU utilisé par le service | 250m |
-| **MEMORY_REQUEST** | Mémoire requise par le service. | 128Mi |
-| **MEMORY_LIMIT** | Limite de mémoire utilisé par le service. | 256Mi |
-| **ACAPY_LABEL** | Libellé de l'agent ACA-py. | OID4VCI mDL issuer |
-
 
 Utilisez la route POST
 https://mdl-issuer-admin.<APP_DOMAIN>/oid4vci/credential-supported/create
@@ -113,3 +96,23 @@ https://mdl-issuer-admin.<APP_DOMAIN>/oid4vci/credential-supported/create
     }
 }
 ```
+
+| Paramètre | Description | Défaut      |
+| --------- | ----------- | ----------- |
+| **APP_NAME** | Nom utilisé pour regrouper les composantes ensembles dans la console OpenShift. | exp-mdl |
+| **AGENT_SUBDOMAIN** | Le nom de sous domaine pour accéder à l'application. | exp-mdl |
+| **POSTGRESQL_NAME** | Nom assigné à tous les objets PostgreSQL déployés par le gabarit. | mdl-issuer-database |
+| **POSTGRESQL_USERNAME** | Nom d'utilisateur PostgreSQL. | dbuser |
+| **POSTGRESQL_ADMIN_USERNAME** | Nom d'utilisateur de l'administrateur PostgreSQL. | postgres |
+| **POSTGRESQL_DATABASE_NAME** | Nom de la base de données de l'application. | mdl-issuer |
+| **POSTGRESQL_PORT** | Numéro de port sur lequel PostgreSQL écoute. | 5432 |
+| **POSTGRESQL_VOLUME_SIZE** | Capacité du volume persistant PostgreSQL. | 1Gi |
+| **WALLET_STORAGE_TYPE** | Type de stockage utilisé ('postgres_storage' or 'sqlite_storage'). | postgres_storage |
+| **ACA_PY_OID4VCI_NAME** | Nom assigné à tous les objets ACA-py déployés par le gabarit. | mdl-issuer |
+| **ACAPY_LABEL** | Libellé de l'agent ACA-py. | OID4VCI mDL issuer |
+| **GITHUB_REPOSITORY_URI** | URI du dépôt GitHub. | https://github.com/CQEN-QDCE/exp-mdl.git |
+| **CPU_REQUEST** | CPU requis par le service. | 100m |
+| **CPU_LIMIT** | Limite de ressources CPU utilisé par le service | 250m |
+| **MEMORY_REQUEST** | Mémoire requise par le service. | 128Mi |
+| **MEMORY_LIMIT** | Limite de mémoire utilisé par le service. | 256Mi |
+| **STORAGE_CLASS_NAME** | Nom de la classe de stockage utilisé. | gp2 |
