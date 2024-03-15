@@ -220,10 +220,10 @@ objects:
                 --outbound-transport http
                 --admin 0.0.0.0 ${ADMIN_INTERFACE_PORT}
                 --endpoint https://${AGENT_SUBDOMAIN}.${APP_DOMAIN}
-                --genesis-url "${GENESIS_FILE_URL}"
                 --auto-accept-invites
                 --auto-accept-requests
                 --auto-provision
+                --no-ledger
                 --wallet-type '${WALLET_TYPE}'
                 --wallet-name "$(echo ${WALLET_NAME} | tr '[:upper:]' '[:lower:]' | sed "s~-~_~g")"
                 --wallet-key "${WALLET_ENCRYPTION_KEY}"
@@ -245,8 +245,6 @@ objects:
                 value: ${ACAPY_IMAGE_URL}               
               - name: ACAPY_AUTO_ACCEPT_INVITES
                 value: ${ACAPY_AUTO_ACCEPT_INVITES}
-              - name: GENESIS_FILE_URL
-                value: ${GENESIS_FILE_URL}
               - name: WEBHOOK_URL
                 value: ${WEBHOOK_URL}
               - name: WALLET_NAME
@@ -457,10 +455,10 @@ parameters:
 - name: APP_DOMAIN
   description: The external hostname to access the application.
   required: true
-- name: APP_SUBDOMAIN
-  description: The external subdomain to access the application.
+- name: AGENT_SUBDOMAIN
+  description: The external subdomain to access Aries issuer.
   required: true
-  value: "exp-mdl"
+  value: 'mdl-issuer'
 - name: POSTGRESQL_USERNAME
   displayName: PostgreSQL connection username
   description: Username for the PostgreSQL connection user.
@@ -470,8 +468,6 @@ parameters:
   displayName: PostgreSQL connection password
   description: Password for the PostgreSQL connection user.
   required: true
-  generate: "expression"
-  from: "[a-zA-Z0-9]{16}"
 - name: WALLET_STORAGE_TYPE
   displayName: Wallet storage type
   description: The wallet storage type. Possible values are 'postgres_storage' or 'sqlite_storage' at the moment.  If not defined, defaults to 'sqlite_storage' for compatibility.
@@ -486,8 +482,6 @@ parameters:
   fdisplayName: PostgreSQL administrator password
   description: Password for the PostgreSQL administrative account.
   required: true
-  generate: "expression"
-  from: "[a-zA-Z0-9]{16}"
 - name: POSTGRESQL_DATABASE_NAME
   displayName: PostgreSQL database name
   description: Name of the PostgreSQL database.
@@ -502,7 +496,7 @@ parameters:
   displayName: PostgreSQL name
   description: The name assigned to all PostgreSQL objects defined in this template.
   required: true
-  value: "postgres-database"
+  value: "mdl-issuer-database"
 - name: STORAGE_CLASS_NAME
   displayNgp2iption: The storage class of the volume.
   required: true
@@ -547,10 +541,6 @@ parameters:
   description: Label of the agent.
   required: true
   value: 'OID4VCI mDL issuer'
-- name: GENESIS_FILE_URL
-  displayName: Genesis file URL
-  description: The URL from which the genesis file can be downloaded.
-  required: true
 - name: LOG_LEVEL
   displayName: Log Level
   description: The logging level of the issuer agent.
@@ -595,10 +585,6 @@ parameters:
   description: The port on which the agent will listen for the admin API.
   required: true
   value: '3000'
-- name: AGENT_SUBDOMAIN
-  description: The external subdomain to access Aries issuer.
-  required: true
-  value: 'mdl-issuer'
 - name: OID4VCI_PLUGIN_HTTP_PORT
   displayName: Agent Admin Port
   description: The port on which the agent will listen for the admin API.

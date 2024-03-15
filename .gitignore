@@ -21,3 +21,5 @@ build/
 # Fichiers de dépendances
 package-lock.json
 yarn.lock
+
+*.params
