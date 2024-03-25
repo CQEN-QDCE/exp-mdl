@@ -11,14 +11,6 @@ Le registre de confiance pour le modèle proposé par la norme ISO-18013-5 et pa
 
 La PKI est utilisée pour émettre des certificats numériques qui attestent l'indetité des entités qui sont enrolées dans le protocole (autorité emettrice - Issuing Authotiry (IA)), le citoyen, le dispositif mobile (modile device); la VICAL est un service qui sert de point de confiance aux participants de mDL, où la liste d'autorités autorisées est publiée  
 
-### ACA-PY - aries-cloudagent-python
-
-L'agent "aries infonuagique Python" (plus connu comme `aca-py`), est l'agent émetteur responsable de la génération et émission des documents dans le format mDL. 
-
-Détenteur de la paire de clés qui sont utilisées pour la signature de certificats numériques et des émissions de documents mDL.
-
-
-
 
 
 ### PKI - Public Key Infrastructure 
@@ -49,7 +41,13 @@ service plays a critical role on the overall security and interoperability of th
 security requirements are defined.
 
 
-Endpoints 
+### ACA-PY - aries-cloudagent-python
+
+L'agent "aries infonuagique Python" (plus connu comme `aca-py`), est l'agent émetteur responsable de la génération et émission des documents dans le format mDL. 
+
+Détenteur de la paire de clés qui sont utilisées pour la signature de certificats numériques et des émissions de documents mDL.
+
+*Endpoints* 
 
 I   POST /wallet/x509/keypair   
 II  POST /wallet/x509/csr   
