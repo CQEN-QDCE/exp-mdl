@@ -1,0 +1,51 @@
+@startuml aries_cloudagent_python
+allow_mixing
+
+title 
+    "Endpoints dans l'agent infonuagique Aries"
+end title
+
+
+rectangle "aries-cloudagent-python" as acapy {
+
+    ' Définition des endpoints
+    rectangle "endpoints" as endpoints #LightCyan{
+        rectangle "/wallet/x509" as wallet_x509 #LightGoldenRodYellow{
+            rectangle "keypair" as keypair #LightGreen{
+                rectangle "ECDSA-p256" as ECDSAp256
+                rectangle "ECDSA-p384" as ECDSAp384
+                rectangle "ECDSA-p521" as ECDSAp521
+            }
+            rectangle "csr" as csr #LightGreen{
+                rectangle "CSR racine" as csr_racine
+                rectangle "CSR émettrice" as csr_emettrice  
+            }
+
+            keypair -> keypair_racine
+            keypair -> keypair_emettrice
+            keypair_racine -> csr_racine
+            keypair_emettrice -> csr_emettrice
+        }
+
+        rectangle "wallet/verification-method" as wallet_verification_method #LightGoldenRodYellow{
+            rectangle "sign" as sign
+            rectangle "verify" as verify
+        }
+        
+    }
+
+    rectangle "PKI de l'Autorité Émettrice" as pki  
+
+    ' Définition des acteurs
+    actor "Resp PKI SAAQ" as resp_pki_saaq
+
+    ' Définition des liens et rélations  
+    csr_racine -> pki
+    csr_emettrice -> pki
+
+    ' Définition des actions de l'acteur 
+    resp_pki_saaq -> keypair:"Générer une paire de clés"
+    resp_pki_saaq -> csr:"Générer une demande de signature de certificat"    
+}
+
+@enduml

@@ -1,0 +1,32 @@
+@startuml infrastructure_cles_publiques
+allow_mixing
+
+title 
+    "Infrastructure à clés publiques PKI"
+end title
+
+rectangle "Infrastructure à clés publiques (PKI)" as pki #LightBlue{
+
+    ' Définition des entités
+
+    ' Définit l'autorité de certification émettrice
+    rectangle "Autorité de certification Émettrice " as ea #LightCoral{
+        rectangle "Cerfificat autorité émettrice" as crt_ea
+    }
+
+    ' Définit l'autorité de certification racine
+    rectangle "Autorité de certification Racine(IACA)" as ca #LightCoral{
+        rectangle "Cerfificat autorité racine" as crt_ca
+    }
+
+    ' Définit l'entité finale
+    rectangle "Cerficat d'end-entity" as ee 
+
+    ' Définition des liens et relations
+    ca -> crt_ca: "Émission certificat auto-signé"
+    ca -> crt_ea : "Émission Certificat autorité émettrice"
+    ea -> ee : "Émission certificat end-entity1"
+    
+}
+
+@enduml

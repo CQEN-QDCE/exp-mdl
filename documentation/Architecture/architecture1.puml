@@ -1,0 +1,110 @@
+@startuml arch_reg_confiance
+allow_mixing
+
+title 
+    "Diagrammes d'architecture du registre de confiance"
+end title
+
+' ======================================================================
+' Définition de la PKI
+' ======================================================================
+rectangle "Infrastructure à clés publiques (PKI)" as pki #LightBlue{
+
+    ' Définition des entités
+
+    ' Définit l'autorité de certification émettrice
+    rectangle "Autorité de certification Émettrice " as ea #LightCoral{
+        rectangle "Cerfificat autorité émettrice" as crt_ea
+    }
+
+    ' Définit l'autorité de certification racine
+    rectangle "Autorité de certification Racine(IACA)" as ca #LightCoral{
+        rectangle "Cerfificat autorité racine" as crt_ca
+    }
+
+    ' Définit l'entité finale
+    rectangle "Cerficat d'end-entity" as ee 
+
+    ' Définition des liens et relations
+    ca -> crt_ca: "Émission certificat auto-signé"
+    ca -> crt_ea : "Émission Certificat autorité émettrice"
+    ea -> ee : "Émission certificat end-entity1"
+    
+}
+
+' ======================================================================
+' Définition de la VICAL
+' ======================================================================
+rectangle "VICAL" as vical #LightBlue {
+    ' Liste VICAL
+    rectangle "Liste Vical" as liste #LightGray{
+        rectangle "Autorité Émettrice État B" as aeb #White{
+            rectangle "Certificat Signataire de l'état B" as csb
+            rectangle "Certificat Racine de l'état B" as crb
+        }
+        rectangle "Autorité Émettrice A" as aea #White{
+            rectangle "Certificat Signataire de l'état A" as csa
+            rectangle "Certificat Racine de l'état A" as cra
+        }
+
+        rectangle "Autorité Émettrice de la SAAQ" as aesaaq  #White{
+            rectangle "Certificat Signataire de la SAAQ " as cssaaq
+            rectangle "Certificat Racine de la SAAQ" as crsaaq
+        }
+    }
+}
+
+
+' ======================================================================
+' Définition de l'agent aca-py
+' ======================================================================
+rectangle "aries-cloudagent-python" as acapy {
+
+    ' Définition des endpoints
+    rectangle "endpoints" as endpoints #LightCyan{
+        rectangle "/wallet/x509" as wallet_x509 #LightGoldenRodYellow{
+            rectangle "keypair" as keypair #LightGreen{
+                rectangle "ECDSA-p256" as ECDSAp256
+                rectangle "ECDSA-p384" as ECDSAp384
+                rectangle "ECDSA-p521" as ECDSAp521
+            }
+            rectangle "csr" as csr #LightGreen{
+                rectangle "CSR racine" as csr_racine
+                rectangle "CSR émettrice" as csr_emettrice  
+            }
+
+            keypair -> keypair_racine
+            keypair -> keypair_emettrice
+            keypair_racine -> csr_racine
+            keypair_emettrice -> csr_emettrice
+        }
+
+        rectangle "wallet/verification-method" as wallet_verification_method #LightGoldenRodYellow{
+            rectangle "sign" as sign
+            rectangle "verify" as verify
+        }
+        
+    }
+
+    rectangle "PKI de l'Autorité Émettrice" as pki  
+
+    ' Définition des acteurs
+    actor "Resp PKI SAAQ" as resp_pki_saaq
+
+    ' Définition des liens et rélations  
+    csr_racine -> pki
+    csr_emettrice -> pki
+
+    ' Définition des actions de l'acteur 
+    resp_pki_saaq -> keypair:"Générer une paire de clés"
+    resp_pki_saaq -> csr:"Générer une demande de signature de certificat"    
+}
+
+
+
+' Définition des liens et relations inter-entités
+crt_ca -> crsaaq : "Inclusion certificat racine SAAQ à la VICAL"
+crt_ea -> cssaaq : "Inclusion certificat signataire SAAQ à la VICAL"
+
+@enduml
+```

@@ -1,0 +1,28 @@
+@startuml Vical
+allow_mixing
+
+title 
+    "VICAL - Liste Verifié d’Autorités de Certification Émettrices "
+end title
+
+rectangle VICAL as vical #LightBlue{
+    ' Liste Vical
+    rectangle "Liste Vical" as liste #LightGray{
+            rectangle "Autorité Émettrice État B" as aeb #White{
+                rectangle "Certificat Signataire de l'état B" as csb
+                rectangle "Certificat Racine de l'état B" as crb
+            }
+            rectangle "Autorité Émettrice A" as aea #White{
+                rectangle "Certificat Signataire de l'état A" as csa
+                rectangle "Certificat Racine de l'état A" as cra
+            }
+
+            rectangle "Autorité Émettrice de la SAAQ" as aesaaq  #White{
+                rectangle "Certificat Signataire de la SAAQ " as cssaaq
+                rectangle "Certificat Racine de la SAAQ" as crsaaq
+            }
+    }
+}
+
+
+@enduml
