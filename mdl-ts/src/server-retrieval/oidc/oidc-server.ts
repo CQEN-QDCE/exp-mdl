@@ -1,11 +1,12 @@
 import { v4 as uuidv4 } from 'uuid';
-import * as x509 from "@peculiar/x509";
 import { CredentialTypeRepository } from '../credential-type/credential-type-repository';
 import { StorageEngine } from '../storage/storage-engine';
 import { EphemeralStorageEngine } from '../storage/ephemeral-storage-engine';
 import { JsonStringifier } from '../../utils/json.stringifier';
 import { Jwt } from '../Jwt';
 import { ServerRetrievalUtil } from '../server-retrieval-utils';
+import rs from "jsrsasign";
+import { Text } from '../../utils/text';
 
 export class OidcServer {
 
@@ -16,8 +17,8 @@ export class OidcServer {
     private readonly storageEngine: StorageEngine = new EphemeralStorageEngine();
 
     constructor(private readonly baseUrl: string, 
-                private readonly privateKey: CryptoKey,
-                private readonly certificateChain: x509.X509Certificate[] = [],
+                private readonly privateKey: rs.KJUR.crypto.ECDSA,
+                private readonly certificateChain: rs.KJUR.asn1.x509.Certificate[] = [],
                 private readonly credentialTypeRepository: CredentialTypeRepository) {
         
         let mdocCredentialType = credentialTypeRepository.getMdocCredentialType(OidcServer.MDL_DOCTYPE);
@@ -202,8 +203,8 @@ export class OidcServer {
         data.scope = scope;
         data.authorizationId = authorizationId;
         data.serverRetrievalToken = serverRetrievalToken;
-        let textEncoder = new TextEncoder();
-        let buffer = textEncoder.encode(JsonStringifier.stringify(data));
+        //let textEncoder = new TextEncoder();
+        let buffer = Text.encode(JsonStringifier.stringify(data));
         this.storageEngine.put(clientId, buffer);
     }
 

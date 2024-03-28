@@ -1,5 +1,6 @@
 import { IssuedCredentialResult, Issuer } from "./issuer";
 import { CredentialRepresentation } from "./vc/credential-representation.enum";
+import * as KJUR from "jsrsasign";
 
 export class IssuerAgent implements Issuer {
 
@@ -7,7 +8,7 @@ export class IssuerAgent implements Issuer {
         throw new Error("Method not implemented.");
     }
 
-    issueCredential(subjectPublicKey: CryptoKey, attributeTypes: string[], representation: CredentialRepresentation, claimNames: string[]): IssuedCredentialResult {
+    issueCredential(subjectPublicKey: KJUR.KJUR.crypto.ECDSA, attributeTypes: string[], representation: CredentialRepresentation, claimNames: string[]): IssuedCredentialResult {
         throw new Error("Method not implemented.");
     }
 

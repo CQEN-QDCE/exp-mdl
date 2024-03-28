@@ -23,5 +23,4 @@ export enum CoseHeaderLabel {
     PARTY_V_ID = -24,
     PARTY_V_NONCE = -25,
     PARTY_V_OTHER = -26,
-
 }

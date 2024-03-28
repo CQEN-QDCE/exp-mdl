@@ -1,14 +1,14 @@
-import * as x509 from "@peculiar/x509";
 import { CredentialTypeRepository } from "../credential-type/credential-type-repository";
 import { ServerRequest2 } from "./server-request2";
 import { Jwt } from "../Jwt";
 import { JsonStringifier } from "../../utils/json.stringifier";
+import rs from "jsrsasign";
 
 export class WebApiServer {
     
-    constructor(private readonly privateKey: CryptoKey,
-                private readonly publicKey: CryptoKey,
-                private readonly certificateChain: x509.X509Certificate[] = [],
+    constructor(private readonly privateKey: rs.KJUR.crypto.ECDSA,
+                private readonly publicKey: rs.KJUR.crypto.ECDSA,
+                private readonly certificateChain: rs.KJUR.asn1.x509.Certificate[] = [],
                 private readonly credentialTypeRepository: CredentialTypeRepository) {
     }
 

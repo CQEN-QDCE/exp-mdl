@@ -1,4 +1,5 @@
 import { CborWebToken } from "../../../src/oidc4vci/cbor-web-token";
+import { Text } from "../../../src/utils/text";
 
 describe('#mac', () => {
     test('should return the CborWebToken as a string', async () => {
@@ -35,8 +36,8 @@ describe('#mac', () => {
         cwt.issuedAt = 1443944944;
         cwt.cwtId = new Uint8Array(Buffer.from("0b71", "hex")).buffer;
         
-        const textEncoder = new TextEncoder(); // always utf-8
-        const secret = textEncoder.encode("my-secret");
+        //const textEncoder = new TextEncoder(); // always utf-8
+        const secret = Text.encode("my-secret");
 
         await cwt.mac(secret);
         let token = cwt.serialize();

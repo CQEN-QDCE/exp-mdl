@@ -1,15 +1,15 @@
-import { COSECryptoProvider } from "./cose/cose-crypto-provider";
-import { COSESign1 } from "./cose/cose-sign-1";
-import { CborDataItem } from "./cbor/cbor-data-item";
-import { CborEncoder } from "./cbor/cbor-encoder";
-import { CborEncodedDataItem } from "./cbor/types/cbor-encoded-data-item";
-import { IssuerSignedItem } from "./issuer-signed/issuer-signed-item";
+import { COSECryptoProvider } from "../cose/cose-crypto-provider";
+import { COSESign1 } from "../cose/cose-sign-1";
+import { CborDataItem } from "../cbor/cbor-data-item";
+import { CborEncoder } from "../cbor/cbor-encoder";
+import { CborEncodedDataItem } from "../cbor/types/cbor-encoded-data-item";
+import { IssuerSignedItem } from "../issuer-signed/issuer-signed-item";
 import { MobileDocument } from "./mobile-document";
-import { DeviceSigned } from "./mdoc/device-signed";
-import { IssuerSigned } from "./issuer-signed/issuer-signed";
-import { MobileSecurityObject } from "./mdoc/mobile-security-object";
-import { DeviceKeyInfo } from "./mso/device-key-info";
-import { ValidityInfo } from "./mso/validity-info";
+import { DeviceSigned } from "./device-signed";
+import { IssuerSigned } from "../issuer-signed/issuer-signed";
+import { MobileSecurityObject } from "./mobile-security-object";
+import { DeviceKeyInfo } from "../mso/device-key-info";
+import { ValidityInfo } from "../mso/validity-info";
 
 export class MobileDocumentBuilder {
 

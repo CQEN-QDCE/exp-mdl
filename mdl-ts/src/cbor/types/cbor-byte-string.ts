@@ -6,7 +6,7 @@ export class CborByteString implements CborDataItem {
     
     private data: ArrayBuffer;
 
-    constructor(value: ArrayBuffer) {
+    constructor(value: ArrayBuffer = new ArrayBuffer(0)) {
         this.data = value;
         this.majorType = 0;
     }

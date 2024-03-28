@@ -1,22 +1,18 @@
-import { Crypto } from "@peculiar/webcrypto";
 import { CborByteString } from "../cbor/types/cbor-byte-string";
 import { CborDataItem } from "../cbor/cbor-data-item";
 import { CborEncoder } from "../cbor/cbor-encoder";
 import { CborMap } from "../cbor/types/cbor-map";
-import { CborNumber } from "../cbor/types/cbor-number";
 import { CborTextString } from "../cbor/types/cbor-text-string";
 import { ArrayBufferComparer } from "../utils/array-buffer-comparer";
-import { CoseHeaderLabel } from "./cose-header-label.enum";
 import { COSEObject } from "./cose-object";
 import { CoseAlgorithm } from "./cose-algorithm.enum";
-import { CborDecoder } from "../cbor/cbor-decoder";
 import { CborConvertible } from "../cbor/cbor-convertible";
 import { CborArray } from "../cbor/types/cbor-array";
+import rs from "jsrsasign";
+import { Hex } from "../utils/hex";
 
 export class COSEMac0 extends COSEObject<COSEMac0> implements CborConvertible {
    
-    private readonly crypto = new Crypto();
-
     private readonly context = 'MAC0';
 
     private digest: ArrayBuffer | null = null;
@@ -38,9 +34,7 @@ export class COSEMac0 extends COSEObject<COSEMac0> implements CborConvertible {
 
     public async mac(secret: ArrayBuffer, externalData: ArrayBuffer = new ArrayBuffer(0)): Promise<void> {
         
-        const algorithm = CoseAlgorithm.toSubtleCryptoAlgorithm(this.headers.algorithm.value);
-
-        const key = await this.crypto.subtle.importKey('raw', secret, algorithm, false, ["sign", "verify"]);
+        //const algorithm = CoseAlgorithm.toSubtleCryptoAlgorithm(this.headers.algorithm.value);
 
         const cborArray = new CborArray();
 
@@ -49,7 +43,9 @@ export class COSEMac0 extends COSEObject<COSEMac0> implements CborConvertible {
         cborArray.push(new CborByteString(externalData));
         cborArray.push(new CborByteString(this.content));
 
-        this.digest = await this.crypto.subtle.sign(algorithm, key, CborEncoder.encode(cborArray));
+        const mac = new rs.KJUR.crypto.Mac({alg: "HmacSHA256", "pass": {"hex": Hex.encode(secret)}});
+        mac.updateHex(Hex.encode(CborEncoder.encode(cborArray)));
+        this.digest = Hex.decode(mac.doFinal());
     }
 
     get tag(): ArrayBuffer {
@@ -65,9 +61,7 @@ export class COSEMac0 extends COSEObject<COSEMac0> implements CborConvertible {
             throw 'Algorithm currently not supported, only supported algorithm is HMAC256.';
         }
         
-        const algorithm = CoseAlgorithm.toSubtleCryptoAlgorithm(this.headers.algorithm.value);
-
-        const key = await this.crypto.subtle.importKey('raw', sharedSecret, algorithm, false, ["sign", "verify"]);
+        //const algorithm = CoseAlgorithm.toSubtleCryptoAlgorithm(this.headers.algorithm.value);
 
         const cborArray = new CborArray();
 
@@ -78,51 +72,18 @@ export class COSEMac0 extends COSEObject<COSEMac0> implements CborConvertible {
 
         const data = CborEncoder.encode(cborArray);
 
-        const tag = await this.crypto.subtle.sign(algorithm, key, data);
+        const mac1 = new rs.KJUR.crypto.Mac({alg: "HmacSHA256", "pass": {"hex":  Hex.encode(sharedSecret)}});
+        mac1.updateHex(Hex.encode(data));
+        const tag = Hex.decode(mac1.doFinal());
+
         return ArrayBufferComparer.equals(this.tag, tag);
-    }
-
-    private encodeProtectedHeaders(): ArrayBuffer {
-        const cborMap = new CborMap();
-        cborMap.set(CoseHeaderLabel.ALG, new CborNumber(this.headers.algorithm.value));
-        return CborEncoder.encode(cborMap);
-    }
-
-    private decodeProtectedHeaders(protectedHeaders: CborByteString, message: COSEMac0): void {
-        for(const [key, value] of CborDecoder.decode(protectedHeaders.getValue()).getValue()) {
-            switch(key.int) {
-                case CoseHeaderLabel.ALG:
-                    message.headers.algorithm.value = <CoseAlgorithm>value.getValue();
-                    break;
-            }
-        };
-    }
-
-    private encodeUnprotectedHeaders(): CborMap {
-        const cborMap = new CborMap();
-        if (this.headers.x5Chain.value) {
-            cborMap.set(CoseHeaderLabel.X5_CHAIN, new CborByteString(this.headers.x5Chain.value));
-        }
-        return cborMap;
-    }
-
-    private decodeUnprotectedHeaders(unprotectedHeaders: CborMap, message: COSEMac0): void {
-        for(const [key, value] of unprotectedHeaders.getValue()) {
-            switch(key) {
-                case CoseHeaderLabel.ALG:
-                    throw new Error('Algorithm must be in protected headers');
-                 case CoseHeaderLabel.X5_CHAIN:
-                    message.headers.x5Chain.value = value.getValue();
-                    break;
-                }
-        };
     }
 
     fromCborDataItem(dataItem: CborDataItem): COSEMac0 {
         const cborArray = dataItem as CborArray;
         const message = new COSEMac0();
-        this.decodeProtectedHeaders(cborArray[0] as CborByteString, message);
-        this.decodeUnprotectedHeaders(cborArray[1] as CborMap, message);
+        message.decodeProtectedHeaders(cborArray[0] as CborByteString);
+        message.decodeUnprotectedHeaders(cborArray[1] as CborMap);
         message.dataElements = cborArray.getValue();
         message.content = cborArray[2].getValue();
         message.digest = cborArray[3].getValue();

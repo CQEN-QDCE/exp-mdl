@@ -7,10 +7,11 @@ import { DeviceKeyInfo } from "../mso/device-key-info";
 import { IssuerSignedItem } from "../issuer-signed/issuer-signed-item";
 import { ValidityInfo } from "../mso/validity-info";
 import { DigestAlgorithm } from "./digest-algorithm.enum";
-import { Crypto } from "@peculiar/webcrypto";
 import { CborEncoder } from "../cbor/cbor-encoder";
 import { ArrayBufferComparer } from "../utils/array-buffer-comparer";
 import { CborConvertible } from "../cbor/cbor-convertible";
+import rs from "jsrsasign";
+import { Hex } from "../utils/hex";
 
 // Mobile security object (MSO), representing the payload of the issuer signature, for the issuer signed part of the mdoc.
 export class MobileSecurityObject implements CborConvertible {
@@ -61,27 +62,28 @@ export class MobileSecurityObject implements CborConvertible {
     }
 
     fromCborDataItem(dataItem: CborDataItem): MobileSecurityObject {
-        const cborMap = <CborMap>dataItem;
-        const version = <CborTextString>cborMap.get('version');
-        const digestAlgorithm = <CborTextString>cborMap.get('digestAlgorithm');
-        const valueDigests = <CborMap>cborMap.get('valueDigests');
-        const deviceKeyInfo = DeviceKeyInfo.fromMapElement(<CborMap>cborMap.get('deviceKeyInfo'));
-        const docType = <CborTextString>cborMap.get('docType');
-        const validityInfo = ValidityInfo.fromMapElement(<CborMap>cborMap.get('validityInfo'));
+        const cborMap = dataItem as CborMap;
+        const version = cborMap.get('version') as CborTextString;
+        const digestAlgorithm = cborMap.get('digestAlgorithm') as CborTextString;
+        const valueDigests = cborMap.get('valueDigests') as CborMap;
+        const deviceKeyInfo = CborDataItem.to(DeviceKeyInfo, cborMap.get('deviceKeyInfo') as CborMap);
+        const docType = cborMap.get('docType') as CborTextString;
+        const validityInfo = CborDataItem.to(ValidityInfo, cborMap.get('validityInfo') as CborMap);
 
+        // TODO: Nettoyer ce code.
         let valueDigests2 = new Map<string, Map<number, ArrayBuffer>>;
-        for(const [key, value] of valueDigests.getValue()) {
+        for(const [namespace, value] of valueDigests.getValue()) {
             const digestMap = new Map<number, ArrayBuffer>();
             for (const [key2, value2] of (<CborMap>value).getValue()) {
                 if (value2 instanceof CborByteString) {
                     digestMap.set(key2 as number, value2.getValue());
                 }
             }
-            valueDigests2.set(key as string, digestMap);
+            valueDigests2.set(namespace as string, digestMap);
         }
 
         return new MobileSecurityObject(version.getValue(), 
-                                        <DigestAlgorithm>digestAlgorithm.getValue(), 
+                                        digestAlgorithm.getValue() as DigestAlgorithm, 
                                         valueDigests2, 
                                         deviceKeyInfo, 
                                         docType.getValue(), 
@@ -101,9 +103,9 @@ export class MobileSecurityObject implements CborConvertible {
         cborMap.set('version', new CborTextString(this.version));
         cborMap.set('digestAlgorithm', new CborTextString(this.digestAlgorithm));
         cborMap.set('valueDigests', new CborMap(valueDigestNamespaces));
-        cborMap.set('deviceKeyInfo', this.deviceKeyInfo.toMapElement());
+        cborMap.set('deviceKeyInfo', CborDataItem.from(this.deviceKeyInfo));
         cborMap.set('docType', new CborTextString(this.docType));
-        cborMap.set('validityInfo', this.validity.toMapElement());
+        cborMap.set('validityInfo', CborDataItem.from(this.validity));
         return cborMap;
     }
 
@@ -133,8 +135,10 @@ export class MobileSecurityObject implements CborConvertible {
 
     private static async digestItem(issuerSignedItem: IssuerSignedItem, digestAlgorithm: DigestAlgorithm): Promise<ArrayBuffer> {
         const encodedItem = new CborEncodedDataItem(CborEncoder.encode(issuerSignedItem.toMapElement()));
-        const crypto = new Crypto();
-        const hash = await crypto.subtle.digest(digestAlgorithm, CborEncoder.encode(encodedItem));
-        return hash
-    }
+        
+        const md = new rs.KJUR.crypto.MessageDigest({"alg": "sha256"});
+        md.updateHex(Hex.encode(CborEncoder.encode(encodedItem)));
+        const hashValueHex = md.digest();
+        return Hex.decode(hashValueHex);
+     }
 }

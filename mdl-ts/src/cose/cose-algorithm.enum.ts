@@ -21,6 +21,7 @@ export enum CoseAlgorithm {
 }
 
 export namespace CoseAlgorithm {
+    /*
     export function toSubtleCryptoAlgorithm(value: CoseAlgorithm): AlgorithmIdentifier | RsaPssParams | EcdsaParams {
         switch (value) {
             case CoseAlgorithm.HMAC256_64:
@@ -87,10 +88,63 @@ export namespace CoseAlgorithm {
                 f.algorithm = "RSASSA-PKCS1-v1_5";
                 f.hash = "SHA-1";
                 break;
+
+            default:
+                throw new Error("Algorithm not supported");
+        }
+    }
+*/
+    export function toJsRsaSignAlgorithm(value: CoseAlgorithm): string {
+        switch (value) {
+            case CoseAlgorithm.HMAC256_64:
+                return 'HmacSHA256';
+            case CoseAlgorithm.HMAC256:
+                return 'HmacSHA256';
+            case CoseAlgorithm.HMAC384:
+                return 'HmacSHA384';
+            case CoseAlgorithm.HMAC512:
+                return 'HmacSHA512';
+            case CoseAlgorithm.ES256:
+                return "SHA256withECDSA";
+            case CoseAlgorithm.ES384:
+                return "SHA384withECDSA";
+            case CoseAlgorithm.ES512:
+                return "SHA512withECDSA";
+/*                
+            case CoseAlgorithm.PS256:
+                f.algorithm = "RSA-PSS";
+                f.hash = "SHA-256";
+                break;
+            case CoseAlgorithm.PS384:
+                f.algorithm = "RSA-PSS";
+                f.hash = "SHA-384";
+                break;
+            case CoseAlgorithm.PS512:
+                f.algorithm = "RSA-PSS";
+                f.hash = "SHA-512";
+                break;
+            case CoseAlgorithm.RS256:
+                f.algorithm = "RSASSA-PKCS1-v1_5";
+                f.hash = "SHA-256";
+                break;
+            case CoseAlgorithm.RS384:
+                f.algorithm = "RSASSA-PKCS1-v1_5";
+                f.hash = "SHA-384";
+                break;
+            case CoseAlgorithm.RS512:
+                f.algorithm = "RSASSA-PKCS1-v1_5";
+                f.hash = "SHA-512";
+                break;
+            case CoseAlgorithm.RS1:
+                f.algorithm = "RSASSA-PKCS1-v1_5";
+                f.hash = "SHA-1";
+                break;
 */
             default:
                 throw new Error("Algorithm not supported");
         }
     }
+
+    
 
 }

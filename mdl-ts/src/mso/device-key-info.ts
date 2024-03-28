@@ -1,8 +1,9 @@
 import { CoseKey } from "../cose/cose-key";
 import { CborDataItem } from "../cbor/cbor-data-item";
 import { CborMap } from "../cbor/types/cbor-map";
+import { CborConvertible } from "../cbor/cbor-convertible";
 
-export class DeviceKeyInfo {
+export class DeviceKeyInfo implements CborConvertible {
 
     private deviceKey: CoseKey | null = null;
     private keyAuthorizations: CborMap | null = null;
@@ -16,14 +17,15 @@ export class DeviceKeyInfo {
         this.keyInfo = keyInfo;
     }
 
-    static fromMapElement(cborMap: CborMap): DeviceKeyInfo {
+    fromCborDataItem(dataItem: CborDataItem): DeviceKeyInfo {
+        const cborMap = dataItem as CborMap;
         const deviceKey = cborMap.get('deviceKey');
         const keyAuthorizations = cborMap.get('keyAuthorizations');
         const keyInfo = cborMap.get('keyInfo');
         return new DeviceKeyInfo(deviceKey.getValue() === null ? null : CborDataItem.to(CoseKey, <CborMap>deviceKey), <CborMap>keyAuthorizations, <CborMap>keyInfo);
     }
-    
-    toMapElement(): CborMap {
+
+    toCborDataItem(): CborDataItem {
         const cborMap = new CborMap();
         cborMap.set('deviceKey', CborDataItem.from(this.deviceKey));
         if (this.keyAuthorizations) cborMap.set('keyAuthorizations', this.keyAuthorizations);

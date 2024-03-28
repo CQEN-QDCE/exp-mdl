@@ -1,19 +1,18 @@
-import * as x509 from "@peculiar/x509";
-import { Crypto } from "@peculiar/webcrypto";
+import rs from "jsrsasign";
 
 export class TestKeysAndCertificates {
 
-    public jwtSignerPrivateKey: CryptoKey;
+    public jwtSignerPrivateKey: rs.KJUR.crypto.ECDSA;
 
-    public jwtSignerPublicKey: CryptoKey;
+    public jwtSignerPublicKey: rs.KJUR.crypto.ECDSA;
 
-    public jwtSignerCertificate: x509.X509Certificate;
+    public jwtSignerCertificate: rs.KJUR.asn1.x509.Certificate;
 
-    public caCertificate: x509.X509Certificate;
+    public caCertificate: rs.KJUR.asn1.x509.Certificate;
 
-    public jwtCertificateChain: x509.X509Certificate[] = [];
+    public jwtCertificateChain: rs.KJUR.asn1.x509.Certificate[] = [];
 
-    public clientPrivateKey: CryptoKey;
+    public clientPrivateKey: rs.KJUR.crypto.ECDSA;
 
     constructor() {
 
@@ -21,66 +20,59 @@ export class TestKeysAndCertificates {
 
     public async init(): Promise<void> {  
 
-        const crypto = new Crypto();
+        const caKeyPair = rs.KEYUTIL.generateKeypair("EC", "secp256k1");
+        const jwtSignerkeyPair = rs.KEYUTIL.generateKeypair("EC", "secp256k1");
+        this.jwtSignerPrivateKey = caKeyPair.prvKeyObj;
+        this.jwtSignerPublicKey = jwtSignerkeyPair.pubKeyObj
 
-        x509.cryptoProvider.set(crypto);
-        
-        const algorithm = {
-            name: 'ECDSA',
-            namedCurve: 'P-256',
-            hash: 'SHA-256'
-        };
-        
-        const caKeyPair = await crypto.subtle.generateKey(algorithm, true, ["sign", "verify"]);
-        const jwtSignerkeyPair = await crypto.subtle.generateKey(algorithm, true, ["sign", "verify"]);
-        this.jwtSignerPrivateKey = jwtSignerkeyPair.privateKey;
-        this.jwtSignerPublicKey = jwtSignerkeyPair.publicKey;
-
-        this.caCertificate = await x509.X509CertificateGenerator.createSelfSigned(
+        this.caCertificate = new rs.KJUR.asn1.x509.Certificate(
             {
-                serialNumber: "01",
-                name: "CN=JWT CA",
-                notBefore: new Date("2023/01/01"),
-                notAfter: new Date("2025/01/01"),
-                signingAlgorithm: algorithm,
-                keys: caKeyPair,
-                extensions: [
-                    new x509.BasicConstraintsExtension(false, 2, true),
-                    new x509.KeyUsagesExtension(x509.KeyUsageFlags.digitalSignature, true),
-                    await x509.SubjectKeyIdentifierExtension.create(caKeyPair.publicKey),
+                version: 3,
+                serial: {int: 1},
+                issuer: {str: "/CN=JWT CA"},
+                notbefore: "20231231235959Z",
+                notafter: "20251231235959Z",
+                subject: {str: "/CN=User1"},
+                sigalg: "SHA256withECDSA",
+                cakey: caKeyPair.prvKeyObj,
+                sbjpubkey: caKeyPair.pubKeyObj,
+                ext: [
+                    {extname: "basicConstraints", cA: false},
+                    {extname: "keyUsage", critical: true, names:["digitalSignature"]},
                 ]
         });
 
-        this.jwtSignerCertificate = await x509.X509CertificateGenerator.createSelfSigned(
+        this.jwtSignerCertificate = new rs.KJUR.asn1.x509.Certificate(
             {
-                serialNumber: "02",
-                name: "CN=JWT Signer",
-                notBefore: new Date("2023/01/01"),
-                notAfter: new Date("2025/01/01"),
-                signingAlgorithm: algorithm,
-                keys: jwtSignerkeyPair,
-                extensions: [
-                        new x509.BasicConstraintsExtension(true, 2, true),
-                        new x509.KeyUsagesExtension(x509.KeyUsageFlags.digitalSignature, true),
-                        await x509.AuthorityKeyIdentifierExtension.create(this.caCertificate),
-                        await x509.SubjectKeyIdentifierExtension.create(jwtSignerkeyPair.publicKey),
-                    ]
+                version: 3,
+                serial: {int: 2},
+                issuer: {str: "/CN=JWT Signer"},
+                notbefore: "20231231235959Z",
+                notafter: "20251231235959Z",
+                subject: {str: "/CN=User2"},
+                sigalg: "SHA256withECDSA",
+                cakey: jwtSignerkeyPair.prvKeyObj,
+                sbjpubkey: jwtSignerkeyPair.pubKeyObj,
+                ext: [
+                    {extname: "basicConstraints", cA: false},
+                    {extname: "keyUsage", critical: true, names:["digitalSignature"]},
+                ]
             }
         );
 
-        const chain = new x509.X509ChainBuilder({
-            certificates: [
-                this.jwtSignerCertificate
-            ],
-          });
+//        const chain = new x509.X509ChainBuilder({
+//            certificates: [
+//                this.jwtSignerCertificate
+//            ],
+//          });
 
-        const items = await chain.build(this.caCertificate);
+//        const items = await chain.build(this.caCertificate);
 
         this.jwtCertificateChain.push(this.jwtSignerCertificate);
         this.jwtCertificateChain.push(this.caCertificate);
 
-        const clientKeyPair = await crypto.subtle.generateKey(algorithm, true, ["sign", "verify"]);
-        this.clientPrivateKey = clientKeyPair.privateKey;
+        const clientKeyPair = rs.KEYUTIL.generateKeypair("EC", "secp256k1");
+        this.clientPrivateKey = clientKeyPair.prvKeyObj;
     }
 
 }

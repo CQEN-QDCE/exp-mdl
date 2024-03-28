@@ -1,7 +1,8 @@
 import { Base64 } from "../utils/base64";
-import * as x509 from "@peculiar/x509";
-import { Crypto } from "@peculiar/webcrypto";
 import { JsonStringifier } from "../utils/json.stringifier";
+import rs from "jsrsasign";
+import { Hex } from "../utils/hex";
+import { Text } from "../utils/text";
 
 export class Jwt {
     
@@ -10,7 +11,7 @@ export class Jwt {
     constructor(private readonly header: any, public readonly payload: any, private readonly signature: ArrayBuffer) {
     }
 
-    public static async verify(encodedJwt: string, publicKey: CryptoKey = null): Promise<boolean> {
+    public static async verify(encodedJwt: string, publicKey: rs.KJUR.crypto.ECDSA = null): Promise<boolean> {
         const pk = publicKey;
         const jwt = this.decode(encodedJwt)
         //val signatureAlgorithm = Signature.getInstance(SIGNATURE_ALGORITHM)
@@ -26,14 +27,15 @@ export class Jwt {
         if (decoded.length != 3) throw "Invalid JWT";
         const signature = Base64.urlDecode(decoded[2]);
 
-        const crypto = new Crypto();
-        x509.cryptoProvider.set(crypto);
-        const algo =   {
-            name: "ECDSA",
-            hash: { name: "SHA-256" },
-        };
-        var enc = new TextEncoder()
-        return await crypto.subtle.verify(algo, publicKey, signature, enc.encode(decoded[0] + '.' + decoded[1]));
+
+        //const enc = new TextEncoder();
+
+        const verifier = new rs.KJUR.crypto.Signature({"alg": "SHA256withECDSA"});
+        verifier.init(<rs.KJUR.crypto.ECDSA>publicKey);
+        verifier.updateHex(Hex.encode(Text.encode(decoded[0] + '.' + decoded[1])));
+        const response = verifier.verify(Hex.encode(signature));
+
+        return response;
     }
 
     public static decode(encodedJwt: string): Jwt {
@@ -49,7 +51,7 @@ export class Jwt {
         return new Jwt(header, payload, signature);
     }
 
-    public static async encode(payload: any, privateKey: CryptoKey, certificateChain: x509.X509Certificate[] = []): Promise<string> {
+    public static async encode(payload: any, privateKey: rs.KJUR.crypto.ECDSA, certificateChain: rs.KJUR.asn1.x509.Certificate[] = []): Promise<string> {
         const headerJson = {};
         headerJson["alg"] = "ES256";
         headerJson["typ"] = "JWT";
@@ -63,23 +65,20 @@ export class Jwt {
         }
         let oldStringify = JSON.stringify;
         JSON.stringify = (obj, replacer, space) => oldStringify(obj, replacer || ((key, value) => {if(key && value === obj) return "[recursive]"; return value;}), space)
-        const enc = new TextEncoder(); 
-        const headerBase64 = Base64.urlEncode(enc.encode(JSON.stringify(headerJson)));
+        //const enc = new TextEncoder(); 
+        const headerBase64 = Base64.urlEncode(Text.encode(JSON.stringify(headerJson)));
         let v = JsonStringifier.stringify(payload);
-        const payloadBase64 = Base64.urlEncode(enc.encode(JSON.stringify(payload)));
+        const payloadBase64 = Base64.urlEncode(Text.encode(JSON.stringify(payload)));
 
-        const crypto = new Crypto();
-        x509.cryptoProvider.set(crypto);
-        const algo =   {
-            name: "ECDSA",
-            hash: { name: "SHA-256" },
-          };
-        const signature = await crypto.subtle.sign(algo, privateKey, enc.encode(headerBase64 + '.' + payloadBase64));
-        const signatureBase64 = Base64.urlEncode(signature);
+        const signature = new rs.KJUR.crypto.Signature({"alg": "SHA256withECDSA"});
+        signature.init(<rs.KJUR.crypto.ECDSA>privateKey);
+        signature.updateHex(Hex.encode(Text.encode(headerBase64 + '.' + payloadBase64)));
+        const signatureBase64 = Base64.urlEncode(Hex.decode(signature.sign()));
+
         return headerBase64 + '.' + payloadBase64 + '.' + signatureBase64;
     }
 
-    private static parseCertificateChain(certificateChain: string[]): x509.X509Certificate[] {
+    private static parseCertificateChain(certificateChain: string[]): rs.KJUR.asn1.x509.Certificate[] {
     //    return certificateChain.map {
     //        val bytes = Base64.getDecoder().decode(it)
     //        CertificateFactory.getInstance("X509")

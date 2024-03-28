@@ -10,7 +10,6 @@ import { CborBoolean } from './types/cbor-boolean';
 import { CborFullDate } from './types/cbor-full-date';
 import { TDateElement } from './types/tdate-element';
 import { COSESign1 } from '../cose/cose-sign-1';
-import { MobileSecurityObject } from '../mdoc/mobile-security-object';
 import { CborEncoder } from './cbor-encoder';
 import { CborArray } from './types/cbor-array';
 

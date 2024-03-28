@@ -1,4 +1,5 @@
-import { randomBytes } from "crypto";
+import {create} from 'secure-id'
+import { Text } from './text';
 
 /**
  * Responsible for generating cryptographically secure random numbers or strings of characters (depending on the use-case).
@@ -42,7 +43,12 @@ export class SecureRandom {
                 'will be broken');
         }
 
-        const randomBytesBuffer: Buffer = randomBytes(length);
+        const {generate, validate} = create(chars)(length);
+        const id = generate();
+        //const enc = new TextEncoder();
+        const randomBytesBuffer = Text.encode(id);
+
+        //const randomBytesBuffer: Buffer = randomBytes(length);
         const result = new Array(length);
 
         let cursor = 0;

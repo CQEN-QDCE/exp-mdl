@@ -5,14 +5,15 @@
 ///import {httpClient} from '@digitalbazaar/http-client';
 import axios, { AxiosResponse, AxiosRequestConfig, RawAxiosRequestHeaders, AxiosInstance } from 'axios';
 import { Base64 } from '../utils/base64';
+import { Text } from '../utils/text';
 
 const GRANT_TYPES = new Map([
   ['preAuthorizedCode', 'urn:ietf:params:oauth:grant-type:pre-authorized_code']
 ]);
 const HEADERS = {accept: 'application/json'};
 
-const TEXT_ENCODER = new TextEncoder();
-const ENCODED_PERIOD = TEXT_ENCODER.encode('.');
+//const TEXT_ENCODER = new TextEncoder();
+const ENCODED_PERIOD = Text.encode('.');
 const WELL_KNOWN_REGEX = /\/\.well-known\/([^\/]+)/;
 
 export class OID4Client {
@@ -624,19 +625,19 @@ export function assert(x, name, type, optional = false) {
   }
   
   export async function signJWT(payload: any, protectedHeader: any, signer: any) {
-    let enc = new TextEncoder(); // always utf-8
+    //let enc = new TextEncoder(); // always utf-8
     // encode payload and protected header
-    const b64Payload = Base64.urlEncode(enc.encode(JSON.stringify(payload)));
-    const b64ProtectedHeader = Base64.urlEncode(enc.encode(JSON.stringify(protectedHeader)));
-    payload = TEXT_ENCODER.encode(b64Payload);
-    protectedHeader = TEXT_ENCODER.encode(b64ProtectedHeader);
+    const b64Payload = Base64.urlEncode(Text.encode(JSON.stringify(payload)));
+    const b64ProtectedHeader = Base64.urlEncode(Text.encode(JSON.stringify(protectedHeader)));
+    payload = Text.encode(b64Payload);
+    protectedHeader = Text.encode(b64ProtectedHeader);
   
     // concatenate
     const data = new Uint8Array(
-      protectedHeader.length + ENCODED_PERIOD.length + payload.length);
+      protectedHeader.length + 2 + payload.length);
     data.set(protectedHeader);
-    data.set(ENCODED_PERIOD, protectedHeader.length);
-    data.set(payload, protectedHeader.length + ENCODED_PERIOD.length);
+    ///data.set(ENCODED_PERIOD, protectedHeader.length);
+    data.set(payload, protectedHeader.length + 2);
   
     // sign
     const signature = await signer.sign({data});

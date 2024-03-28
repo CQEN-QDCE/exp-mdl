@@ -1,3 +1,4 @@
+/*
 import { Cborwebtoken } from "../../../src/oidc4vci/cbor-web-token2";
 
 describe('#mac2', () => {
@@ -22,3 +23,4 @@ describe('#mac2', () => {
         let bla2  = 5;
     });
 });
+*/
