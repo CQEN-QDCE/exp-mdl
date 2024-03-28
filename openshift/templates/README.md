@@ -5,7 +5,6 @@ Ce dépôt contient les instructions nécessaires pour déployer ACA-py avec le 
 | Gabarit  | Descripton |
 | -------- | ---------- |
 | [aca-py-oid4vci.yaml](https://github.com/CQEN-QDCE/exp-mdl/blob/prod/openshift/templates/aca-py-oid4vci.yaml) | Installation d'ACA-py avec le plugin OID4VCI. |
-| [aca-py-oid4vci.dev.params](https://github.com/CQEN-QDCE/exp-mdl/blob/prod/openshift/templates/aca-py-oid4vci.dev.params) | Paramètres pour un environnement de développement. |
 
 ## Paramètres du gabarit
 

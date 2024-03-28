@@ -7,7 +7,7 @@ metadata:
   name: ${APP_NAME}
   annotations:
     description: Expérimentation pour intégrer le standard (ISO 18013-5) "Mobile driver's license" ou "mDl" aux attestations vérifiables.
-    tags: CQEN, ING, Hyperledger, ARIES, Indy, ISO 18013-5 (mDL), PostgreSql
+    tags: CQEN, ING, ISO 18013-5 (mDL), PostgreSql
 objects:
 ######################################################################
 # PostgreSql Database
@@ -16,6 +16,13 @@ objects:
   apiVersion: v1
   metadata:
     name: ${POSTGRESQL_NAME}
+    labels:
+      name: ${POSTGRESQL_NAME}
+      app: ${APP_GROUP}
+      app.kubernetes.io/part-of: ${APP_GROUP}
+      app-group: ${APP_GROUP}
+      role: database
+      env: ${ENV_NAME}
   spec:
     storageClassName: ${STORAGE_CLASS_NAME}
     accessModes:
@@ -47,8 +54,12 @@ objects:
     annotations:
       template.alpha.openshift.io/wait-for-ready: 'true'
     labels:
-      app: ${POSTGRESQL_NAME}
-      app.kubernetes.io/part-of: Exp-mDL
+      name: ${POSTGRESQL_NAME}
+      app: ${APP_GROUP}
+      app.kubernetes.io/part-of: ${APP_GROUP}
+      app-group: ${APP_GROUP}
+      role: database
+      env: ${ENV_NAME}
   spec:
     strategy:
       type: Recreate
@@ -122,6 +133,13 @@ objects:
   apiVersion: v1
   metadata:
     name: ${POSTGRESQL_NAME}
+    labels:
+      name: ${POSTGRESQL_NAME}
+      app: ${APP_GROUP}
+      app.kubernetes.io/part-of: ${APP_GROUP}
+      app-group: ${APP_GROUP}
+      role: database
+      env: ${ENV_NAME}
   spec:
     ports:
     - name: ${POSTGRESQL_NAME}
@@ -173,8 +191,12 @@ objects:
   metadata:
     name: ${ACA_PY_OID4VCI_NAME}
     labels:
-      app: ${ACA_PY_OID4VCI_NAME}
-      app.kubernetes.io/part-of: Exp-mDL
+      name: ${ACA_PY_OID4VCI_NAME}
+      app: ${APP_GROUP}
+      app.kubernetes.io/part-of: ${APP_GROUP}
+      app-group: ${APP_GROUP}
+      role: agent
+      env: ${ENV_NAME}
   spec:
     strategy:
       type: Rolling
@@ -451,7 +473,12 @@ parameters:
   displayName: Application name
   description: Used to group components together in the OpenShift console.
   required: true
-  value: "exp-mdl"
+  value: 'exp-mdl'
+- name: APP_GROUP
+  displayName: Application group
+  description: The name assigned to all of the deployments in this project.
+  required: true
+  value: 'mDL-issuer'
 - name: APP_DOMAIN
   description: The external hostname to access the application.
   required: true
@@ -459,6 +486,11 @@ parameters:
   description: The external subdomain to access Aries issuer.
   required: true
   value: 'mdl-issuer'
+- name: ENV_NAME
+  displayName: Environment name
+  description: Environment name. For the build environment this will typically be 'tools'
+  required: true
+  value: dev
 - name: POSTGRESQL_USERNAME
   displayName: PostgreSQL connection username
   description: Username for the PostgreSQL connection user.
