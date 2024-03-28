@@ -2,8 +2,10 @@ import './App.css';
 import Footer from './components/footer/footer';
 import Form from './components/form/form';
 import Header from './components/header/header';
-import Main from './components/main/main';
 import Qrcode from './components/qrcode/qrcode';
+import Home from './components/home/home';
+import Conditions from './components/conditions/conditions';
+import Result from './components/result/result';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -12,10 +14,12 @@ function App() {
     <Router>
       <div className="App">
         <Header />
-        <Main />
         <Routes>
-          <Route path="/" element={<Form />} />
+          <Route path="/" exact element={<Home />} />
+          <Route path="/conditions" exact element={<Conditions />} />
+          <Route path="/forms" exact element={<Form />} />
           <Route path="/qrcode" element={<Qrcode />} />
+          <Route path="/result" element={<Result />} />
         </Routes>
         <Footer />
       </div>      
