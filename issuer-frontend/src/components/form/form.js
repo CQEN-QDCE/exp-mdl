@@ -196,7 +196,7 @@ export default function Form(props) {
   };   
   
   const getAddress = () => {
-    return streetNumber + ", " + streetAddress + isEmpty(doorNumber) ? "" : ", " + doorNumber;
+    return (isEmpty(doorNumber) ? "" : doorNumber) + (isEmpty(streetNumber) ? "" : " " + streetNumber) + (isEmpty(streetAddress) ? "" : ", " + streetAddress) + (isEmpty(city) ? "" : ", " + city);
   }
   
   const handleRegistration = async () => {
@@ -449,12 +449,12 @@ export default function Form(props) {
                     </label>
                     <input type='text' id='doorNumber' value={doorNumber} onChange={handleDoorNumber} className='service-input form-control'/>
                   </div>
-                  <div className='col'>
+                  {/* <div className='col'>
                     <label htmlFor='streetNumber' className='control-label'>
                       <FormattedMessage id="app.form.address.street.number" defaultMessage={"Street number"} />
                     </label>
                     <input type='text' id='streetNumber' value={streetNumber} onChange={handleStreetNumber} className='service-input form-control'/>
-                  </div>                              
+                  </div>                               */}
                   <div className='col'>
                     <label htmlFor='streetAddress' className='control-label'>
                       <FormattedMessage id="app.form.address.street" defaultMessage={"Street Address"} />
@@ -475,12 +475,12 @@ export default function Form(props) {
                     </label>
                     <input type='text' id='postalCode' value={postalCode} onChange={handlePostalCode} className='service-input form-control'/>
                   </div>           
-                  <div className='col'>         
+                  {/* <div className='col'>         
                     <label htmlFor='province' className='control-label'>
                       <FormattedMessage id="app.form.address.province" defaultMessage={"Province"} />
                     </label>
                     <input type='text' id='province' value={province} onChange={handleProvince} className='service-input form-control'/>
-                  </div>
+                  </div> */}
                 </div>                                       
               </div>
 

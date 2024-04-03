@@ -37,7 +37,7 @@ const Qrcode = () => {
 
       const responseData = response.data.results[0];
       console.log(responseData);
-      if(tmpDemoTimer < 10) {
+      if(tmpDemoTimer < 30) {
         tmpDemoTimer++;
       }
       else {
@@ -47,7 +47,7 @@ const Qrcode = () => {
       console.log("tmpDemoTimer: ", tmpDemoTimer);
       const issued = responseData.state === "issued";    
 
-      if (issued || tmpDemoTimer === 9) {
+      if (issued || tmpDemoTimer === 29) {
 
         if (issued) {
           console.log("issued state, so will try to get the name and the family_name from the response");
