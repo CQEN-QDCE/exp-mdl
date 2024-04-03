@@ -79,7 +79,8 @@ export default function Form(props) {
   };
 
   const handleGender = (e) => {
-    setGender(e.target.value);
+    e.preventDefault();  
+    setGender(e.target.name);
     setSubmitted(false);
   };
 
@@ -338,14 +339,39 @@ export default function Form(props) {
             
             {/*About you*/}
             <form className="service-form" onSubmit={handleSubmit}>
-              <div className='coordonnees-section'  style={{textAlign: "left"}}>
+              <div className='coordonnees-section'  style={{textAlign: "left", backgroundColor: "white"}}>
                 <div className='row'>
                   <label className='control-label'>
-                    <FormattedMessage id="app.form.about.you.title" defaultMessage={"Physical Characteristics"} />
+                    <FormattedMessage id="app.form.about.you.title" defaultMessage={"About you"} />
                   </label>
                   <span>
                     <FormattedMessage id="app.form.about.you.description" defaultMessage={"Lorem Ipsum..."} />
                   </span>              
+                </div>
+                <br />
+                <div className='row'>
+                  <div className='col'>
+                    <label className='control-label'>
+                      <FormattedMessage id="app.form.gender" defaultMessage={"About you"} />
+                    </label>                    
+                  </div>
+                </div>
+                <div className='row'>
+                  <div className="col-3">
+                    <button name='F' className="service_submit btn btn-secondary rounded-pill" onClick={handleGender}>
+                      <FormattedMessage id="app.form.gender.female"/>
+                    </button>  
+                  </div>                  
+                  <div className="col-3">
+                    <button name='M' className="service_submit btn btn-secondary rounded-pill" onClick={handleGender}>
+                    <FormattedMessage id="app.form.gender.male"/>
+                    </button>  
+                  </div>
+                  <div className="col-3">
+                    <button name='X' className="service_submit btn btn-secondary rounded-pill" onClick={handleGender}>
+                      <FormattedMessage id="app.form.gender.not.specified"/>
+                    </button>  
+                  </div>                  
                 </div>
                 <br />
                 <div className='row'> 
@@ -393,6 +419,9 @@ export default function Form(props) {
                       <span className="required">*</span>
                     </label>
                     <input type='date' id='birthDate' value={birthDate} onChange={handleBirthDate} className='service-input form-control'/>
+                    <label htmlFor='birthDate' className='control-label'>
+                      <FormattedMessage id="app.form.birthdate.format"/>
+                    </label>                    
                     {errors["birthDate"] && 
                       <span style={{ color: "red" }}>
                         <FormattedMessage id="app.form.validation.not.empty" defaultMessage={"Cannot be empty"} />
@@ -403,7 +432,7 @@ export default function Form(props) {
               </div>
               
               {/*Address*/}
-              <div className='coordonnees-section' style={{textAlign: "left"}}>
+              <div className='coordonnees-section' style={{textAlign: "left", backgroundColor: "white"}}>
                 <div className='row'>
                   <label className='control-label'>
                     <FormattedMessage id="app.form.address.title" defaultMessage={"Physical Characteristics"} />
@@ -455,7 +484,7 @@ export default function Form(props) {
                 </div>                                       
               </div>
 
-              <div className='coordonnees-section' style={{textAlign: "left"}}>
+              <div className='coordonnees-section' style={{textAlign: "left", backgroundColor: "white"}}>
                 <div className='row'>
                   <label className='control-label'>
                     <FormattedMessage id="app.form.fieldset.license" defaultMessage={"License Information"} />

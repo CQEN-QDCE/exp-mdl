@@ -35,7 +35,8 @@ const Qrcode = () => {
         }
       );
 
-      console.log(response.data);
+      const responseData = response.data.results[0];
+      console.log(responseData);
       if(tmpDemoTimer < 10) {
         tmpDemoTimer++;
       }
@@ -44,8 +45,21 @@ const Qrcode = () => {
       }
 
       console.log("tmpDemoTimer: ", tmpDemoTimer);
-      if (response.data.results[0].state === "issued" || tmpDemoTimer === 9) {
-        navigate(`/result`);
+      const issued = responseData.state === "issued";    
+
+      if (issued || tmpDemoTimer === 9) {
+
+        if (issued) {
+          console.log("issued state, so will try to get the name and the family_name from the response");
+          //TODO TEST! get given_name and family_name from json extract from response
+          const given_name = responseData.claims["org.iso.18013.5.1.given_name"];
+          const family_name = responseData.claims["org.iso.18013.5.1.family_name"];          
+          console.log("given_name: ", given_name, ", family_name: ", family_name);
+          navigate(`/result`, { state: { given_name, family_name } });
+        }
+        else {
+          navigate(`/result`);
+        }        
       }
     } catch (error) {
       console.error("Error during API call:", error);
@@ -60,7 +74,7 @@ const Qrcode = () => {
   }, [urlOffer]);  
 
   return (
-    <div className="container" style={{ textAlign: "left" }}>
+    <div className="container" style={{ textAlign: "left"}}>
       <div className='row-form'>
         <h1 className='h1 title-orange-bar'>
         <FormattedMessage id="app.qrcode.title" defaultMessage={"Digital credential"} />
