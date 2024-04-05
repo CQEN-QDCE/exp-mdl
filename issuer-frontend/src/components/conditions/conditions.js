@@ -3,6 +3,8 @@ import './conditions.css';
 import { useNavigate } from "react-router-dom";
 import { FormattedMessage } from 'react-intl';
 import { useState } from 'react';
+import flechedroite from '../../assets/piv/fleche-droite.svg';
+import flechegauche from '../../assets/piv/fleche-gauche.svg';
 
 export default function Conditions(props) {
   const navigate = useNavigate();
@@ -80,12 +82,14 @@ export default function Conditions(props) {
       <div className='row'>
         <div className='col'>
           <button type="submit" className="service_submit btn btn-secondary" onClick={handleBack}>
+            <img className='mr-1' src={flechegauche} />            
             <FormattedMessage id='app.button.back' defaultMessage={"Submit"} />
           </button>
         </div>
         <div className='col'>
           <button type="submit" id='continue' className="service_submit btn btn-primary" onClick={handleContinue}>
             <FormattedMessage id='app.button.continue' defaultMessage={"Submit"} />
+            <img className='ml-1' src={flechedroite} />
           </button>          
         </div>        
       </div>  

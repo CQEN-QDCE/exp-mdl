@@ -7,7 +7,6 @@ import { FormattedMessage } from 'react-intl';
 
 function LangJoinUs(context) {
   if(context.locale === 'fr'){
-    console.log("header lang join us fr");
     return (
       <ul className="listePiv">
       <li>

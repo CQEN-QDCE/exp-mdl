@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import './form.css';
 import '../../css/quebec_ca.css';
 import { FormattedMessage } from 'react-intl';
+import flechedroite from '../../assets/piv/fleche-droite.svg';
+import flechegauche from '../../assets/piv/fleche-gauche.svg';
 
 export default function Form(props) {
 
@@ -14,7 +16,7 @@ export default function Form(props) {
   const [lastName, setLastName] = useState("Tremblay");
   const [licenseNumber, setLicenseNumber] = useState("A0A 1B1");
   const [birthDate, setBirthDate] = useState(new Date().toLocaleDateString("en-CA"));
-  const [gender, setGender] = useState("F");
+  const [gender, setGender] = useState("");
   const [height, setHeight] = useState("");
   const [heightUnit, setHeightUnit] = useState("");
   const [eyeColor, setEyeColor] = useState("");
@@ -53,14 +55,12 @@ export default function Form(props) {
 
   // Handling the name change
   const handleName = (e) => {
-    console.log("handleName");
       setName(e.target.value);
       setSubmitted(false);
       errors["name"] = null;
   };
 
   const handleLastName = (e) => {
-    console.log("handleLastName");
     setLastName(e.target.value);
     setSubmitted(false);
     errors["lastName"] = null;
@@ -351,9 +351,12 @@ export default function Form(props) {
                 <br />
                 <div className='row'>
                   <div className='col'>
-                    <label className='control-label'>
-                      <FormattedMessage id="app.form.gender" defaultMessage={"About you"} />
-                    </label>                    
+                      <label className='font-weight-lighter' style={{color: "gray"}}>
+                        <FormattedMessage id="app.form.gender.driver.license.reference" />                      
+                      </label>
+                      <label className='control-label'>                      
+                        <FormattedMessage id="app.form.gender" defaultMessage={"About you"} />
+                      </label>                    
                   </div>
                 </div>
                 <div className='row'>
@@ -376,6 +379,9 @@ export default function Form(props) {
                 <br />
                 <div className='row'> 
                   <div className="col">
+                    <label className='font-weight-lighter' style={{color: "gray"}}>
+                      <FormattedMessage id="app.form.last.name.driver.license.reference" />                      
+                    </label>                    
                     <label htmlFor="lastName" className="control-label">
                       <FormattedMessage id="app.form.last.name" defaultMessage={"Last Name"} />
                       <span className="required">*</span>
@@ -388,6 +394,9 @@ export default function Form(props) {
                     }
                   </div>            
                   <div className="col">
+                    <label className='font-weight-lighter' style={{color: "gray"}}>
+                      <FormattedMessage id="app.form.first.name.driver.license.reference" />                      
+                    </label>                     
                     <label htmlFor="name" className="control-label">
                         <FormattedMessage id="app.form.first.name" defaultMessage={"First Name"} />
                         <span className="required">*</span>
@@ -400,26 +409,36 @@ export default function Form(props) {
                     }                 
                   </div>            
                 </div>  
+                <br />
                 <div className='row'>
                   <div className='col'>
+                    <label className='font-weight-lighter' style={{color: "gray"}}>
+                      <FormattedMessage id="app.form.height.driver.license.reference" />                      
+                    </label>                     
                     <label htmlFor="height" className="control-label">
                       <FormattedMessage id="app.form.height" defaultMessage={"Height"} />
                     </label>
                       <input type="text" id="height" value={height} onChange={handleHeight} className="service-input form-control" />                   
                   </div>  
                   <div className='col'>
+                    <label className='font-weight-lighter' style={{color: "gray"}}>
+                      <FormattedMessage id="app.form.eye.color.driver.license.reference" />                      
+                    </label>                     
                     <label htmlFor="eyeColor" className="control-label">
                         <FormattedMessage id="app.form.eye.color" defaultMessage={"Eye Color"} />
                       </label>
                       <input type="text" id="eyeColor" value={eyeColor} onChange={handleEyeColor} className="service-input form-control" />                                      
                   </div>     
                   <div className='col'>
+                    <label className='font-weight-lighter' style={{color: "gray"}}>
+                      <FormattedMessage id="app.form.birthdate.driver.license.reference" />                      
+                    </label>                     
                     <label htmlFor='birthDate' className='control-label'>
                       <FormattedMessage id="app.form.birthdate" defaultMessage={"Birthdate"} />
                       <span className="required">*</span>
                     </label>
                     <input type='date' id='birthDate' value={birthDate} onChange={handleBirthDate} className='service-input form-control'/>
-                    <label htmlFor='birthDate' className='control-label'>
+                    <label htmlFor='birthDate' className='control-label' style={{fontWeight: "normal"}}>
                       <FormattedMessage id="app.form.birthdate.format"/>
                     </label>                    
                     {errors["birthDate"] && 
@@ -435,7 +454,7 @@ export default function Form(props) {
               <div className='coordonnees-section' style={{textAlign: "left", backgroundColor: "white"}}>
                 <div className='row'>
                   <label className='control-label'>
-                    <FormattedMessage id="app.form.address.title" defaultMessage={"Physical Characteristics"} />
+                    <FormattedMessage id="app.form.address.title" defaultMessage={"Address"} />
                   </label>
                   <span>
                     <FormattedMessage id="app.form.address.description" defaultMessage={"Lorem Ipsum..."} />
@@ -444,54 +463,54 @@ export default function Form(props) {
                 <br />
                 <div className='row'>
                   <div className='col'>
-                    <label htmlFor='doorNumber' className='control-label'>
-                      <FormattedMessage id="app.form.address.door.number" defaultMessage={"Door number"} />
+                    <label className='font-weight-lighter' style={{color: "gray"}}>
+                      <FormattedMessage id="app.form.address.driver.license.reference" />                      
+                    </label>                     
+                    <label className='control-label'>
+                      <FormattedMessage id="app.form.address" defaultMessage={"Address"} />
                     </label>
-                    <input type='text' id='doorNumber' value={doorNumber} onChange={handleDoorNumber} className='service-input form-control'/>
                   </div>
-                  {/* <div className='col'>
-                    <label htmlFor='streetNumber' className='control-label'>
-                      <FormattedMessage id="app.form.address.street.number" defaultMessage={"Street number"} />
-                    </label>
-                    <input type='text' id='streetNumber' value={streetNumber} onChange={handleStreetNumber} className='service-input form-control'/>
-                  </div>                               */}
-                  <div className='col'>
-                    <label htmlFor='streetAddress' className='control-label'>
-                      <FormattedMessage id="app.form.address.street" defaultMessage={"Street Address"} />
-                    </label>
-                    <input type='text' id='streetAddress' value={streetAddress} onChange={handleStreetAddress} className='service-input form-control'/>
-                  </div>               
                 </div>
                 <div className='row'>
                   <div className='col'>
-                    <label htmlFor='city' className='control-label'>
-                      <FormattedMessage id="app.form.address.city" defaultMessage={"City"} />
-                    </label>
+                    <input type='text' id='doorNumber' value={doorNumber} onChange={handleDoorNumber} className='service-input form-control'/>
+                    <p>
+                      <FormattedMessage id="app.form.address.door.number" defaultMessage={"Door number"} />
+                    </p>
+                  </div>
+                  <div className='col'>
+                    <input type='text' id='streetAddress' value={streetAddress} onChange={handleStreetAddress} className='service-input form-control'/>
+                    <p>
+                      <FormattedMessage id="app.form.address.street" defaultMessage={"Street Address"} />
+                    </p>                                          
+                  </div>                                               
+                  <div className='col'>
                     <input type='text' id='city' value={city} onChange={handleCity} className='service-input form-control'/>
+                    <p>
+                      <FormattedMessage id="app.form.address.city" defaultMessage={"City"} />
+                    </p>                                                              
                   </div>               
                   <div className='col'>
-                    <label htmlFor='postalCode' className='control-label'>
-                      <FormattedMessage id="app.form.address.postal.code" defaultMessage={"Postal Code"} />
-                    </label>
                     <input type='text' id='postalCode' value={postalCode} onChange={handlePostalCode} className='service-input form-control'/>
+                    <p>
+                      <FormattedMessage id="app.form.address.postal.code" defaultMessage={"Postal Code"} />
+                    </p>                                                              
                   </div>           
-                  {/* <div className='col'>         
-                    <label htmlFor='province' className='control-label'>
-                      <FormattedMessage id="app.form.address.province" defaultMessage={"Province"} />
-                    </label>
-                    <input type='text' id='province' value={province} onChange={handleProvince} className='service-input form-control'/>
-                  </div> */}
-                </div>                                       
+                </div>
               </div>
 
+              {/*License Information*/}
               <div className='coordonnees-section' style={{textAlign: "left", backgroundColor: "white"}}>
-                <div className='row'>
+                <div className='row'>                  
                   <label className='control-label'>
                     <FormattedMessage id="app.form.fieldset.license" defaultMessage={"License Information"} />
                   </label>              
                 </div>            
                 <div className='row'>
                   <div className="col">
+                    <label className='font-weight-lighter' style={{color: "gray"}}>
+                      <FormattedMessage id="app.form.license.number.driver.license.reference" />                      
+                    </label>                     
                     <label htmlFor="licenseNumber" className="control-label">
                       <FormattedMessage id="app.form.license.number" defaultMessage={"License Number"} />
                       <span className="required">*</span>
@@ -502,16 +521,23 @@ export default function Form(props) {
                         <FormattedMessage id="app.form.validation.not.empty" defaultMessage={"Cannot be empty"} />
                       </span>
                     }
-                    </div>
-                    <div className='col'>
+                  </div>
+                  <div className='col'>
+                    <label className='font-weight-lighter' style={{color: "gray"}}>
+                      <FormattedMessage id="app.form.reference.number.driver.license.reference" />                      
+                    </label>                     
                     <label htmlFor='referenceNumber' className='control-label'>
                       <FormattedMessage id="app.form.reference.number" defaultMessage={"Reference Number"} />
                     </label>                  
                     <input type="text" id="referenceNumber" value={referenceNumber} onChange={handleReferenceNumber} className="service-input form-control" />                                    
                   </div>
                 </div> 
+                <br />
                 <div className='row'>
                   <div className='col'>
+                    <label className='font-weight-lighter' style={{color: "gray"}}>
+                      <FormattedMessage id="app.form.license.class.driver.license.reference" />                      
+                    </label>                     
                     <label htmlFor='licenseClass' className='control-label'>
                       <FormattedMessage id="app.form.license.class" defaultMessage={"License Class"} />
                     </label>
@@ -528,6 +554,9 @@ export default function Form(props) {
                       </select>                  
                   </div>            
                   <div className='col'>
+                    <label className='font-weight-lighter' style={{color: "gray"}}>
+                      <FormattedMessage id="app.form.associated.conditions.driver.license.reference" />                      
+                    </label>                     
                     <label htmlFor='associatedConditions' className='control-label'>
                       <FormattedMessage id="app.form.associated.conditions" defaultMessage={"Associated Conditions"} />
                     </label>                  
@@ -542,12 +571,14 @@ export default function Form(props) {
               <div className='row'>
                 <div className="col">
                     <button type="submit" onClick={handleBack} className="service_submit btn btn-secondary">
+                      <img className='mr-1' src={flechegauche} />
                       <FormattedMessage id="app.button.back" defaultMessage={"Back"} />
                     </button>
                 </div>  
                 <div className='col'>
                   <button type="submit" className="service_submit btn btn-primary">
                     <FormattedMessage id="app.form.submit" defaultMessage={"Submit"} />
+                    <img className='ml-1' src={flechedroite} />
                   </button>            
                 </div>            
               </div>                                   

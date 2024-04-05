@@ -1,10 +1,9 @@
 import React from 'react';
 import './result.css';
 import { FormattedMessage } from 'react-intl';
-import check from '../../assets/piv/check-symbol-4794.svg';
-import success from '../../assets/piv/success.7819d369.png';
 import securite from '../../assets/piv/Icone_SAG_securite.7bb3bff2d69705eff5b7db1df76fa80c.svg';
 import { useNavigate } from 'react-router-dom';
+import flechedroite from '../../assets/piv/fleche-droite.svg';
 
 export default function Result(props) {
   const navigate = useNavigate();
@@ -50,6 +49,7 @@ export default function Result(props) {
               </p>
               <button type='submit' className="service_submit btn btn-primary" onClick={handleHome}>
                 <FormattedMessage id='app.button.home' defaultMessage={"Home"} />
+                <img className='ml-1' src={flechedroite}/>
               </button> 
             </div>            
           </div>
