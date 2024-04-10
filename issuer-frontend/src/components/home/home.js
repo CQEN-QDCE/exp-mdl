@@ -33,7 +33,7 @@ export default function Home(props) {
                 <img className='ml-1' src={flechedroite} alt=''/>
               </button>             
             </div>
-            <div className='col-lg-5' visibility={isMobile ? "hidden" : "visible"}>
+            <div className='col-lg-5' style={{display: isMobile ? "none" : "block"}}>
               <img className='w-100'  src={cel} alt='' style={{width: "100%", height: "100%"}}/>            
             </div>          
           </div>
