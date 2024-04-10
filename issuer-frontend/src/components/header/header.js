@@ -14,26 +14,20 @@ function LangJoinUs(context) {
           <FormattedMessage id="app.header.lang.label" defaultMessage={"English"}/>
         </a>
       </li>
-      <li><a tabIndex="25" href="https://quebec.ca/nous-joindre/renseignements-generaux">
-        <FormattedMessage id="app.header.join.us" defaultMessage={"Nous joindre"}/>                                  
-        </a>
-      </li>
     </ul>      
     );            
   }
-  return (
-    <ul className="listePiv">
-    <li>
-      <a lang="fr" tabIndex="20" href="#" onClick={context.selectLanguage}>
-        <FormattedMessage id="app.header.lang.label" defaultMessage={"Français"}/>
-      </a>     
-    </li>
-    <li><a tabIndex="25" href="https://www.quebec.ca/en/how-to-reach-us/general-information">
-      <FormattedMessage id="app.header.join.us" defaultMessage={"Contact us"}/>                                  
-      </a>
-    </li>
-  </ul>      
-  );      
+  else {
+    return (
+      <ul className="listePiv">
+      <li>
+        <a lang="fr" tabIndex="20" href="#" onClick={context.selectLanguage}>
+          <FormattedMessage id="app.header.lang.label" defaultMessage={"Français"}/>
+        </a>     
+      </li>
+    </ul>      
+    );          
+  }
 }
 
 export default function Header(props) {

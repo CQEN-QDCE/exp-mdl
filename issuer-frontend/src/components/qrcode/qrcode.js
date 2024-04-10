@@ -99,15 +99,15 @@ const Qrcode = () => {
                 <FormattedMessage id="app.qrcode.info.p1" defaultMessage={"Lorem Ipsum..."} />
               </p> 
               <p style={{ textAlign: "left" }}>
-                <img src="https://authentification.quebec.ca/resources/na6x6/login/SQIN5/img/0105-shield-check.svg"/>
+                <img src="https://authentification.quebec.ca/resources/na6x6/login/SQIN5/img/0105-shield-check.svg" alt=''/>
                 <FormattedMessage id="app.qrcode.info.p2" defaultMessage={"Lorem Ipsum..."} />  
               </p>           
               <p style={{ textAlign: "left" }}>
-                <img src='https://authentification.quebec.ca/resources/na6x6/login/SQIN5/img/0111-key.svg'/>
+                <img src='https://authentification.quebec.ca/resources/na6x6/login/SQIN5/img/0111-key.svg' alt=''/>
                 <FormattedMessage id="app.qrcode.info.p3" defaultMessage={"Lorem Ipsum..."} />  
               </p>                         
               <p style={{ textAlign: "left" }}>
-                <img src="https://authentification.quebec.ca/resources/na6x6/login/SQIN5/img/0110-unlock.svg"/>
+                <img src="https://authentification.quebec.ca/resources/na6x6/login/SQIN5/img/0110-unlock.svg" alt=''/>
                 <FormattedMessage id="app.qrcode.info.p4" defaultMessage={"Lorem Ipsum..."} />  
               </p>                                       
             </div>

@@ -571,14 +571,14 @@ export default function Form(props) {
               <div className='row'>
                 <div className="col">
                     <button type="submit" onClick={handleBack} className="service_submit btn btn-secondary">
-                      <img className='mr-1' src={flechegauche} />
+                      <img className='mr-1' src={flechegauche} alt=''/>
                       <FormattedMessage id="app.button.back" defaultMessage={"Back"} />
                     </button>
                 </div>  
                 <div className='col'>
                   <button type="submit" className="service_submit btn btn-primary">
                     <FormattedMessage id="app.form.submit" defaultMessage={"Submit"} />
-                    <img className='ml-1' src={flechedroite} />
+                    <img className='ml-1' src={flechedroite} alt=''/>
                   </button>            
                 </div>            
               </div>                                   

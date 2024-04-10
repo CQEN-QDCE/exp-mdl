@@ -1,14 +1,33 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import './conditions.css';
 import { useNavigate } from "react-router-dom";
 import { FormattedMessage } from 'react-intl';
-import { useState } from 'react';
 import flechedroite from '../../assets/piv/fleche-droite.svg';
 import flechegauche from '../../assets/piv/fleche-gauche.svg';
+import { Context } from '../wrapper/wrapper';
+
+function LangRepo(context) {
+  if(context.locale === 'fr'){
+    return (
+      <p> 
+        <FormattedMessage id='app.conditions.description.p2' defaultMessage={"Lorem Ipsum..."} values={{ repoexpmdl: <a href="https://github.com/CQEN-QDCE/exp-mdl">répértoire dédié</a> }}/>
+      </p>      
+    );
+  }
+  else {
+    return (
+      <p> 
+        <FormattedMessage id='app.conditions.description.p2' defaultMessage={"Lorem Ipsum..."} values={{ repoexpmdl: <a href="https://github.com/CQEN-QDCE/exp-mdl">dedicated directory</a> }}/>
+      </p>      
+    );
+  }
+}
 
 export default function Conditions(props) {
   const navigate = useNavigate();
   const [agree, setAgree] = useState(false);
+
+  const context = useContext(Context);
 
   const canBeSubmitted = () => {
     if(agree) {
@@ -44,16 +63,11 @@ export default function Conditions(props) {
           
       <div className='row-form' style={{textAlign: "left"}}>
         <p>
-          <FormattedMessage id='app.conditions.description.p1' defaultMessage={"Lorem Ipsum..."} values={{ link: <a href="https://www.quebec.ca/gouvernement/politiques-orientations/vitrine-numeriqc/accompagnement-des-organismes-publics/fondations-numeriques-gouvernementales#c132534">site</a> }}/>
+          <FormattedMessage id='app.conditions.description.p1' defaultMessage={"Lorem Ipsum..."} values={{ link: <a href="https://www.quebec.ca/gouvernement/politiques-orientations/vitrine-numeriqc/accompagnement-des-organismes-publics/fondations-numeriques-gouvernementales#c132534">Fondations numériques gouvernementales du Québec</a> }}/>
         </p>
-        <p> 
-          <FormattedMessage id='app.conditions.description.p2' defaultMessage={"Lorem Ipsum..."} />
-        </p>
+        {LangRepo(context)}
         <p>
           <FormattedMessage id='app.conditions.description.p3' defaultMessage={"Lorem Ipsum..."} />
-        </p>
-        <p>
-          <FormattedMessage id='app.conditions.description.p4' defaultMessage={"Lorem Ipsum..."} />
         </p>
       </div>
       
@@ -82,14 +96,14 @@ export default function Conditions(props) {
       <div className='row'>
         <div className='col'>
           <button type="submit" className="service_submit btn btn-secondary" onClick={handleBack}>
-            <img className='mr-1' src={flechegauche} />            
+            <img className='mr-1' src={flechegauche} alt=''/>            
             <FormattedMessage id='app.button.back' defaultMessage={"Submit"} />
           </button>
         </div>
         <div className='col'>
           <button type="submit" id='continue' className="service_submit btn btn-primary" onClick={handleContinue}>
             <FormattedMessage id='app.button.continue' defaultMessage={"Submit"} />
-            <img className='ml-1' src={flechedroite} />
+            <img className='ml-1' src={flechedroite} alt=''/>
           </button>          
         </div>        
       </div>  

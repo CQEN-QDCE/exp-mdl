@@ -25,6 +25,7 @@ objects:
       app: ${APP_NAME}
       app.kubernetes.io/component: react-app
       app.kubernetes.io/instance: ${APP_NAME}
+      app.kubernetes.io/name: nodejs
     name: ${APP_NAME}
   spec:
     output:

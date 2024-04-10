@@ -40,7 +40,7 @@ export default function Result(props) {
             </div>
             <div className='col-lg-1'></div>
             <div className='col-lg-5'>
-              <img className='text-center w-25' src={securite} />
+              <img className='text-center w-25' src={securite} alt=''/>
               <h4>
                 <FormattedMessage id='app.result.message.title' defaultMessage={"Credential successfully issued"}/>
               </h4>            
@@ -49,7 +49,7 @@ export default function Result(props) {
               </p>
               <button type='submit' className="service_submit btn btn-primary" onClick={handleHome}>
                 <FormattedMessage id='app.button.home' defaultMessage={"Home"} />
-                <img className='ml-1' src={flechedroite}/>
+                <img className='ml-1' src={flechedroite} alt=''/>
               </button> 
             </div>            
           </div>
