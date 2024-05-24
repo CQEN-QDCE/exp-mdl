@@ -197,6 +197,9 @@ objects:
       app-group: ${APP_GROUP}
       role: agent
       env: ${ENV_NAME}
+    annotations:
+      app.openshift.io/connects-to: >- 
+        [{"apiVersion":"apps.openshift.io/v1","kind":"DeploymentConfig","name":"${POSTGRESQL_NAME}"}]
   spec:
     strategy:
       type: Rolling
@@ -231,6 +234,9 @@ objects:
       metadata:
         labels:
           app: ${ACA_PY_OID4VCI_NAME}
+        annotations:
+          app.openshift.io/connects-to: >- 
+            [{"apiVersion":"apps.openshift.io/v1","kind":"DeploymentConfig","name":"${POSTGRESQL_NAME}"}]
       spec:
         containers:
           - name: ${ACA_PY_OID4VCI_NAME}
@@ -473,7 +479,7 @@ parameters:
   displayName: Application name
   description: Used to group components together in the OpenShift console.
   required: true
-  value: 'exp-mdl'
+  value: 'exp-mdl-agent'
 - name: APP_GROUP
   displayName: Application group
   description: The name assigned to all of the deployments in this project.
@@ -485,7 +491,7 @@ parameters:
 - name: AGENT_SUBDOMAIN
   description: The external subdomain to access Aries issuer.
   required: true
-  value: 'mdl-issuer'
+  value: 'mdl-issuer-agent'
 - name: ENV_NAME
   displayName: Environment name
   description: Environment name. For the build environment this will typically be 'tools'
@@ -542,7 +548,7 @@ parameters:
   displayName: ACA-py with OID4VCI plugin name
   description: The name assigned to all ACA-py with OID4VCI plugin objects defined in this template.
   required: true
-  value: "mdl-issuer"
+  value: "mdl-issuer-agent"
 - name: GITHUB_REPOSITORY_URI
   displayName: GitHub repository URI
   description: URI of the GitHub repository.
@@ -622,5 +628,3 @@ parameters:
   description: The port on which the agent will listen for the admin API.
   required: true
   value: '8081'
-
-  
