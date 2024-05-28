@@ -60,6 +60,8 @@ objects:
       app-group: ${APP_GROUP}
       role: database
       env: ${ENV_NAME}
+      app.kubernetes.io/name: postgresql
+      app.kubernetes.io/runtime: postgresql      
   spec:
     strategy:
       type: Recreate
@@ -261,6 +263,7 @@ objects:
                 $([ ! -z "${WEBHOOK_URL}" ] && echo "--webhook-url ${WEBHOOK_URL}" || echo "")
                 $([ ! -z "${AGENT_ADMIN_API_KEY}" ] && echo "--admin-api-key ${AGENT_ADMIN_API_KEY}" || echo "--admin-insecure-mode")
                 --plugin 'oid4vci'
+                --plugin 'mso_mdoc'
                 --log-level ${AGENT_LOG_LEVEL});
             env:
               - name: OID4VCI_PORT
