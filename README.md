@@ -11,4 +11,6 @@
 
 
 # exp-mdl
-Expérimentation pour intégrer le standard (ISO 18013-5) "Mobile driver's license" ou "mDl" aux attestations vérifiables.
+Expérimentation pour intégrer le standard (ISO 18013-5) "Mobile driver's license" ou "mDL" aux attestations vérifiables.
+
+À compléter.

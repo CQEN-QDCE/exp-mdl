@@ -1,0 +1,25 @@
+# Fichiers et dossiers générés par les systèmes d'exploitation
+.DS_Store
+Thumbs.db
+
+# Fichiers de sauvegarde
+*.bak
+*.swp
+
+# Dossiers générés par les outils de développement
+node_modules/
+dist/
+build/
+
+# Fichiers de configuration spécifiques à l'IDE
+.idea/
+.vscode/
+
+# Fichiers de logs
+*.log
+
+# Fichiers de dépendances
+package-lock.json
+yarn.lock
+
+*.params
