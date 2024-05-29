@@ -1,12 +1,13 @@
-import { Router, Request, Response } from "express";
+//import { Router, Request, Response } from "express";
 import { IssuerService } from "./issuer-service";
 import { TokenRequestParameters } from "./token-request-parameters";
 import { Grant } from "./generic.types";
 import { OpenId4VciAuthorizationCodeFlowConfig, OpenId4VciPreAuthorizedCodeFlowConfig } from "./vc-issuer-service-options";
 import { NonceService } from "./nonce-service";
 import { CredentialRequestParameters } from "./credential-request-parameters";
-
-const router = Router();
+/*
+//const router = Router();
+const router:any = {};
 
 router.get("/credential-offer-uri", async (req: Request, res: Response): Promise<void> => {
   const issuerService = new IssuerService();
@@ -46,7 +47,7 @@ router.get("/credential-offer-uri", async (req: Request, res: Response): Promise
       scheme: baseCredentialRequestOptions.scheme ?? 'https',
       baseUri: baseCredentialRequestOptions.baseUri,
     });
-  res.status(200).send(uri);
+  //res.status(200).send(uri);
 });
 
 router.post("/token", (req: Request, res: Response): void => {
@@ -54,8 +55,8 @@ router.post("/token", (req: Request, res: Response): void => {
   let issuerService = new IssuerService();
   let params = new TokenRequestParameters(
     {
-      grantType: test.grant_type,
-      preAuthorizedCode: test.pre_authorized_code
+//      grantType: test.grant_type,
+  //    preAuthorizedCode: test.pre_authorized_code
     });
   let bla = issuerService.token(params);
 
@@ -70,7 +71,7 @@ router.post("/token", (req: Request, res: Response): void => {
   tokenResponse.authorization_pending = bla.authorizationPending;
   tokenResponse.interval = bla.interval;
 
-  res.status(200).send(tokenResponse);
+///  res.status(200).send(tokenResponse);
 });
 
 router.post("/credential", (req: Request, res: Response): void => {
@@ -88,3 +89,4 @@ router.post("/credential", (req: Request, res: Response): void => {
 });
 
 export { router };
+*/

@@ -1,24 +1,23 @@
-import { COSECryptoProvider } from "./cose/cose-crypto-provider";
-import { COSEMac0 } from "./cose/cose-mac-0";
-import { CborDataItem } from "./cbor/cbor-data-item";
-import { CborDecoder } from "./cbor/cbor-decoder";
-import { CborEncoder } from "./cbor/cbor-encoder";
-import { CborEncodedDataItem } from "./cbor/types/cbor-encoded-data-item";
-import { CborMap } from "./cbor/types/cbor-map";
-import { CborNumber } from "./cbor/types/cbor-number";
-import { CborTextString } from "./cbor/types/cbor-text-string";
-import { IssuerSignedItem } from "./issuer-signed/issuer-signed-item";
-import { DeviceAuthentication } from "./mdoc-auth/device-authentication";
-import { MobileDocumentRequest } from "./doc-request/mobile-document-request";
-import { DeviceAuth } from "./mdoc/device-auth";
-import { DeviceSigned } from "./mdoc/device-signed";
-import { IssuerSigned } from "./issuer-signed/issuer-signed";
-import { MDocVerificationParams } from "./mdoc/mdoc-verification-params";
-import { MobileSecurityObject } from "./mdoc/mobile-security-object";
-import { VerificationType } from "./mdoc/verification-type.enum";
-import { Lazy } from "./utils/lazy";
-import { CborConvertible } from "./cbor/cbor-convertible";
-import { Cbor } from "./cbor/cbor";
+import { COSECryptoProvider } from "../cose/cose-crypto-provider";
+import { COSEMac0 } from "../cose/cose-mac-0";
+import { CborDataItem } from "../cbor/cbor-data-item";
+import { CborDecoder } from "../cbor/cbor-decoder";
+import { CborEncoder } from "../cbor/cbor-encoder";
+import { CborEncodedDataItem } from "../cbor/types/cbor-encoded-data-item";
+import { CborMap } from "../cbor/types/cbor-map";
+import { CborNumber } from "../cbor/types/cbor-number";
+import { CborTextString } from "../cbor/types/cbor-text-string";
+import { IssuerSignedItem } from "../issuer-signed/issuer-signed-item";
+import { DeviceAuthentication } from "../mdoc-auth/device-authentication";
+import { MobileDocumentRequest } from "../doc-request/mobile-document-request";
+import { DeviceAuth } from "./device-auth";
+import { DeviceSigned } from "./device-signed";
+import { IssuerSigned } from "../issuer-signed/issuer-signed";
+import { MDocVerificationParams } from "./mdoc-verification-params";
+import { MobileSecurityObject } from "./mobile-security-object";
+import { VerificationType } from "./verification-type.enum";
+import { Lazy } from "../utils/lazy";
+import { CborConvertible } from "../cbor/cbor-convertible";
 
 export class MobileDocument implements CborConvertible {
 
@@ -77,7 +76,7 @@ export class MobileDocument implements CborConvertible {
 
     private verifyValidity(): boolean {
         const validityInfo = this.mso.validity;
-        return validityInfo.validFrom.getValue() <= new Date() && validityInfo.validUntil.getValue() >= new Date();
+        return validityInfo.validFrom <= new Date() && validityInfo.validUntil >= new Date();
     }
 
     private verifyDocType(): boolean {

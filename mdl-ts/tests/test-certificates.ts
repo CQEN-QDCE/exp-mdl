@@ -1,27 +1,27 @@
-import * as x509 from "@peculiar/x509";
+import rs from "jsrsasign";
 
 export class TestCertificates {
 
-    private _caKeyPair: CryptoKeyPair;
-    private _caCertificate: x509.X509Certificate;
+    private _caKeyPair: any;
+    private _caCertificate: rs.X509;
 
-    private _issuerKeyPair: CryptoKeyPair;
-    private _issuerCertificate: x509.X509Certificate;
+    private _issuerKeyPair: any;
+    private _issuerCertificate: rs.X509;
 
-    private _readerKeyPair: CryptoKeyPair;
-    private _readerCertificate: x509.X509Certificate;
+    private _readerKeyPair: any;
+    private _readerCertificate: rs.X509;
 
-    private _deviceKeyPair: CryptoKeyPair;
-    private _deviceCertificate: x509.X509Certificate;
+    private _deviceKeyPair: any;
+    private _deviceCertificate: rs.X509;
 
-    constructor(caKeyPair: CryptoKeyPair, 
-                caCertificate: x509.X509Certificate, 
-                issuerKeyPair: CryptoKeyPair, 
-                issuerCertificate: x509.X509Certificate,
-                readerKeyPair: CryptoKeyPair, 
-                readerCertificate: x509.X509Certificate,
-                deviceKeyPair: CryptoKeyPair, 
-                deviceCertificate: x509.X509Certificate) {
+    constructor(caKeyPair: any, 
+                caCertificate: rs.X509, 
+                issuerKeyPair: any, 
+                issuerCertificate: rs.X509,
+                readerKeyPair: any, 
+                readerCertificate: rs.X509,
+                deviceKeyPair: any, 
+                deviceCertificate: rs.X509) {
         this._caKeyPair = caKeyPair;
         this._caCertificate = caCertificate;
         this._issuerKeyPair = issuerKeyPair;
@@ -32,35 +32,35 @@ export class TestCertificates {
         this._deviceCertificate = deviceCertificate;
     }
 
-    get caKeyPair(): CryptoKeyPair {
+    get caKeyPair(): any {
         return this._caKeyPair;
     }
 
-    get caCertificate(): x509.X509Certificate {
+    get caCertificate(): rs.X509 {
         return this._caCertificate;
     }
 
-    get issuerKeyPair(): CryptoKeyPair {
+    get issuerKeyPair(): any {
         return this._issuerKeyPair;
     }
 
-    get issuerCertificate(): x509.X509Certificate {
+    get issuerCertificate(): rs.X509 {
         return this._issuerCertificate;
     }
 
-    get readerKeyPair(): CryptoKeyPair {
+    get readerKeyPair(): any {
         return this._readerKeyPair;
     }
 
-    get readerCertificate(): x509.X509Certificate {
+    get readerCertificate(): rs.X509 {
         return this._readerCertificate;
     }
 
-    get deviceKeyPair(): CryptoKeyPair {
+    get deviceKeyPair(): any {
         return this._deviceKeyPair;
     }
 
-    get deviceCertificate(): x509.X509Certificate {
+    get deviceCertificate(): rs.X509 {
         return this._deviceCertificate;
     }
 

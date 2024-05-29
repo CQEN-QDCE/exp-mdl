@@ -1,3 +1,4 @@
+/*
 import express, { Application, Request, Response, NextFunction } from "express";
 import { router as userRoutes } from "./oidc4vci/oid4vc-routes";
 import { IssuerService } from "./oidc4vci/issuer-service";
@@ -39,3 +40,4 @@ app.use("/.well-known/openid-credential-issuer", (req: Request, res: Response, n
 const PORT: Number = 5050;
 
 app.listen(PORT, (): void => console.log(`running on port ${PORT}`));
+*/

@@ -8,7 +8,7 @@ import { CborMap } from "../cbor/types/cbor-map";
 import { CborTextString } from "../cbor/types/cbor-text-string";
 import { MDocRequestVerificationParams } from "./mdoc-request-verification-params";
 import { ItemsRequest } from "./items-request";
-import { ReaderAuthentication } from "../reader-authentication";
+import { ReaderAuthentication } from "../mdoc-auth/reader-authentication";
 import { Lazy } from "../utils/lazy";
 
 export class MobileDocumentRequest {

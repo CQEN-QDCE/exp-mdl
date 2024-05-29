@@ -2,7 +2,7 @@ import { CborDataItem } from "../cbor/cbor-data-item";
 import { CborMap } from "../cbor/types/cbor-map";
 import { CborNumber } from "../cbor/types/cbor-number";
 import { CborTextString } from "../cbor/types/cbor-text-string";
-import { MobileDocument } from "../mobile-document";
+import { MobileDocument } from "../mdoc/mobile-document";
 import { DeviceResponseStatus } from "./device-response-status.enum";
 import { CborConvertible } from "../cbor/cbor-convertible";
 import { CborArray } from "../cbor/types/cbor-array";

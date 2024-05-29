@@ -1,4 +1,4 @@
-import { ReaderAuthentication } from "../reader-authentication";
+import { ReaderAuthentication } from "../mdoc-auth/reader-authentication";
 
 export class MDocRequestVerificationParams {
 

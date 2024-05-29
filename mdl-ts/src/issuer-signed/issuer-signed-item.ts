@@ -5,6 +5,7 @@ import { CborNumber } from "../cbor/types/cbor-number";
 import { CborTextString } from "../cbor/types/cbor-text-string";
 import { SecureRandom } from "../utils/secure-random";
 import { CborConvertible } from "../cbor/cbor-convertible";
+import { Text } from "../utils/text";
 
 
 export class IssuerSignedItem implements CborConvertible {
@@ -17,7 +18,7 @@ export class IssuerSignedItem implements CborConvertible {
 
     public static build(digestID: number, elementIdentifier: string, elementValue: CborDataItem): IssuerSignedItem {
         return new IssuerSignedItem(digestID, 
-                                    new Uint8Array(new TextEncoder().encode(SecureRandom.generate(16))).buffer, 
+                                    new Uint8Array(Text.encode(SecureRandom.generate(16))).buffer, 
                                     elementIdentifier, 
                                     elementValue);
     }

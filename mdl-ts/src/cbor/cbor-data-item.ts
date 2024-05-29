@@ -8,12 +8,6 @@ export interface CborDataItem {
 
 export abstract class CborDataItem {
 
-//    protected attribute: CborDataItem.Attribute;
-
-//    constructor(attribute: CborDataItem.Attribute) {
-//        this.attribute = attribute;
-//    }
-
     public static from(object: CborConvertible): CborDataItem {
         return (<CborConvertible>object).toCborDataItem();
     }
@@ -24,10 +18,6 @@ export abstract class CborDataItem {
         if (instance === unInitializedIntance) throw new Error("Invalid data item");
         return instance;
     }
-
-//    get type(): CborDataItem.Type {
-//        return this.attribute.type;
-//    }
 
 }
 

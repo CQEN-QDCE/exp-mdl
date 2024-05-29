@@ -9,6 +9,7 @@ import { CborMap } from "../cbor/types/cbor-map";
 import { CborNumber } from "../cbor/types/cbor-number";
 import { CborTextString } from "../cbor/types/cbor-text-string";
 import { Base64 } from "../utils/base64";
+import * as KJUR from "jsrsasign";
 
 export class CborWebToken {
   
@@ -62,14 +63,14 @@ export class CborWebToken {
     constructor() {
     }
 
-    public async sign(privateKey: CryptoKey): Promise<void> {
+    public async sign(privateKey: KJUR.KJUR.crypto.ECDSA): Promise<void> {
         const payload = CborEncoder.encode(this.serializeClaims());
         this.coseSignMessage.headers.algorithm.value = CoseAlgorithm.ES256; // TODO: Permettre de changer ceci.
         this.coseSignMessage.attachPayload(payload);
         await this.coseSignMessage.sign(privateKey);
     }
 
-    public async verify2(publicKey: CryptoKey): Promise<boolean> {
+    public async verify2(publicKey: KJUR.KJUR.crypto.ECDSA): Promise<boolean> {
         const payload = CborEncoder.encode(this.serializeClaims());
         this.coseSignMessage.headers.algorithm.value = CoseAlgorithm.ES256; // TODO: Permettre de changer ceci.
         this.coseSignMessage.attachPayload(payload);

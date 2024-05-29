@@ -1,11 +1,12 @@
 import { CredentialRepresentation } from "./vc/credential-representation.enum";
 import { CredentialScheme } from "./vc/credential-scheme";
+import * as KJUR from "jsrsasign";
 
 export interface Issuer {
     
     get identifier(): string;
 
-    issueCredential(subjectPublicKey: CryptoKey, attributeTypes: string[], representation: CredentialRepresentation, claimNames: string[]): IssuedCredentialResult;
+    issueCredential(subjectPublicKey: KJUR.KJUR.crypto.ECDSA, attributeTypes: string[], representation: CredentialRepresentation, claimNames: string[]): IssuedCredentialResult;
 
     issueRevocationListCredential(timePeriod: number): string;
 

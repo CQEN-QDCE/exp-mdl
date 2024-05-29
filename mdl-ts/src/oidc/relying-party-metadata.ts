@@ -25,7 +25,8 @@ export class RelyingPartyMetadata {
 export class JsonWebKeySet {
 
     // @SerialName("keys")
-    public readonly keys: JsonWebKey[] = [];
+   // public readonly keys: JsonWebKey[] = [];
+    public readonly keys: any[] = [];
 
     constructor(initializer?: Partial<JsonWebKeySet>) {
         Object.assign(this, initializer);

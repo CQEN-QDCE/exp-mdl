@@ -1,11 +1,11 @@
-import { Crypto } from "@peculiar/webcrypto";
-import { KeyKeys } from "../../key-keys.enum";
+import { KeyKeys } from "./key-keys.enum";
 import { Base64 } from '../utils/base64';
 import { CborMap } from '../cbor/types/cbor-map';
 import { CborDataItem } from '../cbor/cbor-data-item';
 import { CborNumber } from '../cbor/types/cbor-number';
 import { CborByteString } from '../cbor/types/cbor-byte-string';
 import { CborConvertible } from "../cbor/cbor-convertible";
+import rs from "jsrsasign";
 
 export class CoseKey implements CborConvertible {
 
@@ -32,14 +32,13 @@ export class CoseKey implements CborConvertible {
         return cborMap;
     }
 
-    static async new(publicKey: CryptoKey | null = null, privateKey: CryptoKey | null = null): Promise<CoseKey> {
+    static async new(publicKey: rs.KJUR.crypto.ECDSA  | null = null, privateKey: rs.KJUR.crypto.ECDSA | null = null): Promise<CoseKey> {
         
         const keyMap = new Map<number, number | ArrayBuffer>();
 
-        const crypto = new Crypto();
-
         if (publicKey) {
-            const jsonWebPublicKey = await crypto.subtle.exportKey('jwk', publicKey);
+            
+            const jsonWebPublicKey = rs.KEYUTIL.getJWKFromKey( publicKey );
             const x = Base64.decode(jsonWebPublicKey.x); // EC2_X -2
             const y = Base64.decode(jsonWebPublicKey.y); // EC2_Y -3
             keyMap.set(KeyKeys.KeyType, KeyKeys.KeyType_EC2);
@@ -49,8 +48,8 @@ export class CoseKey implements CborConvertible {
         }
 
         if (privateKey) {
-            const jsonWebPrivateKey = await crypto.subtle.exportKey('jwk', privateKey);
-            const d = Base64.decode(jsonWebPrivateKey.d); // EC2_D -4
+            const jsonWebPrivateKey = rs.KEYUTIL.getJWKFromKey( privateKey );
+            const d = Base64.decode(jsonWebPrivateKey.k); // EC2_D -4
             keyMap.set(KeyKeys.EC2D, d);
         }
 

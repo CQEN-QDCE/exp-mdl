@@ -1,111 +1,109 @@
-import * as x509 from "@peculiar/x509";
-import { Crypto } from "@peculiar/webcrypto";
 import { TestCertificates } from "./test-certificates";
+import rs from "jsrsasign";
 
 export class TestCertificatesBuilder {
 
-    static async generateKey(): Promise<CryptoKeyPair> {
-        const crypto = new Crypto();
-      
-        const algorithm = {
-            name: 'ECDSA',
-            namedCurve: 'P-256',
-            hash: 'SHA-256'
-        };
-
-        return await crypto.subtle.generateKey(algorithm, true, ["sign", "verify"]);
+    static async generateKey(): Promise<any> {
+        return rs.KEYUTIL.generateKeypair("EC", "secp256r1");
     }
 
     static async build(): Promise<TestCertificates> {
 
-        const crypto = new Crypto();
-
-        x509.cryptoProvider.set(crypto);
         
-        const algorithm = {
-            name: 'ECDSA',
-            namedCurve: 'P-256',
-            hash: 'SHA-256'
-        };
-        
-        const caKeyPair = await crypto.subtle.generateKey(algorithm, true, ["sign", "verify"]);
-        const issuerKeyPair = await crypto.subtle.generateKey(algorithm, true, ["sign", "verify"]);
-        const deviceKeyPair = await crypto.subtle.generateKey(algorithm, true, ["sign", "verify"]);
-        const readerKeyPair = await crypto.subtle.generateKey(algorithm, true, ["sign", "verify"]);
+        const caKeyPair = rs.KEYUTIL.generateKeypair("EC", "secp256r1");
+        const issuerKeyPair = rs.KEYUTIL.generateKeypair("EC", "secp256r1");
+        const deviceKeyPair = rs.KEYUTIL.generateKeypair("EC", "secp256r1");
+        const readerKeyPair = rs.KEYUTIL.generateKeypair("EC", "secp256r1");
 
-        const caCertificate = await x509.X509CertificateGenerator.createSelfSigned(
+        const caCertificate = new rs.KJUR.asn1.x509.Certificate(
             {
-                serialNumber: "01",
-                name: "CN=MDOC Test CA",
-                notBefore: new Date("2023/01/01"),
-                notAfter: new Date("2025/01/01"),
-                signingAlgorithm: algorithm,
-                keys: caKeyPair,
-                extensions: [
-                    new x509.BasicConstraintsExtension(false, 2, true),
-                    new x509.KeyUsagesExtension(x509.KeyUsageFlags.digitalSignature, true),
-                    await x509.SubjectKeyIdentifierExtension.create(caKeyPair.publicKey),
+                version: 3,
+                serial: {int: 1},
+                issuer: {str: "/CN=MDOC Test CA"},
+                notbefore: "20231231235959Z",
+                notafter: "20251231235959Z",
+                subject: {str: "/CN=User1"},
+                sigalg: "SHA256withECDSA",
+                cakey: caKeyPair.prvKeyObj,
+                sbjpubkey: caKeyPair.pubKeyObj,
+                ext: [
+                    {extname: "basicConstraints", cA: false},
+                    {extname: "keyUsage", critical: true, names:["digitalSignature"]},
                 ]
         });
 
-        const issuerCertificate = await x509.X509CertificateGenerator.createSelfSigned(
+        const issuerCertificate = new rs.KJUR.asn1.x509.Certificate(
             {
-                serialNumber: "02",
-                name: "CN=MDOC Test Issuer",
-                notBefore: new Date("2023/01/01"),
-                    notAfter: new Date("2025/01/01"),
-                    signingAlgorithm: algorithm,
-                    keys: issuerKeyPair,
-                    extensions: [
-                        new x509.BasicConstraintsExtension(true, 2, true),
-                        new x509.ExtendedKeyUsageExtension(["1.2.3.4.5.6.7", "2.3.4.5.6.7.8"], true),
-                        new x509.KeyUsagesExtension(x509.KeyUsageFlags.keyCertSign | x509.KeyUsageFlags.cRLSign, true),
-                        await x509.SubjectKeyIdentifierExtension.create(issuerKeyPair.publicKey),
-                    ]
+                version: 3,
+                serial: {int: 2},
+                issuer: {str: "/CN=MDOC Test Issuer"},
+                notbefore: "20231231235959Z",
+                notafter: "20251231235959Z",
+                subject: {str: "/CN=User2"},
+                sigalg: "SHA256withECDSA",
+                cakey: issuerKeyPair.prvKeyObj,
+                sbjpubkey: issuerKeyPair.pubKeyObj,
+                ext: [
+                    {extname: "basicConstraints", cA: false},
+                    {extname: "keyUsage", critical: true, names:["digitalSignature"]},
+                ]
             }
         );
 
-        const readerCertificate = await x509.X509CertificateGenerator.createSelfSigned(
+        const readerCertificate = new rs.KJUR.asn1.x509.Certificate(
             {
-                serialNumber: "02",
-                name: "CN=MDOC Test Reader",
-                notBefore: new Date("2023/01/01"),
-                    notAfter: new Date("2025/01/01"),
-                    signingAlgorithm: algorithm,
-                    keys: issuerKeyPair,
-                    extensions: [
-                        new x509.BasicConstraintsExtension(true, 2, true),
-                        new x509.ExtendedKeyUsageExtension(["1.2.3.4.5.6.7", "2.3.4.5.6.7.8"], true),
-                        new x509.KeyUsagesExtension(x509.KeyUsageFlags.keyCertSign | x509.KeyUsageFlags.cRLSign, true),
-                        await x509.SubjectKeyIdentifierExtension.create(readerKeyPair.publicKey),
-                    ]
+                version: 3,
+                serial: {int: 3},
+                issuer: {str: "/CN=MDOC Test Reader"},
+                notbefore: "20231231235959Z",
+                notafter: "20251231235959Z",
+                subject: {str: "/CN=User2"},
+                sigalg: "SHA256withECDSA",
+                cakey: readerKeyPair.prvKeyObj,
+                sbjpubkey: readerKeyPair.pubKeyObj,
+                ext: [
+                    {extname: "basicConstraints", cA: false},
+                    {extname: "keyUsage", critical: true, names:["digitalSignature"]},
+                ]
             }
         );
 
-        const deviceCertificate = await x509.X509CertificateGenerator.createSelfSigned(
+        const deviceCertificate = new rs.KJUR.asn1.x509.Certificate(
             {
-                serialNumber: "02",
-                name: "CN=MDOC Test Reader",
-                notBefore: new Date("2023/01/01"),
-                    notAfter: new Date("2025/01/01"),
-                    signingAlgorithm: algorithm,
-                    keys: issuerKeyPair,
-                    extensions: [
-                        new x509.BasicConstraintsExtension(true, 2, true),
-                        new x509.ExtendedKeyUsageExtension(["1.2.3.4.5.6.7", "2.3.4.5.6.7.8"], true),
-                        new x509.KeyUsagesExtension(x509.KeyUsageFlags.keyCertSign | x509.KeyUsageFlags.cRLSign, true),
-                        await x509.SubjectKeyIdentifierExtension.create(deviceKeyPair.publicKey),
-                    ]
-            }
+                version: 3,
+                serial: {int: 4},
+                issuer: {str: "/CN=MDOC Test Device"},
+                notbefore: "20231231235959Z",
+                notafter: "20251231235959Z",
+                subject: {str: "/CN=User4"},
+                sigalg: "SHA256withECDSA",
+                cakey: deviceKeyPair.prvKeyObj,
+                sbjpubkey: deviceKeyPair.pubKeyObj,
+                ext: [
+                    {extname: "basicConstraints", cA: false},
+                    {extname: "keyUsage", critical: true, names:["digitalSignature"]},
+                ]               
+             }
         );
-            
+        const caCertificate2 = new rs.X509();   
+        caCertificate2.readCertPEM(caCertificate.getPEM()); 
+
+        const issuerCertificate2 = new rs.X509();   
+        issuerCertificate2.readCertPEM(issuerCertificate.getPEM()); 
+
+        const readerCertificate2 = new rs.X509();   
+        readerCertificate2.readCertPEM(readerCertificate.getPEM()); 
+
+        const deviceCertificate2 = new rs.X509();   
+        deviceCertificate2.readCertPEM(deviceCertificate.getPEM()); 
+
         return new TestCertificates(caKeyPair, 
-                                    caCertificate, 
+                                    caCertificate2, 
                                     issuerKeyPair, 
-                                    issuerCertificate, 
+                                    issuerCertificate2, 
                                     readerKeyPair, 
-                                    readerCertificate, 
+                                    readerCertificate2, 
                                     deviceKeyPair, 
-                                    deviceCertificate);
+                                    deviceCertificate2);
     }
 }

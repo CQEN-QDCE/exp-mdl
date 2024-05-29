@@ -3,9 +3,9 @@ import { v4 as uuidv4 } from 'uuid';
 export class TokenService {
     private localStorage: any;
     constructor(private readonly validTokens: Set<string> = new Set<string>()) {
-        if (typeof localStorage === "undefined" || localStorage === null) {
-            let LocalStorage = require('node-localstorage').LocalStorage;
-            this.localStorage = new LocalStorage('./tokens');
+        if (typeof this.localStorage === "undefined" || this.localStorage === null) {
+//            let LocalStorage = require('node-localstorage').LocalStorage;
+//            this.localStorage = new LocalStorage('./tokens');
         }
     }
 
