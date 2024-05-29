@@ -1,2 +1,0 @@
-REACT_APP_ISSUER_API_BASE_URL=https://mdl-issuer-admin.apps.exp.openshift.cqen.ca
-REACT_APP_OID4VCI_SUPPORTED_CREDENTIAL_ID=30c5fd6a-3896-4fbb-bdde-d3a7671ed9cb

@@ -7,7 +7,7 @@ metadata:
   name: ${APP_NAME}
   annotations:
     description: Expérimentation pour intégrer le standard (ISO 18013-5) "Mobile driver's license" ou "mDl" aux attestations vérifiables.
-    tags: CQEN, ING, Hyperledger, ARIES, Indy, ISO 18013-5 (mDL), PostgreSql
+    tags: CQEN, ING, ISO 18013-5 (mDL), PostgreSql
 objects:
 ######################################################################
 # PostgreSql Database
@@ -16,6 +16,13 @@ objects:
   apiVersion: v1
   metadata:
     name: ${POSTGRESQL_NAME}
+    labels:
+      name: ${POSTGRESQL_NAME}
+      app: ${APP_GROUP}
+      app.kubernetes.io/part-of: ${APP_GROUP}
+      app-group: ${APP_GROUP}
+      role: database
+      env: ${ENV_NAME}
   spec:
     storageClassName: ${STORAGE_CLASS_NAME}
     accessModes:
@@ -47,8 +54,14 @@ objects:
     annotations:
       template.alpha.openshift.io/wait-for-ready: 'true'
     labels:
-      app: ${POSTGRESQL_NAME}
-      app.kubernetes.io/part-of: Exp-mDL
+      name: ${POSTGRESQL_NAME}
+      app: ${APP_GROUP}
+      app.kubernetes.io/part-of: ${APP_GROUP}
+      app-group: ${APP_GROUP}
+      role: database
+      env: ${ENV_NAME}
+      app.kubernetes.io/name: postgresql
+      app.kubernetes.io/runtime: postgresql      
   spec:
     strategy:
       type: Recreate
@@ -122,6 +135,13 @@ objects:
   apiVersion: v1
   metadata:
     name: ${POSTGRESQL_NAME}
+    labels:
+      name: ${POSTGRESQL_NAME}
+      app: ${APP_GROUP}
+      app.kubernetes.io/part-of: ${APP_GROUP}
+      app-group: ${APP_GROUP}
+      role: database
+      env: ${ENV_NAME}
   spec:
     ports:
     - name: ${POSTGRESQL_NAME}
@@ -173,8 +193,15 @@ objects:
   metadata:
     name: ${ACA_PY_OID4VCI_NAME}
     labels:
-      app: ${ACA_PY_OID4VCI_NAME}
-      app.kubernetes.io/part-of: Exp-mDL
+      name: ${ACA_PY_OID4VCI_NAME}
+      app: ${APP_GROUP}
+      app.kubernetes.io/part-of: ${APP_GROUP}
+      app-group: ${APP_GROUP}
+      role: agent
+      env: ${ENV_NAME}
+    annotations:
+      app.openshift.io/connects-to: >- 
+        [{"apiVersion":"apps.openshift.io/v1","kind":"DeploymentConfig","name":"${POSTGRESQL_NAME}"}]
   spec:
     strategy:
       type: Rolling
@@ -209,6 +236,9 @@ objects:
       metadata:
         labels:
           app: ${ACA_PY_OID4VCI_NAME}
+        annotations:
+          app.openshift.io/connects-to: >- 
+            [{"apiVersion":"apps.openshift.io/v1","kind":"DeploymentConfig","name":"${POSTGRESQL_NAME}"}]
       spec:
         containers:
           - name: ${ACA_PY_OID4VCI_NAME}
@@ -220,10 +250,10 @@ objects:
                 --outbound-transport http
                 --admin 0.0.0.0 ${ADMIN_INTERFACE_PORT}
                 --endpoint https://${AGENT_SUBDOMAIN}.${APP_DOMAIN}
-                --genesis-url "${GENESIS_FILE_URL}"
                 --auto-accept-invites
                 --auto-accept-requests
                 --auto-provision
+                --no-ledger
                 --wallet-type '${WALLET_TYPE}'
                 --wallet-name "$(echo ${WALLET_NAME} | tr '[:upper:]' '[:lower:]' | sed "s~-~_~g")"
                 --wallet-key "${WALLET_ENCRYPTION_KEY}"
@@ -233,6 +263,7 @@ objects:
                 $([ ! -z "${WEBHOOK_URL}" ] && echo "--webhook-url ${WEBHOOK_URL}" || echo "")
                 $([ ! -z "${AGENT_ADMIN_API_KEY}" ] && echo "--admin-api-key ${AGENT_ADMIN_API_KEY}" || echo "--admin-insecure-mode")
                 --plugin 'oid4vci'
+                --plugin 'mso_mdoc'
                 --log-level ${AGENT_LOG_LEVEL});
             env:
               - name: OID4VCI_PORT
@@ -245,8 +276,6 @@ objects:
                 value: ${ACAPY_IMAGE_URL}               
               - name: ACAPY_AUTO_ACCEPT_INVITES
                 value: ${ACAPY_AUTO_ACCEPT_INVITES}
-              - name: GENESIS_FILE_URL
-                value: ${GENESIS_FILE_URL}
               - name: WEBHOOK_URL
                 value: ${WEBHOOK_URL}
               - name: WALLET_NAME
@@ -453,14 +482,24 @@ parameters:
   displayName: Application name
   description: Used to group components together in the OpenShift console.
   required: true
-  value: "exp-mdl"
+  value: 'exp-mdl-agent'
+- name: APP_GROUP
+  displayName: Application group
+  description: The name assigned to all of the deployments in this project.
+  required: true
+  value: 'mDL-issuer'
 - name: APP_DOMAIN
   description: The external hostname to access the application.
   required: true
-- name: APP_SUBDOMAIN
-  description: The external subdomain to access the application.
+- name: AGENT_SUBDOMAIN
+  description: The external subdomain to access Aries issuer.
   required: true
-  value: "exp-mdl"
+  value: 'mdl-issuer-agent'
+- name: ENV_NAME
+  displayName: Environment name
+  description: Environment name. For the build environment this will typically be 'tools'
+  required: true
+  value: dev
 - name: POSTGRESQL_USERNAME
   displayName: PostgreSQL connection username
   description: Username for the PostgreSQL connection user.
@@ -470,8 +509,6 @@ parameters:
   displayName: PostgreSQL connection password
   description: Password for the PostgreSQL connection user.
   required: true
-  generate: "expression"
-  from: "[a-zA-Z0-9]{16}"
 - name: WALLET_STORAGE_TYPE
   displayName: Wallet storage type
   description: The wallet storage type. Possible values are 'postgres_storage' or 'sqlite_storage' at the moment.  If not defined, defaults to 'sqlite_storage' for compatibility.
@@ -486,8 +523,6 @@ parameters:
   fdisplayName: PostgreSQL administrator password
   description: Password for the PostgreSQL administrative account.
   required: true
-  generate: "expression"
-  from: "[a-zA-Z0-9]{16}"
 - name: POSTGRESQL_DATABASE_NAME
   displayName: PostgreSQL database name
   description: Name of the PostgreSQL database.
@@ -502,7 +537,7 @@ parameters:
   displayName: PostgreSQL name
   description: The name assigned to all PostgreSQL objects defined in this template.
   required: true
-  value: "postgres-database"
+  value: "mdl-issuer-database"
 - name: STORAGE_CLASS_NAME
   displayNgp2iption: The storage class of the volume.
   required: true
@@ -516,7 +551,7 @@ parameters:
   displayName: ACA-py with OID4VCI plugin name
   description: The name assigned to all ACA-py with OID4VCI plugin objects defined in this template.
   required: true
-  value: "mdl-issuer"
+  value: "mdl-issuer-agent"
 - name: GITHUB_REPOSITORY_URI
   displayName: GitHub repository URI
   description: URI of the GitHub repository.
@@ -547,10 +582,6 @@ parameters:
   description: Label of the agent.
   required: true
   value: 'OID4VCI mDL issuer'
-- name: GENESIS_FILE_URL
-  displayName: Genesis file URL
-  description: The URL from which the genesis file can be downloaded.
-  required: true
 - name: LOG_LEVEL
   displayName: Log Level
   description: The logging level of the issuer agent.
@@ -595,14 +626,8 @@ parameters:
   description: The port on which the agent will listen for the admin API.
   required: true
   value: '3000'
-- name: AGENT_SUBDOMAIN
-  description: The external subdomain to access Aries issuer.
-  required: true
-  value: 'mdl-issuer'
 - name: OID4VCI_PLUGIN_HTTP_PORT
   displayName: Agent Admin Port
   description: The port on which the agent will listen for the admin API.
   required: true
   value: '8081'
-
-  

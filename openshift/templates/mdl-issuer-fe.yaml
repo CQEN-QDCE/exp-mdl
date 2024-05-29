@@ -7,7 +7,7 @@ metadata:
   name: ${APP_NAME}
   annotations:
     description: Application frontend pour l'expérimentation d'intégration du standard (ISO 18013-5) "Mobile driver's license" ou "mDl" aux attestations vérifiables.
-    tags: CQEN, ING, Hyperledger, ARIES, Indy, ISO 18013-5 (mDL), PostgreSql
+    tags: CQEN, ING, ISO 18013-5 (mDL), PostgreSql
 objects:
 - kind: ConfigMap
   apiVersion: v1
@@ -65,7 +65,12 @@ objects:
       app: ${APP_NAME}
       app.kubernetes.io/component: react-app
       app.kubernetes.io/instance: ${APP_NAME}
+      app.kubernetes.io/name: nodejs
+      app.kubernetes.io/runtime: nodejs      
     name: ${APP_NAME}
+    annotations:
+      app.openshift.io/connects-to: >-
+        [{"apiVersion":"apps.openshift.io/v1","kind":"DeploymentConfig","name":"${ISSUER_AGENT}"}]    
   spec:
     strategy:
       type: Recreate
@@ -76,6 +81,9 @@ objects:
       metadata:
         labels:
           deploymentconfig: ${APP_NAME}
+        annotations:
+          app.openshift.io/connects-to: >-
+            [{"apiVersion":"apps.openshift.io/v1","kind":"DeploymentConfig","name":"${ISSUER_AGENT}"}]              
       spec:
         containers:
         - image: ${APP_NAME}
@@ -176,6 +184,7 @@ objects:
       app.kubernetes.io/instance: ${APP_NAME}
     name: ${APP_NAME}
   spec:
+    host: ${APP_DOMAIN_NAME}.apps.exp.openshift.cqen.ca
     port:
       targetPort: 8080-tcp      
     to:
@@ -209,7 +218,11 @@ parameters:
   displayName: Name
   description: The name assigned to all of the frontend objects defined in this template.    
   required: true
-  value: "mdl-issuer-fe"
+  value: "mdl-issuer-controller"
+- name: APP_DOMAIN_NAME
+  displayName: Domain Name
+  description: The name assigned to the domain of the application.    
+  value: "mdl-issuer"    
 - name: SOURCE_REPOSITORY_URL
   displayName: Git Repository URL
   description: The URL of the repository with your application source code.    
@@ -228,8 +241,12 @@ parameters:
 - name: REACT_APP_ISSUER_API_BASE_URL
   displayName: URL for the issuer API
   description: The URL for the issuer API.
-  value: https://mdl-issuer-admin.apps.exp.openshift.cqen.ca
+  value: https://mdl-issuer-agent-admin.apps.exp.openshift.cqen.ca
 - name: REACT_APP_OID4VCI_SUPPORTED_CREDENTIAL_ID
   displayName: OID4VCI supported credential ID
   description: The OID4VCI supported credential ID.
   value: env-value
+- name: ISSUER_AGENT
+  displayName: The name of the issuer agent
+  description: The name of the issuer agent.
+  value: "mdl-issuer-agent"
