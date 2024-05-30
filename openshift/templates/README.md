@@ -1,10 +1,10 @@
-# Déployer ACA-py avec le plugin OID4VCI sur OpenShift
+# Déployer ACA-py avec les plugins OID4VCI et MSO-MDOC sur OpenShift
 
-Ce dépôt contient les instructions nécessaires pour déployer ACA-py avec le plugin OID4VCI sur OpenShift.
+Ce dépôt contient les instructions nécessaires pour déployer ACA-py avec les plugins OID4VCI et MSO-MDOC sur OpenShift.
 
 | Gabarit  | Descripton |
 | -------- | ---------- |
-| [aca-py-oid4vci.yaml](https://github.com/CQEN-QDCE/exp-mdl/blob/prod/openshift/templates/aca-py-oid4vci.yaml) | Installation d'ACA-py avec le plugin OID4VCI. |
+| [aca-py-oid4vci.yaml](https://github.com/CQEN-QDCE/exp-mdl/blob/prod/openshift/templates/aca-py-oid4vci.yaml) | Installation d'ACA-py avec les plugins OID4VCI et MSO-MDOC. |
 
 ## Paramètres du gabarit
 
@@ -28,10 +28,10 @@ Lancez l'installation sur OpenShift
 oc process -f ./aca-py-oid4vci.yaml --param-file=./aca-py-oid4vci.dev.params | oc apply -f -
 ```
 
-Une fois que tous les pods sont démarrés, vous pouvez accéder à l'OpenAPI du service à l'adresse https://mdl-issuer-admin.<APP_DOMAIN>.
+Une fois que tous les pods sont démarrés, vous pouvez accéder à l'OpenAPI du service à l'adresse https://mdl-issuer-agent-admin.<APP_DOMAIN>.
 
 Utilisez la route POST
-https://mdl-issuer-admin.<APP_DOMAIN>/oid4vci/credential-supported/create
+https://mdl-issuer-agent-admin.<APP_DOMAIN>/oid4vci/credential-supported/create
 ```json
 {
     "format": "mso_mdoc",
