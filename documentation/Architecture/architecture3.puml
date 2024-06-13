@@ -5,11 +5,19 @@ title
     "Endpoints dans l'agent infonuagique Aries"
 end title
 
+' Définition DU CONTRÔLEUR
+rectangle "Contrôleur" as resp_pki_saaq
 
+' La PKI de l'Autorité Émettrice
+rectangle "PKI de l'Autorité Émettrice" as pki  
+
+' L'agent infonuagique Aries
 rectangle "aries-cloudagent-python" as acapy {
 
     ' Définition des endpoints
     rectangle "endpoints" as endpoints #LightCyan{
+
+        ' Définition des endpoints pour générer des clés de signature
         rectangle "/wallet/x509" as wallet_x509 #LightGoldenRodYellow{
             rectangle "keypair" as keypair #LightGreen{
                 rectangle "ECDSA-p256" as ECDSAp256
@@ -20,32 +28,28 @@ rectangle "aries-cloudagent-python" as acapy {
                 rectangle "CSR racine" as csr_racine
                 rectangle "CSR émettrice" as csr_emettrice  
             }
-
-            keypair -> keypair_racine
-            keypair -> keypair_emettrice
-            keypair_racine -> csr_racine
-            keypair_emettrice -> csr_emettrice
         }
 
+        ' Définition des endpoints lorsque les clés existent déjà
         rectangle "wallet/verification-method" as wallet_verification_method #LightGoldenRodYellow{
-            rectangle "sign" as sign
-            rectangle "verify" as verify
+            ' On a besoin de la clé privé, la méthode permet d'aller chercher la clé privé dans le wallet de l'ACA-PY.
+            rectangle "sign" as sign 
+            
+            ' On a besoin de la clé publique, elle va être émise avec un certificat, la méthode permet d'aller chercher la clé publique dans le wallet de l'ACA-PY qui se présente dans un certificat (le verkey).
+            rectangle "verify" as verify 
         }
         
     }
 
-    rectangle "PKI de l'Autorité Émettrice" as pki  
-
-    ' Définition des acteurs
-    actor "Resp PKI SAAQ" as resp_pki_saaq
-
     ' Définition des liens et rélations  
-    csr_racine -> pki
-    csr_emettrice -> pki
+    csr_racine -up-> pki : "keypair_racine"
+    csr_emettrice -up-> pki : "keypair_emettrice"
 
     ' Définition des actions de l'acteur 
-    resp_pki_saaq -> keypair:"Générer une paire de clés"
-    resp_pki_saaq -> csr:"Générer une demande de signature de certificat"    
+    resp_pki_saaq -down-> keypair : "Générer une paire de clés"
+    resp_pki_saaq -down-> csr : "Générer une demande \nde signature de certificat"
+    resp_pki_saaq -down-> sign : "Signer un document mDL"
+    resp_pki_saaq -down-> verify : "Vérifier la signature\n d'un document mDL"
 }
 
 @enduml
