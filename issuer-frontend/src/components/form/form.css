@@ -1,0 +1,9 @@
+.Form {
+    position: absolute;
+    top: 180px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    /*background-color: rgb(0, 95, 130);*/
+    color: white;    
+}
