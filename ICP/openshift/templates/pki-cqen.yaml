@@ -237,12 +237,12 @@ parameters:
 - name: GITHUB_REPOSITORY_REF
   displayName: Git Reference  
   description: Set this to a branch name, tag or other ref of your repository if you are not using the default branch.  
-  value: "feature/pki-v0.2-deploy"  
+  value: "feature/icpGouvQC"  
 - name: CONTEXT_DIR
   displayName: Context Directory
   description: Set this to the relative path to your project if it is not in the root
     of your repository.  
-  value: "pki-cqen"  
+  value: "ICP"  
 - name: VOLUME_SIZE
   displayName: Volume size
   description: The size of the persistent volume, e.g. 512Mi, 1Gi, 2Gi.
