@@ -237,7 +237,7 @@ parameters:
 - name: GITHUB_REPOSITORY_REF
   displayName: Git Reference  
   description: Set this to a branch name, tag or other ref of your repository if you are not using the default branch.  
-  value: "feature/icpGouvQC"  
+  value: "features/icpGouvQC"  
 - name: CONTEXT_DIR
   displayName: Context Directory
   description: Set this to the relative path to your project if it is not in the root
@@ -278,3 +278,16 @@ parameters:
   displayName: The name of the privileged SCC rolebinding
   description: The name of the privileged SCC rolebinding.
   value: use-privileged-scc
+- name: NESTJS_NAME
+  displayName: The name for NESTJS
+  description: The name for NESTJS.
+  value: pkiicpgouv
+- name: APP_SUBDOMAIN
+  displayName: App subdomain
+  description: App subdomain
+  value: icpgouvcqen
+- name: APP_DOMAIN
+  displayName: App domain
+  description: App domain
+  value: apps.exp.openshift.cqen.ca
+
