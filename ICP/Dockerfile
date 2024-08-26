@@ -40,7 +40,6 @@ WORKDIR /icpGouv
 # Copy pki-cqen files
 RUN ls -la
 COPY --from=build /icpGouv .
-COPY --from=build *.params ./icpGouv/scripts 
 
 # Permissions for SSH user
 RUN chown -R causer:cagroup /icpGouv
