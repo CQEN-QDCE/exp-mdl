@@ -19,8 +19,6 @@ COPY . .
 # Run script
 RUN ./deploy.sh
 
-# Permissions for ACX/ca/private
-#RUN chmod -R 740 AC*/ca/private
 
 FROM ubuntu:24.10
 
@@ -42,6 +40,7 @@ WORKDIR /icpGouv
 # Copy pki-cqen files
 RUN ls -la
 COPY --from=build /icpGouv .
+COPY --from=build *.params ./icpGouv/scripts 
 
 # Permissions for SSH user
 RUN chown -R causer:cagroup /icpGouv

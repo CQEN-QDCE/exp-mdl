@@ -46,6 +46,10 @@ chmod 755 $PKI_HOME/db
 chmod 600 $PKI_HOME/ca/*/private/ca_password.txt
 chmod 600 $PKI_HOME/ca/cqen/private/ocsp_password.txt
 
+# Copier les fichiers shell et params vers le repertoire scripts
+cp *.sh $PKI_HOME/scripts
+cp *.params $PKI_HOME/scripts
+
 echo -e "\033[32m PKI directory structure created successfully at $PKI_HOME\033[0m"
 
 #EOF
