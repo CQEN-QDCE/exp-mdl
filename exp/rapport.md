@@ -21,6 +21,22 @@ statut : en cours
 
 ## 3. Configuration et installation 
 
+### 3.1 PKI 
+
+La PKI Interne de Développement CQEN Dev V1 est créé pour donner support aux activités 
+de développement dans un contexte d'expérimentation qui ont besoin d'une PKI fonctionnelle. 
+Dans un premier temps, elle servira à fournir la infrastructure de certification nécessaire
+pour l'éxpérimentation du permis de conduire mobile (Mobile Driver's Licence mDL).  
+
+Information détaillé sur la structure de la PKI Interne de développement, consultez le document [PKI](./pki.md). 
+
+### 3.2 Plugin Aca-py 
+
+### 3.3 Application émettrice 
+
+### 3.4 Application mobile de test BLE 
+
+
 ## 4. Démarche de l'expérimentation 
 
 ## 5. Analyse des résultats 
