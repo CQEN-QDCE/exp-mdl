@@ -1,6 +1,13 @@
+<!-- ENTETE -->
+[![img](https://img.shields.io/badge/Lifecycle-Experimental-339999)](https://www.quebec.ca/gouv/politiques-orientations/vitrine-numeriqc/accompagnement-des-organismes-publics/demarche-conception-services-numeriques)
+[![Licence](https://img.shields.io/badge/Licence-LiLiQ--P-blue)](../LICENCE)
+---
+![Logo MCN](https://github.com/CQEN-QDCE/.github/blob/main/images/mcn.png)
+<!-- FIN ENTETE -->
+
 # PKI Interne de Développement CQEN Dev V1
 
-La PKI Interne de Déeveloppement CQEN Dev V1 est créé pour donner support aux activités 
+La PKI Interne de Développement CQEN Dev V1 est créé pour donner support aux activités 
 de développement dans un contexte d'expérimentation qui ont besoin d'une PKI fonctionnelle. 
 
 Dans un premier temps, elle servira à fournir la infrastructure de certification nécessaire
