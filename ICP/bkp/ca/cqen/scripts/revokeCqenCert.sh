@@ -1,8 +1,8 @@
 #!/bin/bash
-# Se o arquivo de certificado esta disponivel 
+# Si le fichier du certificat est disponible: 
 # openssl ca -config ca.conf -revoke path/to/certificate_to_revoke.pem -crl_reason cessationOfOperation
 #
-# Se o serial number esta disponivel 
+# Si le serial number est disponible:  
 # openssl ca -config ca.conf -revoke /dev/null -crl_reason cessationOfOperation -serial 0x<serial_number>
 
 # Reasons for revocation: 
