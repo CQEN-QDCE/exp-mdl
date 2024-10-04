@@ -261,11 +261,13 @@ parameters:
 - name: PASSPHRASE
   displayName: The passphrase for the key generations
   description: The passphrase for the key generations.
-  value: env-value
+  generate: expression
+  from: "[a-zA-Z0-9]{32}"
 - name: CAUSERPSSWD
   displayName: The ssh users's password
   description: The ssh users's password.
-  value: env-value
+  generate: expression
+  from: "[a-zA-Z0-9]{32}"
 - name: SSH_SERVICEACCOUNT_NAME
   displayName: The name of the service account
   description: The name of the service account.
