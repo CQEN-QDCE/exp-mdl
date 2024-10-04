@@ -41,7 +41,7 @@ Information détaillé sur la structure de la PKI Interne de développement, con
 
 ### 4.1 Étude de la norme ISO/IEC 18013-5
 
-L'ISO/IEC 18013-5 est une norme internationale qui définit les spécifications des permis de conduire mobiles (mobile Driver's License - mDL). L'étude de la norme était un prérequis à la réalisation de cette expérimentation. Nous devions rapidement comprendre sa structure générale, le modèle de données, les protocoles de communication, les mécanismes de sécurité, les fonctionalités de confidentialité, l'interopérabilité et les cas d'utilisation quelle supportent.
+L'ISO/IEC 18013-5 est une norme internationale qui définit les spécifications des permis de conduire mobiles (mobile Driver's License - mDL). L'étude de la norme était un prérequis à la réalisation de cette expérimentation. Nous devions rapidement comprendre sa structure générale, le modèle de données, les protocoles de communication, les mécanismes de sécurité, les fonctionnalités de confidentialité, l'interopérabilité et les cas d'utilisation qu'elle supporte.
 
 #### Composants principaux
 Comme pour l'infrastructure d'identité numérique, l'éco-système mDL se compose de trois éléments principaux (le fameux triangle de confiance):
@@ -63,11 +63,11 @@ Une des caractéristiques clés offerte par un mDL est la divulgation sélective
 
 ##### Processus d'utilisation du mDL
 
-Initialisation : Le détenteur présente son mDL à un lecteur mDL pour vérification.
-Demande de preuve : Le lecteur mDL demande les éléments de données à valider à l'appareil du détenteur.
-Consentement : Le détenteur reçoit une invite montrant les éléments de données demandés et doit consentir à les partager.
-Transmission : Après consentement, les éléments de données du mDL, y compris l'objet de sécurité mobile (MSO), sont partagées, via une communication sécurisée, avec le lecteur.
-Vérification : Le lecteur mDL valide l'intégrité des éléments de données reçues en vérifiant la signature de l'objet de sécurité mobile (MSO) et en contrôlant le hachage individuel de chaque élément de données.
+- **Initialisation** : Le détenteur présente son mDL à un lecteur mDL pour vérification.
+- **Demande de preuve** : Le lecteur mDL demande les éléments de données à valider à l'appareil du détenteur.
+- **Consentement** : Le détenteur reçoit une invite montrant les éléments de données demandés et doit consentir à les partager.
+- **Transmission** : Après consentement, les éléments de données du mDL, y compris l'objet de sécurité mobile (MSO), sont partagées via une communication sécurisée avec le lecteur.
+- **Vérification** : Le lecteur mDL valide l'intégrité des éléments de données reçues en vérifiant la signature de l'objet de sécurité mobile (MSO) et en contrôlant le hachage de chaque élément de données individuellement.
 
 ##### Technologies de communication
 Le mDL peut échanger des données avec les lecteurs en utilisant la communication en champ proche (NFC), le Bluetooth Low Energy (BLE) ou le Wi-Fi Aware1.
