@@ -1,0 +1,12 @@
+# Variables d'environnement de l'Autorité CQEN 
+export CQEN_ROOT="$PKI_HOME/ca/cqen"
+
+export CQEN_CONF="$CQEN_ROOT/config/openssl.conf"
+export CQEN_PASSWORD_FILE="$CQEN_ROOT/private/ca_password.txt"
+
+export CQEN_CN="/C=CA/ST=QC/O=Gouvernement du Quebec/CN=Autorite de Certification Intermediaire CQEN Dev v1"
+export CQEN_OCSP_URL="http://ocsp.icpgourvernementaleqc.apps.exp.openshift.cqen.ca"
+export CQEN_CRL_URL="http://crl.icpgourvernementaleqc.apps.exp.openshift.cqen.ca/cqen/dev/v1/ca.crl"
+
+export OCSP_CONF="$CQEN_ROOT/config/ocsp.conf"
+export CQEN_OCSP_PASSWORD_FILE="$CQEN_ROOT/private/ocsp_password.txt"

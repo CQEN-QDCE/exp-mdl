@@ -1,0 +1,14 @@
+# References le repertoire home du projet, tel comme il a été cloné du repo github. 
+export PROJECT_HOME="/pki/data"
+export PROJECT_BKP_HOME="/bkp"
+export PROJECT_SRC_HOME="/sources"
+
+# Reference au repertoire d'installation de la PKI dans le système. 
+export PKI_HOME="/icpGouv"
+
+# Colors pour utilisation dans les messages des scripts 
+export COLOR_RED=31
+export COLOR_GREEN=32
+export COLOR_YELLOW=33
+export COLOR_BLUE=34
+export COLOR_RESET=0
