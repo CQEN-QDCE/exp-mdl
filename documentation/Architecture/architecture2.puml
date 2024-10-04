@@ -1,0 +1,82 @@
+@startuml Vical
+allow_mixing
+
+title 
+    "VICAL - Liste Verifié d’Autorités de Certification Émettrices "
+end title
+
+rectangle "VICAL - AAMVA" as vicalaamva #LightBlue{
+    ' Liste Vical
+    rectangle "Liste Vical de l'Amérique du Nord" as listeaamva #LightGray{
+            rectangle "Autorité Émettrice État A" as aea #White{
+                rectangle "Certificat Signataire de l'état A" as csa
+                rectangle "Certificat Racine de l'état A" as cra
+            }
+
+            rectangle "Autorité Émettrice État B" as aeb #White{
+                rectangle "Certificat Signataire de l'état B" as csb
+                rectangle "Certificat Racine de l'état B" as crb
+            }
+
+            rectangle "Autorité Émettrice de la SAAQ" as aesaaq  #White{
+                rectangle "Certificat Signataire de la SAAQ " as cssaaq
+                rectangle "Certificat Racine de la SAAQ" as crsaaq
+            }
+
+            aea -[hidden]down- aeb
+            aeb -[hidden]down- aesaaq
+    }
+}
+
+note right of vicalaamva
+    L'AAMVA (American Association of Motor Vehicle Administrators) 
+    est une association américaine qui se concentre sur les questions relatives 
+    à la réglementation des véhicules et à la conduite automobile.
+
+    En Europe, il n'y a pas d'équivalent exact de l'AAMVA, car chaque pays 
+    a son propre organisme responsable de la réglementation et de 
+    l'administration des véhicules et de la conduite. 
+    
+    Par exemple, en France, c'est le Ministère de l'Intérieur et le Service 
+    des Titres de Circulation qui s'occupent de ces questions. 
+    
+    Pour informations, il y a 44 pays reconnus en Europe, bien que cela 
+    puisse varier en fonction des différentes définitions géographiques et politiques. 
+
+    Cependant, il est important de noter que certains pays européens sont 
+    membres de l'Union européenne, tandis que d'autres ne le sont pas. 
+    Actuellement, il y a 27 pays membres de l'Union européenne.
+end note
+
+rectangle "VICAL Autres" as vical #LightBlue{
+    ' Liste Vical
+    rectangle "Liste Vical" as liste #LightGray{
+            rectangle "Autorité Émettrice État A" as aex #White{
+                rectangle "Certificat Signataire de l'état A" as csx
+                rectangle "Certificat Racine de l'état A" as crx
+            }
+
+            rectangle "Autorité Émettrice État B" as aey #White{
+                rectangle "Certificat Signataire de l'état B" as csy
+                rectangle "Certificat Racine de l'état B" as cry
+            }
+
+            rectangle "Autorité Émettrice de la SAAQ" as aesaaq2  #White{
+                rectangle "Certificat Signataire de la SAAQ " as cssaaq2
+                rectangle "Certificat Racine de la SAAQ" as crsaaq2
+            }
+
+            aex -[hidden]down- aey
+            aey -[hidden]down- aesaaq2
+    }
+}
+
+note right of vical
+    Il faut multiplié les listes VICAL pour chaque pays 
+    qui existe dans le monde ou nous devons faire 
+    reconnaître le permis de conduire numérique.
+end note
+
+vicalaamva -[hidden]down- vical
+
+@enduml

@@ -1,0 +1,85 @@
+@startuml infrastructure_cles_publiques
+allow_mixing
+
+title 
+    "Infrastructure à clés publiques PKI"
+end title
+
+'**********************
+' OPTION 1 - en analyse
+' - Le scénario consiste à rendre les partenaires autonomes dans la gestion de leur clé de signature sous l'autorité de la SAAQ dans l'arbre de la PKI.
+'
+' - Avantages:
+'   - les partenaires sont autonomes
+'   - la SAAQ n'a pas à gérer les clés privées des partenaires
+'   - les partenaires génère leur CSR (Certificate Signing Request) et peuvent choisir leur clé privée
+'   - la SAAQ peut déterminer les algorithmes de signature à utiliser
+'   - la SAAQ peut déterminer leur longueur de clé
+'   - la SAAQ peut déterminer la date de fin de validité
+'   - la SAAQ peut déterminer les informations à inclure dans le certificat
+'   - la SAAQ reçoit les CSR et peut les valider avant de signer le certificat et autoriser le partenaire
+'        - création ou nouveau partenaire: génération de CSR et provisionnement du certificat
+'        - renouvellement: génération de CSR et provisionnement du nouveau certificat
+' - Inconvénients:
+'   - les partenaires doivent gérer leur clé privée
+'   - les partenaires doivent gérer la révocation de leur certificat
+'   - les partenaires doivent gérer la rotation de leur clé de signature
+'   - les partenaires doivent gérer la date de validité de leur certificat
+'   - les partenaires doivent gérer la sécurité de leur clé privée
+
+'CES MANDATAIRES AU LIEU DE PARTENAIRES
+
+'**********************
+rectangle "Infrastructure à clés publiques (PKI) - Option en analyse" as pki #LightBlue {
+
+    ' Définition des entités
+
+    ' Définit l'autorité de certification racine
+    rectangle "Autorité de certification Racine(IACA) - FondationNumérique" as ca #LightCoral {
+        rectangle "Cerfificat autorité racine" as crt_ca
+    }
+
+    ' Définit l'autorité de certification émettrice
+    rectangle "Autorité de certification Émettrice - SAAQ" as ea #LightCoral {
+        rectangle "Cerfificat autorité émettrice" as crt_ea
+    }
+
+
+    ' Définit l'entité finale
+    rectangle "Réseau de bureau de la SAAQ et de partenaires" as rp #LightCoral {
+        rectangle "Cerficat d'end-entity \nBureau SAAQ (Sherbrooke)" as bureau
+        rectangle "Cerficat d'end-entity \nPartenaire CAA" as caa
+        rectangle "Cerficat d'end-entity \nPartenaire Concessionnaires automobiles" as concessionnaires
+        rectangle "Cerficat d'end-entity \nAutres" as autres
+    }
+
+    rectangle "Citoyens" as citoyens #line.dashed {
+        rectangle "Mdl Philippe" as mdl1
+        rectangle "Mdl Julio" as mdl2
+        rectangle "Mdl A" as mdl3
+        rectangle "Mdl B" as mdl4
+        rectangle "Mdl X" as mdl5
+        rectangle "Mdl Y" as mdl6
+        rectangle "Mdl Z" as mdl7
+    }
+
+
+    ' Définition des liens et relations
+    crt_ca -down-> crt_ea : "Émission certificat autorité émettrice"
+    crt_ea -right-> mdl1
+    crt_ea -right-> mdl2
+    crt_ea -right-> mdl3
+
+    crt_ea -down-> bureau : "Émission certificat end-entity"
+    bureau -down-> mdl4
+    crt_ea -down-> caa : "Émission certificat end-entity"
+    caa -down-> mdl5
+    crt_ea -down-> concessionnaires : "Émission certificat end-entity"
+    concessionnaires -down-> mdl6
+    crt_ea -down-> autres : "Émission certificat end-entity"
+    autres -down-> mdl7
+
+'todo représenter la révocation    
+}
+
+@enduml
