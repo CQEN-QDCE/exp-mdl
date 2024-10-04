@@ -21,7 +21,7 @@ statut : en cours
 
 ## 3. Configuration et installation 
 
-### 3.1 PKI 
+### 3.1 ICP / PKI (Infrastructure à clé publiques / Public Key Infrastructure)
 
 La PKI Interne de Développement CQEN Dev V1 est créé pour donner support aux activités 
 de développement dans un contexte d'expérimentation qui ont besoin d'une PKI fonctionnelle. 
@@ -29,6 +29,23 @@ Dans un premier temps, elle servira à fournir la infrastructure de certificatio
 pour l'éxpérimentation du permis de conduire mobile (Mobile Driver's Licence mDL).  
 
 Information détaillé sur la structure de la PKI Interne de développement, consultez le document [PKI](./pki.md). 
+
+### Configuration de la ICP Expérimentale du Gouvernement du Québec
+
+#### Configuration des fichiers de paramètres dans le répertoire de scripts
+
+Il y a un fichier de paramètre général, appelé `base.params`, et un fichier de paramètres par AC crée (p. ex. `cqen.params`, `saaq.params`, etc). 
+
+La configuration du fichier général doit prendre en consideration les paramètres suivants: 
+
+
+|Nom du paramètre | Obligatoirité | Valeur | Exemple | 
+|---|---|---|---|
+|PROJECT_HOME|O|Répertoire dans lequel les sources du projet github ont été clonés et à partir duquel l'ICP sera compilée et construite.|/home/usu/code-source/pkiCloneGithub|
+|PROJECT_BKP_HOME|O|Répertoire de bkp des scripts et des fichiers de configuration des sources de l'ICP. Référer comme un sous répertoire de `$PROJECT_HOME`.|/bkp|
+|PROJECT_SRC_HOME|O||/sources|
+|PKI_HOME|O||/pki-gouvernementale|
+||||
 
 ### 3.2 Plugin Aca-py 
 
