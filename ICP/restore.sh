@@ -19,7 +19,7 @@ cp -r $PROJECT_HOME$PROJECT_BKP_HOME/ca/root/scripts/* $PKI_HOME/ca/root/scripts
 cp -r $PROJECT_HOME$PROJECT_BKP_HOME/ca/cqen/scripts/* $PKI_HOME/ca/cqen/scripts/.
 cp -r $PROJECT_HOME$PROJECT_BKP_HOME/ca/saaq/scripts/* $PKI_HOME/ca/saaq/scripts/.
 
-cp -r $PROJECT_HOME$PROJECT_BKP_HOME/scripts/* $PKI_HOME/scripts/.
+# cp -r $PROJECT_HOME$PROJECT_BKP_HOME/scripts/* $PKI_HOME/scripts/.
 
 echo $COLOR_GREEN "Fichiers restaurés avec succès."
 
