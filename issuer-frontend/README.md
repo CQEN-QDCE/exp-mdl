@@ -23,5 +23,5 @@ Le prototype sera accessible à l'url http://localhost:3000/ par défaut.
 
 | Variable | Description |
 | -------- | ----------- |
-| **REACT_APP_ISSUER_API_BASE_URL** | L'URL de l'API de l'agent ACA-Py émettrice. |
-| **REACT_APP_OID4VCI_SUPPORTED_CREDENTIAL_ID** | L'identificateur utilisé pour l'appel à l'API de l'agent ACA-Py émettrice pour enregistrer les informations du permis de conduire. |
+| **REACT_APP_ISSUER_API_BASE_URL** | L'URL de l'API de l'agent ACA-Py émetteur. |
+| **REACT_APP_OID4VCI_SUPPORTED_CREDENTIAL_ID** | L'identificateur utilisé pour l'appel à l'API de l'agent ACA-Py émetteur pour enregistrer les informations du permis de conduire. |
