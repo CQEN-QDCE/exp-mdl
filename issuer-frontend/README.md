@@ -1,74 +1,27 @@
-# Getting Started with Create React App
+# Prototype de l'application émettrice - controller - react native
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+L'application émettrice - controller est une application react native frontend qui interagi avec l'agent instance ACA-Py (émettrice - ACA-Py) pour gérer l'offre de l'attestation (accepter, refuser, etc.). 
 
-## Available Scripts
+Cette application permet à l'utilisateur de recevoir son attestation du permis de conduire dans son portefeuille mobile:
+1. L'utilisateur remplit les informations concernant le permis de conduire.
+2. L'application communique avec le ACA-Py pour la création de l'attestation.
+3. L'application affiche un code QR que l'utilisateur doit scanner avec son portefeuille numérique.
+4. L'attestation du permis de conduire est reçue par le portefeuille numérique.
 
-In the project directory, you can run:
+## Installation locale
 
-### `npm start`
+Dans le répertoire courant (/app)
+```
+pnmp install
+pnmp start
+```
+Le prototype sera accessible à l'url http://localhost:3000/ par défaut.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Configuration
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**Variables d'environnement**
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-### Additional Information
-
-Application frontend for the issuer - driver license
+| Variable | Description |
+| -------- | ----------- |
+| **REACT_APP_ISSUER_API_BASE_URL** | L'URL de l'API de l'agent ACA-Py émettrice. |
+| **REACT_APP_OID4VCI_SUPPORTED_CREDENTIAL_ID** | L'identificateur utilisé pour l'appel à l'API de l'agent ACA-Py émettrice pour enregistrer les informations du permis de conduire. |
