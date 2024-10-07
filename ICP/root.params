@@ -1,0 +1,11 @@
+# Variables d'environnement de l'Autorité Racine
+
+export PKI_ROOT="$PKI_HOME/ca/root"
+export ROOT_CONF="$PKI_ROOT/config/openssl.conf"
+export ROOT_PASSWORD_FILE="$PKI_ROOT/private/ca_password.txt"
+
+# Vars d'environnement utilisées par openssl 
+
+export ROOT_CN="/C=CA/ST=QC/O=Gouvernement du Quebec/CN=Autorite de Certification Racine du Gouvernement Quebec Dev v1"
+export ROOT_OCSP_URL="http://ocsp.icpgourvernementaleqc.apps.exp.openshift.cqen.ca"
+export ROOT_CRL_URL="http://crl.icpgourvernementaleqc.icp.apps.exp.openshift.cqen.ca/root/dev/v1/ca.crl"

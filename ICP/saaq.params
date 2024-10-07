@@ -1,0 +1,9 @@
+# Variables d'environnement de l'Autorité SAAQ 
+export SAAQ_ROOT="$PKI_HOME/ca/saaq"
+
+export SAAQ_CONF="$SAAQ_ROOT/config/openssl.conf"
+export SAAQ_PASSWORD_FILE="$SAAQ_ROOT/private/ca_password.txt"
+
+export SAAQ_CN="/C=CA/ST=QC/O=Gouvernement du Quebec/CN=Autorite de Certification SAAQ Dev v1"
+export SAAQ_OCSP_URL="http://ocsp.icpgourvernementaleqc.apps.exp.openshift.cqen.ca"
+export SAAQ_CRL_URL="http://crl.icpgourvernementaleqc.apps.exp.openshift.cqen.ca/saaq/dev/v1/ca.crl"

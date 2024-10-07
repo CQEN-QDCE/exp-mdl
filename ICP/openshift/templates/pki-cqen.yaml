@@ -1,0 +1,295 @@
+######################################################################
+# oc process -f ./pki-cqen.yaml --param-file=./pki-cqen.dev.params | oc apply -f -
+######################################################################
+kind: Template
+apiVersion: template.openshift.io/v1
+metadata:
+  name: ${APP_NAME}
+  annotations:
+    description: PKI Interne de Développement CQEN Exp V1.
+    tags: CQEN, ING, ISO 18013-5 (mDL)
+objects:
+######################################################################
+# PKI CQEN
+######################################################################
+- kind: PersistentVolumeClaim
+  apiVersion: v1
+  metadata:
+    name: ${POSTGRESQL_NAME}
+  spec:
+    storageClassName: ${STORAGE_CLASS_NAME}
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: ${POSTGRESQL_VOLUME_SIZE}
+- kind: ServiceAccount
+  apiVersion: v1
+  metadata:
+    name: ${SSH_SERVICEACCOUNT_NAME}
+- kind: Role
+  apiVersion: rbac.authorization.k8s.io/v1
+  metadata:
+    name: ${PRIVILEDGED_SCC_ROLE_NAME}
+  rules:
+    - apiGroups:
+        - security.openshift.io
+      resources:
+        - securitycontextconstraints
+      resourceNames:
+        - privileged
+      verbs:
+        - use
+- kind: RoleBinding
+  apiVersion: rbac.authorization.k8s.io/v1
+  metadata:
+    name: ${PRIVILEDGED_SCC_ROLEBINDING_NAME}
+  subjects:
+    - kind: ServiceAccount
+      name: ${SSH_SERVICEACCOUNT_NAME}
+  roleRef:
+    kind: Role
+    name: ${PRIVILEDGED_SCC_ROLE_NAME}
+    apiGroup: rbac.authorization.k8s.io
+- kind: ImageStream
+  apiVersion: v1
+  metadata:
+    name: ${APP_NAME}
+- kind: BuildConfig
+  apiVersion: v1
+  metadata:
+    annotations:
+      app.openshift.io/vcs-uri: ${GITHUB_REPOSITORY_URI}
+      template.alpha.openshift.io/wait-for-ready: "true"
+    labels:
+      app: ${APP_NAME}
+    name: ${APP_NAME}
+  spec:
+    output:
+      to:
+        kind: ImageStreamTag
+        name: ${APP_NAME}:latest
+    source:
+      contextDir: ${CONTEXT_DIR}
+      git:
+        uri: ${GITHUB_REPOSITORY_URI}
+        ref: ${GITHUB_REPOSITORY_REF}
+      type: Git          
+    strategy:
+      dockerStrategy:
+        dockerfilePath: Dockerfile
+        buildArgs:
+          - name: causerpsswd
+            value: ${CAUSERPSSWD}
+          - name: passphrase
+            value: ${PASSPHRASE}
+      type: Docker
+    triggers:
+      - type: ConfigChange
+- kind: DeploymentConfig
+  apiVersion: v1
+  metadata:
+    name: ${APP_NAME}
+    labels:
+      name: ${APP_NAME}
+      app: ${APP_GROUP}
+      app.kubernetes.io/part-of: ${APP_GROUP}
+      app-group: ${APP_GROUP}
+      role: agent
+      env: ${ENV_NAME}
+  spec:
+    strategy:
+      type: Rolling
+    triggers:
+      - type: GitHub
+        github:
+          secretReference:
+            name: ${APP_NAME}        
+      - type: ConfigChange
+      - type: ImageChange
+        imageChangeParams:
+          automatic: true
+          containerNames:
+          - ${APP_NAME}
+          from:
+            kind: ImageStreamTag
+            name: "${APP_NAME}:latest"
+    replicas: 1
+    revisionHistoryLimit: 2
+    test: false
+    selector:
+      name: ${APP_NAME}
+    template:
+      metadata:
+        labels:
+          name: ${APP_NAME}
+      spec:
+        containers:
+        - name: ${APP_NAME}
+          image: ${APP_NAME}:latest
+          ports:
+          - containerPort: ${{SSH_PORT}}
+            protocol: TCP
+          env:
+          - name: WEBHOOK_URL
+            value: ${WEBHOOK_URL}  
+          resources: {}   
+          securityContext:
+            capabilities:
+              add:
+                - SYS_CHROOT
+                - AUDIT_WRITE
+            runAsUser: 0
+            runAsGroup: 0                   
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          imagePullPolicy: Always
+        restartPolicy: Always
+        serviceAccountName: ssh-serviceaccount
+        serviceAccount: ssh-serviceaccount        
+  status: {}
+- kind: Service
+  apiVersion: v1
+  metadata:
+    name: ${APP_NAME}   
+  spec:
+    type: ClusterIP
+    selector:
+      name: ${APP_NAME}
+    ports:
+      - name: ssh
+        protocol: TCP
+        port: ${{SSH_PORT}}
+        targetPort: ${{SSH_TARGET_PORT}}
+######################################################################
+# Secrets
+######################################################################
+- kind: Secret
+  apiVersion: v1
+  metadata:
+    name: ${APP_NAME}
+    labels:
+      name: ${APP_NAME}
+    annotations:
+      template.openshift.io/expose-passphrase: "{.data['passphrase']}"
+      template.openshift.io/expose-causerpsswd: "{.data['causerpsswd']}"
+      template.openshift.io/expose-webhook-url: "{.data['webhook-url']}"
+  stringData:
+    passphrase: ${PASSPHRASE}
+    causerpsswd: ${CAUSERPSSWD}
+    webhook-url: ${WEBHOOK_URL}
+  type: Opaque
+######################################################################
+# Routes
+######################################################################
+- kind: Route
+  apiVersion: v1
+  metadata:
+    name: ${APP_NAME}
+    labels:
+      app: ${NESTJS_NAME}
+      app.kubernetes.io/part-of: exp-port-e-raccourci
+  spec:
+    host: ${APP_SUBDOMAIN}.${APP_DOMAIN}
+    to:
+      kind: Service
+      name: ${NESTJS_NAME}
+      weight: 100
+    port:
+      targetPort: 3000
+    tls:
+      termination: edge
+      insecureEdgeTerminationPolicy: None
+    wildcardPolicy: None
+  status:
+    ingress:
+      - host: ${APP_SUBDOMAIN}.${APP_DOMAIN}
+        routerName: default
+        conditions:
+          - type: Admitted
+            status: "True"
+        wildcardPolicy: None
+        routerCanonicalHostname: ${APP_DOMAIN}
+######################################################################
+# Parameters
+######################################################################
+parameters:
+- name: APP_NAME
+  displayName: Application name
+  description: Used to group components together in the OpenShift console.
+  required: true
+  value: 'pki-cqen'
+- name: APP_GROUP
+  displayName: Application group
+  description: The name assigned to all of the deployments in this project.
+  required: true
+  value: 'mDL'
+- name: ENV_NAME
+  displayName: Environment name
+  description: Environment name. For the build environment this will typically be 'tools'
+  required: true
+  value: dev
+- name: GITHUB_REPOSITORY_URI
+  displayName: GitHub repository URI
+  description: URI of the GitHub repository.
+  required: true
+  value: "https://github.com/CQEN-QDCE/exp-mdl.git"
+- name: GITHUB_REPOSITORY_REF
+  displayName: Git Reference  
+  description: Set this to a branch name, tag or other ref of your repository if you are not using the default branch.  
+  value: "features/icpGouvQC"  
+- name: CONTEXT_DIR
+  displayName: Context Directory
+  description: Set this to the relative path to your project if it is not in the root
+    of your repository.  
+  value: "ICP"  
+- name: VOLUME_SIZE
+  displayName: Volume size
+  description: The size of the persistent volume, e.g. 512Mi, 1Gi, 2Gi.
+  required: true
+  value: 512Mi  
+- name: SSH_PORT
+  displayName: SSH port
+  description: The SSH port for connection
+  required: true
+  value: '22'
+- name: SSH_TARGET_PORT
+  displayName: SSH target port
+  description: The SSH target port for connection
+  required: true
+  value: '2222'
+- name: PASSPHRASE
+  displayName: The passphrase for the key generations
+  description: The passphrase for the key generations.
+  generate: expression
+  from: "[a-zA-Z0-9]{32}"
+- name: CAUSERPSSWD
+  displayName: The ssh users's password
+  description: The ssh users's password.
+  generate: expression
+  from: "[a-zA-Z0-9]{32}"
+- name: SSH_SERVICEACCOUNT_NAME
+  displayName: The name of the service account
+  description: The name of the service account.
+  value: ssh-serviceaccount
+- name: PRIVILEDGED_SCC_ROLE_NAME
+  displayName: The name of the privileged SCC role
+  description: The name of the privileged SCC role.
+  value: privileged-scc
+- name: PRIVILEDGED_SCC_ROLEBINDING_NAME
+  displayName: The name of the privileged SCC rolebinding
+  description: The name of the privileged SCC rolebinding.
+  value: use-privileged-scc
+- name: NESTJS_NAME
+  displayName: The name for NESTJS
+  description: The name for NESTJS.
+  value: pkiicpgouv
+- name: APP_SUBDOMAIN
+  displayName: App subdomain
+  description: App subdomain
+  value: icpgouvcqen
+- name: APP_DOMAIN
+  displayName: App domain
+  description: App domain
+  value: apps.exp.openshift.cqen.ca
+
