@@ -47,9 +47,9 @@ La configuration du fichier général doit prendre en consideration les paramèt
 |PKI_HOME|O||/pki-gouvernementale|
 ||||
 
-### 3.2 Plugin Aca-py 
+### 3.2 Plugin aca-py 
 
-Pour préparer l'environnement de développement, il faut s'assurer d'avoir `python` et son package manager `poetry` dument installés. Le projet d'acapy est forké dans le repo du CQEN sous le nom `aries-cloudagent-python`. Clonez-le à la machine locale, puis créez et changes dans une nouvelle branche pour votre feature. 
+Pour préparer l'environnement de développement, il faut s'assurer d'avoir `python` et son package manager `poetry` dûment installés. Le projet d'aca-py est forké dans le repo du CQEN sous le nom `aries-cloudagent-python`. Clonez-le à la machine locale, puis créez et changez dans une nouvelle branche pour votre fonctionalité. 
 
 ```bash
 git clone https://github.com/CQEN-QDCE/aries-cloudagent-python.git 
@@ -57,7 +57,7 @@ cd aries-cloudagent-python
 git checkout -b features/votrebranche
 ```
 
-Ensuite, créez dans la racine du projet le repertoire `.vscode`. Dans ce répertoire, créez deux fichiers,  `launch.json` et `local.yaml`. Copiez le contenu suivant dans le fichier respectif : 
+Ensuite, créez dans la racine du projet le repertoire `.vscode`. Dans ce répertoire, créez deux fichiers,  `launch.json` et `local.yaml`. Copiez le contenu suivant dans les fichiers respectifs : 
 
 
 - `launch.json`
@@ -121,7 +121,7 @@ plugin:
   -ecdsa-x509
 ```
 
-Ensuite, il faut configurer l'environnement virtuel via `poetry`. À la première démarrage, il faut installer les packages de poetry. Aux démarrages suivantes, vous n'avez qu'à lancer l'environnement. 
+Ensuite, il faut configurer l'environnement virtuel via `poetry`. À la première démarrage, vous devez installer les packages de poetry. Aux démarrages suivantes, vous n'avez qu'à lancer l'environnement. 
 
 ```bash 
 poetry install --extras="askar bbs ecdsa-x509"
@@ -137,8 +137,6 @@ ECDSAP256 = "p256"
 ECDSAP384 = "p384"
 ECDSAP521 = "p521"
 ```
-
-Probablement il y a du changement ailleurs dans ce package. Rechercher ce qu'il faut. 
 
 Un fois VSCode lancé, l'environnement et le degub sont prêts. 
 
