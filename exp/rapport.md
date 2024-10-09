@@ -142,8 +142,8 @@ Un fois VSCode lancé, l'environnement et le degub sont prêts.
 
 ### 3.3 Application émettrice 
 
-### 3.4 Application mobile de test BLE 
-
+### 3.4 Portefeuille mobile mDL
+Pour être en mesure de tester Lémission d'un mDL, une application mobile de type portefeuille numérique a été développé. Pour l'utiliser, [Consulter son dépôt](https://github.com/CQEN-QDCE/portefeuille-mobile-mdl/) et suivre la procédure d'installation.
 
 ## 4. Démarche de l'expérimentation 
 
