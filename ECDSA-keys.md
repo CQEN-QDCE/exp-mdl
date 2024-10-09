@@ -87,6 +87,8 @@ admin-insecure-mode: true
 label: 'Issuer Agent1'
 log-level: debug
 debug-webhooks: true
+plugin:
+  -ecdsa-x509
 
 #wallet-storage-type: postgres_storage
 #wallet-storage-config: '{"url":"localhost:5432","max_connections":5}'
@@ -147,38 +149,9 @@ Json à utiliser dans les essais. Remplacer le keyType par `p256`, `p384` ou `p5
 
 OID pour ed25519: {iso(1) identified-organization(3) thawte(101) id-Ed25519(112)}
 
-### Outil auxiliaire de génération de clés et CSR 
-
-L'outil auxiliaire fait la création des clés et génération de la CSR, en utilisant les mêmes librairies et code 
-que sont déployes dans aca-py. 
-
-Pour l'utilisation, il faut créér deux répertoires sous ECDSA-CSR, nommés `csr` and `keys`. 
-
-```bash 
-mkdir -p csr/ keys/
-```
-
-Tout d'abord, utilisez l'endpoint /wallet/did/create-did pour générer un nouveau paire de clés. Prennez en note l'identificateur du did:, qui sera utilisé comme alias dans les étapes suivantes. 
-
-Ensuite, exécutez le programme `ECCSR.py`, avec ses deux paramètres: a curve name (p256, p384 ou p521), et un alias, 
-qui sera utilisé comme `common-name` dans le certificat.  
-
-```bash
-python3 ECCSR.py p256 did:key:WgWxqztrNooG92RXvxSTWv
-```
- 
-Les clés seront générées sous le répertoire `/keys` et la CSR sous le répertoire `/CSR`. 
-
-Finalement, pour émettre le certificat, exécuter le scritp ./certificateIssuance.sh, avec le même alias en paramètre, qu'il sera émis par la structure de la PKI interne. 
-
-```bash
-./certiticateIssuance.sh did:key:WgWxqztrNooG92RXvxSTWv
-```
-
 
 
 ## Références 
 
 Librairie Python Cryptography   
 https://cryptography.io/en/latest/hazmat/primitives/asymmetric/ec/
-
