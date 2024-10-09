@@ -34,3 +34,5 @@ yarn.lock
 
 # openshift templates params
 *.params
+
+__pycache__/
