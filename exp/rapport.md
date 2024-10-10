@@ -45,6 +45,7 @@ Ainsi, cette expérimentation vise à tester et essayer les normes et règles st
 
 - Collaboration avec spécialistes d'autres provinces lors de certains moments clés des expérimentations
 
+Au terme de cette expérimentation, nous souhaitions matérialiser l’entièreté du cycle de vie d’un permis de conduire mobile. En cas de succès, nous pourrions obtenir des informations utiles sur le fonctionnement du permis de conduire mobile, ainsi que sur l’expérience des différents utilisateurs finaux. Ces informations devraient constituer un substrat de qualité pour des initiatives futurs sur le développement d’un permis de conduire mobile au Québec et en Amérique du Nord. 
 
 ## 2. Contexte 
 
