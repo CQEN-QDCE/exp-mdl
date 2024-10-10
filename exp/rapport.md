@@ -17,7 +17,68 @@ statut : en cours
 
 ## 1. Objectifs 
 
+L'objectif principal de cette expérimentation est d’explorer la création d’un permis de conduire mobile. Cet objectif se décline en plusieurs sous-objectifs tels que : 
+
+- Démontrer la faisabilité technique d’un permis de conduire numérique compatible à la fois aux orientations nationales en matière d’identité numérique et aux normes internationales en lien avec le permis de conduire numérique.  
+
+- Créer une attestation vérifiable et un registre d’attestation. 
+
+- Créer un registre de consommateurs et expliciter les étapes de vérification du permis de conduire mobile 
+
+- Créer un environnement représentatif du portefeuille numérique sur appareil mobile et assurer l’acheminement sécurisé du permis de conduire numérique.  
+
+- Créer un environnement représentatif du registre de preuves permettant de valider l’interopérabilité à l’échelle nord-américaine.  
+
+- Évaluer l'expérience utilisateur des utilisateurs finaux (propriétaire du permis et contrôleurs routiers)   
+
+Ainsi, cette expérimentation vise à tester et essayer les normes et règles statuées pour la création et utilisation de permis de conduire numériques (mDL - Mobile Driver's Licence). On établi comme buts à atteindre lors de cette expérimentation les facteurs suivants: 
+
+- Durant la phase préparatoire, obtenir des formations permettant une mise à niveau des connaissances technologiques requises pour mener à bien les activités de prototypage et d’expérimentations​
+
+- Obtenir l’appui d’experts du domaine à certains moments clé des expérimentations (ex. permis, technologies mDL, technologies chaînes de blocs)
+
+- Partage de l’état d’avancement de nos expérimentations avec les communautés open source des technologies impliqués et obtenir des rétroactions (ex. JEDI, employés de différentes juridictions canadiennes)
+
+- Accès aux outils dont dispose les contrôleurs routiers dans le cadre de leur travail (ex. cellulaires, tablettes)
+
+- Participation des équipes spécialisées en recherche d'expérience client  
+
+- Collaboration avec spécialistes d'autres provinces lors de certains moments clés des expérimentations
+
+
 ## 2. Contexte 
+
+### 2.1 Scénarios
+
+Pour cette expérimentation, on a envisagé une stratégie de d'essais à plusieurs volets. 
+
+Identité numérique ...
+
+mDL pur ..
+
+Solution hybride...
+
+Alors, plusieurs scénarios ont été envisagés pour l'expérimentation des mDL. 
+
+**Scénario 1**
+
+Se base sur l’expérience et l’infrastructure développé pour l’identité numérique. S’appuie sur le travail effectué par le Joint Council – Jurisdictional Experts on Digital Identity (JC-JEDI)​
+  
+**Scénario 2**
+
+Basé sur la norme ISO 18013-5 (mDL) et les lignes directrices de l’AAMVA.
+
+**Scénario 3**
+
+Réutilisation de l’infrastructure développé dans le cadre du projet d’identité numérique pour émettre un permis mobile conforme à la norme ISO 18013-5 (mDL).
+
+**Scénario 4**
+
+Basé sur l’infrastructure requise pour les fondations de l’identité numérique et de la norme ISO 18013-5 mDL 
+
+
+<img src="./images/HighLevelmDLOverview.png" width="800" />
+
 
 ## 3. Configuration et installation 
 
@@ -198,6 +259,34 @@ La pile technologique utilisé dans nos expérimentations précédentes sur l'id
 Le code de la bibliothèque [pyMDOC-CBOR](https://github.com/IdentityPython/pyMDOC-CBOR) à été utilisé pour permettre à un agent [ACA-Py](https://github.com/openwallet-foundation/acapy) d'émettre un permis de conduire au format mDL. Pour le [Portefeuille mobile mDL](https://github.com/CQEN-QDCE/portefeuille-mobile-mdl), une conversion du code de la bibliothèque [Kotlin Multiplatform mdoc library](https://github.com/walt-id/waltid-mdoc) en TypeScript a été effectué. La bilbiothèque [mdl-ts](https://github.com/CQEN-QDCE/mdl-ts) est le résultat de cette conversion.
 
 ## 5. Analyse des résultats 
+
+### 5.xx - Enjeux identifiés 
+
+- Marché peu mature en matière de mDL et expertises/solutions silotés par fournisseurs. Rend plus difficile la prise de connaissances et la formation; 
+
+- Il faudra discuter des modalités de publication de nos résultats auprès de la communauté de pratique Open Source;
+
+- La participation des équipes de recherche ne sera pas requise si nous ne pouvons pas aller auprès des utilisateurs. Notamment, nous ne pourrons pas connaître s’il y  a une perception positive vis-à-vis le permis numérique; 
+
+- Disponibilité des ressources stratégiques (ex. Experts permis, Experts de certaines technologies); 
+
+- Caractère innovant de la solution; 
+
+- Nécessité d’interopérabilité avec l’écosystème mDL et eID canadien et américain; 
+
+- La disponibilité des membres de l’équipe noyau a été un enjeu depuis le début du projet d’expérimentation. La planification a été ajustée pour tenir compte de cet enjeu; 
+
+- L’équipe partenaire rencontre des bloquants pour la consultation des experts et spécialistes en lien avec le permis;
+
+
+### 5.xx - Exclusions du scope du projet 
+
+- Cette première phase d’expérimentation couvrira l’interopérabilité dans l’écosystème nord-américain. L’interopérabilité à l’échelle international, et plus spécifiquement avec le territoire européen, sera déterminé dans une deuxième phase, le cas échéant;
+
+- Cette phase d’expérimentation ne couvrira pas les parties prenantes du secteur privé qui pourraient devoir utiliser un éventuel permis numérique québécois (ex. concessionnaires automobiles, entreprises de location de voitures/camions, etc);
+
+- Les prototypes finaux ne seront pas des fondations réutilisables dans l’écosystème d’identité numérique et de permis numérique québécois. Si les résultats s’avèrent concluants, il faudra prévoir une phase projet pour détailler la solution d’affaires cible, et ce, conformément aux exigences de la LGGRI.
+
 
 ## 6. Conclusion
 
