@@ -190,6 +190,12 @@ En normalisant ces aspects, l'ISO/IEC 18013-5 vise à assurer l'interopérabilit
 
 ## 7. Références 
 
+### Standards à suivre 
+
+ISO/IEC 18013-2 - Personal identification — ISO-compliant driving licence - Part 2: Machine-readable technologies
+ISO/IEC 18013-5 - Personal identification — ISO-compliant driving licence - Part 5: Mobile driving licence (mDL) application
+AAMVA - Mobile Driver’s License (mDL) Implementation Guidelines Version 1.2
+
 
 ### Sécurité de l'information
 
