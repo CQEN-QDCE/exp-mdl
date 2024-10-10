@@ -49,6 +49,24 @@ Au terme de cette expérimentation, nous souhaitions matérialiser l’entièret
 
 ## 2. Contexte 
 
+le Centre Québécois d’Excellence numérique, expérimente le prototypage d’un permis de conduire numérique. Il s’agit d’une représentation numérique du permis de conduire physique traditionnel stockée et accessible à l’aide d’un dispositif mobile comme un téléphone intelligent ou une tablette. Comme pour son équivalent physique, le permis de conduire numérique fait l’objet d’une suite de standards émis à l’échelle internationale par l’Organisation International de Standardisation (ISO). La norme ISO 18013-5 établit des spécifications techniques sur le stockage et l’interface pour la vérification du document. Cela inclut notamment des règles strictes sur les modèles de données, l’échange de données entre le détenteur et le vérificateur, ainsi que des mécanismes de sécurité pour protéger son intégrité et son authenticité.  
+
+Au reste, pour le volet émission du document, la norme donne des lignes directrices sur la gouvernance, laissant le soin aux autorités émettrices et à leur association régionale de déterminer les spécifications techniques complémentaires pour se conformer au cadre légal et règlementaire. Pour l’Amérique du Nord, l’AAMVA (American Association of Motor Vehicle Administrators) a édicté des recommandations pour l’émission d’un permis de conduire numérique. Elle mentionne notamment la création d’une liste vérifiée des autorités émettrices de certificats (VICAL), qui contient les clés publiques des autorités émettrices et garantit leur fiabilité.  
+
+L’expérimentation a un caractère autonome et n’entretient aucune relation directe avec les autres initiatives du gouvernement en matière d’identité numérique. Toutefois, lorsqu’on dépasse les frontières de l’expérimentation, les permis de conduire numérique et l’identité numérique entretiennent un rapport étroit. Il devient donc essentiel de prendre en compte le cadre de confiance établit en matière d’identité numérique, grâce à l’enchevêtrement des principes édictés par le Conseil d’identification et d’authentification numériques du Canada (CCIAN) et les orientations du programme gouvernemental du Service québécois d’identité numérique (SQIN) dans la réalisation de l’expérimentation. 
+
+Dans ce contexte, quatre scénarios potentiels ont été identifiés :  
+
+    La création d’un permis de conduire mobile reposant uniquement sur l’expérience et l’infrastructure développée pour l’identité numérique, notamment sur la blockchain pancanadienne d’identité numérique CANDY. 
+
+    La création d’un permis de conduire numérique reposant uniquement sur les normes de l’ISO 18013-5 complétées par les lignes directrices de l’AAMVA.  
+
+    La création d’un permis de conduire mobile reposant sur l’infrastructure de l’identité numérique existante conforme aux spécificités techniques de la norme ISO 18013-5. 
+
+    La dérivation d’un permis de conduire numérique à partir de l’identité numérique.  
+
+Nous privilégions le scénario 2 avec pour objectif principal la conformité avec les standards de l’ISO complétés par les lignes directrices de l’AAMVA. En conséquence, nous avons poursuivi la réalisation de quatre prototypes touchant l’émission du document, la création et la gestion du registre de preuves, la détention et la vérification du document.  
+
 ### 2.1 Scénarios
 
 Pour cette expérimentation, on a envisagé une stratégie de d'essais à plusieurs volets. 
