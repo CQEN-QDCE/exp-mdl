@@ -278,6 +278,10 @@ Le code de la bibliothèque [pyMDOC-CBOR](https://github.com/IdentityPython/pyMD
 
 ## 5. Analyse des résultats 
 
+### 5.1 Résultats attendus 
+
+Au terme de cette expérimentation, nous souhaitions matérialiser l’entièreté du cycle de vie d’un permis de conduire mobile. En cas de succès, nous pourrions obtenir des informations utiles sur le fonctionnement du permis de conduire mobile, ainsi que sur l’expérience des différents utilisateurs finaux. Ces informations devraient constituer un substrat de qualité pour des initiatives futurs sur le développement d’un permis de conduire mobile au Québec et en Amérique du Nord. 
+
 ### 5.xx - Enjeux identifiés 
 
 - Marché peu mature en matière de mDL et expertises/solutions silotés par fournisseurs. Rend plus difficile la prise de connaissances et la formation; 
