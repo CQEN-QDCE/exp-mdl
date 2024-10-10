@@ -115,7 +115,7 @@ Information détaillé sur la structure de la PKI Interne de développement, con
 
 #### Configuration des fichiers de paramètres dans le répertoire de scripts
 
-Il y a un fichier de paramètre général, appelé `base.params`, et un fichier de paramètres par AC crée (p. ex. `cqen.params`, `saaq.params`, etc). 
+Il y a un fichier de paramètre général, appelé `base.params`, et un fichier de paramètres par AC crée (p. ex. `cqen.params`, etc). 
 
 La configuration du fichier général doit prendre en consideration les paramètres suivants: 
 
@@ -309,6 +309,8 @@ Le code de la bibliothèque [pyMDOC-CBOR](https://github.com/IdentityPython/pyMD
 
 
 ## 6. Conclusion
+
+
 
 ## 7. Références 
 
