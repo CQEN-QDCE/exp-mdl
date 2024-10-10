@@ -164,3 +164,31 @@ structure de secrets de votre plateforme (Secrets d'Openshift, par exemple), ou 
 s'assurant qu'ils ne seront jamais commités dans une dépôt de code. Regardez l'article de [Bruce Schneider](01) sur le sujet. 
 
 [01]: https://www.schneier.com/blog/archives/2005/06/write_down_your.html "Write down you passwords"
+
+## Références 
+
+**Requests for Comments** 
+======================
+RFC 3339 - Date and time on the Internet : Timestamps 
+RFC 4648 - The Base16, Base32, and Base64 Data Encodings
+RFC 5869 - HMAC-based Extract-and-Expand Key Derivation Function (HKDF)
+RFC 7049 - Concise Binary Objet Representation (CBOR)
+RFC 8152 - CBOR Object Signing and Encryption (COSE)
+RFC 8259 - The JavaScript Object Notation (JSON) Data Interchange Format
+RFC 8610 - Concise Data Definition Language
+RFC 8943 - Concise Binary Object Representation (CBOR) Tags for Date 
+
+**ISO Standards**
+==============
+ISO/IEC 18004   - Automatic identification and data capture techniques. QR Code bar code symbology specification. 
+ISO/IEC 18013-5 - 
+ISO/IEC 18013-7 - 
+
+**Bundesamt für Sicherheit in der Informationstechnik**
+===================================================  
+BSI TR-03111 Elliptic Curve Cryptography (ECC)
+
+
+**NIST**
+=========
+NIST SP 800-38D - Recommendation for Block Cipher Modes of Operation: Galois/Counter Mode (GCM) and GMAC
