@@ -95,8 +95,9 @@ Réutilisation de l’infrastructure développé dans le cadre du projet d’ide
 
 Basé sur l’infrastructure requise pour les fondations de l’identité numérique et de la norme ISO 18013-5 mDL 
 
-
 <img src="./images/HighLevelmDLOverview.png" width="800" />
+
+**Vision général de l'écosystème du mDL** 
 
 
 ## 3. Configuration et installation 
