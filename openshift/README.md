@@ -53,7 +53,7 @@ Nous utilisons la "Ligne de Commande Openshift" (Openshift CLI) `oc client` pour
 
 ### Applications
 
-- **Application émettrice**: L'émetteur est composé d'une application API (ACA-Py agent) et d'une applicatioin frontend (controller)
+- **Application émettrice**: L'émetteur est composé d'une application API (ACA-Py agent) et d'une application frontend (controller)
     
     ![Émetteur](./../documentation/img/emetteur_app_openshift.png)
 

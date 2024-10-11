@@ -221,6 +221,12 @@ Un fois VSCode lancé, l'environnement et le degub sont prêts.
 
 ### 3.3 Application émettrice 
 
+L'application émettrice est un ensemble de deux composants: une API (backend) et une application web/mobile (frontend):
+- "backend": API d'un agent ACA-Py (Hyperledger Aries Cloud Agent Python) qui gère l'offre de l'attestation (accepter, refuser, etc.).
+  - [Consulter la procédure d'installation](../aca-py-oid4vci/README.md)
+- "frontend": Application web/mobile qui permet à l'utilisateur de fournir ses informations pour le permis de conduire mobile et aussi de faire les appels à l'API ACA-Py pour l'émission du permis.
+  - [Consulter la procédure d'installation](../issuer-frontend/README.md)
+
 ### 3.4 Portefeuille mobile mDL
 Pour être en mesure de tester l'émission d'un mDL, une application mobile de type portefeuille numérique a été développé. Pour l'utiliser, [Consulter son dépôt](https://github.com/CQEN-QDCE/portefeuille-mobile-mdl/) et suivre la procédure d'installation.
 
