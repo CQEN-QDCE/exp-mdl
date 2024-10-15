@@ -282,6 +282,8 @@ La pile technologique utilisé dans nos expérimentations précédentes sur l'id
 
 Le code de la bibliothèque [pyMDOC-CBOR](https://github.com/IdentityPython/pyMDOC-CBOR) à été utilisé pour permettre à un agent [ACA-Py](https://github.com/openwallet-foundation/acapy) d'émettre un permis de conduire au format mDL. Pour le [Portefeuille mobile mDL](https://github.com/CQEN-QDCE/portefeuille-mobile-mdl), une conversion du code de la bibliothèque [Kotlin Multiplatform mdoc library](https://github.com/walt-id/waltid-mdoc) en TypeScript a été effectué. La bilbiothèque [mdl-ts](https://github.com/CQEN-QDCE/mdl-ts) est le résultat de cette conversion.
 
+Au cours de cette expérimentation, les implémentations de la norme ISO/IEC 18013-5 ont évolués. Un acteur majeur du monde SSI, la bibliothèque [credo-ts](https://github.com/openwallet-foundation/credo-ts), a ajouté une fonctionnalité pour supporter le mDL. Au moment d'écrire ces lignes, le code n'est pas complété mais cet ajout est intéressant pour le développement d'un portefeuille multi-formats. En plus de supporter les [AnonCreds](https://hyperledger.github.io/anoncreds-spec/), la bibliothèque credo-ts supportent les [attestations vérifiables W3C](https://www.w3.org/TR/vc-data-model/), les [attestations vérifiables SD-JWT](https://www.ietf.org/archive/id/draft-ietf-oauth-sd-jwt-vc-01.html), le protocol OID4VC et prochainement, le mDL. Ainsi, le [Portfeuille mobile QC](https://github.com/MCN-ING/Portefeuille-mobile-qc) pourra devenir un portefeuille multi-formats.
+
 ## 5. Analyse des résultats 
 
 ### 5.1 Résultats attendus 
