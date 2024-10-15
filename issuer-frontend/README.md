@@ -10,7 +10,7 @@ Cette application permet à l'utilisateur de recevoir son attestation du permis 
 
 ## Installation locale
 
-Dans le répertoire courant (/app)
+Dans le répertoire courant (/issuer-frontend)
 ```
 pnmp install
 pnmp start

@@ -16,6 +16,8 @@
 
 ## Comment utiliser ce dépôt ?
 
+TODO
+
 ## Licence
 
 Le code et la documentation de cette expérimentation sont la propriété intellectuelle du Gouvernement du Québec et sont publiés sous la licence libre du Québec - Permissive (LiLiQ-P) version 1.1. 
