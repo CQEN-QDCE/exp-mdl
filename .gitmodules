@@ -1,0 +1,3 @@
+[submodule "portefeuille-mobile-mdl"]
+	path = portefeuille-mobile-mdl
+	url = https://github.com/CQEN-QDCE/portefeuille-mobile-mdl.git
