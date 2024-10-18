@@ -98,3 +98,93 @@ https://www.cyber.gc.ca/en/guidance/cryptographic-algorithms-unclassified-protec
 FIPS 186-5 - Digital Signature Standard (DSS) 
 https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.186-5.pdf
 
+The BBS Signature Scheme
+https://identity.foundation/bbs-signature/draft-irtf-cfrg-bbs-signatures.html
+
+Cryptographic Module Validation Program (CMVP)
+Canada
+https://www.cyber.gc.ca/en/tools-services/cryptographic-module-validation-program-cmvp
+E-U
+https://csrc.nist.gov/Projects/cryptographic-module-validation-program/use-of-fips-140-2-logo-and-phrases
+
+Digital Identity Guidelines
+https://csrc.nist.gov/pubs/sp/800/63/4/ipd	
+
+BBS+ Applications, Standardization and a Bit of Theory
+https://csrc.nist.gov/csrc/media/presentations/2023/crclub-2023-10-18/images-media/20231018-crypto-club--greg-and-vasilis--slides--BBS.pdf
+
+
+## References de crypto symétrique 
+
+Symmetric Cryptography & Key Management: Exhaustion, Rotation, Defence
+https://www.cryptomathic.com/news-events/blog/symmetric-cryptography-and-key-management-considerations-on-key-exhaustion-rotation-and-security-models#
+
+An Overview of Symmetric Encryption and the Key Lifecycle
+https://www.cryptomathic.com/news-events/blog/an-overview-of-symmetric-encryption-and-the-key-lifecycle
+
+UBS SPARES ITS CLIENTS THE PAPERWORK AND INCREASES EFFICIENCY AND SECURITY USING QUALIFIED ELECTRONIC SIGNATURES
+https://www.cryptomathic.com/casestudies/ubs
+
+https://geraintluff.github.io/cbor-debug/
+
+https://www.aamva.org/identity/mobile-driver-license-digital-trust-service/for-issuing-authorities
+
+https://github.com/CQEN-QDCE/Portefeuille-mobile-qc-mDL/blob/main/DEVELOPER.md
+
+https://github.com/nvm-sh/nvm
+
+https://github.com/openwallet-foundation/credo-ts-ext/tree/main/packages/transport-ble
+
+
+***Digital Identities - Mobile Driver's License (mDL) !!!!!***   
+
+https://www.nccoe.nist.gov/projects/digital-identities-mdl
+
+https://github.com/CQEN-QDCE/exp-mdl/blob/dev/documentation/notes.md
+
+Multiple significant security vulnerabilities in the design of data integrity
+https://github.com/w3c/vc-data-integrity/issues/272
+
+Anoncreds-RS
+https://github.com/hyperledger/anoncreds-rs
+
+European blockchain regulatory sandbox for Distributed Ledger Technologies
+https://ec.europa.eu/digital-building-blocks/sites/display/EBSI/Sandbox+Project
+
+European Blockchain Sandbox releases the complete Cohort 1 Best Practices Report
+https://ec.europa.eu/digital-building-blocks/sites/display/EBSISANDCOLLAB/European+Blockchain+Sandbox+releases+the+complete+Cohort+1+Best+Practices+Report
+
+Verifiable Credential Data Integrity 1.0
+https://www.w3.org/TR/vc-data-integrity/
+
+Data Integrity ECDSA Cryptosuites v1.0
+https://www.w3.org/TR/vc-di-ecdsa/
+
+Data Integrity BBS Cryptosuites v1.0
+https://www.w3.org/TR/vc-di-bbs/
+
+W3C CCG presentation on parallel signatures
+https://docs.google.com/presentation/d/19uepe7zinY0MKdTkLkDu_bPX2P4BDj6mmFPtRjCfJX8/edit#slide=id.g2afc3854acf_0_0
+
+Breakthrough: Parallel Signatures - NIST, ECDSA-SD, and BBS
+https://lists.w3.org/Archives/Public/public-credentials/2024Jan/0054.html
+
+Swiss E-ID & Trust Infrastructure — Technical Roadmap (WIP)
+https://github.com/e-id-admin/open-source-community/blob/main/tech-roadmap/tech-roadmap.md
+
+AnonCreds to W3C Format Verifiable Credential and Presentation Converter
+https://github.com/andrewwhitehead/anoncreds-w3c-mapping
+
+Aries VCR
+https://github.com/bcgov/aries-vcr?tab=readme-ov-file
+
+Indy-VDR (Verifiable Data Registry)
+https://github.com/hyperledger/indy-vdr
+
+React Native Ble DIDComm
+https://github.com/animo/react-native-ble-didcomm/tree/main
+
+Functional mdoc implementation
+https://github.com/openwallet-foundation-labs/wallet-framework-dotnet/pull/120
+
+
