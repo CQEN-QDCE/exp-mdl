@@ -77,6 +77,50 @@ Ed25519 est une implémentation spécifique de l'EdDSA (Edwards-curve Digital Si
 
 N'oubliez pas que le choix entre Ed25519 et ECDSA dépendra de votre cas d'utilisation spécifique, notamment des systèmes avec lesquels vous interagissez, de vos besoins en termes de performances et de vos exigences en matière de sécurité.
 
+### Quels sont les cas d'utilisation courants dans lesquels Ed25519 est préféré à ECDSA pour les signatures numériques ?
+
+Ed25519 est souvent préférée à l'ECDSA (Elliptic Curve Digital Signature Algorithm) dans les cas d'utilisation suivants :
+
+- **Messagerie sécurisée :** Les applications de messagerie sécurisée comme Signal utilisent Ed25519 pour sa vitesse et ses fortes propriétés de sécurité.
+
+- **Authentification SSH :** OpenSSH prend en charge les clés Ed25519. Elles sont plus rapides et plus sûres que les clés ECDSA.
+
+- **TLS :** certaines implémentations de TLS (Transport Layer Security) prennent en charge la clé Ed25519. Il est utilisé dans les certificats pour HTTPS et d'autres protocoles de communication sécurisés.
+
+- **Signature de logiciels :** Ed25519 est utilisé pour signer les paquets de logiciels dans certains systèmes de gestion des paquets en raison de ses signatures déterministes et de sa résistance à certains types d'attaques.
+
+- **Réseau Tor :** Le réseau d'anonymat Tor utilise Ed25519 pour authentifier ses serveurs relais.
+
+- **Cryptomonnaies :** Certaines crypto-monnaies récentes préfèrent Ed25519 à ECDSA en raison de ses avantages en termes de sécurité et de performance. Par exemple, Stellar et Nano utilisent Ed25519.
+
+### Quelles sont les courbes homologuées par le NIST pour les algorithmes EdDSA et ECDSA ?
+
+Le `National Institute of Standards and Technology (NIST)` a approuvé plusieurs courbes elliptiques à utiliser avec l'algorithme de signature numérique à courbe elliptique (ECDSA). Ces courbes sont définies dans la norme `NIST FIPS 186-4` et comprennent :
+
+- P-192
+- P-224
+- P-256
+- P-384
+- P-521
+
+Toutefois, le NIST n'a officiellement homologué aucune courbe pour une utilisation avec l'algorithme de signature numérique à courbe d'Edwards (EdDSA). L'EdDSA utilise généralement des courbes définies dans d'autres normes, telles que Curve25519 et Curve448, qui sont définies dans le RFC 7748. Ces courbes n'ont pas été développées par le NIST et ne sont pas incluses dans les normes du NIST.
+
+Il est important de noter que si le NIST n'a homologué aucune courbe pour l'EdDSA, cela ne signifie pas nécessairement que l'EdDSA est moins sûr ou moins adapté à l'utilisation que l'ECDSA. La sécurité d'un algorithme de signature numérique dépend de nombreux facteurs, notamment de la courbe spécifique utilisée, de la mise en œuvre de l'algorithme et du contexte dans lequel l'algorithme est utilisé.
+
+**Réf:** FIPS 186-5 - Digital Signature Standard (DSS)
+https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.186-5.pdf
+
+## Le schema BBS (Boneh-Boyen-Schachman)
+
+Le schema de signature numérique BBS (Boneh-Boyen-Shacham) est un protocole de signature numérique multi-messages sécurisé qui permet le selective disclosure, l'Unlinkable Proofs et la Proof of Possession d'une signature dans un sous-ensemble des messages signés. 
+
+Pour dire qu'un produit qui traite des informations sensibles peut être utilisé dans le context du gouverment fédéral canadien ou dans le gouvernement des E-U, il faut faire la validation de ce produit par le Cryptographic Module Validation Program (CMVP). Ce programme valide le produit selon le standard NIST-FIPS-140-3, qui normatise les algorithmes, tailles de clés, les courbes, etc..., bien comme l'utiilisation des bonnes pratiques preconisées par la CSE. 
+
+L'utilisation du schema de signature BBS peut se montrer un empêchement lors de la validation du produit dans la CMVP. Un produit non homologué est potentiellement non utilisable dans des applications qui traitent de l'information sensible, dans le cadre gouvernemental (fédéral et américain). 
+
+Il est important de noter que même si le schema de signature BBS n'est pas actuellement homologué par le NIST, il possède les fonctionnalités de selective disclosure et de proof-of-knowledge requises par les applications qui préservent la privacité, comme la blockchain d'identité, et il est utilisé dans diverses applications qui sont en cours de normalisation dans d'autres organisations telles que le W3C.
+
+
 
 ## Références
 
