@@ -17,7 +17,7 @@ Alors, la structure initialle de la PKI est la suivante:
     |----Autorité de Certification Intermediaire CQEN Exp V1        5 ans
     |    |---- Certificat d'usager final                            1 an
     |
-    |----Autorité de Certification SAAQ mDL Exp V1                  5 ans
+    |----Autorité de Certification mDL mDL Exp V1                  5 ans
     |    |---- Certificat de mDL (Mobile Driver's Licence)          Délai à définir selon les normes adoptées          
 ```
 
@@ -34,10 +34,10 @@ Niveau: 2eme
 Prefix: ACIntermediaireCQENExpV1  
 Dir: /ACIntermediaire  
 
-Nom: Autorité de Certification SAAQ mDL Exp V1  
+Nom: Autorité de Certification mDL mDL Exp V1  
 Niveau: 2eme  
-Prefix: ACSAAQmDLExpV1  
-Dir: /ACSAAQ  
+Prefix: ACmDLExpV1  
+Dir: /ACmDL  
 
 
 ## Création de la PKI 
@@ -98,7 +98,7 @@ Sign the certificate? [y/n]:
 
 Répondez `y` aux demandes de confirmation. 
 
-Ensuite, on fera l'émission des certificats des ACs de deuxième niveau: CQEN et SAAQ. Le processus est le même 
+Ensuite, on fera l'émission des certificats des ACs de deuxième niveau: CQEN et mDL. Le processus est le même 
 pour les deux ACs.  Au prompt `Enter PEM pass phrase` rentrez et confirmez un nouveau mot de passe qui protegera la clé
 privée **de l'AC intermediaire**; ensuite, à la demande `Enter pass phrase for ACRacineCQENExpV1.key`, attention, rentrez le mot de 
 passe créé pour **l'AC Racine**; ce mot de passe est utilisé par l'AC Racine pour signer l'émission du certificat de l'AC intermediaire.  
@@ -144,7 +144,7 @@ Sign the certificate? [y/n]:y
 
 1 out of 1 certificate requests certified, commit? [y/n]y
 Data Base Updated
-Réalise la copie des objets cryptographiques vers le repositoire de l'AC SAAQ
+Réalise la copie des objets cryptographiques vers le repositoire de l'AC mDL.
 [-] Fin de la configuration des ACs .
 ``` 
 
