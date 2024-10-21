@@ -259,6 +259,61 @@ Si l'installation est faite sur une ancienne installation, et que vous voulez re
 sudo rm -rf ~/.cache/pypoetry/virtualenv/aries*
 ``` 
 
+## Opération
+
+### Nouveaux endpoints de l'application
+
+| Méthode | Endpoint | Fonction | Schémas                                                    |
+|---------|----------|----------|------------------------------------------------------------|
+| POST | `/wallet/x509/keypair` | `wallet_x509_keypair` | `req_schema`, `res_schema`         |
+| POST | `/wallet/x509/csr`     | `wallet_x509_create_csr` | `req_schema`, `res_schema`      |
+| GET  | `/wallet/x509/csr`     | `wallet_x509_get_csr` | `querystring_schema`, `res_schema` |
+| POST | `/wallet/x509/sign`    | `wallet_x509_sign` | `req_schema`, `res_schema`            |
+| POST | `/wallet/x509/verify`  | `wallet_x509_verify` | `req_schema`, `res_schema`          |
+
+### JSON pour tests
+
+Utilisez le JSON suivant pour tester, en remplaçant `keyType` par `p256`, `p384` ou `p521` :
+
+```json
+{
+  "method": "key",
+  "options": {
+    "key_type": "ed25519"
+  }
+}
+```
+
+Note : L'OID d'ed25519 est `{iso(1) identified-organization(3) thawte(101) id-Ed25519(112)}`
+
+### Outil auxiliaire de génération de clés et CSR
+
+Un outil auxiliaire a été développé pour la création des clés et la génération de la CSR, utilisant les mêmes librairies et code que ceux déployés dans aca-py.
+
+***Utilisation***
+
+1. Créez deux répertoires sous ECDSA-CSR :
+
+```bash 
+mkdir -p csr/ keys/
+```
+
+2. Utilisez l'endpoint `/wallet/did/create-did` pour générer une nouvelle paire de clés. Notez l'identifiant du DID qui sera utilisé comme alias dans les étapes suivantes.
+
+3. Exécutez le programme `ECCSR.py` avec deux paramètres : le nom de la courbe (p256, p384 ou p521) et l'alias :
+
+```bash
+python3 ECCSR.py p256 did:key:WgWxqztrNooG92RXvxSTWv
+```
+
+Les clés seront générées dans le répertoire `/keys` et la CSR dans le répertoire `/CSR`.
+
+4. Pour émettre le certificat, exécutez le script `certificateIssuance.sh` avec le même alias en paramètre :
+
+```bash
+./certificateIssuance.sh did:key:WgWxqztrNooG92RXvxSTWv
+```
+
 
 ## Références
 
@@ -442,5 +497,3 @@ https://github.com/animo/react-native-ble-didcomm/tree/main
 
 Functional mdoc implementation
 https://github.com/openwallet-foundation-labs/wallet-framework-dotnet/pull/120
-
-
