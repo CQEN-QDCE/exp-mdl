@@ -1,4 +1,4 @@
-# Prototype de l'application émettrice - controller - react
+# Prototype de l'application émettrice - contrôller - react
 
 L'application émettrice - controller est une application react frontend qui interagi avec l'agent instance ACA-Py (émettrice - ACA-Py) pour gérer l'offre de l'attestation (accepter, refuser, etc.). 
 

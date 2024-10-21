@@ -21,7 +21,7 @@ La stratégie du CQEN quant aux dépôts de code source des expérimentations, �
   - [aca-py-oid4vci](./aca-py-oid4vci/README.md): API de l'agent ACA-Py (Aries Cloud Agent Python), couche backend de l'émetteur.
   - [issuer-frontend](./issuer-frontend/README.md): Application web, couche frontend de l'émetteur.
   - [portefeuille-mobile-mdl](https://github.com/CQEN-QDCE/portefeuille-mobile-mdl/tree/5bdd28cfd2f9d44dc6c8f884a753877ea49956b9): Application mobile (react native) de portefeuille électronique qui permet de recevoir la réception du permis de conduire mobile (mDL).
-  - [ICP (PKI)](./ICP/README.md): Application qui permet la gestion des clés de chiffrement et la délivrance de certificats numériques, tout en assurant la sécurité des échanges d'information et des transactions électroniques effectuées par l'intermédiare d'un reseau informatique tel Internet.
+  - [ICP (PKI)](./ICP/README.md): Application qui permet la gestion des clés de chiffrement et la délivrance de certificats numériques, tout en assurant la sécurité des échanges d'information et des transactions électroniques effectuées par l'intermédiaire d'un réseau informatique tel Internet.
 - Documentation de l'expérimentation
   - [documentation](./documentation): Dépôt des documents divers de la phase découverte, exploration et analyse de l'expérimentation.
   - [exp](./exp/README.md): Documentation de l'expérimentation.

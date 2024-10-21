@@ -18,15 +18,15 @@ statut : en cours
 
 ## Contexte 
 
-Depuis quelques années des normes et standards encadrant le déploiement des permis de conduire numériques (Mobile Driver’s License – mDL) ainsi que de l’identité numérique (Digital Identity – eID) à l’échelle internationale ont été publiés. Dans le domaine de la sécurité routière, la norme ISO 18013-5 (mDL) ainsi que des normes de l’American Association of Motor Vehicle Administrators (AAMVA) viennent encadrer le déploiement du permis de conduire numérique sur appareil mobile, et ce, pour la région nord-américaine. Au Canada et au Québec, le Pan-Canadian Trust Framework (PCTF) du Digital Identity and Authentication Council of Canada (DIACC) viennent établir les grandes orientations et balises pour le déploiement de l’identité numérique. 
+Depuis quelques années, des normes et standards encadrant le déploiement des permis de conduire numériques (Mobile Driver’s License – mDL) ainsi que de l’identité numérique (Digital Identity – eID) à l’échelle internationale ont été publiés. Dans le domaine de la sécurité routière, la norme ISO 18013-5 (mDL) ainsi que des normes de l’American Association of Motor Vehicle Administrators (AAMVA) viennent encadrer le déploiement du permis de conduire numérique sur appareil mobile, et ce, pour la région nord-américaine. Au Canada et au Québec, le Pan-Canadian Trust Framework (PCTF) du Digital Identity and Authentication Council of Canada (DIACC) viennent établir les grandes orientations et balises pour le déploiement de l’identité numérique. 
 
 ## La problématique
 
-L’enjeu actuel majeur est le fait que les orientations, les cadres et les technologies soutenant le déploiement du permis de conduire numérique ainsi que de l’identité numérique à l’échelle nationale et internationale évoluent en parallèle et présentent certains manquements en termes d’interopérabilité et de compatibilité. Le CQEN serait précurseur dans l’établissement des prérequis nécessaires à la mise en place d’une solution d’affaires répondant à la fois aux normes de l’AAMVA et ISO mDL ainsi qu’aux orientations du pays et de la région en matière d’identité numérique, tout en étant interopérable à l’échelle nord-américaine et internationale. Qui plus est, cet arrimage est requis afin d’assurer la viabilité de la solution finale au-delà de ses frontières notamment puisque la pièce permis représente un élément essentiel à la concrétisation de la vision de l’écosystème d’identité numérique incluant le portefeuille numérique gouvernemental.  
+L’enjeu actuel majeur est le fait que les orientations, les cadres et les technologies soutenant le déploiement du permis de conduire numérique ainsi que de l’identité numérique à l’échelle nationale et internationale évoluent en parallèle et présentent certains manquements en matière d’interopérabilité et de compatibilité. Le CQEN serait précurseur dans l’établissement des prérequis nécessaires à la mise en place d’une solution d’affaires répondant à la fois aux normes de l’AAMVA et ISO mDL ainsi qu’aux orientations du pays et de la région en matière d’identité numérique, tout en étant interopérable à l’échelle nord-américaine et internationale. Qui plus est, cet arrimage est requis afin d’assurer la viabilité de la solution finale au-delà de ses frontières notamment puisque la pièce permise représente un élément essentiel à la concrétisation de la vision de l’écosystème d’identité numérique incluant le portefeuille numérique gouvernemental.  
 
 ## Hypothèse[^1]
 
-**Nous croyons qu’** une implémentation conciliée des normes de l’identité numérique et du permis de conduire numérique (ISO 18013-5 (mDL) et AAMVA) peut être conservé dans un portefeuille numérique. 
+**Nous croyons qu’** une implémentation conciliée des normes de l’identité numérique et du permis de conduire numérique (ISO 18013-5 (mDL) et AAMVA) peut être conservée dans un portefeuille numérique. 
 
 **Résultera** en un permis de conduire numérique qui est arrimé à l’initiative d’identité numérique et qui est conforme aux normes mDL et de l’AAMVA.
 
@@ -34,16 +34,16 @@ L’enjeu actuel majeur est le fait que les orientations, les cadres et les tech
 
 - Nous démontrerons qu’il est faisable d’utiliser un lecteur standardisé conforme à la norme mDL et pouvant être utilisé par n’importe quelle force de l’ordre nord-américaine; 
 
-- À travers une recherche utilisateur auprès des parties prenantes essentielles tels que le citoyen, les forces de l’ordre, les contrôleurs routiers et le secteur privé:
+- À travers une recherche utilisateur auprès des parties prenantes essentielles telles que le citoyen, les forces de l’ordre, les contrôleurs routiers et le secteur privé:
   - Nous arriverons à mesurer une réelle augmentation de la productivité sur les tâches des contrôleurs routiers et du privé; 
   - Nous validerons l’acceptabilité de la part les parties prenantes; 
-  - Nous identifierons les bonnes pratiques à adopter avec la version numérique intégré à l’identité numérique. 
+  - Nous identifierons les bonnes pratiques à adopter avec la version numérique intégrée à l’identité numérique. 
 
 ## Méthode 
 
-Cette preuve de concept se fera en mode cocréation entre le CQEN et certains représentants spécialisés gouvernementaux en matière d’identité numérique. Des spécialistes en matière de permis de conduire numériques de ces gouvernements pourraient être interpelés également.
+Cette preuve de concept se fera en mode co-création entre le CQEN et certains représentants spécialisés gouvernementaux en matière d’identité numérique. Des spécialistes en matière de permis de conduire numériques de ces gouvernements pourraient être interpellés également.
 
-Nous réutiliserons des prototypes déjà réalisés dans le cadre du projet de l’identité numérique pour émettre un permis de conduire au portefeuille numérique. 
+Nous réutiliserons des prototypes déjà réalisés dans le cadre du projet de l’identité numérique pour délivrer un permis de conduire au portefeuille numérique. 
 
 Nous réaliserons une implémentation à même le portefeuille numérique conciliant les normes de l’identité numérique et du permis de conduire numérique (ISO 18013-5 (mDL) et AAMVA) qui en permet la présentation à un lecteur. 
 

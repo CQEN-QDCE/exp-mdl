@@ -9,13 +9,13 @@
 
 ## Déploiement sur Openshift
 
-Le CQEN offre la possibilité de travailler avec Openshift comme plateforme cloudifié. Dans cette section, nous allons décrire le déploiement de chacune des applications dans cette plateforme.
+Le CQEN offre la possibilité de travailler avec Openshift comme plateforme cloudifiée. Dans cette section, nous allons décrire le déploiement de chacune des applications dans cette plateforme.
 
 **Outil de Travail: Openshift CLI**
-Nous utilisons la "Ligne de Commande Openshift" (Openshift CLI) `oc client` pour la gestion de resouces dans Openshift, à partir d'un terminal. 
+Nous utilisons la "Ligne de Commande Openshift" (Openshift CLI) `oc client` pour la gestion de ressources dans Openshift, à partir d'un terminal. 
 - Installation: Si ce n'est pas installé, voici le lien de la page de [documentation d'Openshift](https://docs.openshift.com/container-platform/4.17/cli_reference/openshift_cli/getting-started-cli.html#installing-openshift-cli) pour le faire.
 - Login au cluster Openshift:
-  - Obtenir un jeton de connection à partir d'Openshift avec le lien d'authentification, par exemple [Openshift CQEN](https://oauth-openshift.apps.exp.openshift.cqen.ca/oauth/token/display)
+  - Obtenir un jeton de connexion à partir d'Openshift avec le lien d'authentification, par exemple [Openshift CQEN](https://oauth-openshift.apps.exp.openshift.cqen.ca/oauth/token/display)
   - Login au cluster avec la commande:
     `oc login --token=<token-dans-la-reponse> --server=https://<cluster-url>:6443 `
 
@@ -45,7 +45,7 @@ Nous utilisons la "Ligne de Commande Openshift" (Openshift CLI) `oc client` pour
         APP_NAME="private-reg"
         ```
 3. Déploiement des resources dans Openshift
-    - Assurez-vous que vous êtes dans le repertoire du script et des paramètres.
+    - Assurez-vous que vous êtes dans le répertoire du script et des paramètres.
     - Procédez au déploiement dans Openshift avec la commande:
         ```bash
         oc process -f ./application1.yaml --param-file ./application1.dev.params  | oc apply -f -
