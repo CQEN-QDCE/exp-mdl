@@ -1,6 +1,6 @@
-# Prototype de l'application émettrice - controller - react native
+# Prototype de l'application émettrice - controller - react
 
-L'application émettrice - controller est une application react native frontend qui interagi avec l'agent instance ACA-Py (émettrice - ACA-Py) pour gérer l'offre de l'attestation (accepter, refuser, etc.). 
+L'application émettrice - controller est une application react frontend qui interagi avec l'agent instance ACA-Py (émettrice - ACA-Py) pour gérer l'offre de l'attestation (accepter, refuser, etc.). 
 
 Cette application permet à l'utilisateur de recevoir son attestation du permis de conduire dans son portefeuille mobile:
 1. L'utilisateur remplit les informations concernant le permis de conduire.
@@ -25,3 +25,7 @@ Le prototype sera accessible à l'url http://localhost:3000/ par défaut.
 | -------- | ----------- |
 | **REACT_APP_ISSUER_API_BASE_URL** | L'URL de l'API de l'agent ACA-Py émetteur. |
 | **REACT_APP_OID4VCI_SUPPORTED_CREDENTIAL_ID** | L'identificateur utilisé pour l'appel à l'API de l'agent ACA-Py émetteur pour enregistrer les informations du permis de conduire. |
+
+## Déploiement
+
+Le déploiement de ce composant web se fait dans Openshift. Pour les détails, voir [ici](../openshift/templates/mdl-issuer-frontend/README.md)

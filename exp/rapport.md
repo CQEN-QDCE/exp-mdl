@@ -57,7 +57,7 @@ Dans un souci d’expérience utilisateur intuitive et à valeur ajoutée, de co
 
 Le CQEN expérimente ainsi le prototypage d’un permis de conduire numérique. Il s’agit d’une représentation numérique du permis de conduire physique traditionnel stockée et accessible à l’aide d’un dispositif mobile comme un téléphone intelligent ou une tablette. Comme pour son équivalent physique, le permis de conduire numérique fait l’objet d’une suite de standards émis à l’échelle internationale par l’Organisation International de Standardisation (ISO). La norme ISO 18013-5 établit des spécifications techniques sur le stockage et l’interface pour la vérification du document. Cela inclut notamment des règles strictes sur les modèles de données, l’échange de données entre le détenteur et le vérificateur, ainsi que des mécanismes de sécurité pour protéger son intégrité et son authenticité.  
 
-Au reste, pour le volet émission du document, la norme donne des lignes directrices sur la gouvernance, laissant le soin aux autorités émettrices et à leur association régionale de déterminer les spécifications techniques complémentaires pour se conformer au cadre légal et règlementaire. Pour l’Amérique du Nord, l’AAMVA (American Association of Motor Vehicle Administrators) a édicté des recommandations pour l’émission d’un permis de conduire numérique. Elle mentionne notamment la création d’une liste vérifiée des autorités émettrices de certificats (VICAL), qui contient les clés publiques des autorités émettrices et garantit leur fiabilité.  
+Au reste, pour le volet émission du document, la norme donne des lignes directrices sur la gouvernance, laissant le soin aux autorités émettrices et à leur association régionale de déterminer les spécifications techniques complémentaires pour se conformer au cadre légal et règlementaire. Pour l’Amérique du Nord, l’AAMVA (American Association of Motor Vehicle Administrators) a édicté des recommandations pour l’émission d’un permis de conduire numérique. Elle mentionne notamment la création d’une liste **vérifiée des autorités émettrices de certificats (VICAL)**, qui contient les clés publiques des autorités émettrices et garantit leur fiabilité.  
 
 L’expérimentation a un caractère autonome et n’entretient aucune relation directe avec les autres initiatives du gouvernement en matière d’identité numérique. Toutefois, lorsqu’on dépasse les frontières de l’expérimentation, les permis de conduire numérique et l’identité numérique entretiennent un rapport étroit. Il devient donc essentiel de prendre en compte le cadre de confiance établit en matière d’identité numérique, grâce à l’enchevêtrement des principes édictés par le Conseil d’identification et d’authentification numériques du Canada (CCIAN) et les orientations du programme gouvernemental du Service québécois d’identité numérique (SQIN) dans la réalisation de l’expérimentation. 
 
@@ -227,10 +227,10 @@ Un fois VSCode lancé, l'environnement et le degub sont prêts.
 
 ### 3.3 Application émettrice 
 
-L'application émettrice est un ensemble de deux composants: une API (backend) et une application web/mobile (frontend):
+L'application émettrice est un ensemble de deux composants: une API (backend) et une application web (frontend):
 - "backend": API d'un agent ACA-Py (Hyperledger Aries Cloud Agent Python) qui gère l'offre de l'attestation (accepter, refuser, etc.).
   - [Consulter la procédure d'installation](../aca-py-oid4vci/README.md)
-- "frontend": Application web/mobile qui permet à l'utilisateur de fournir ses informations pour le permis de conduire mobile et aussi de faire les appels à l'API ACA-Py pour l'émission du permis.
+- "frontend": Application web qui permet à l'utilisateur de fournir ses informations pour le permis de conduire mobile et aussi de faire les appels à l'API ACA-Py pour l'émission du permis.
   - [Consulter la procédure d'installation](../issuer-frontend/README.md)
 
 ### 3.4 Portefeuille mobile mDL
