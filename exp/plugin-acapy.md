@@ -1,4 +1,35 @@
+<!-- ENTETE -->
+[![img](https://img.shields.io/badge/Cycle%20de%20Vie-Phase%20d%C3%A9couverte-339999)](https://www.quebec.ca/gouv/politiques-orientations/vitrine-numeriqc/accompagnement-des-organismes-publics/demarche-conception-services-numeriques)
+[![License](https://img.shields.io/badge/Licence-LiLiQ--R-blue)](LICENSE)
+
+---
+
+<div>
+    <a target="_blank" href="https://www.quebec.ca/gouvernement/ministere/cybersecurite-numerique">
+      <img src="images/mcn.png" alt="Logo du Ministère de la cybersécurité et du numérique" />
+    </a>
+</div>
+<!-- FIN ENTETE -->
+
 # Plugin aca-py pour support à ECDSA et x.509 
+
+## Ajustement de l'aca-py pour mDL 
+
+Ajoute des keys pour les algorithmes ECDSA
+
+- ECDSA with SHA-256
+- ECDSA with SHA-384
+- ECDSA with SHA-512
+
+Algorithmes admis par la AAMVA: 
+
+|Algorithme|Curve|Appelation|Py-Crypto class|
+|----------|-----|----------|---------------|
+|ES256|P256|NIST P-256|SECP256R1|
+|ES384|P384|NIST P-384|SECP384R1|
+|ES512|P521|NIST P-521|SECP521R1|
+
+*AAMVA Implementation Guidelines, p. 22*
 
 ## Algorithmes 
 
@@ -8,7 +39,7 @@ Ensuite vérifie auprès du NIST/FIPS s'ils sont homologés.
 
 Les algorithmes utilisés dans aca-py sont: 
 
-EdDSA: Edwards-curve Digital Signature Algorithm: c'est un algorithme de signature numérique qui utilise une variante de la Schnorr signature, basée sur les twisted Edwards curves.
+EdDSA: Edwards-curve Digital Signature Algorithm: c'est un algorithme de signature numérique qui utilise une variante de la Schnorr signature, basée sur les twisted Edwards curves. Les clés EdDSA sont définies avec exactement 256 bits de longueur. 
 
 	Courbes utilisées: 
 		Ed25519 : c'est le schema de signature EdDSA qui utlise SHA-512 et la Curve25519
@@ -121,8 +152,189 @@ L'utilisation du schema de signature BBS peut se montrer un empêchement lors de
 Il est important de noter que même si le schema de signature BBS n'est pas actuellement homologué par le NIST, il possède les fonctionnalités de selective disclosure et de proof-of-knowledge requises par les applications qui préservent la privacité, comme la blockchain d'identité, et il est utilisé dans diverses applications qui sont en cours de normalisation dans d'autres organisations telles que le W3C.
 
 
+## Configuration du plugin 
+
+Pour préparer l'environnement de développement, il faut s'assurer d'avoir `python` et son package manager `poetry` dûment installés. Le projet d'aca-py est forké dans le repo du CQEN sous le nom `aries-cloudagent-python`. Clonez-le à la machine locale, puis créez et changez dans une nouvelle branche pour votre fonctionalité. 
+
+```bash
+git clone https://github.com/CQEN-QDCE/aries-cloudagent-python.git 
+cd aries-cloudagent-python
+git checkout -b features/votrebranche
+```
+
+Ensuite, créez dans la racine du projet le repertoire `.vscode`. Dans ce répertoire, créez deux fichiers,  `launch.json` et `local.yaml`. Copiez le contenu suivant dans les fichiers respectifs : 
+
+
+- `launch.json`
+```json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "DEBUG CQEN",
+            "request": "launch",
+            "type": "debugpy",
+            "module": "aries_cloudagent",
+            "justMyCode": true,
+            "args": [
+                "start",
+                "--arg-file=${workspaceRoot}/.vscode/local.yaml"
+            ]
+        }
+    ]
+}
+```
+
+- `local.yaml`
+```yaml
+inbound-transport:
+  - [http, 0.0.0.0, 8021]
+outbound-transport: http
+endpoint: http://localhost:8021 
+genesis-url: https://raw.githubusercontent.com/ICCS-ISAC/dtrust-reconu/main/CANdy/dev/pool_transactions_genesis
+auto-accept-invites: true
+auto-accept-requests: true
+auto-ping-connection: true
+auto-respond-messages: true
+auto-respond-credential-proposal: true
+auto-respond-credential-offer: true
+auto-respond-credential-request: true
+auto-store-credential: true
+auto-respond-presentation-proposal:
+auto-respond-presentation-request: true
+auto-verify-presentation: true
+auto-provision: true
+public-invites: true
+requests-through-public-did: true
+emit-new-didcomm-prefix: true
+emit-new-didcomm-mime-type: true
+monitor-ping: true
+notify-revocation: true
+monitor-revocation-notification: true
+wallet-local-did: true
+wallet-type: askar
+wallet-name: issuer_agent1_candy_dev
+wallet-key: key
+wallet-storage-type: default 
+seed: candi_issuer_0000000000000000001
+admin: [0.0.0.0, 8024]
+admin-insecure-mode: true
+label: 'Issuer Agent1'
+log-level: debug
+debug-webhooks: true
+plugin:
+  -ecdsa-x509
+```
+
+Ajoutez la ligne suivante dans le fichier `./pyproject.toml`: 
+
+```
+oid4vci = { path = "~/CQEN-MCN/code/ongoing/merging/aries-acapy-plugins/oid4vci/", develop = true, optional = true }
+```
+
+Ensuite, il faut configurer l'environnement virtuel via `poetry`. À la première démarrage, vous devez installer les packages de poetry. Aux démarrages suivantes, vous n'avez qu'à lancer l'environnement. 
+
+```bash 
+poetry install --extras="askar bbs ecdsa-x509"
+poetry shell 
+code . 
+```
+
+Dans la dépendence `askar` il faut aussi ajouter du code pour supporter l'émission de clés avec les nouveaux algorithmes. 
+
+`aries-askar/types.py` il faut rajouter les lignes suivantes dans la classe `KeyAlg`:
+```python 
+ECDSAP256 = "p256"
+ECDSAP384 = "p384"
+ECDSAP521 = "p521"
+```
+
+Un fois VSCode lancé, l'environnement et le degub sont prêts. 
+
+***Reconfiguration*** 
+
+Si l'installation est faite sur une ancienne installation, et que vous voulez repartir le répositoire à nouveau, alors il faudrait faire la suppréssion du cache de poetry. Dans un système Linux, ce cache se situe dans le repertoire `~/.cache/pypoetry/virtualenv/aries*`. Exécutez la commande ci-dessous pour supprimer le répertoire du cache: 
+
+```bash 
+sudo rm -rf ~/.cache/pypoetry/virtualenv/aries*
+``` 
+
 
 ## Références
+
+Ceci est une liste extensive des références qui ont été consultées et servi d'inspiration ou de source d'information pendant les travaux de développement du plugin aca-py. 
+
+### Development and Setup
+
+- [ACA-Py Development with Dev Container](https://github.com/CQEN-QDCE/aries-cloudagent-python/blob/main/devcontainer.md)
+- [Becoming a Hyperledger Aries Developer - Getting Started](https://ldej.nl/post/becoming-a-hyperledger-aries-developer-getting-started/)
+- [Hyperledger Aries ACA-Py Agents Setup and Running Tutorials — Part III— Dev Environment Setup](https://yunxi-zhang-75627.medium.com/hyperledger-aries-aca-py-agents-setup-and-running-tutorials-part-i-i-i-dev-environment-setup-20ab5a32457e)
+- [Logging docs](https://github.com/hyperledger/aries-cloudagent-python/blob/main/Logging.md)
+- [Aries ACA-Py Plugins](https://github.com/hyperledger/aries-acapy-plugins/tree/main/oid4vci)
+
+### Protocols and Standards
+
+- [Aries RFC 0434: Out-of-Band Protocols](https://github.com/hyperledger/aries-rfcs/tree/2da7fc4ee043effa3a9960150e7ba8c9a4628b68/features/0434-outofband)
+- [RFC 0021 - Sender and recipient identifiers used in envelope as DID key references](https://github.com/hyperledger/aries-rfcs/issues/104)
+- [BBS Cryptosuite v2023](https://www.w3.org/TR/vc-di-bbs/)
+- [The did:key Method v0.7](https://w3c-ccg.github.io/did-method-key/#format)
+- [Indy DID Method](https://hyperledger.github.io/indy-did-method/)
+- [Aries RFC 0809: W3C Verifiable Credential Data Integrity Attachment format](https://github.com/hyperledger/aries-rfcs/tree/main/features/0809-w3c-data-integrity-credential-attachment)
+- [Architectural Layering for Decentralized Identification](https://github.com/WebOfTrustInfo/rwot5-boston/blob/master/topics-and-advance-readings/Architectural-Layering-for-Decentralized-Identification.md)
+- [W3C did:x509 Method Specification](https://w3c-ccg.github.io/did-method-web/)
+- [Trust over IP - Spécification de la méthode did:x509](https://trustoverip.github.io/tswg-did-x509-method-specification/)
+- [Microsoft did:x509](https://github.com/microsoft/did-x509)
+
+### Cryptography and Key Management
+
+- [Generating public ed25519 key with OpenSSL](https://stackoverflow.com/questions/72151697/generating-public-ed25519-key-with-openssl)
+- [Gen pubkey openssl ed25519](https://superuser.com/questions/1319543/gen-pubkey-openssl-ed25519)
+- [Convert Aries KMS public key to JWK](https://penkovski.com/post/convert-aries-pubkey-to-jwk/)
+- [Multicodec](https://github.com/multiformats/multicodec/blob/master/table.csv#L115)
+- [Pure-Python ECDSA and ECDH](https://pypi.org/project/ecdsa/)
+- [Welcome to pyca/cryptography](https://cryptography.io/en/latest/)
+- [How to sign and verify signature with ecdsa in python](https://stackoverflow.com/questions/34451214/how-to-sign-and-verify-signature-with-ecdsa-in-python)
+- [Encoding public keys in PEM format](https://jpassing.com/2021/11/30/using-pem-to-encode-public-keys/)
+- [Extracting a public key from an Ed25519 private key with OpenSSL](https://superuser.com/questions/1700544/extracting-a-public-key-from-an-ed25519-private-key-with-openssl)
+- [Librairie Python Cryptography](https://cryptography.io/en/latest/hazmat/primitives/asymmetric/ec/)
+- [Python-Cryptography: Key Serialization](https://github.com/pyca/cryptography/blob/main/docs/hazmat/primitives/asymmetric/serialization.rst)
+- [P256 keys using Secure Enclave and Android StrongBox](https://github.com/hyperledger/aries-askar/pull/245/commits/fec3c574425560618626f40a3eb6862591cd19ae#)
+
+### Encoding and Data Conversion
+
+- [Exercise: Convert Data between Decimal, Base58, and Hex](https://learn.saylor.org/mod/page/view.php?id=36344)
+- [base58](https://www.npmjs.com/package/base58-native?activeTab=readme)
+- [Bienvenue à l'ASN.1 et au DER](https://letsencrypt.org/fr/docs/a-warm-welcome-to-asn1-and-der/)
+- [JSON Web Key (JWK)](https://jwcrypto.readthedocs.io/en/latest/jwk.html)
+
+### Tools and Libraries
+
+- [Repositorio pydid](https://github.com/Indicio-tech/pydid/tree/main)
+- [PyCose](https://github.com/TimothyClaeys/pycose)
+- [starkbank/ecdsa-python](https://github.com/starkbank/ecdsa-python)
+- [AntonKueltz/fastecdsa](https://github.com/AntonKueltz/fastecdsa)
+- [tlsfuzzer/python-ecdsa](https://github.com/tlsfuzzer/python-ecdsa)
+- [ecdsa PyPI](https://pypi.org/project/ecdsa/)
+- [ecdsa ReadTheDocs](https://ecdsa.readthedocs.io/en/latest/index.html)
+- [ASN.1 Tool - PKI Solutions](https://www.pkisolutions.com/tools/asn1editor)
+- [Asn1Editor.WPF GitHub](https://github.com/PKISolutions/Asn1Editor.WPF)
+- [Aries Askar sur PyPI](https://pypi.org/project/aries-askar/)
+- [Aries Askar sur GitHub](https://start-here.hyperledger.org/pull-requests/hyperledger/aries-askar)
+- [Open Wallet Foundation: Identity Credential](https://github.com/openwallet-foundation-labs/identity-credential)
+- [Askar Storage](https://github.com/hyperledger/aries-askar/blob/main/docs/storage.md)
+- [OpenWallet Foundation Credo-TS](https://github.com/openwallet-foundation/credo-ts)
+
+### Security Notices
+
+- [USN-4196-1: python-ecdsa vulnerabilities](https://ubuntu.com/security/notices/USN-4196-1)
+
+### Miscellaneous
+
+- [IDENTIFYING AND TRACKING PHYSICAL OBJECTS WITH HYPERLEDGER DECENTRALIZED APPLICATIONS (Thesis)](https://upcommons.upc.edu/bitstream/handle/2117/379937/Degree_thesis_DavidChicanoValenzuela.pdf?sequence=5&isAllowed=y)
+- [open-source-community - Die Open Source Community](https://github.com/e-id-admin/open-source-community/blob/main/discussion-paper-tech-proposal/20231201_Question_Overview.pdf)
+- [Command Line Arguments for Your Python Script](https://machinelearningmastery.com/command-line-arguments-for-your-python-script/)
+- [INRUPT: New type of wallet, well built](https://www.inrupt.com/products/developer-portal)
+- [INRUPT GitHub Repositories](https://github.com/orgs/inrupt/repositories?type=all)
 
 NIST SP 800-186 Recommendations for Discrete Logarithm-based Cryptography: Elliptic Curve Domain Parameters 
 https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-186.pdf
@@ -158,7 +370,7 @@ BBS+ Applications, Standardization and a Bit of Theory
 https://csrc.nist.gov/csrc/media/presentations/2023/crclub-2023-10-18/images-media/20231018-crypto-club--greg-and-vasilis--slides--BBS.pdf
 
 
-## References de crypto symétrique 
+***References de crypto symétrique*** 
 
 Symmetric Cryptography & Key Management: Exhaustion, Rotation, Defence
 https://www.cryptomathic.com/news-events/blog/symmetric-cryptography-and-key-management-considerations-on-key-exhaustion-rotation-and-security-models#
