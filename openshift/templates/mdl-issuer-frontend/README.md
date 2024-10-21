@@ -1,6 +1,6 @@
 # Déploiement de l'application frontend - controller sur Openshift
 
-Déploiement de l'application frontend, qui correspond à la partie web ou mobile de l'émetteur.
+Déploiement de l'application frontend, qui correspond à la partie web de l'émetteur.
 
 ## Script de déploiement
 

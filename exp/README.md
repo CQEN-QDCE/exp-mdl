@@ -7,7 +7,7 @@
 Démontrer la faisabilité technique de l'intégration du standard ISO 18013-5, mDL aux attestations vérifiables.
 
 - Émetteur du permis de conduire mobile: Pour que l'émetteur du permis de conduire mobile fonctionne, il a besoin de trois composants:
-  - **Application web et mobile** qui sert de couche "frontend" de l'émetteur.
+  - **Application web** qui sert de couche "frontend" de l'émetteur.
   - **API de l'agent ACA-Py** qui sert de couche "backend" de l'émetteur.
   - **Application mobile de portefeuille numérique** qui sert à:
     - Balayer le code QR que l'application frontend affiche.
