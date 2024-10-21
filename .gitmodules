@@ -1,0 +1,3 @@
+[submodule "aries-acapy-plugins"]
+	path = aries-acapy-plugins
+	url = https://github.com/CQEN-QDCE/aries-acapy-plugins
