@@ -25,9 +25,9 @@ Algorithmes admis par la AAMVA:
 
 |Algorithme|Curve|Appelation|Py-Crypto class|
 |----------|-----|----------|---------------|
-|ES256|P256|NIST P-256|SECP256R1|
-|ES384|P384|NIST P-384|SECP384R1|
-|ES512|P521|NIST P-521|SECP521R1|
+|ES256     |P256 |NIST P-256|SECP256R1      |
+|ES384     |P384 |NIST P-384|SECP384R1      |
+|ES512     |P521 |NIST P-521|SECP521R1      |
 
 *AAMVA Implementation Guidelines, p. 22*
 
@@ -154,6 +154,14 @@ Il est important de noter que même si le schema de signature BBS n'est pas actu
 
 ## Configuration du plugin 
 
+### Pré-requis 
+
+Assurez-vous d'avoir installé :
+- Python
+- Poetry (gestionnaire de paquets)
+
+### Étapes d'installation
+
 Pour préparer l'environnement de développement, il faut s'assurer d'avoir `python` et son package manager `poetry` dûment installés. Le projet d'aca-py est forké dans le repo du CQEN sous le nom `aries-cloudagent-python`. Clonez-le à la machine locale, puis créez et changez dans une nouvelle branche pour votre fonctionalité. 
 
 ```bash
@@ -162,8 +170,7 @@ cd aries-cloudagent-python
 git checkout -b features/votrebranche
 ```
 
-Ensuite, créez dans la racine du projet le repertoire `.vscode`. Dans ce répertoire, créez deux fichiers,  `launch.json` et `local.yaml`. Copiez le contenu suivant dans les fichiers respectifs : 
-
+Ensuite, créez à la racine du projet le repertoire `.vscode`. Dans ce répertoire, créez deux fichiers,  `launch.json` et `local.yaml`. Copiez le contenu suivant dans les fichiers respectifs : 
 
 - `launch.json`
 ```json
@@ -226,11 +233,15 @@ plugin:
   -ecdsa-x509
 ```
 
+***Modifications dans les dépendances***
+
 Ajoutez la ligne suivante dans le fichier `./pyproject.toml`: 
 
 ```
 oid4vci = { path = "~/CQEN-MCN/code/ongoing/merging/aries-acapy-plugins/oid4vci/", develop = true, optional = true }
 ```
+
+***Lancement de l'application*** 
 
 Ensuite, il faut configurer l'environnement virtuel via `poetry`. À la première démarrage, vous devez installer les packages de poetry. Aux démarrages suivantes, vous n'avez qu'à lancer l'environnement. 
 
@@ -289,6 +300,12 @@ Note : L'OID d'ed25519 est `{iso(1) identified-organization(3) thawte(101) id-Ed
 ### Outil auxiliaire de génération de clés et CSR
 
 Un outil auxiliaire a été développé pour la création des clés et la génération de la CSR, utilisant les mêmes librairies et code que ceux déployés dans aca-py.
+
+**Package Py-Crypto:**
+ 
+```
+cryptography.hazmat.primitives.assymetric.ec
+```
 
 ***Utilisation***
 
