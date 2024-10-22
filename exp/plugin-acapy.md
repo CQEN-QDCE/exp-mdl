@@ -302,7 +302,7 @@ Note : L'OID d'ed25519 est `{iso(1) identified-organization(3) thawte(101) id-Ed
 Un outil auxiliaire a été développé pour la création des clés et la génération de la CSR, utilisant les mêmes librairies et code que ceux déployés dans aca-py.
 
 **Package Py-Crypto:**
- 
+
 ```
 cryptography.hazmat.primitives.assymetric.ec
 ```
@@ -331,6 +331,33 @@ Les clés seront générées dans le répertoire `/keys` et la CSR dans le répe
 ./certificateIssuance.sh did:key:WgWxqztrNooG92RXvxSTWv
 ```
 
+### Méthodes équivalents en OpenSSL
+
+Les commandes OpenSSL qui suivent ont été utilisées pour faire la validation des objets crées par l'exécution des méthodes implementées dans le plugin. 
+
+Malgré que les objets crées ne se constituent pas exactement des mêmes données, parce que les algorithmes des courbes elliptiques sont principalement `non-deterministes`, ces objets peuvent être comparés en termes de structure et de codification, ainsi qu'utilisés de façon inter-opérable, pour démontrer leur validité.  
+
+**Générer une clé privée pour une courbe elliptique en utilisant l'algorithme EdDSA25519**
+```bash
+openssl genpkey -algorithm ed25519 -out ed25519key.pem
+```
+
+**Extraire la clé publique à partir de la clé privée**
+```bash
+openssl pkey -in ed25519key.pem -pubout -out ed25519pub.pem 
+```
+
+**Générer clé publique ed25519 avec OpenSSL** (https://stackoverflow.com/questions/72151697/generating-public-ed25519-key-with-openssl)
+```bash
+openssl genpkey -algorithm ed25519 -outform DER -out test25519.der
+openssl pkey -in private.pem -pubout -out public.pem
+openssl pkey -in ed25519key.pem -pubout
+```
+
+**Génération de clé publique ed25519 - méthode alternative** (https://superuser.com/questions/1319543/gen-pubkey-openssl-ed25519)
+```bash
+openssl pkey -in ed25519key.pem -pubout
+```
 
 ## Références
 
