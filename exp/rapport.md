@@ -111,9 +111,10 @@ Basé sur l’infrastructure requise pour les fondations de l’identité numér
 ### 3.1 ICP / PKI (Infrastructure à clé publiques / Public Key Infrastructure)
 
 La PKI Interne de Développement CQEN Dev V1 est créé pour donner support aux activités de développement dans un contexte d'expérimentation qui ont besoin d'une PKI fonctionnelle. 
-Dans un premier temps, elle servira à fournir la infrastructure de certification nécessaire pour l'éxpérimentation du permis de conduire mobile (Mobile Driver's Licence mDL).  
 
-Information détaillé sur la structure de la PKI Interne de développement, consultez le document [PKI](./pki.md). 
+Dans un premier temps, elle servira à fournir la infrastructure de certification nécessaire pour l'éxpérimentation du permis de conduire mobile (Mobile  Driver's Licence mDL), et permettre l'émission des certificats numériques qui seront ajoutés à la `VICAL - verified issuer certificate authority list` (Liste des autorités de certification des émetteurs vérifiés) de l'AAMVA.   
+
+Information détaillé sur la structure de la PKI Interne de développement est disponible sur le document [ICP Interne de Développement CQEN Dev V1](./pki.md). 
 
 ### Configuration de la ICP Expérimentale du Gouvernement du Québec
 

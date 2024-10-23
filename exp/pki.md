@@ -13,15 +13,13 @@ statut : en cours
 ![Logo MCN](https://github.com/CQEN-QDCE/.github/blob/main/images/mcn.png)
 <!-- FIN ENTETE -->
 
-# PKI Interne de Développement CQEN Dev V1
+# ICP Interne de Développement CQEN Dev V1
 
-La PKI Interne de Développement CQEN Dev V1 est créé pour donner support aux activités 
-de développement dans un contexte d'expérimentation qui ont besoin d'une PKI fonctionnelle. 
+La ICP Interne de Développement CQEN Dev V1 est créé pour donner support aux activités de développement dans un contexte d'expérimentation qui ont besoin d'une PKI fonctionnelle. 
 
-Dans un premier temps, elle servira à fournir la infrastructure de certification nécessaire
-pour l'éxpérimentation du permis de conduire mobile (Mobile Driver's Licence mDL).  
+Dans un premier temps, elle servira à fournir la infrastructure de certification nécessaire pour l'éxpérimentation du permis de conduire mobile (Mobile  Driver's Licence mDL), et permettre l'émission des certificats numériques qui seront ajoutés à la `VICAL - verified issuer certificate authority list` (Liste des autorités de certification des émetteurs vérifiés) de l'AAMVA.
 
-Alors, la structure initialle de la PKI est la suivante: 
+Alors, la structure initialle de l'ICP est la suivante: 
 
 ```
      IDENTIFICATEUR DES NIVEAUX                                     DÉLAIS DE VALIDITÉ
@@ -55,7 +53,7 @@ Prefix: ACmDLExpV1
 Dir: /ACmDL  
 
 
-## Création de la PKI 
+## Création de l'ICP 
 
 Pour réproduire la création de la PKI de l'expérimentation, clonez le projet sur l'ordinateur local: 
 

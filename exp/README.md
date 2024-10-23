@@ -14,9 +14,9 @@ Démontrer la faisabilité technique de l'intégration du standard ISO 18013-5, 
     - Recevoir le permis de conduire mobile de l'API de l'agent ACA-Py avec les informations du code QR balayé .
 - **ICP: Application d'Infrastructure à clé publique (PKI)**
 
-  La PKI Interne de Développement CQEN Dev V1 est créé pour donner support aux activités de développement dans un contexte d'expérimentation qui ont besoin d'une PKI fonctionnelle. 
+  La PKI Interne de Développement CQEN Dev V1 est créé pour donner support aux activités de développement dans un contexte d'expérimentation qui ont besoin d'une ICP fonctionnelle. 
 
-  Dans un premier temps, elle servira à fournir la infrastructure de certification nécessaire pour l'éxpérimentation du permis de conduire mobile (Mobile  Driver's Licence mDL).  
+  Dans un premier temps, elle servira à fournir la infrastructure de certification nécessaire pour l'éxpérimentation du permis de conduire mobile (Mobile  Driver's Licence mDL), et permettre l'émission des certificats numériques qui seront ajoutés à la `VICAL - verified issuer certificate authority list` (Liste des autorités de certification des émetteurs vérifiés) de l'AAMVA.   
 
 - **Plugin ACA-Py**
   - TODO
