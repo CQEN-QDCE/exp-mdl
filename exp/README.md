@@ -17,11 +17,11 @@ Démontrer la faisabilité technique de l'intégration du standard ISO 18013-5, 
 
   La PKI Interne de Développement CQEN Dev V1 est créé pour donner support aux activités de développement dans un contexte d'expérimentation qui ont besoin d'une ICP fonctionnelle. 
 
-  Dans un premier temps, elle servira à fournir la infrastructure de certification nécessaire pour l'éxpérimentation du permis de conduire mobile (Mobile  Driver's Licence mDL), et permettre l'émission des certificats numériques qui seront ajoutés à la `VICAL - verified issuer certificate authority list` (Liste des autorités de certification des émetteurs vérifiés) de l'AAMVA.   
+  Dans un premier temps, elle servira à fournir l'infrastructure de certification nécessaire pour l'éxpérimentation du permis de conduire mobile (Mobile  Driver's Licence mDL), et permettre l'émission des certificats numériques qui seront ajoutés à la `VICAL - verified issuer certificate authority list` (Liste des autorités de certification des émetteurs vérifiés) de l'AAMVA.   
 
 - **Plugin ACA-Py ECDSA x.509**
 
-  Le plugin ACA-Py vise faire l'extension des fonctionalités de l'agent pour suporter l'intégration et l'utilisation de certificats numériques qui sont émis à partir d'une ICP externe. Il permettra création de demandes de génération de certificats (CSR - Certificate Signature Request) avec les respectives clés, la gestion de paires de clés des organismes publiques directement dans la région securisée de l'agent, bien comme les opérations de signature et vérification de signature de transactions, données et de paquets de données.    
+  Le plugin ACA-Py vise à faire l'extension des fonctionalités de l'agent pour supporter l'intégration et l'utilisation de certificats numériques qui sont émis à partir d'une ICP externe. Il permettra la création de demandes de génération de certificats (CSR - Certificate Signature Request) avec les clés respectives, la gestion des paires de clés des organismes publiques directement dans la région securisée de l'agent, bien comme les opérations de signature et vérification de signature de transactions, données et de paquets de données.    
 
 ## Cas à démontrer
 
