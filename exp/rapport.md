@@ -241,6 +241,13 @@ Au terme de cette expérimentation, nous souhaitions matérialiser l’entièret
 
 ## 6. Conclusion
 
+Au terme de cette expérimentation, nous pouvons conclure que bien que l'intégration technique du standard ISO-18013-5 aux attestations vérifiables soit réalisable, les implications en termes de coûts et de complexité technique constituent un frein significatif pour un déploiement à grande échelle en environnement de production. Face à ce constat, une approche hybride plus pragmatique se dessine : le déploiement de deux identités numériques complémentaires, chacune présentant ses propres avantages et limitations spécifiques.
+
+L'utilisation d'attestations numériques au format ANONCREDS pour les besoins locaux dans la province (et par extension, dans le pays) présente des atouts stratégiques majeurs : elle s'inscrit parfaitement dans la stratégie gouvernementale d'identité numérique et s'harmonise naturellement avec l'infrastructure du programme SQIN. Sa forte adoption à l'échelle canadienne, soutenue par une communauté active de développeurs, en fait une solution techniquement mature. Néanmoins, l'absence de déploiements à grande échelle en environnement de production et le manque d'études de charge approfondies soulèvent des questions légitimes quant à sa capacité à répondre aux besoins de l'ensemble de la province.
+
+En parallèle, le déploiement d'attestations mDL ISO-18013-5 pour les usages internationaux offre des perspectives d'interopérabilité prometteuses, notamment grâce à son statut de standard ISO et son adoption par l'AAMVA, ouvrant la voie à une potentielle interopérabilité avec les États-Unis. Cependant, cette solution présente aussi ses défis : l'utilisation de technologies émergentes encore peu documentées et supportées, une non-conformité avec la stratégie canadienne d'identité numérique, et une adoption non garantie parmi tous les membres de l'AAMVA.
+
+Cette stratégie dual-track, bien que complexe à mettre en œuvre, offre un compromis équilibré entre les contraintes opérationnelles, les coûts de déploiement et les besoins d'interopérabilité à différentes échelles, tout en permettant de capitaliser sur les forces respectives de chaque solution.
 
 
 ## 7. Références 
