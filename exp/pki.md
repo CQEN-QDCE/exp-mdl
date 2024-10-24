@@ -169,12 +169,18 @@ ne pas les enregistrer dans code. S'il faut les utiliser dans des applications o
 structure de secrets de votre plateforme (Secrets d'Openshift, par exemple), ou crééz des fichiers d'environnement, en 
 s'assurant qu'ils ne seront jamais commités dans une dépôt de code. Regardez l'article de [Bruce Schneider](01) sur le sujet. 
 
-[01]: https://www.schneier.com/blog/archives/2005/06/write_down_your.html "Write down you passwords"
+[01]: [https://www.schneier.com/blog/archives/2005/06/write_down_your.html]("Write down you passwords") 
 
 ## Références 
 
+[An Overview of X.509 Certificates](https://www.ibm.com/support/pages/system/files/inline-files/An_Overview_of_x.509_certificates.pdf)
+
 **Requests for Comments** 
 ======================
+
+RFC 5280 - [Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile](https://datatracker.ietf.org/doc/html/rfc5280)
+
+
 RFC 3339 - Date and time on the Internet : Timestamps 
 RFC 4648 - The Base16, Base32, and Base64 Data Encodings
 RFC 5869 - HMAC-based Extract-and-Expand Key Derivation Function (HKDF)
@@ -183,6 +189,8 @@ RFC 8152 - CBOR Object Signing and Encryption (COSE)
 RFC 8259 - The JavaScript Object Notation (JSON) Data Interchange Format
 RFC 8610 - Concise Data Definition Language
 RFC 8943 - Concise Binary Object Representation (CBOR) Tags for Date 
+
+
 
 **ISO Standards**
 ==============
