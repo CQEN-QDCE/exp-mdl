@@ -178,31 +178,14 @@ s'assurant qu'ils ne seront jamais commités dans une dépôt de code. Regardez 
 **Requests for Comments** 
 ======================
 
+RFC 3339 - [Date and time on the Internet : Timestamps](https://datatracker.ietf.org/doc/html/rfc3339) 
+
+RFC 4648 - [The Base16, Base32, and Base64 Data Encodings](https://datatracker.ietf.org/doc/html/rfc4648)
+
 RFC 5280 - [Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile](https://datatracker.ietf.org/doc/html/rfc5280)
 
-
-RFC 3339 - Date and time on the Internet : Timestamps 
-RFC 4648 - The Base16, Base32, and Base64 Data Encodings
-RFC 5869 - HMAC-based Extract-and-Expand Key Derivation Function (HKDF)
-RFC 7049 - Concise Binary Objet Representation (CBOR)
-RFC 8152 - CBOR Object Signing and Encryption (COSE)
-RFC 8259 - The JavaScript Object Notation (JSON) Data Interchange Format
-RFC 8610 - Concise Data Definition Language
-RFC 8943 - Concise Binary Object Representation (CBOR) Tags for Date 
-
-
-
-**ISO Standards**
-==============
-ISO/IEC 18004   - Automatic identification and data capture techniques. QR Code bar code symbology specification. 
-ISO/IEC 18013-5 - 
-ISO/IEC 18013-7 - 
-
-**Bundesamt für Sicherheit in der Informationstechnik**
-===================================================  
-BSI TR-03111 Elliptic Curve Cryptography (ECC)
-
+RFC 5869 - [HMAC-based Extract-and-Expand Key Derivation Function (HKDF)](https://datatracker.ietf.org/doc/html/rfc5869)
 
 **NIST**
 =========
-NIST SP 800-38D - Recommendation for Block Cipher Modes of Operation: Galois/Counter Mode (GCM) and GMAC
+NIST SP 800-38D - [Recommendation for Block Cipher Modes of Operation: Galois/Counter Mode (GCM) and GMAC](https://csrc.nist.gov/pubs/sp/800/38/d/final)
