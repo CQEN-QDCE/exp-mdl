@@ -230,9 +230,9 @@ Au terme de cette expérimentation, nous souhaitions matérialiser l’entièret
 
 ### 5.3 - Exclusions du scope du projet 
 
-- Cette première phase d’expérimentation couvrira l’interopérabilité dans l’écosystème nord-américain. L’interopérabilité à l’échelle international, et plus spécifiquement avec le territoire européen, sera déterminé dans une deuxième phase, le cas échéant;
+- Cette première phase d’expérimentation a couvert l’interopérabilité dans l’écosystème nord-américain. L’interopérabilité à l’échelle international, et plus spécifiquement avec le territoire européen, sera déterminé dans une deuxième phase, le cas échéant;
 
-- Cette phase d’expérimentation ne couvrira pas les parties prenantes du secteur privé qui pourraient devoir utiliser un éventuel permis numérique québécois (ex. concessionnaires automobiles, entreprises de location de voitures/camions, etc);
+- Cette phase d’expérimentation n'a pas couvert les parties prenantes du secteur privé qui pourraient devoir utiliser un éventuel permis numérique québécois (ex. concessionnaires automobiles, entreprises de location de voitures/camions, etc);
 
 - Les prototypes finaux ne seront pas des fondations réutilisables dans l’écosystème d’identité numérique et de permis numérique québécois. Si les résultats s’avèrent concluants, il faudra prévoir une phase projet pour détailler la solution d’affaires cible, et ce, conformément aux exigences de la LGGRI.
 
@@ -245,14 +245,15 @@ Au terme de cette expérimentation, nous souhaitions matérialiser l’entièret
 
 ### Standards à suivre 
 
-ISO/IEC 18013-2 - Personal identification — ISO-compliant driving licence - Part 2: Machine-readable technologies
-ISO/IEC 18013-5 - Personal identification — ISO-compliant driving licence - Part 5: Mobile driving licence (mDL) application
-AAMVA - Mobile Driver’s License (mDL) Implementation Guidelines Version 1.2
+[ISO/IEC 18013-2 - Personal identification — ISO-compliant driving licence - Part 2: Machine-readable technologies](https://www.iso.org/standard/70486.html)
+[ISO/IEC 18013-5 - Personal identification — ISO-compliant driving licence - Part 5: Mobile driving licence (mDL) application](https://www.iso.org/standard/69084.html)
+[AAMVA - Mobile Driver’s License (mDL) Implementation Guidelines Version 1.2](https://www.aamva.org/assets/best-practices,-guides,-standards,-manuals,-whitepapers/mobile-driver-s-license-implementation-guidelines-1-2)
 
 
 ### Sécurité de l'information
 
 **FIPS 140-2 : Security Requirements for Cryptographic Modules**   
+
 https://csrc.nist.rip/publications/detail/fips/140/2/final
 
 Cette norme fédérale de traitement de l'information (FIPS 140-2) spécifie les exigences de sécurité qui seront satisfaites par un module cryptographique, en fournissant quatre niveaux qualitatifs croissants destinés à couvrir une large gamme d'applications et d'environnements potentiels. Les domaines couverts, liés à la conception et à la mise en œuvre sécurisées d'un module cryptographique, comprennent la spécification ; les ports et les interfaces ; les rôles, les services et l'authentification ; le modèle à états finis ; la sécurité physique ; l'environnement opérationnel ; la gestion des clés cryptographiques ; les interférences électromagnétiques/compatibilité électromagnétique (EMI/EMC) ; les auto-tests ; l'assurance de la conception ; et l'atténuation des autres attaques.
