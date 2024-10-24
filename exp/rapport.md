@@ -106,6 +106,34 @@ Basé sur l’infrastructure requise pour les fondations de l’identité numér
 **Vision général de l'écosystème du mDL** 
 
 
+### 2.2 - Enjeux identifiés 
+
+- Marché peu mature en matière de mDL et expertises/solutions silotés par fournisseurs. Rend plus difficile la prise de connaissances et la formation; 
+
+- Il faudra discuter des modalités de publication de nos résultats auprès de la communauté de pratique Open Source;
+
+- La participation des équipes de recherche ne sera pas requise si nous ne pouvons pas aller auprès des utilisateurs. Notamment, nous ne pourrons pas connaître s’il y  a une perception positive vis-à-vis le permis numérique; 
+
+- Disponibilité des ressources stratégiques (ex. Experts permis, Experts de certaines technologies); 
+
+- Caractère innovant de la solution; 
+
+- Nécessité d’interopérabilité avec l’écosystème mDL et eID canadien et américain; 
+
+- La disponibilité des membres de l’équipe noyau a été un enjeu depuis le début du projet d’expérimentation. La planification a été ajustée pour tenir compte de cet enjeu; 
+
+- L’équipe partenaire rencontre des bloquants pour la consultation des experts et spécialistes en lien avec le permis;
+
+
+### 2.3 - Exclusions de la portée du projet 
+
+- Cette première phase d’expérimentation a couvert l’interopérabilité dans l’écosystème nord-américain. L’interopérabilité à l’échelle international, et plus spécifiquement avec le territoire européen, sera déterminé dans une deuxième phase, le cas échéant;
+
+- Cette phase d’expérimentation n'a pas couvert les parties prenantes du secteur privé qui pourraient devoir utiliser un éventuel permis numérique québécois (ex. concessionnaires automobiles, entreprises de location de voitures/camions, etc);
+
+- Les prototypes finaux ne seront pas des fondations réutilisables dans l’écosystème d’identité numérique et de permis numérique québécois. Si les résultats s’avèrent concluants, il faudra prévoir une phase projet pour détailler la solution d’affaires cible, et ce, conformément aux exigences de la LGGRI.
+
+
 ## 3. Configuration et installation 
 
 ### 3.1 ICP / PKI (Infrastructure à clé publiques / Public Key Infrastructure)
@@ -209,32 +237,6 @@ Au cours de cette expérimentation, les implémentations de la norme ISO/IEC 180
 
 Au terme de cette expérimentation, nous souhaitions matérialiser l’entièreté du cycle de vie d’un permis de conduire mobile. En cas de succès, nous pourrions obtenir des informations utiles sur le fonctionnement du permis de conduire mobile, ainsi que sur l’expérience des différents utilisateurs finaux. Ces informations devraient constituer un substrat de qualité pour des initiatives futurs sur le développement d’un permis de conduire mobile au Québec et en Amérique du Nord. 
 
-### 5.2 - Enjeux identifiés 
-
-- Marché peu mature en matière de mDL et expertises/solutions silotés par fournisseurs. Rend plus difficile la prise de connaissances et la formation; 
-
-- Il faudra discuter des modalités de publication de nos résultats auprès de la communauté de pratique Open Source;
-
-- La participation des équipes de recherche ne sera pas requise si nous ne pouvons pas aller auprès des utilisateurs. Notamment, nous ne pourrons pas connaître s’il y  a une perception positive vis-à-vis le permis numérique; 
-
-- Disponibilité des ressources stratégiques (ex. Experts permis, Experts de certaines technologies); 
-
-- Caractère innovant de la solution; 
-
-- Nécessité d’interopérabilité avec l’écosystème mDL et eID canadien et américain; 
-
-- La disponibilité des membres de l’équipe noyau a été un enjeu depuis le début du projet d’expérimentation. La planification a été ajustée pour tenir compte de cet enjeu; 
-
-- L’équipe partenaire rencontre des bloquants pour la consultation des experts et spécialistes en lien avec le permis;
-
-
-### 5.3 - Exclusions du scope du projet 
-
-- Cette première phase d’expérimentation a couvert l’interopérabilité dans l’écosystème nord-américain. L’interopérabilité à l’échelle international, et plus spécifiquement avec le territoire européen, sera déterminé dans une deuxième phase, le cas échéant;
-
-- Cette phase d’expérimentation n'a pas couvert les parties prenantes du secteur privé qui pourraient devoir utiliser un éventuel permis numérique québécois (ex. concessionnaires automobiles, entreprises de location de voitures/camions, etc);
-
-- Les prototypes finaux ne seront pas des fondations réutilisables dans l’écosystème d’identité numérique et de permis numérique québécois. Si les résultats s’avèrent concluants, il faudra prévoir une phase projet pour détailler la solution d’affaires cible, et ce, conformément aux exigences de la LGGRI.
 
 
 ## 6. Conclusion
