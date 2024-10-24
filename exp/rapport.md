@@ -72,10 +72,25 @@ Dans ce contexte, quatre scénarios potentiels ont été identifiés :
 4. La dérivation d’un permis de conduire numérique à partir de l’identité numérique.  
 
 Nous privilégions le scénario 2 avec pour objectif principal la conformité avec les standards de l’ISO complétés par les lignes directrices de l’AAMVA. En conséquence, nous avons poursuivi la réalisation de quatre prototypes touchant l’émission du document, la création et la gestion du registre de preuves, la détention et la vérification du document.  
+L'attestation Anoncred aura les avantages suivantes:
+	- intégrera à la stratégie gouvernementale d'indetité numérique;
+	- s'arrimera facilement avec les travaux et l'infrastruture qui seront fournies par le programme SQIN;
+	- il s'agit d'une technologie qui a une adoption et traction considerable à l'échélle canadienne;
+	- technologie connue, avec forte communauté de développeurs et de support;
+	
+L'attestation Anoncred aura les limitations suivantes:
+	- on n'a pas encore eu de déploiement en large échelle, en environnement de prod, des attestations numériques Anoncred;
+	- il manque des études et testes de charges pour s'assurer que l'infrastructure sera capable de répondre à la demande d'utilisation à la largeur de la province;
 
-### 2.1 Scénarios
+L'attestation mDL ISO-18013-5 aura les avantages suivantes:
+	- standard final publié par l'ISO;
+	- adoption par l'association nord-américaine des autorités de transit (AAMVA);
+	- potentielle interoperabilité avec les EEUU
 
-Pour cette expérimentation, on a envisagé une stratégie de d'essais à plusieurs volets. 
+L'attestation mDL ISO-18013-5 aura les limitations suivantes:
+	- le nouveau standard propose l'utilisation de plusieurs technologies et stacks technologiques qui sont très nouveaux, alors sans beaucoup d'adoption, de documentation, et de support;
+	- n'est pas en conformance avec la stratégie canadienne d'identité numérique;
+	- parmi les participants de l'AAMVA, son adoption n'est pas prise pour acquis par tous.'essais à plusieurs volets. 
 
 Identité numérique ...
 
@@ -237,6 +252,30 @@ Au cours de cette expérimentation, les implémentations de la norme ISO/IEC 180
 
 Au terme de cette expérimentation, nous souhaitions matérialiser l’entièreté du cycle de vie d’un permis de conduire mobile. En cas de succès, nous pourrions obtenir des informations utiles sur le fonctionnement du permis de conduire mobile, ainsi que sur l’expérience des différents utilisateurs finaux. Ces informations devraient constituer un substrat de qualité pour des initiatives futurs sur le développement d’un permis de conduire mobile au Québec et en Amérique du Nord. 
 
+
+### 5.x - Évaluation du scénario 1 - Identité numérique
+
+L'attestation Anoncred aura les avantages suivantes:
+- intégrera à la stratégie gouvernementale d'indetité numérique;
+- s'arrimera facilement avec les travaux et l'infrastruture qui seront fournies par le programme SQIN;
+- il s'agit d'une technologie qui a une adoption et traction considerable à l'échélle canadienne;
+- technologie connue, avec forte communauté de développeurs et de support;
+	
+L'attestation Anoncred aura les limitations suivantes:
+- on n'a pas encore eu de déploiement en large échelle, en environnement de prod, des attestations numériques Anoncred;
+- il manque des études et testes de charges pour s'assurer que l'infrastructure sera capable de répondre à la demande d'utilisation à la largeur de la province;
+
+### 5.x - Évaluation du scénario 2 - ISO 18013-5 (mDL)
+
+L'attestation mDL ISO-18013-5 aura les avantages suivantes:
+- standard final publié par l'ISO;
+- adoption par l'association nord-américaine des autorités de transit (AAMVA);
+- potentielle interoperabilité avec les EEUU
+
+L'attestation mDL ISO-18013-5 aura les limitations suivantes:
+- le nouveau standard propose l'utilisation de plusieurs technologies et stacks technologiques qui sont très nouveaux, alors sans beaucoup d'adoption, de documentation, et de support;
+- n'est pas en conformance avec la stratégie canadienne d'identité numérique;
+- parmi les participants de l'AAMVA, son adoption n'est pas prise pour acquis par tous.
 
 
 ## 6. Conclusion
