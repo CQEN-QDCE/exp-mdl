@@ -260,6 +260,7 @@ Nous avons structuré l'expérimentation en deux phases:
   - Émetteur: Mettre en place une solution émettrice du permis de conduire numérique
   - Détenteur: Mettre en place un portefeuille numérique qui supporte le permis de conduire numérique
   - Vérificateur: Mettre en place la vérification du permis de conduire numérique
+  - Infrastructure de Clés Publique (ICP): Mettre en place une ICP pour l'intégrer à l'ecosystème du permis de conduire numérique.
 
 ### 5.1 Exploration et analyse de l'ecosystème du permis de conduire
 
@@ -270,20 +271,32 @@ L'Exploration et l'analyse de l'ecosystème du permis de conduire est un succès
 - ✅ Comprehénsion et apprentissage de la norme ISO 18013-5
 - TODO
 
-### 5.2 Implémentation du cycle de vie comple d'un permis de conduire numérique dans le contexte des attestations vérifiables
+### 5.2 Implémentation du cycle de vie complet d'un permis de conduire numérique dans le contexte des attestations vérifiables
 
 
 #### 5.2.1 Émetteur: Mettre en place une solution émettrice du permis de conduire numérique
 
-- ✅ Ajout du plugin OID4VCI à l'agent ACA-Py pour émettre un permis de conduire mobile au format mDL.
-- ✅ Un prototype d'application frontend (contrôller) a été associé à l'agent ACA-Py émetteur.
+- ✅ Un agent ACA-Py avec les plugins OID4VCI ("OpenID for Verifiable Credential Issuance") et mso-mdoc ("Mobile Security Object") a été deployé pour l'émission d'un permis de conduire mobile au format mDL.
+  - Le plugin OID4VCI pour l'émission d'une attestation vérifiable.
+  - Le plugin mso-doc pour l'authentication (signature) de l'émission.
+- ✅ Un prototype d'application web frontend (contrôller) a été associé à l'agent ACA-Py pour la saisie des informations du permis de conduire numérique.
+- ✅ Un permis de conduire numérique au format mDL a été émis.
 
 #### 5.2.2 Détenteur: Mettre en place un portefeuille numérique qui supporte le permis de conduire numérique
 
+- ✅ Une application portefeuille numérique a été mis en place avec la librairie [mdl-ts](https://github.com/CQEN-QDCE/mdl-ts) pour supporter le format mdoc conforme à la norme ISO/IEC 18013-5 (mDL)
+- ✅ L'application de portefeuille numérique a été publié en phase de test interne dans Google Play Console pour être capable de l'installer dans un appareil Android.
+- ⚠️ Il reste à publier l'application de portefeuille numérique pour un appareil iOS. 
+
 #### 5.2.3 Vérificateur: Mettre en place la vérification du permis de conduire numérique
 
+- ⚠️ La partie du vérificateur n'a pas été mis en place.
+  - TODO détail.
 
+#### 5.2.4 Infrastructure de Clés Publique (ICP): Mettre en place une ICP pour l'intégrer à l'ecosystème du permis de conduire numérique.
 
+- ✅ L'ICP a été deployé dans un environnement infonuagique (Openshift).
+- ⚠️ L'intégration à l'ecosystème du permis de conduire n'a pas été completé. Il reste à travailler l'ajout des certificats dans la liste de confiance VICAL ("Verifiable Issuing Certificate Authority List).
 
 ### 5.x - Évaluation du scénario 1 - Identité numérique
 
