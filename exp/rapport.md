@@ -233,9 +233,41 @@ Au cours de cette expérimentation, les implémentations de la norme ISO/IEC 180
 
 ## 5. Analyse des résultats 
 
-### 5.1 Résultats attendus 
+L'hypothèse d'expérimentation avait comme objectif de démontrer qu'un permis de conduire numérique peut être conservé dans un portefeuille numérique; tout en respectant les normes de l'indentité numérique ainsi que les normes du permis de conduire numérique (ISO 18013-5 - mDL et l'AAMVA).
 
-Au terme de cette expérimentation, nous souhaitions matérialiser l’entièreté du cycle de vie d’un permis de conduire mobile. En cas de succès, nous pourrions obtenir des informations utiles sur le fonctionnement du permis de conduire mobile, ainsi que sur l’expérience des différents utilisateurs finaux. Ces informations devraient constituer un substrat de qualité pour des initiatives futurs sur le développement d’un permis de conduire mobile au Québec et en Amérique du Nord. 
+Nous avons structuré l'expérimentation en deux phases:
+- Phase d'exploration et d'analyse de l'ecosystème du permis de conduire mobile.
+- Phase d'implémentation du cycle de vie complet d'un permis de conduire numérique dans le contexte des attestations vérifiables:
+
+    ![Triangle émetteur - détenteur - vérificateur](images/triangle_issuer_holder_verifier.png)
+
+
+  - Émetteur: Mettre en place une solution émettrice du permis de conduire numérique
+  - Détenteur: Mettre en place un portefeuille numérique qui supporte le permis de conduire numérique
+  - Vérificateur: Mettre en place la vérification du permis de conduire numérique
+
+### 5.1 Exploration et analyse de l'ecosystème du permis de conduire
+
+L'Exploration et l'analyse de l'ecosystème du permis de conduire est un succès:
+
+- ✅ Détermination de quatre possibles scénarios de solution
+  - Sélection du scénario 2 (mDL) qui réprésentait le scénario moins connu.
+- ✅ Comprehénsion et apprentissage de la norme ISO 18013-5
+- TODO
+
+### 5.2 Implémentation du cycle de vie comple d'un permis de conduire numérique dans le contexte des attestations vérifiables
+
+
+#### 5.2.1 Émetteur: Mettre en place une solution émettrice du permis de conduire numérique
+
+- ✅ Ajout du plugin OID4VCI à l'agent ACA-Py pour émettre un permis de conduire mobile au format mDL.
+- ✅ Un prototype d'application frontend (contrôller) a été associé à l'agent ACA-Py émetteur.
+
+#### 5.2.2 Détenteur: Mettre en place un portefeuille numérique qui supporte le permis de conduire numérique
+
+#### 5.2.3 Vérificateur: Mettre en place la vérification du permis de conduire numérique
+
+
 
 
 
