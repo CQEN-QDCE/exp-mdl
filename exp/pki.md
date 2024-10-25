@@ -71,8 +71,7 @@ L'IACA est une autorité de certification spécifique au contexte des permis de 
 
 Les IACA participent à un écosystème international de confiance géré par l'AAMVA à travers la `VICAL (Verified Issuing Certificate Authority List)`, une liste de confiance qui répertorie les certificats des IACA autorisées à émettre des mDL. Pour qu'une IACA soit incluse dans la VICAL, elle doit soumettre son certificat racine ou intermédiaire à l'AAMVA pour une vérification rigoureuse. Une fois validée et incluse dans la VICAL, tous les mDL émis et signés par cette IACA peuvent être automatiquement validés par les vérificateurs qui font confiance à la VICAL, créant ainsi un réseau de confiance distribué et interopérable à l'échelle internationale.
 
-Le graphique ci-dessous, tiré du site de la VICAL de l'AAMVA, décrit visuellement le flux de clés entre l'autorité émettrice, le STD et les parties utilisatrices.
-
+Le graphique ci-dessous, tiré du site de la VICAL de l'AAMVA, décrit visuellement le flux de clés entre l'autorité émettrice, le registre de confiance et les parties utilisatrices.
 <div>
     <img src="./images/DTS-Flow-Chart.png" alt="Le flux de clés dans une VICAL" width="1000" />
 </div>
