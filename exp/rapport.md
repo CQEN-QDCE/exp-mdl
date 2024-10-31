@@ -300,40 +300,23 @@ L'Exploration et l'analyse de l'ecosystème du permis de conduire est un succès
 - ✅ L'ICP a été deployé dans un environnement infonuagique (Openshift).
 - ⚠️ L'intégration à l'ecosystème du permis de conduire n'a pas été completé. Il reste à travailler l'ajout des certificats dans la liste de confiance VICAL ("Verifiable Issuing Certificate Authority List).
 
-### 5.x - Évaluation du scénario 1 - Identité numérique
-
-L'attestation Anoncred aura les avantages suivantes:
-- intégrera à la stratégie gouvernementale d'indetité numérique;
-- s'arrimera facilement avec les travaux et l'infrastruture qui seront fournies par le programme SQIN;
-- il s'agit d'une technologie qui a une adoption et traction considerable à l'échélle canadienne;
-- technologie connue, avec forte communauté de développeurs et de support;
-	
-L'attestation Anoncred aura les limitations suivantes:
-- on n'a pas encore eu de déploiement en large échelle, en environnement de prod, des attestations numériques Anoncred;
-- il manque des études et testes de charges pour s'assurer que l'infrastructure sera capable de répondre à la demande d'utilisation à la largeur de la province;
-
-### 5.x - Évaluation du scénario 2 - ISO 18013-5 (mDL)
-
-L'attestation mDL ISO-18013-5 aura les avantages suivantes:
-- standard final publié par l'ISO;
-- adoption par l'association nord-américaine des autorités de transit (AAMVA);
-- potentielle interoperabilité avec les EEUU
-
-L'attestation mDL ISO-18013-5 aura les limitations suivantes:
-- le nouveau standard propose l'utilisation de plusieurs technologies et stacks technologiques qui sont très nouveaux, alors sans beaucoup d'adoption, de documentation, et de support;
-- n'est pas en conformance avec la stratégie canadienne d'identité numérique;
-- parmi les participants de l'AAMVA, son adoption n'est pas prise pour acquis par tous.
-
 
 ## 6. Conclusion
 
-Au terme de cette expérimentation, nous pouvons conclure que bien que l'intégration technique du standard ISO-18013-5 aux attestations vérifiables soit réalisable, les implications en termes de coûts et de complexité technique constituent un frein significatif pour un déploiement à grande échelle en environnement de production. Face à ce constat, une approche hybride plus pragmatique se dessine : le déploiement de deux identités numériques complémentaires, chacune présentant ses propres avantages et limitations spécifiques.
+Au terme de cette expérimentation, nous pouvons conclure que bien que l'intégration technique du standard ISO-18013-5 aux attestations vérifiables soit réalisable, les implications en termes de coûts et de complexité technique constituent un frein significatif pour un déploiement à grande échelle en environnement de production. Face à ce constat, une **approche hybride** plus pragmatique se dessine : le déploiement de deux identités numériques complémentaires, chacune présentant ses propres avantages et limitations spécifiques.
 
-L'utilisation d'attestations numériques au format ANONCREDS pour les besoins locaux dans la province (et par extension, dans le pays) présente des atouts stratégiques majeurs : elle s'inscrit parfaitement dans la stratégie gouvernementale d'identité numérique et s'harmonise naturellement avec l'infrastructure du programme SQIN. Sa forte adoption à l'échelle canadienne, soutenue par une communauté active de développeurs, en fait une solution techniquement mature. Néanmoins, l'absence de déploiements à grande échelle en environnement de production et le manque d'études de charge approfondies soulèvent des questions légitimes quant à sa capacité à répondre aux besoins de l'ensemble de la province.
+L'utilisation d'attestations numériques au format ANONCREDS pour les besoins locaux dans la province (et par extension, dans le pays) présente des atouts stratégiques majeurs : elle s'inscrit parfaitement dans la stratégie gouvernementale d'identité numérique. Sa forte adoption à l'échelle canadienne, soutenue par une communauté active de développeurs, en fait une solution techniquement mature. Néanmoins, l'absence de déploiements à grande échelle en environnement de production et le manque d'études de charge approfondies soulèvent des questions légitimes quant à sa capacité à répondre aux besoins de l'ensemble de la province.
 
 En parallèle, le déploiement d'attestations mDL ISO-18013-5 pour les usages internationaux offre des perspectives d'interopérabilité prometteuses, notamment grâce à son statut de standard ISO et son adoption par l'AAMVA, ouvrant la voie à une potentielle interopérabilité avec les États-Unis. Cependant, cette solution présente aussi ses défis : l'utilisation de technologies émergentes encore peu documentées et supportées, une non-conformité avec la stratégie canadienne d'identité numérique, et une adoption non garantie parmi tous les membres de l'AAMVA.
 
 Cette stratégie dual-track, bien que complexe à mettre en œuvre, offre un compromis équilibré entre les contraintes opérationnelles, les coûts de déploiement et les besoins d'interopérabilité à différentes échelles, tout en permettant de capitaliser sur les forces respectives de chaque solution.
+
+À continuation un tableau résumant les avantages et inconvénients de chacun des types d'attestation:
+
+| Scénario |Attestation Type | Avantages | Inconvénients 
+|---|---|---|---|
+| 1.- Identité Numérique | AnonCreds | - Intégration avec la stratégie gouvernementale d'indetité numérique <br />- S'arrime facilement avec les travaux et l'infrastruture qui seront fournies par le programme provincial de l'identité numérique <br>- Il s'agit d'une technologie qui a une adoption et traction considerable à l'échélle canadienne <br>- Technologie connue, avec forte communauté de développeurs et de support | - On n'a pas encore eu de déploiement en large échelle, en environnement de production, des attestations numériques Anoncred <br>- Il manque des études et testes de charges pour s'assurer que l'infrastructure sera capable de répondre à la demande d'utilisation à la largeur de la province |
+| 2.- ISO 18013-5 (mDL) | mDL ISO-18013-5 | - Standard final publié par l'ISO <br>- Adoption par l'association nord-américaine des autorités de transit (AAMVA) <br>- Potentielle interoperabilité avec les EEUU | - Le nouveau standard propose l'utilisation de plusieurs technologies et stacks technologiques qui sont très nouveaux, alors sans beaucoup d'adoption, de documentation, et de support <br>- N'est pas en conformance avec la stratégie canadienne d'identité numérique <br>- Parmi les participants de l'AAMVA, son adoption n'est pas prise pour acquis par tous. |
 
 
 ## 7. Références 
