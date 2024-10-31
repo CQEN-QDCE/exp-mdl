@@ -66,6 +66,7 @@ L’expérimentation a un caractère autonome et n’entretient aucune relation 
 Dans ce contexte, quatre scénarios potentiels ont été identifiés :  
 
 1. La création d’un permis de conduire mobile reposant uniquement sur l’expérience et l’infrastructure développée pour l’identité numérique, notamment sur la blockchain pancanadienne d’identité numérique CANDY. 
+   1. S’appuie sur le travail effectué par le Joint Council – Jurisdictional Experts on Digital Identity (JC-JEDI)​
 
 2. La création d’un permis de conduire numérique reposant uniquement sur les normes de l’ISO 18013-5 complétées par les lignes directrices de l’AAMVA.  
 
@@ -74,49 +75,6 @@ Dans ce contexte, quatre scénarios potentiels ont été identifiés :
 4. La dérivation d’un permis de conduire numérique à partir de l’identité numérique.  
 
 Nous privilégions le scénario 2 avec pour objectif principal la conformité avec les standards de l’ISO complétés par les lignes directrices de l’AAMVA. En conséquence, nous avons poursuivi la réalisation de quatre prototypes touchant l’émission du document, la création et la gestion du registre de preuves, la détention et la vérification du document.  
-L'attestation Anoncred aura les avantages suivantes:
-	- intégrera à la stratégie gouvernementale d'indetité numérique;
-	- s'arrimera facilement avec les travaux et l'infrastruture qui seront fournies par le programme SQIN;
-	- il s'agit d'une technologie qui a une adoption et traction considerable à l'échélle canadienne;
-	- technologie connue, avec forte communauté de développeurs et de support;
-	
-L'attestation Anoncred aura les limitations suivantes:
-	- on n'a pas encore eu de déploiement en large échelle, en environnement de prod, des attestations numériques Anoncred;
-	- il manque des études et testes de charges pour s'assurer que l'infrastructure sera capable de répondre à la demande d'utilisation à la largeur de la province;
-
-L'attestation mDL ISO-18013-5 aura les avantages suivantes:
-	- standard final publié par l'ISO;
-	- adoption par l'association nord-américaine des autorités de transit (AAMVA);
-	- potentielle interoperabilité avec les EEUU
-
-L'attestation mDL ISO-18013-5 aura les limitations suivantes:
-	- le nouveau standard propose l'utilisation de plusieurs technologies et stacks technologiques qui sont très nouveaux, alors sans beaucoup d'adoption, de documentation, et de support;
-	- n'est pas en conformance avec la stratégie canadienne d'identité numérique;
-	- parmi les participants de l'AAMVA, son adoption n'est pas prise pour acquis par tous.'essais à plusieurs volets. 
-
-Identité numérique ...
-
-mDL pur ..
-
-Solution hybride...
-
-Alors, plusieurs scénarios ont été envisagés pour l'expérimentation des mDL. 
-
-**Scénario 1**
-
-Se base sur l’expérience et l’infrastructure développé pour l’identité numérique. S’appuie sur le travail effectué par le Joint Council – Jurisdictional Experts on Digital Identity (JC-JEDI)​
-  
-**Scénario 2**
-
-Basé sur la norme ISO 18013-5 (mDL) et les lignes directrices de l’AAMVA.
-
-**Scénario 3**
-
-Réutilisation de l’infrastructure développé dans le cadre du projet d’identité numérique pour émettre un permis mobile conforme à la norme ISO 18013-5 (mDL).
-
-**Scénario 4**
-
-Basé sur l’infrastructure requise pour les fondations de l’identité numérique et de la norme ISO 18013-5 mDL 
 
 <img src="./images/HighLevelmDLOverview.png" width="800" />
 
