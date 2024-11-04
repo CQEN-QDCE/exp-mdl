@@ -61,11 +61,12 @@ Le CQEN expérimente ainsi le prototypage d’un permis de conduire numérique. 
 
 Au reste, pour le volet émission du document, la norme donne des lignes directrices sur la gouvernance, laissant le soin aux autorités émettrices et à leur association régionale de déterminer les spécifications techniques complémentaires pour se conformer au cadre légal et règlementaire. En Amérique du Nord, l’AAMVA (American Association of Motor Vehicle Administrators) a édicté des recommandations pour l’émission d’un permis de conduire numérique. Elle mentionne notamment la création d’une liste **vérifiée des autorités émettrices de certificats (VICAL)**, qui contient les clés publiques des autorités émettrices et garantit leur fiabilité.  
 
-L’expérimentation a un caractère autonome et n’entretient aucune relation directe avec les autres initiatives du gouvernement en matière d’identité numérique. Toutefois, lorsqu’on dépasse les frontières de l’expérimentation, les permis de conduire numérique et l’identité numérique entretiennent un rapport étroit. Il devient donc essentiel de prendre en compte le cadre de confiance établit en matière d’identité numérique, grâce à l’enchevêtrement des principes édictés par le `Conseil d’identification et d’authentification numériques du Canada (CCIAN)` et les orientations du programme gouvernemental du Service québécois d’identité numérique (SQIN) dans la réalisation de l’expérimentation. 
+L’expérimentation a un caractère autonome et n’entretient aucune relation directe avec les autres initiatives du gouvernement en matière d’identité numérique. Toutefois, lorsqu’on dépasse les frontières de l’expérimentation, les permis de conduire numérique et l’identité numérique entretiennent un rapport étroit. Il devient donc essentiel de prendre en compte le cadre de confiance établit en matière d’identité numérique, grâce à l’enchevêtrement des principes édictés par le `Conseil d’identification et d’authentification numériques du Canada (CCIAN)` et les orientations du programme gouvernemental québécois d’identité numérique dans la réalisation de l’expérimentation. 
 
 Dans ce contexte, quatre scénarios potentiels ont été identifiés :  
 
 1. La création d’un permis de conduire mobile reposant uniquement sur l’expérience et l’infrastructure développée pour l’identité numérique, notamment sur la blockchain pancanadienne d’identité numérique CANDY. 
+   1. S’appuie sur le travail effectué par le Joint Council – Jurisdictional Experts on Digital Identity (JC-JEDI)​
 
 2. La création d’un permis de conduire numérique reposant uniquement sur les normes de l’ISO 18013-5 complétées par les lignes directrices de l’AAMVA.  
 
@@ -74,49 +75,6 @@ Dans ce contexte, quatre scénarios potentiels ont été identifiés :
 4. La dérivation d’un permis de conduire numérique à partir de l’identité numérique.  
 
 Nous privilégions le scénario 2 avec pour objectif principal la conformité avec les standards de l’ISO complétés par les lignes directrices de l’AAMVA. En conséquence, nous avons poursuivi la réalisation de quatre prototypes touchant l’émission du document, la création et la gestion du registre de preuves, la détention et la vérification du document.  
-L'attestation Anoncred aura les avantages suivantes:
-	- intégrera à la stratégie gouvernementale d'indetité numérique;
-	- s'arrimera facilement avec les travaux et l'infrastruture qui seront fournies par le programme SQIN;
-	- il s'agit d'une technologie qui a une adoption et traction considerable à l'échélle canadienne;
-	- technologie connue, avec forte communauté de développeurs et de support;
-	
-L'attestation Anoncred aura les limitations suivantes:
-	- on n'a pas encore eu de déploiement en large échelle, en environnement de prod, des attestations numériques Anoncred;
-	- il manque des études et testes de charges pour s'assurer que l'infrastructure sera capable de répondre à la demande d'utilisation à la largeur de la province;
-
-L'attestation mDL ISO-18013-5 aura les avantages suivantes:
-	- standard final publié par l'ISO;
-	- adoption par l'association nord-américaine des autorités de transit (AAMVA);
-	- potentielle interoperabilité avec les EEUU
-
-L'attestation mDL ISO-18013-5 aura les limitations suivantes:
-	- le nouveau standard propose l'utilisation de plusieurs technologies et stacks technologiques qui sont très nouveaux, alors sans beaucoup d'adoption, de documentation, et de support;
-	- n'est pas en conformance avec la stratégie canadienne d'identité numérique;
-	- parmi les participants de l'AAMVA, son adoption n'est pas prise pour acquis par tous.'essais à plusieurs volets. 
-
-Identité numérique ...
-
-mDL pur ..
-
-Solution hybride...
-
-Alors, plusieurs scénarios ont été envisagés pour l'expérimentation des mDL. 
-
-**Scénario 1**
-
-Se base sur l’expérience et l’infrastructure développé pour l’identité numérique. S’appuie sur le travail effectué par le Joint Council – Jurisdictional Experts on Digital Identity (JC-JEDI)​
-  
-**Scénario 2**
-
-Basé sur la norme ISO 18013-5 (mDL) et les lignes directrices de l’AAMVA.
-
-**Scénario 3**
-
-Réutilisation de l’infrastructure développé dans le cadre du projet d’identité numérique pour émettre un permis mobile conforme à la norme ISO 18013-5 (mDL).
-
-**Scénario 4**
-
-Basé sur l’infrastructure requise pour les fondations de l’identité numérique et de la norme ISO 18013-5 mDL 
 
 <img src="./images/HighLevelmDLOverview.png" width="800" />
 
@@ -244,10 +202,17 @@ La pile technologique utilisé dans nos expérimentations précédentes sur l'id
 
 3. [pyMDOC-CBOR](https://github.com/IdentityPython/pyMDOC-CBOR): Un analyseur/générateur en Python pour les attestations de Type 1 et également pour les cas d'usage mDL. Ce projet est une proposition expérimentale née d'un projet éducatif.
 
-Le code de la bibliothèque [pyMDOC-CBOR](https://github.com/IdentityPython/pyMDOC-CBOR) à été utilisé pour permettre à un agent [ACA-Py](https://github.com/openwallet-foundation/acapy) d'émettre un permis de conduire au format mDL. Pour le [Portefeuille mobile mDL](https://github.com/CQEN-QDCE/portefeuille-mobile-mdl), une conversion du code de la bibliothèque [Kotlin Multiplatform mdoc library](https://github.com/walt-id/waltid-mdoc) en TypeScript a été effectué. La bilbiothèque [mdl-ts](https://github.com/CQEN-QDCE/mdl-ts) est le résultat de cette conversion.
-
 Au cours de cette expérimentation, les implémentations de la norme ISO/IEC 18013-5 ont évolués. Un acteur majeur du monde SSI, la bibliothèque [credo-ts](https://github.com/openwallet-foundation/credo-ts), a ajouté une fonctionnalité pour supporter le mDL. Au moment d'écrire ces lignes, le code n'est pas complété mais cet ajout est intéressant pour le développement d'un portefeuille multi-formats. En plus de supporter les [AnonCreds](https://hyperledger.github.io/anoncreds-spec/), la bibliothèque credo-ts supportent les [attestations vérifiables W3C](https://www.w3.org/TR/vc-data-model/), les [attestations vérifiables SD-JWT](https://www.ietf.org/archive/id/draft-ietf-oauth-sd-jwt-vc-01.html), le protocol OID4VC et prochainement, le mDL. Ainsi, le [Portfeuille mobile QC](https://github.com/MCN-ING/Portefeuille-mobile-qc) pourra devenir un portefeuille multi-formats.
 
+### 4.3 Mise en place d'un prototype
+Afin de comprendre le cycle de vie complet d'un permis de conduire mobile dans le contexte des attestations vérifiables, nous avons décidé de créer un prototype qui implémente les composantes majeures suivantes: Émetteur, détenteur, vérificateur et Infrastructure de Clés Publique (ICP). 
+
+- Émetteur: Il est responsable de l'émission du permis de conduire mobile. Comme nous avions déjà un émetteur ([ACA-Py](https://github.com/openwallet-foundation/acapy)) utilisé dans le projet d'identité numérique et que ce dernier supporte un système d'extensions, nous avons décidé de l'utiliser comme émetteur. Une extension supportant le protocole d'émission OID4VCI était déjà disponible. Le code de la bibliothèque [pyMDOC-CBOR](https://github.com/IdentityPython/pyMDOC-CBOR) pouvait être utilisé pour permettre à [ACA-Py](https://github.com/openwallet-foundation/acapy) d'émettre un permis de conduire mobile au format mDL. 
+
+- Détenteur: Le projet d'identité numérique utilise le [Portfeuille mobile QC](https://github.com/MCN-ING/Portefeuille-mobile-qc). Ce dernier est développé en React Native (Typescript). Au moment où l'expérimentation a commencé, nous n'avions pas de bibliothèque assez avancé en Typescript qui implémentait la norme ISO 18013-5 mDL. Nous avons décidé de convertir le code de la bibliothèque [Kotlin Multiplatform mdoc library](https://github.com/walt-id/waltid-mdoc) en TypeScript.
+
+- Vérificateur: Il est responsable des demandes de vérification d'un permis de conduire mobile. Comme il n'existait pas d'application de vérification en code source ouvert au moment où l'expérimentation a commencé, nous avons décidé d'en développer une en React Native (Typescript). Il était requis que cette dernière supporte. au minimum, les demandes de preuve sans connexion via le protocol BLE (exigence de la norme ISO 18013-5 MDL)
+.
 ## 5. Analyse des résultats 
 
 L'hypothèse d'expérimentation avait comme objectif de démontrer qu'un permis de conduire numérique peut être conservé dans un portefeuille numérique; tout en respectant les normes de l'indentité numérique ainsi que les normes du permis de conduire numérique (ISO 18013-5 - mDL et l'AAMVA).
@@ -300,40 +265,23 @@ L'Exploration et l'analyse de l'ecosystème du permis de conduire est un succès
 - ✅ L'ICP a été deployé dans un environnement infonuagique (Openshift).
 - ⚠️ L'intégration à l'ecosystème du permis de conduire n'a pas été completé. Il reste à travailler l'ajout des certificats dans la liste de confiance VICAL ("Verifiable Issuing Certificate Authority List).
 
-### 5.x - Évaluation du scénario 1 - Identité numérique
-
-L'attestation Anoncred aura les avantages suivantes:
-- intégrera à la stratégie gouvernementale d'indetité numérique;
-- s'arrimera facilement avec les travaux et l'infrastruture qui seront fournies par le programme SQIN;
-- il s'agit d'une technologie qui a une adoption et traction considerable à l'échélle canadienne;
-- technologie connue, avec forte communauté de développeurs et de support;
-	
-L'attestation Anoncred aura les limitations suivantes:
-- on n'a pas encore eu de déploiement en large échelle, en environnement de prod, des attestations numériques Anoncred;
-- il manque des études et testes de charges pour s'assurer que l'infrastructure sera capable de répondre à la demande d'utilisation à la largeur de la province;
-
-### 5.x - Évaluation du scénario 2 - ISO 18013-5 (mDL)
-
-L'attestation mDL ISO-18013-5 aura les avantages suivantes:
-- standard final publié par l'ISO;
-- adoption par l'association nord-américaine des autorités de transit (AAMVA);
-- potentielle interoperabilité avec les EEUU
-
-L'attestation mDL ISO-18013-5 aura les limitations suivantes:
-- le nouveau standard propose l'utilisation de plusieurs technologies et stacks technologiques qui sont très nouveaux, alors sans beaucoup d'adoption, de documentation, et de support;
-- n'est pas en conformance avec la stratégie canadienne d'identité numérique;
-- parmi les participants de l'AAMVA, son adoption n'est pas prise pour acquis par tous.
-
 
 ## 6. Conclusion
 
-Au terme de cette expérimentation, nous pouvons conclure que bien que l'intégration technique du standard ISO-18013-5 aux attestations vérifiables soit réalisable, les implications en termes de coûts et de complexité technique constituent un frein significatif pour un déploiement à grande échelle en environnement de production. Face à ce constat, une approche hybride plus pragmatique se dessine : le déploiement de deux identités numériques complémentaires, chacune présentant ses propres avantages et limitations spécifiques.
+Au terme de cette expérimentation, nous pouvons conclure que bien que l'intégration technique du standard ISO-18013-5 aux attestations vérifiables soit réalisable, les implications en termes de coûts et de complexité technique constituent un frein significatif pour un déploiement à grande échelle en environnement de production. Face à ce constat, une **approche hybride** plus pragmatique se dessine : le déploiement de deux identités numériques complémentaires, chacune présentant ses propres avantages et limitations spécifiques.
 
-L'utilisation d'attestations numériques au format ANONCREDS pour les besoins locaux dans la province (et par extension, dans le pays) présente des atouts stratégiques majeurs : elle s'inscrit parfaitement dans la stratégie gouvernementale d'identité numérique et s'harmonise naturellement avec l'infrastructure du programme SQIN. Sa forte adoption à l'échelle canadienne, soutenue par une communauté active de développeurs, en fait une solution techniquement mature. Néanmoins, l'absence de déploiements à grande échelle en environnement de production et le manque d'études de charge approfondies soulèvent des questions légitimes quant à sa capacité à répondre aux besoins de l'ensemble de la province.
+L'utilisation d'attestations numériques au format ANONCREDS pour les besoins locaux dans la province (et par extension, dans le pays) présente des atouts stratégiques majeurs : elle s'inscrit parfaitement dans la stratégie gouvernementale d'identité numérique. Sa forte adoption à l'échelle canadienne, soutenue par une communauté active de développeurs, en fait une solution techniquement mature. Néanmoins, l'absence de déploiements à grande échelle en environnement de production et le manque d'études de charge approfondies soulèvent des questions légitimes quant à sa capacité à répondre aux besoins de l'ensemble de la province.
 
 En parallèle, le déploiement d'attestations mDL ISO-18013-5 pour les usages internationaux offre des perspectives d'interopérabilité prometteuses, notamment grâce à son statut de standard ISO et son adoption par l'AAMVA, ouvrant la voie à une potentielle interopérabilité avec les États-Unis. Cependant, cette solution présente aussi ses défis : l'utilisation de technologies émergentes encore peu documentées et supportées, une non-conformité avec la stratégie canadienne d'identité numérique, et une adoption non garantie parmi tous les membres de l'AAMVA.
 
 Cette stratégie dual-track, bien que complexe à mettre en œuvre, offre un compromis équilibré entre les contraintes opérationnelles, les coûts de déploiement et les besoins d'interopérabilité à différentes échelles, tout en permettant de capitaliser sur les forces respectives de chaque solution.
+
+À continuation un tableau résumant les avantages et inconvénients de chacun des types d'attestation:
+
+| Scénario |Attestation Type | Avantages | Inconvénients 
+|---|---|---|---|
+| 1.- Identité Numérique | AnonCreds | - Intégration avec la stratégie gouvernementale d'indetité numérique <br />- S'arrime facilement avec les travaux et l'infrastruture qui seront fournies par le programme provincial de l'identité numérique <br>- Il s'agit d'une technologie qui a une adoption et traction considerable à l'échélle canadienne <br>- Technologie connue, avec forte communauté de développeurs et de support | - On n'a pas encore eu de déploiement en large échelle, en environnement de production, des attestations numériques Anoncred <br>- Il manque des études et testes de charges pour s'assurer que l'infrastructure sera capable de répondre à la demande d'utilisation à la largeur de la province |
+| 2.- ISO 18013-5 (mDL) | mDL ISO-18013-5 | - Standard final publié par l'ISO <br>- Adoption par l'association nord-américaine des autorités de transit (AAMVA) <br>- Potentielle interoperabilité avec les EEUU | - Le nouveau standard propose l'utilisation de plusieurs technologies et stacks technologiques qui sont très nouveaux, alors sans beaucoup d'adoption, de documentation, et de support <br>- N'est pas en conformance avec la stratégie canadienne d'identité numérique <br>- Parmi les participants de l'AAMVA, son adoption n'est pas prise pour acquis par tous. |
 
 
 ## 7. Références 
