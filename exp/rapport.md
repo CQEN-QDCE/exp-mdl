@@ -19,31 +19,31 @@ statut : en cours
 
 L'objectif principal de cette expérimentation est d’explorer la création d’un permis de conduire mobile. Cet objectif se décline en plusieurs sous-objectifs tels que : 
 
-- Démontrer la faisabilité technique d’un permis de conduire numérique compatible à la fois aux orientations nationales en matière d’identité numérique et aux normes internationales en lien avec le permis de conduire numérique.  
+- Démontrer la faisabilité technique d’un permis de conduire numérique compatible à la fois aux orientations nationales en matière d’identité numérique et aux normes internationales en lien avec le permis de conduire numérique;  
 
-- Créer une attestation vérifiable et un registre d’attestation. 
+- Créer une attestation vérifiable et un registre d’attestation; 
 
-- Créer un registre de consommateurs et expliciter les étapes de vérification du permis de conduire mobile 
+- Créer un registre de consommateurs et expliciter les étapes de vérification du permis de conduire mobile; 
 
-- Créer un environnement représentatif du portefeuille numérique sur appareil mobile et assurer l’acheminement sécurisé du permis de conduire numérique.  
+- Créer un environnement représentatif du portefeuille numérique sur appareil mobile et assurer l’acheminement sécurisé du permis de conduire numérique;  
 
-- Créer un environnement représentatif du registre de preuves permettant de valider l’interopérabilité à l’échelle nord-américaine.  
+- Créer un environnement représentatif du registre de preuves permettant de valider l’interopérabilité à l’échelle nord-américaine;
 
-- Évaluer l'expérience utilisateur des utilisateurs finaux (propriétaire du permis et contrôleurs routiers)   
+- Évaluer l'expérience utilisateur des utilisateurs finaux (propriétaire du permis et contrôleurs routiers).   
 
 Ainsi, cette expérimentation vise à tester et essayer les normes et règles statuées pour la création et utilisation de permis de conduire numériques (mDL - Mobile Driver's Licence). On établi comme buts à atteindre lors de cette expérimentation les facteurs suivants: 
 
-- Durant la phase préparatoire, obtenir des formations permettant une mise à niveau des connaissances technologiques requises pour mener à bien les activités de prototypage et d’expérimentations​
+- Durant la phase préparatoire, obtenir des formations permettant une mise à niveau des connaissances technologiques requises pour mener à bien les activités de prototypage et d’expérimentations​;
 
-- Obtenir l’appui d’experts du domaine à certains moments clé des expérimentations (ex. permis, technologies mDL, technologies chaînes de blocs)
+- Obtenir l’appui d’experts du domaine à certains moments clé des expérimentations (ex. permis, technologies mDL, technologies chaînes de blocs);
 
-- Partage de l’état d’avancement de nos expérimentations avec les communautés open source des technologies impliqués et obtenir des rétroactions (ex. JEDI, employés de différentes juridictions canadiennes)
+- Partage de l’état d’avancement de nos expérimentations avec les communautés open source des technologies impliqués et obtenir des rétroactions (ex. JEDI, employés de différentes juridictions canadiennes);
 
-- Accès aux outils dont dispose les contrôleurs routiers dans le cadre de leur travail (ex. cellulaires, tablettes)
+- Accès aux outils dont dispose les contrôleurs routiers dans le cadre de leur travail (ex. cellulaires, tablettes);
 
-- Participation des équipes spécialisées en recherche d'expérience client  
+- Participation des équipes spécialisées en recherche d'expérience client;  
 
-- Collaboration avec spécialistes d'autres provinces lors de certains moments clés des expérimentations
+- Collaboration avec spécialistes d'autres provinces lors de certains moments clés des expérimentations.
 
 Au terme de cette expérimentation, nous souhaitions matérialiser l’entièreté du cycle de vie d’un permis de conduire mobile. En cas de succès, nous pourrions obtenir des informations utiles sur le fonctionnement du permis de conduire mobile, ainsi que sur l’expérience des différents utilisateurs finaux. Ces informations devraient constituer un substrat de qualité pour des initiatives futurs sur le développement d’un permis de conduire mobile au Québec et en Amérique du Nord. 
 
@@ -57,7 +57,7 @@ Les orientations, les cadres et les technologies soutenant le déploiement du pe
 
 Dans un souci d’expérience utilisateur intuitive et à valeur ajoutée, de compatibilité technologique en plus de l’acceptabilité par les parties prenantes essentielles tels que les forces de l’ordre, les contrôleurs routiers et les usagers de la route, le `Centre Québécois d’Excellence numérique (CQEN)` developpe un prototype québécois du permis de conduire numérique qui sera à la fois arrimé avec les orientations gouvernementales en matière d’identité numérique ainsi que le cadre mDL établi par l’AAMVA. 
 
-Le CQEN expérimente ainsi le prototypage d’un permis de conduire numérique. Il s’agit d’une représentation numérique du permis de conduire physique traditionnel stockée et accessible à l’aide d’un dispositif mobile comme un téléphone intelligent ou une tablette. Comme pour son équivalent physique, le permis de conduire numérique fait l’objet d’une suite de standards émis à l’échelle internationale par l’Organisation International de Standardisation (ISO). La norme ISO 18013-5 établit des spécifications techniques sur le stockage et l’interface pour la vérification du document. Cela inclut notamment des règles strictes sur les modèles de données, l’échange de données entre le détenteur et le vérificateur, ainsi que des mécanismes de sécurité pour protéger son intégrité et son authenticité.  
+Le CQEN expérimente ainsi le prototypage d’un permis de conduire numérique. Il s’agit d’une représentation numérique du permis de conduire physique traditionnel stockée et accessible à l’aide d’un dispositif mobile comme un téléphone intelligent ou une tablette. Comme pour son équivalent physique, le permis de conduire numérique fait l’objet d’une suite de standards émise à l’échelle internationale par l’Organisation International de Standardisation (ISO). La norme ISO 18013-5 établit des spécifications techniques sur le stockage et l’interface pour la vérification du document. Cela inclut notamment des règles strictes sur les modèles de données, l’échange de données entre le détenteur et le vérificateur, ainsi que des mécanismes de sécurité pour protéger son intégrité et son authenticité.  
 
 Au reste, pour le volet émission du document, la norme donne des lignes directrices sur la gouvernance, laissant le soin aux autorités émettrices et à leur association régionale de déterminer les spécifications techniques complémentaires pour se conformer au cadre légal et règlementaire. En Amérique du Nord, l’AAMVA (American Association of Motor Vehicle Administrators) a édicté des recommandations pour l’émission d’un permis de conduire numérique. Elle mentionne notamment la création d’une liste **vérifiée des autorités émettrices de certificats (VICAL)**, qui contient les clés publiques des autorités émettrices et garantit leur fiabilité.  
 
