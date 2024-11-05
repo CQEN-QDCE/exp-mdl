@@ -15,4 +15,4 @@ statut : en cours
 
 # Infrastructure à Clé Publique (ICP) pour le Permis de Conduire Mobile (mDL) : Contexte, Mise en œuvre et Considérations Techniques
 
-Merci de vous référer à le document disponible dans [ici](../../../exp/pki.md).
+Merci de vous référer au document disponible [ici](../../../exp/pki.md).
