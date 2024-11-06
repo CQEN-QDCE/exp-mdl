@@ -123,18 +123,34 @@ Information détaillé sur la structure de la PKI Interne de développement est 
 
 #### Configuration des fichiers de paramètres dans le répertoire de scripts
 
-Il y a un fichier de paramètre général, appelé `base.params`, et un fichier de paramètres par AC crée (p. ex. `cqen.params`, etc). 
+La configuration de l'ICP se fait à partir de l'édition d'un fichier de paramètre général, appelé `base.params`, et d'un fichier de paramètres par AC crée (p. ex. `cqen.params`, etc). 
 
 La configuration du fichier général doit prendre en consideration les paramètres suivants: 
-
 
 |Nom du paramètre | Obligatoirité | Valeur | Exemple | 
 |---|---|---|---|
 |PROJECT_HOME|O|Répertoire dans lequel les sources du projet github ont été clonés et à partir duquel l'ICP sera compilée et construite.|/home/usu/code-source/pkiCloneGithub|
 |PROJECT_BKP_HOME|O|Répertoire de bkp des scripts et des fichiers de configuration des sources de l'ICP. Référer comme un sous répertoire de `$PROJECT_HOME`.|/bkp|
-|PROJECT_SRC_HOME|O||/sources|
-|PKI_HOME|O||/pki-gouvernementale|
+|PROJECT_SRC_HOME|O|Répertoire des sources des scripts et de configuration de l'ICP. |/sources|
+|PKI_HOME|O|Répertoire cible où l'installation de l'ICP sera faite.|/pki-gouvernementale|
 ||||
+
+Ensuite, il faut conofigurer le fichier des autorités de certification qui seront créés. 
+
+|Nom du paramètre | Obligatoirité | Valeur | Exemple | 
+|---|---|---|---|
+|CQEN_ROOT|O|Répertoire racine de l'autorité de certification. `$PROJECT_HOME/ca`.|$PKI_HOME/ca/cqen|
+|CQEN_CONF|O|Fichier de configuration d'Openssl de l'autorité.|$CQEN_ROOT/config/openssl.conf|
+|CQEN_PASSWORD_FILE|O|Fichier de mot de passe. Ce fichier est déposé dans un répertoire protegé, et le mot de passe sera généré automatiquement par le generateur de chiffres randominque d'Openssl. |$CQEN_ROOT/private/ca_password.txt|
+|CQEN_CN|O|Identificateur au format de `distinguished name`, qui servira à identifier l'autorité dans l'arborensence de l'ICP. |/C=CA/ST=QC/O=Gouvernement du Quebec/CN=Autorite de Certification Intermediaire CQEN Dev v1|
+|CQEN_OCSP_URL|O|Adresse qui disponibilisera l'endpoint de consultation à l'OCSP. |http://ocsp.icpgourvernementaleqc.apps.exp.openshift.cqen.ca|
+|CQEN_CRL_URL|O|Adresse qui disponibilisera la liste ce certificats revoqués (CRL). |http://crl.icpgourvernementaleqc.apps.exp.openshift.cqen.ca/cqen/dev/v1/ca.crl|
+|OCSP_CONF|O|Fichier de configuration d'Openssl de l'OCSP. |$CQEN_ROOT/config/ocsp.conf|
+|CQEN_OCSP_PASSWORD_FILE|O|Fichier de mot de passe du serveur de l'OCSP. Ce fichier est déposé dans un répertoire protegé, et le mot de passe sera généré automatiquement par le generateur de chiffres randominque d'Openssl. |$CQEN_ROOT/private/ocsp_password.txt|
+||||
+
+Finalement, il suffit de lancer le script de déploiement, `$PROJECT_SRC_HOME/deploy.sh`, l'ICP sera installée sour le répertoire `$PKI_HOME` en déployant l'Autoritée Racine' et toutes les Autorités Intermediaires et finales configurés. 
+
 
 ### 3.2 Plugin aca-py 
 
