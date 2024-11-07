@@ -187,7 +187,7 @@ Comme pour l'infrastructure d'identité numérique, l'éco-système mDL se compo
 Le mDL contient des éléments de données spécifiques sur le détenteur du permis, tels que son nom, sa date de naissance ainsi que ses privilèges de conduite. Ces éléments de données sont protégés par des mécanismes cryptographiques et des certificats numériques gérés par une infrastructure à clé publique (PKI) sous le contrôle d'une autorité émettrice.
 
 ##### Intégrité des données et authentification
-Le mDL inclut un objet de sécurité mobile (MSO) qui contient un condensé des éléments de données. Ce dernier est signé numériquement par l'autorité émettrice. Cela permet aux lecteurs mDL de vérifier l'intégrité et l'authenticité des éléments données.
+Le mDL inclut un objet de sécurité mobile (MSO) qui contient un condensé des éléments de données. Ce dernier est signé numériquement par l'autorité émettrice. Cela permet aux lecteurs mDL de vérifier l'intégrité et l'authenticité des éléments données, en plus de permettre l'authentification de l'autorité émettrice par l'utilisation de la liste vérifiée des autorités émettrices de certificats (VICAL).
 
 ##### Protection de la vie privée
 Une des caractéristiques clés offerte par un mDL est la divulgation sélective, permettant aux détenteurs de partager uniquement le sous-ensemble nécessaire de leurs informations personnelles. Les éléments de données divulgés varient en fonction du cas d'utilisation.
@@ -223,14 +223,17 @@ La pile technologique utilisé dans nos expérimentations précédentes sur l'id
 Au cours de cette expérimentation, les implémentations disponibles de la norme ISO/IEC 18013-5 ont évolués. Un acteur majeur du monde SSI, la bibliothèque [credo-ts](https://github.com/openwallet-foundation/credo-ts), a ajouté le support du mDL. Au moment d'écrire ce rapport, le code n'était pas complété mais cet ajout est intéressant pour le développement d'un portefeuille multi-formats. En plus de supporter les [AnonCreds](https://hyperledger.github.io/anoncreds-spec/), la bibliothèque credo-ts supportent les [attestations vérifiables W3C](https://www.w3.org/TR/vc-data-model/), les [attestations vérifiables SD-JWT](https://www.ietf.org/archive/id/draft-ietf-oauth-sd-jwt-vc-01.html), le protocol OID4VC et prochainement, le mDL. Ainsi, le [Portfeuille mobile QC](https://github.com/MCN-ING/Portefeuille-mobile-qc) pourra devenir un portefeuille multi-formats.
 
 ### 4.3 Mise en place d'un prototype
-Afin de comprendre le cycle de vie complet d'un permis de conduire mobile dans le contexte des attestations vérifiables, nous avons décidé de créer un prototype qui implémente les composantes majeures suivantes: Émetteur, détenteur, vérificateur et Infrastructure de Clés Publique (ICP). 
+Afin de comprendre le cycle de vie complet d'un permis de conduire mobile dans le contexte des attestations vérifiables, nous avons décidé de créer un prototype qui implémente les composantes majeures suivantes: Émetteur, détenteur, vérificateur et Infrastructure à Clés Publique (ICP). Ces 
 
-- Émetteur: Il est responsable de l'émission du permis de conduire mobile. Comme nous avions déjà un émetteur ([ACA-Py](https://github.com/openwallet-foundation/acapy)) utilisé dans le projet d'identité numérique et que ce dernier supporte un système d'extensions, nous avons décidé de l'utiliser comme émetteur. Une extension supportant le protocole d'émission OID4VCI était déjà disponible. Le code de la bibliothèque [pyMDOC-CBOR](https://github.com/IdentityPython/pyMDOC-CBOR) pouvait être utilisé pour permettre à [ACA-Py](https://github.com/openwallet-foundation/acapy) d'émettre un permis de conduire mobile au format mDL. 
+- **Émetteur:** Il est responsable de l'émission du permis de conduire mobile. Comme nous avions déjà un émetteur ([ACA-Py](https://github.com/openwallet-foundation/acapy)) utilisé dans le projet d'identité numérique et que ce dernier supporte un système d'extensions, nous avons décidé de l'utiliser comme émetteur. Une extension supportant le protocole d'émission OID4VCI était déjà disponible. Le code de la bibliothèque [pyMDOC-CBOR](https://github.com/IdentityPython/pyMDOC-CBOR) pouvait être utilisé pour permettre à [ACA-Py](https://github.com/openwallet-foundation/acapy) d'émettre un permis de conduire mobile au format mDL. 
 
-- Détenteur: Le projet d'identité numérique utilise le [Portfeuille mobile QC](https://github.com/MCN-ING/Portefeuille-mobile-qc). Ce dernier est développé en React Native (Typescript). Au moment où l'expérimentation a commencé, nous n'avions pas de bibliothèque assez avancé en Typescript qui implémentait la norme ISO 18013-5 mDL. Nous avons décidé de convertir le code de la bibliothèque [Kotlin Multiplatform mdoc library](https://github.com/walt-id/waltid-mdoc) en TypeScript.
+- **Détenteur:** Le projet d'identité numérique utilise le [Portfeuille mobile QC](https://github.com/MCN-ING/Portefeuille-mobile-qc). Ce dernier est développé en React Native (Typescript). Au moment où l'expérimentation a commencé, nous n'avions pas de bibliothèque assez avancé en Typescript qui implémentait la norme ISO 18013-5 mDL. Nous avons décidé de convertir le code de la bibliothèque [Kotlin Multiplatform mdoc library](https://github.com/walt-id/waltid-mdoc) en TypeScript.
 
-- Vérificateur: Il est responsable des demandes de vérification d'un permis de conduire mobile. Comme il n'existait pas d'application de vérification en code source ouvert au moment où l'expérimentation a commencé, nous avons décidé d'en développer une en React Native (Typescript). Il était requis que cette dernière supporte. au minimum, les demandes de preuve sans connexion via le protocol BLE (exigence de la norme ISO 18013-5 MDL)
-.
+- **Vérificateur:** Il est responsable des demandes de vérification d'un permis de conduire mobile. Comme il n'existait pas d'application de vérification en code source ouvert au moment où l'expérimentation a commencé, nous avons décidé d'en développer une en React Native (Typescript). Il était requis que cette dernière supporte. au minimum, les demandes de preuve sans connexion via le protocol BLE (exigence de la norme ISO 18013-5 MDL).
+
+- **Infrastructure à Clés Publiques:** L'ICP joue le rôle de registre de confiance central dans l'architecture de l'application mDL. Elle crée et gère les paires de clés (publiques et privées) ainsi que les certificats numériques attribués aux autorités émettrices de permis de conduire. Cette infrastructure permet de vérifier de manière cryptographique et sans équivoque qu'un document a été émis par une autorité légitime à travers des signatures numériques. Cette infrastructure est essentielle pour garantir la sécurité, l'authenticité et la fiabilité du système mDL dans son ensemble. 
+
+
 ## 5. Analyse des résultats 
 
 L'hypothèse d'expérimentation avait comme objectif de démontrer qu'un permis de conduire numérique peut être conservé dans un portefeuille numérique; tout en respectant les normes de l'indentité numérique ainsi que les normes du permis de conduire numérique (ISO 18013-5 - mDL et l'AAMVA).
@@ -254,7 +257,7 @@ L'Exploration et l'analyse de l'ecosystème du permis de conduire est un succès
 - ✅ Détermination de quatre possibles scénarios de solution
   - Sélection du scénario 2 (mDL) qui réprésentait le scénario moins connu.
 - ✅ Comprehénsion et apprentissage de la norme ISO 18013-5
-- TODO
+- ✅ Comprehénsion des contraintes imposées par le Guide d'Implementation de l'AAMVA et son impact sur l'architecture du projet. 
 
 ### 5.2 Implémentation du cycle de vie complet d'un permis de conduire numérique dans le contexte des attestations vérifiables
 
