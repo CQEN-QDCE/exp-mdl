@@ -10,7 +10,7 @@ statut : en cours
 [![img](https://img.shields.io/badge/Lifecycle-Experimental-339999)](https://www.quebec.ca/gouv/politiques-orientations/vitrine-numeriqc/accompagnement-des-organismes-publics/demarche-conception-services-numeriques)
 [![Licence](https://img.shields.io/badge/Licence-LiLiQ--P-blue)](../LICENCE)
 ---
-![Logo MCN](https://github.com/CQEN-QDCE/.github/blob/main/images/mcn.png)
+![Logo MCN](https://github.com/CQEN-QDCE/.github/blob/main/images/mcn.png) 
 <!-- FIN ENTETE -->
 
 # Infrastructure à Clé Publique (ICP) pour le Permis de Conduire Mobile (mDL) : Contexte, Mise en œuvre et Considérations Techniques
