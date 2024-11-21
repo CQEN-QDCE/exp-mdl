@@ -278,7 +278,7 @@ L'Exploration et l'analyse de l'ecosystème du permis de conduire est un succès
 
 #### 5.2.3 Vérificateur: Mettre en place la vérification du permis de conduire numérique
 
-- ⚠️ L'application de vérification n'a pas été développée apr manque de temps. Il sera probablement assez rapide d'en mettre une en place lorsque la bibliothèque credo-ts aura complétée son implémentation de la norme mDL.
+- ⚠️ L'application de vérification n'a pas été développée par manque de temps. Il sera probablement assez rapide d'en mettre une en place lorsque la bibliothèque credo-ts aura complétée son implémentation de la norme mDL.
 
 #### 5.2.4 Infrastructure de Clés Publique (ICP): Mettre en place une ICP pour l'intégrer à l'ecosystème du permis de conduire numérique.
 
