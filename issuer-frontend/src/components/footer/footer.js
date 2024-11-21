@@ -1,13 +1,17 @@
-import React, { useContext} from 'react';
+import React from 'react';
 import '../../css/quebec_ca.css';
 import logoFooter from '../../assets/piv/logo-gouv-couleur.svg';
 import './footer.css';
-import { Context } from '../wrapper/wrapper';
+import { useNavigate } from "react-router-dom";
 import { FormattedMessage } from 'react-intl';
 
 export default function Footer(props) {
 
-  const context = useContext(Context);
+  const navigate = useNavigate();
+
+  const handleConditions = (e) => {
+    navigate(`/conditions`, { });    
+  }  
 
   return (    
     <div className="Footer">
@@ -22,13 +26,13 @@ export default function Footer(props) {
                   </a>
                 </li>                
                 <li>
-                  <a href="conditions">
+                  <a href="#" onClick={handleConditions}>
                     <FormattedMessage id="app.footer.use" defaultMessage={"Conditions d'utilisation"} />
                   </a>
                 </li>
                 <li>
                   <a href="https://github.com/CQEN-QDCE">
-                    <FormattedMessage id="app.footer.about" defaultMessage={"À propos de CQEN"} />
+                    <FormattedMessage id="app.footer.about" defaultMessage={"À propos du CQEN"} />
                   </a>
                 </li>                  
               </ul>         
