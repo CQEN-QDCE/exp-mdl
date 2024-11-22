@@ -1,7 +1,7 @@
 @startuml mDL
 allow_mixing
 title
-    **Architecture de l'émetteur de permis de conduire numérique**
+    **Architecture de l'émetteur de permis de conduire numérique - mDL Issuer Architecture**
 end title
 
  
@@ -21,29 +21,29 @@ end title
 !includeurl ICONURL/Concepts/link.puml
  
 'Environnement d'exécution
-rectangle "Environnement d'exécution - Execution environment" as envExecution #LightGray {
+rectangle "Environnement d'exécution - Execution environment" as envExecution #WhiteSmoke {
  
     rectangle "Émetteur - Issuer" as issuer #LightCyan {
         agent "Controlleur - Controller (Web)" as issuerController #LightBlue
  
         rectangle "ACA-PY (Rest-API)" as issuerACAPY #LightYellow {
             agent "Serveur admin - Admin server" as issuerAdmin
-            agent "Anoncred Verifiable Credential" as issuerAnoncred #LightBlue                       
-            node "OIDC4VCI (Plugin)" as issuerPlugin #LightGreen {
-                agent "Plugin Admin routes" as issuerPluginAdmin
-                agent "Plugin Public routes" as issuerPluginPublic
+            agent "Anoncred\n Attestation vérifiable -\n Verifiable Credential" as issuerAnoncred #LightBlue                       
+            node "OIDC4VCI (Plugin)" as issuerPlugin #HoneyDew {
+                agent "Plugin: Routes admin -\n Admin routes" as issuerPluginAdmin
+                agent "Plugin: Routes publiques -\n Public routes" as issuerPluginPublic
                 agent "Type de l'attestation - Credential type" as issuerCredentialType #LightBlue
-                agent "SD-JWT Verifiable Credential" as issuerW3CVC #LightBlue
+                agent "SD-JWT\n Attestation vérifiable -\n Verifiable Credential" as issuerW3CVC #LightBlue
             }
-            node "mDoc (Plugin)" as issuerMDoc #Orchid {
-                agent "Plugin Admin routes" as issuerPluginMDocAdmin
+            node "mDoc (Plugin)" as issuerMDoc #AliceBlue {
+                agent "Plugin: Routes admin - Admin routes" as issuerPluginMDocAdmin
                 agent "mDL (mDoc/CBOR)" as issuerPluginMDoc #LightBlue
             }
 
         }
     }
  
-    rectangle "Réseau de confiance numérique mDL" as networkTrusted #Lavender {        
+    rectangle "Réseau de confiance numérique mDL -\n Network of trust mDL" as networkTrusted #Linen {    
         agent "VICAL" as vicalNetwork #LightBlue   
         agent "PKI" as pkiInfrastructure #LightBlue    
         agent "CANdy" as CandyGouvernance #LightBlue
@@ -60,18 +60,18 @@ node "Détenteur - Holder" as Citizen #LightBlue {
 issuerController <-right-> issuerPluginAdmin #green;line.dashed;
 issuerController <-right-> issuerPluginMDocAdmin #green;line.dashed;
 issuerAdmin <-up-> networkTrusted #Purple;line.dashed;text:Purple
-issuerAdmin <-down-> issuerPluginAdmin #Purple;line.dashed;text:Purple : Routes registered
-issuerAdmin <-left-> issuerPluginMDocAdmin #Purple;line.dashed;text:Purple : Routes registered
+issuerAdmin <-down-> issuerPluginAdmin #Purple;line.dashed;text:Purple : Routes enregistrées - Registered routes
+issuerAdmin <-left-> issuerPluginMDocAdmin #Purple;line.dashed;text:Purple : Routes enregistrées - Registered routes
  
-issuerPluginPublic <-left-> issuerCredentialType #Black;line.dashed;text:Black : Device binding
-issuerPluginAdmin --> issuerCredentialType #Black;line.dashed;text:Black  : Data exchange
+issuerPluginPublic <-left-> issuerCredentialType #Black;line.dashed;text:Black : liaison de périphérique - Device binding
+issuerPluginAdmin --> issuerCredentialType #Black;line.dashed;text:Black  : Échange de données - Data exchange
 issuerCredentialType --> issuerW3CVC #BlueViolet;line.dashed;text:BlueViolet : W3C VC
 issuerCredentialType --> issuerAnoncred #BlueViolet;line.dashed;text:BlueViolet : Anoncred VC
 issuerCredentialType ---> issuerPluginMDoc #BlueViolet;line.dashed;text:BlueViolet : mDL
  
 Citizen <-right-> issuerPluginPublic #Red;line.dashed;text:red : OIDC4VCI Protocol
-Citizen --> issuerController #green;line.dashed;text:green : Initiates Exchange
-issuerController --> Citizen #green;line.dashed;text:green : Credential offer (QR code, etc)
+Citizen --> issuerController #green;line.dashed;text:green : Lancer d'echange -\n Initiates Exchange
+issuerController --> Citizen #green;line.dashed;text:green : Offre d'attestation - Credential offer\n (QR code, etc)
 
 legend
     **Dépôts sources d'inspiration**
