@@ -1,7 +1,7 @@
 @startuml mDL
 allow_mixing
 title
-    **Architecture de l'émetteur de permis de conduire numérique.**
+    **Architecture de l'émetteur de permis de conduire numérique**
 end title
 
  
@@ -21,7 +21,7 @@ end title
 !includeurl ICONURL/Concepts/link.puml
  
 'Environnement d'exécution
-rectangle "Environnement d'exécution - Execution environment" as envExecution #PeachPuff {
+rectangle "Environnement d'exécution - Execution environment" as envExecution #LightGray {
  
     rectangle "Émetteur - Issuer" as issuer #LightCyan {
         agent "Controlleur - Controller (Web)" as issuerController #LightBlue
@@ -38,7 +38,6 @@ rectangle "Environnement d'exécution - Execution environment" as envExecution #
             node "mDoc (Plugin)" as issuerMDoc #Orchid {
                 agent "Plugin Admin routes" as issuerPluginMDocAdmin
                 agent "mDL (mDoc/CBOR)" as issuerPluginMDoc #LightBlue
-                agent "Plugin Public routes" as issuerPluginMDocPublic
             }
 
         }
@@ -66,12 +65,11 @@ issuerAdmin <-left-> issuerPluginMDocAdmin #Purple;line.dashed;text:Purple : Rou
  
 issuerPluginPublic <-left-> issuerCredentialType #Black;line.dashed;text:Black : Device binding
 issuerPluginAdmin --> issuerCredentialType #Black;line.dashed;text:Black  : Data exchange
-issuerCredentialType --> issuerW3CVC #Blue;line.dashed;text:Blue : W3C VC
-issuerCredentialType --> issuerAnoncred #Blue;line.dashed;text:Blue : Anoncred VC
-issuerCredentialType ---> issuerPluginMDoc #Blue;line.dashed;text:Blue : mDL
+issuerCredentialType --> issuerW3CVC #BlueViolet;line.dashed;text:BlueViolet : W3C VC
+issuerCredentialType --> issuerAnoncred #BlueViolet;line.dashed;text:BlueViolet : Anoncred VC
+issuerCredentialType ---> issuerPluginMDoc #BlueViolet;line.dashed;text:BlueViolet : mDL
  
 Citizen <-right-> issuerPluginPublic #Red;line.dashed;text:red : OIDC4VCI Protocol
-Citizen <-right-> issuerPluginMDocPublic #Red;line.dashed;text:red : MDOC CBOR encoding
 Citizen --> issuerController #green;line.dashed;text:green : Initiates Exchange
 issuerController --> Citizen #green;line.dashed;text:green : Credential offer (QR code, etc)
 
