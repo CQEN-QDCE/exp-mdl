@@ -20,9 +20,9 @@ Dans le monde numérique d'aujourd'hui, la confiance est un élément fondamenta
 
 ## Qu'est-ce qu'une ICP ?
 Une Infrastructure à Clé Publique est constituée de trois piliers essentiels:
-1. Une méthodologie de confiance
-2. Une technologie cryptographique
-3. Une infrastructure de gestion des transactions
+1. Une méthodologie de confiance;
+2. Une technologie cryptographique;
+3. Une infrastructure de gestion des transactions.
 
 Le principe fondamental de cette méthodologie repose sur l'utilisation de certificats numériques entre les parties prenantes d'une transaction. La relation de confiance s'établit de manière transitive: si une entité A dispose d'un certificat auquel une entité B fait confiance, alors B peut également faire confiance à A. Cette chaîne de confiance est ancrée dans des autorités de certification (AC), qui agissent comme sources primaires de confiance, aussi connus comme tiers de confiance.
 
