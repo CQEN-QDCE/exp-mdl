@@ -1,0 +1,192 @@
+@startuml arch_reg_confiance
+allow_mixing
+
+title 
+    "Diagrammes d'architecture du registre de preuves et de confiance"
+end title
+
+' ======================================================================
+' Définition de la PKI
+' ======================================================================
+rectangle "Infrastructure à clés publiques (PKI) - Option en analyse" as pki #LightBlue {
+
+    ' Définition des entités
+
+    ' Définit l'autorité de certification racine
+    rectangle "Autorité de certification Racine(IACA) - FondationNumérique" as ca #LightCoral {
+        rectangle "Cerfificat autorité racine" as crt_ca
+    }
+
+    ' Définit l'autorité de certification émettrice
+    rectangle "Autorité de certification Émettrice - SAAQ" as ea #LightCoral {
+        rectangle "Cerfificat autorité émettrice" as crt_ea
+    }
+
+    ' Définit l'entité finale
+    rectangle "Réseau de bureau de la SAAQ et de partenaires" as rp #LightCoral {
+        rectangle "Cerficat d'end-entity \nBureau SAAQ (Sherbrooke)" as bureau
+        rectangle "Cerficat d'end-entity \nPartenaire CAA" as caa
+        rectangle "Cerficat d'end-entity \nPartenaire Concessionnaires automobiles" as concessionnaires
+        rectangle "Cerficat d'end-entity \nAutres" as autres
+    }
+
+    rectangle "Citoyens" as citoyens #line.dashed {
+        rectangle "Mdl Philippe" as mdl1
+        rectangle "Mdl Julio" as mdl2
+        rectangle "Mdl A" as mdl3
+        rectangle "Mdl B" as mdl4
+        rectangle "Mdl X" as mdl5
+        rectangle "Mdl Y" as mdl6
+        rectangle "Mdl Z" as mdl7
+    }
+
+
+    ' Définition des liens et relations
+    crt_ca -down-> crt_ea : "Émission certificat autorité émettrice"
+    crt_ea -right-> mdl1
+    crt_ea -right-> mdl2
+    crt_ea -right-> mdl3
+
+    crt_ea -down-> bureau : "Émission certificat end-entity"
+    bureau -down-> mdl4
+    crt_ea -down-> caa : "Émission certificat end-entity"
+    caa -down-> mdl5
+    crt_ea -down-> concessionnaires : "Émission certificat end-entity"
+    concessionnaires -down-> mdl6
+    crt_ea -down-> autres : "Émission certificat end-entity"
+    autres -down-> mdl7
+
+'todo représenter la révocation    
+}
+
+' ======================================================================
+' Définition de la VICAL
+' ======================================================================
+rectangle "VICAL - AAMVA" as vicalaamva #LightBlue{
+    ' Liste Vical
+    rectangle "Liste Vical de l'Amérique du Nord" as listeaamva #LightGray{
+            rectangle "Autorité Émettrice État A" as aea #White{
+                rectangle "Certificat Signataire de l'état A" as csa
+                rectangle "Certificat Racine de l'état A" as cra
+            }
+
+            rectangle "Autorité Émettrice État B" as aeb #White{
+                rectangle "Certificat Signataire de l'état B" as csb
+                rectangle "Certificat Racine de l'état B" as crb
+            }
+
+            rectangle "Autorité Émettrice de la SAAQ" as aesaaq  #White{
+                rectangle "Certificat Signataire de la SAAQ " as cssaaq
+                rectangle "Certificat Racine de la SAAQ" as crsaaq
+            }
+
+            aea -[hidden]down- aeb
+            aeb -[hidden]down- aesaaq
+    }
+}
+
+note left of vicalaamva
+    L'AAMVA (American Association of Motor Vehicle Administrators) 
+    est une association américaine qui se concentre sur les questions relatives 
+    à la réglementation des véhicules et à la conduite automobile.
+
+    En Europe, il n'y a pas d'équivalent exact de l'AAMVA, car chaque pays 
+    a son propre organisme responsable de la réglementation et de 
+    l'administration des véhicules et de la conduite. 
+    
+    Par exemple, en France, c'est le Ministère de l'Intérieur et le Service 
+    des Titres de Circulation qui s'occupent de ces questions. 
+    
+    Pour informations, il y a 44 pays reconnus en Europe, bien que cela 
+    puisse varier en fonction des différentes définitions géographiques et politiques. 
+
+    Cependant, il est important de noter que certains pays européens sont 
+    membres de l'Union européenne, tandis que d'autres ne le sont pas. 
+    Actuellement, il y a 27 pays membres de l'Union européenne.
+end note
+
+rectangle "VICAL Autres" as vical #LightBlue{
+    ' Liste Vical
+    rectangle "Liste Vical" as liste #LightGray{
+            rectangle "Autorité Émettrice État A" as aex #White{
+                rectangle "Certificat Signataire de l'état A" as csx
+                rectangle "Certificat Racine de l'état A" as crx
+            }
+
+            rectangle "Autorité Émettrice État B" as aey #White{
+                rectangle "Certificat Signataire de l'état B" as csy
+                rectangle "Certificat Racine de l'état B" as cry
+            }
+
+            rectangle "Autorité Émettrice de la SAAQ" as aesaaq2  #White{
+                rectangle "Certificat Signataire de la SAAQ " as cssaaq2
+                rectangle "Certificat Racine de la SAAQ" as crsaaq2
+            }
+
+            aex -[hidden]down- aey
+            aey -[hidden]down- aesaaq2
+    }
+}
+
+note left of vical
+    Il faut multiplié les listes VICAL pour chaque pays 
+    qui existe dans le monde ou nous devons faire 
+    reconnaître le permis de conduire numérique.
+end note
+
+' Définition des liens et relations inter-entités
+crt_ca -down-> crsaaq : "Inclusion certificat racine SAAQ à la VICAL"
+crt_ea -down-> cssaaq : "Inclusion certificat signataire SAAQ à la VICAL"
+
+vicalaamva -[hidden]down- vical
+
+
+' ======================================================================
+' Définition de l'agent aca-py
+' ======================================================================
+' Définition DU CONTRÔLEUR
+rectangle "Contrôleur" as resp_pki_saaq
+
+' L'agent infonuagique Aries
+rectangle "aries-cloudagent-python" as acapy {
+
+    ' Définition des endpoints
+    rectangle "endpoints" as endpoints #LightCyan{
+
+        ' Définition des endpoints pour générer des clés de signature
+        rectangle "/wallet/x509" as wallet_x509 #LightGoldenRodYellow{
+            rectangle "keypair" as keypair #LightGreen{
+                rectangle "ECDSA-p256" as ECDSAp256
+                rectangle "ECDSA-p384" as ECDSAp384
+                rectangle "ECDSA-p521" as ECDSAp521
+            }
+            rectangle "csr" as csr #LightGreen{
+                rectangle "CSR racine" as csr_racine
+                rectangle "CSR émettrice" as csr_emettrice  
+            }
+        }
+
+        ' Définition des endpoints lorsque les clés existent déjà
+        rectangle "wallet/verification-method" as wallet_verification_method #LightGoldenRodYellow{
+            ' On a besoin de la clé privé, la méthode permet d'aller chercher la clé privé dans le wallet de l'ACA-PY.
+            rectangle "sign" as sign 
+            
+            ' On a besoin de la clé publique, elle va être émise avec un certificat, la méthode permet d'aller chercher la clé publique dans le wallet de l'ACA-PY qui se présente dans un certificat (le verkey).
+            rectangle "verify" as verify 
+        }
+        
+    }
+
+    ' Définition des liens et rélations  
+    csr_racine -up-> pki : "keypair_racine"
+    csr_emettrice -up-> pki : "keypair_emettrice"
+
+    ' Définition des actions de l'acteur 
+    resp_pki_saaq -down-> keypair : "Générer une paire de clés"
+    resp_pki_saaq -down-> csr : "Générer une demande \nde signature de certificat"
+    resp_pki_saaq -down-> sign : "Signer un document mDL"
+    resp_pki_saaq -down-> verify : "Vérifier la signature\n d'un document mDL"
+}
+
+@enduml
+```
