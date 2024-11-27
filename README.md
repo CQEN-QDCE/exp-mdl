@@ -14,6 +14,8 @@
 
 >[Consulter le rapport d'expérimentation](exp/rapport.md)
 
+>[Consulter le rapport de la veille technologique](exp/veille.md)
+
 ## Comment utiliser ce dépôt ?
 
 La stratégie du CQEN quant aux dépôts de code source des expérimentations, établie que le dépôt doit contenir entre autres, le code des prototypes, et la documentation liée à l'expérimentation. Dans le cas de cette expérimentation (mDL), le dépôt est structuré de la manière suivante:
