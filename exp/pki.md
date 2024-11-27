@@ -19,57 +19,57 @@ statut : en cours
 Dans le monde numérique d'aujourd'hui, la confiance est un élément fondamental des interactions électroniques. Cette confiance repose principalement sur les infrastructures à clé publique (ICP), qui constituent le socle technologique permettant d'établir et de maintenir des relations de confiance numériques sécurisées.
 
 ## Qu'est-ce qu'une ICP ?
-Une Infrastructure à Clé Publique est constituée de trois piliers essentiels :
+Une Infrastructure à Clé Publique est constituée de trois piliers essentiels:
 1. Une méthodologie de confiance
 2. Une technologie cryptographique
 3. Une infrastructure de gestion des transactions
 
-Le principe fondamental de cette méthodologie repose sur l'utilisation de certificats numériques entre les parties prenantes d'une transaction. La relation de confiance s'établit de manière transitive : si une entité A dispose d'un certificat auquel une entité B fait confiance, alors B peut également faire confiance à A. Cette chaîne de confiance est ancrée dans des autorités de certification (AC), qui agissent comme sources primaires de confiance.
+Le principe fondamental de cette méthodologie repose sur l'utilisation de certificats numériques entre les parties prenantes d'une transaction. La relation de confiance s'établit de manière transitive: si une entité A dispose d'un certificat auquel une entité B fait confiance, alors B peut également faire confiance à A. Cette chaîne de confiance est ancrée dans des autorités de certification (AC), qui agissent comme sources primaires de confiance, aussi connus comme tiers de confiance.
 
 ### Architecture et Composants de l'ICP
-L'ICP s'appuie sur plusieurs composants clés :
-1. L'Autorité de Certification Racine (Root CA)
-   - Représente le plus haut niveau de confiance
-   - Émet les certificats pour les autorités de certification intermédiaires
-   - Sa clé privée est strictement protégée
+L'ICP s'appuie sur plusieurs composants clés.
+1. L'Autorité de Certification Racine (Root CA):
+   - Représente le plus haut niveau de confiance;
+   - Émet les certificats pour les autorités de certification intermédiaires;
+   - Sa clé privée est strictement protégée.
 
-2. Les Autorités de Certification Intermédiaires
-   - Émettent les certificats pour les entités finales
-   - Permettent une meilleure gestion des risques
-   - Facilitent la révocation en cas de compromission
+2. Les Autorités de Certification Intermédiaires:
+   - Émettent les certificats pour les entités finales;
+   - Permettent une meilleure gestion des risques;
+   - Facilitent la révocation en cas de compromission.
 
-3. L'Autorité d'Enregistrement
-   - Vérifie l'identité des demandeurs de certificats
-   - Applique les politiques de certification
+3. L'Autorité d'Enregistrement:
+   - Vérifie l'identité des demandeurs de certificats;
+   - Applique les politiques de certification.
 
 ### Mesures de Sécurité Critiques
-Pour garantir la fiabilité du système, plusieurs mesures sont essentielles :
-1. Protection Physique
-   - Hébergement dans des centres de données sécurisés
-   - Contrôle d'accès strict aux installations
-   - Redondance des systèmes critiques
+Pour garantir la fiabilité du système, plusieurs mesures sont essentielles.
+1. Protection Physique:
+   - Hébergement dans des centres de données sécurisés;
+   - Contrôle d'accès strict aux installations;
+   - Redondance des systèmes critiques.
 
-2. Sécurité Logique
-   - Chiffrement fort des communications
-   - Authentification multi-facteurs
-   - Journalisation et audit des opérations
-   - Surveillance continue des systèmes
+2. Sécurité Logique:
+   - Chiffrement fort des communications;
+   - Authentification multi-facteurs;
+   - Journalisation et audit des opérations;
+   - Surveillance continue des systèmes.
 
-3. Procédures Opérationnelles
-   - Séparation des rôles et responsabilités
-   - Procédures de sauvegarde et de récupération
-   - Plans de continuité d'activité
+3. Procédures Opérationnelles:
+   - Séparation des rôles et responsabilités;
+   - Procédures de sauvegarde et de récupération (backups, key escrow ou autorité de séquestre);
+   - Plans de continuité d'activité.
 
 ## Application au Permis de Conduire Mobile (mDL)
-Dans le contexte spécifique du permis de conduire mobile (mDL), l'intégrité et l'authenticité des données des permis de conduire `(MSO)` sont garanties par des mécanismes cryptographiques et des certificats numériques. Ces éléments sont gérés par une ICP placée sous le contrôle de l'autorité émettrice `(IA - Issuing Authority)` concernée. Au cœur de ce système se trouve l'autorité de certification de l'autorité émettrice `(IACA - Issuing Authority Certification Authority)`, qui constitue la pierre angulaire de la confiance pour tous les vérificateurs de mDL. 
+Dans le contexte spécifique du `permis de conduire mobile (mDL)`, l'intégrité et l'authenticité des données des permis de conduire enregistrés sous le `MSO (Mobile Security Object)` sont garanties par des mécanismes cryptographiques et des certificats numériques. Ces éléments sont gérés par une ICP placée sous le contrôle de l'autorité émettrice `(IA - Issuing Authority)` concernée. Au cœur de ce système se trouve l'autorité de certification de l'autorité émettrice `(IACA - Issuing Authority Certification Authority)`, qui constitue la pierre angulaire de la confiance pour tous les vérificateurs de mDL. 
 
-L'IACA est une autorité de certification spécifique au contexte des permis de conduire mobiles (mDL). Elle représente l'autorité émettrice de mDL au sein de l'infrastructure à clé publique et est responsable de :
+L'IACA est une autorité de certification spécifique au contexte des permis de conduire mobiles (mDL). Elle représente l'autorité émettrice de mDL au sein de l'infrastructure à clé publique et est responsable de:
 
-- La génération et la gestion des certificats utilisés pour signer les mDL
-- La validation de l'authenticité des permis émis
-- La maintenance des listes de révocation pour les certificats qu'elle émet
+- la génération et la gestion des certificats utilisés pour signer les mDL;
+- la validation de l'authenticité des signatures des permis émis;
+- la maintenance des listes de révocation pour les certificats qu'elle émet.
 
-Les IACA participent à un écosystème international de confiance géré par l'AAMVA à travers la `VICAL (Verified Issuing Certificate Authority List)`, une liste de confiance qui répertorie les certificats des IACA autorisées à émettre des mDL. Pour qu'une IACA soit incluse dans la VICAL, elle doit soumettre son certificat racine ou intermédiaire à l'AAMVA pour une vérification rigoureuse. Une fois validée et incluse dans la VICAL, tous les mDL émis et signés par cette IACA peuvent être automatiquement validés par les vérificateurs qui font confiance à la VICAL, créant ainsi un réseau de confiance distribué et interopérable à l'échelle internationale.
+Les IACA participent à un écosystème international de confiance géré par l'AAMVA à travers la `VICAL (Verified Issuing Certificate Authority List)`, une liste de confiance qui répertorie les certificats des IACA autorisées à émettre des mDL. Pour qu'une IACA soit incluse dans la VICAL, elle doit prendre une entente avec l'administrateur de la VICAL (par exemple, l'AAMVA) et soumettre son certificat racine et intermédiaire à l'administrateur pour une vérification rigoureuse. Une fois validée et incluse dans la VICAL, tous les mDL émis et signés par cette IACA peuvent être automatiquement validés par les vérificateurs qui font confiance à la VICAL, créant ainsi un réseau de confiance distribué et interopérable à l'échelle internationale.
 
 Le graphique ci-dessous, tiré du site de la VICAL de l'AAMVA, décrit visuellement le flux de clés entre l'autorité émettrice, le registre de confiance et les parties utilisatrices.
 <div>
@@ -78,34 +78,34 @@ Le graphique ci-dessous, tiré du site de la VICAL de l'AAMVA, décrit visuellem
 
 
 ### Rôle de l'IACA
-L'autorité de certification de l'autorité émettrice (IACA) joue un rôle central :
-- Génération et gestion des certificats de signature des mDL
-- Maintien des listes de révocation de certificats (CRL)
-- Application des politiques de sécurité
-- Garantie de l'intégrité du système
+L'autorité de certification de l'autorité émettrice (IACA) joue un rôle central. Elle est responsable principalement pour:
+- la génération et gestion des certificats de signature des mDL;
+- le maintien des listes de révocation de certificats (CRL);
+- l'application des politiques de sécurité;
+- la garantie de l'intégrité du système.
 
 ### L'ICP Interne de Développement CQEN Dev V1 
 
-Dans ce contexte, l'`ICP Interne de Développement CQEN Dev V1` a été créé pour donner support aux activités de développement dans un contexte d'expérimentation qui a besoin d'une ICP fonctionnelle.
+Dans ce contexte, l'`ICP Interne de Développement CQEN Dev V1` a été créé pour donner support aux activités de développement dans un environnemet d'expérimentation qui a besoin d'une ICP fonctionnelle.
 
-Dans un premier temps, elle aura spécifiquement le rôle d'une IACA et servira à fournir la infrastructure de certification nécessaire pour l'éxpérimentation du permis de conduire mobile et permettre l'émission des certificats numériques qui seront ajoutés à la VICAL de l'AAMVA.
+Dans un premier temps, elle aura spécifiquement le rôle d'une IACA et servira à fournir l'infrastructure de certification nécessaire pour l'éxpérimentation du permis de conduire mobile et permettre l'émission des certificats numériques qui seront ajoutés à la VICAL de l'AAMVA.
 
-L'ICP Interne de Développement CQEN Dev V1 a été créée avec des objectifs spécifiques :
+L'ICP Interne de Développement CQEN Dev V1 a été créée avec des objectifs spécifiques:
 
-1. Support au Développement
-   - Environnement de test sécurisé
-   - Simulation des cas d'utilisation réels
-   - Validation des processus techniques
+1. Support au Développement:
+   - l'environnement de test sécurisé;
+   - la simulation des cas d'utilisation réels;
+   - la validation des processus techniques.
 
-2. Expérimentation mDL
-   - Infrastructure de certification conforme aux standards
-   - Tests d'interopérabilité
-   - Validation des mécanismes de sécurité
+2. Expérimentation mDL:
+   - l'infrastructure de certification conforme aux standards;
+   - les tests d'interopérabilité;
+   - la validation des mécanismes de sécurité. 
 
-3. Intégration VICAL
-   - Émission des certificats pour la liste VICAL de l'AAMVA
-   - Conformité aux exigences de l'AAMVA
-   - Participation à l'écosystème international mDL
+3. Intégration VICAL: 
+   - l'émission des certificats pour la liste VICAL de l'AAMVA;
+   - la conformité aux exigences de l'AAMVA;
+   - la participation à l'écosystème international du mDL. 
 
 Alors, la structure initialle de l'ICP est la suivante: 
 
@@ -151,20 +151,20 @@ Alors, la structure initialle de l'ICP est la suivante:
 
 
 ## Standards et Conformité
-L'implémentation respecte plusieurs standards clés :
-- ISO/IEC 18013-5 pour les permis de conduire mobiles
-- Standards X.509 pour les certificats numériques
-- Recommandations du NIST pour la cryptographie
-- Exigences spécifiques de l'AAMVA pour les mDL
+L'implémentation respecte plusieurs standards clés:
+- ISO/IEC 18013-5 pour les permis de conduire mobiles;
+- Standards X.509 pour les certificats numériques;
+- Recommandations du NIST pour la cryptographie;
+- Exigences spécifiques de l'AAMVA pour les mDL.
 
 ## Perspectives et Évolutions
-Le système est conçu pour évoluer et s'adapter aux :
-- Nouvelles menaces de sécurité
-- Évolutions des standards
-- Besoins émergents des utilisateurs
-- Exigences réglementaires futures
+Le système est conçu pour évoluer et s'adapter aux:
+- nouvelles menaces de sécurité;
+- évolutions des standards;
+- besoins émergents des utilisateurs;
+- éxigences réglementaires futures.
 
-Cette implémentation constitue une étape cruciale vers un système de permis de conduire mobile robuste et sécurisé, s'intégrant dans l'écosystème international des documents d'identité numériques.
+Cette implémentation constitue une étape cruciale vers un système de permis de conduire mobile robuste et sécurisé, qui peut s'intégrer dans l'écosystème international des documents d'identité numériques.
 
 ## Références 
 
