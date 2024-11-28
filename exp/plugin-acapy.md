@@ -363,7 +363,7 @@ openssl pkey -in ed25519key.pem -pubout
 
 Ceci est une liste extensive des références qui ont été consultées et servi d'inspiration ou de source d'information pendant les travaux de développement du plugin aca-py. 
 
-### Development and Setup
+### Développement et configuration
 
 - [ACA-Py Development with Dev Container](https://github.com/CQEN-QDCE/aries-cloudagent-python/blob/main/devcontainer.md)
 - [Becoming a Hyperledger Aries Developer - Getting Started](https://ldej.nl/post/becoming-a-hyperledger-aries-developer-getting-started/)
@@ -371,7 +371,7 @@ Ceci est une liste extensive des références qui ont été consultées et servi
 - [Logging docs](https://github.com/hyperledger/aries-cloudagent-python/blob/main/Logging.md)
 - [Aries ACA-Py Plugins](https://github.com/hyperledger/aries-acapy-plugins/tree/main/oid4vci)
 
-### Protocols and Standards
+### Protocoles et Standards
 
 - [Aries RFC 0434: Out-of-Band Protocols](https://github.com/hyperledger/aries-rfcs/tree/2da7fc4ee043effa3a9960150e7ba8c9a4628b68/features/0434-outofband)
 - [RFC 0021 - Sender and recipient identifiers used in envelope as DID key references](https://github.com/hyperledger/aries-rfcs/issues/104)
@@ -384,7 +384,7 @@ Ceci est une liste extensive des références qui ont été consultées et servi
 - [Trust over IP - Spécification de la méthode did:x509](https://trustoverip.github.io/tswg-did-x509-method-specification/)
 - [Microsoft did:x509](https://github.com/microsoft/did-x509)
 
-### Cryptography and Key Management
+### Cryptographie et gestion de clés
 
 - [Generating public ed25519 key with OpenSSL](https://stackoverflow.com/questions/72151697/generating-public-ed25519-key-with-openssl)
 - [Gen pubkey openssl ed25519](https://superuser.com/questions/1319543/gen-pubkey-openssl-ed25519)
@@ -399,14 +399,14 @@ Ceci est une liste extensive des références qui ont été consultées et servi
 - [Python-Cryptography: Key Serialization](https://github.com/pyca/cryptography/blob/main/docs/hazmat/primitives/asymmetric/serialization.rst)
 - [P256 keys using Secure Enclave and Android StrongBox](https://github.com/hyperledger/aries-askar/pull/245/commits/fec3c574425560618626f40a3eb6862591cd19ae#)
 
-### Encoding and Data Conversion
+### Encoding et conversion de données
 
 - [Exercise: Convert Data between Decimal, Base58, and Hex](https://learn.saylor.org/mod/page/view.php?id=36344)
 - [base58](https://www.npmjs.com/package/base58-native?activeTab=readme)
 - [Bienvenue à l'ASN.1 et au DER](https://letsencrypt.org/fr/docs/a-warm-welcome-to-asn1-and-der/)
 - [JSON Web Key (JWK)](https://jwcrypto.readthedocs.io/en/latest/jwk.html)
 
-### Tools and Libraries
+### Outils et libraries
 
 - [Repositorio pydid](https://github.com/Indicio-tech/pydid/tree/main)
 - [PyCose](https://github.com/TimothyClaeys/pycose)
@@ -423,11 +423,11 @@ Ceci est une liste extensive des références qui ont été consultées et servi
 - [Askar Storage](https://github.com/hyperledger/aries-askar/blob/main/docs/storage.md)
 - [OpenWallet Foundation Credo-TS](https://github.com/openwallet-foundation/credo-ts)
 
-### Security Notices
+### Avis de sécurité
 
 - [USN-4196-1: python-ecdsa vulnerabilities](https://ubuntu.com/security/notices/USN-4196-1)
 
-### Miscellaneous
+### Divers
 
 - [IDENTIFYING AND TRACKING PHYSICAL OBJECTS WITH HYPERLEDGER DECENTRALIZED APPLICATIONS (Thesis)](https://upcommons.upc.edu/bitstream/handle/2117/379937/Degree_thesis_DavidChicanoValenzuela.pdf?sequence=5&isAllowed=y)
 - [open-source-community - Die Open Source Community](https://github.com/e-id-admin/open-source-community/blob/main/discussion-paper-tech-proposal/20231201_Question_Overview.pdf)
@@ -435,28 +435,28 @@ Ceci est une liste extensive des références qui ont été consultées et servi
 - [INRUPT: New type of wallet, well built](https://www.inrupt.com/products/developer-portal)
 - [INRUPT GitHub Repositories](https://github.com/orgs/inrupt/repositories?type=all)
 
-NIST SP 800-186 Recommendations for Discrete Logarithm-based Cryptography: Elliptic Curve Domain Parameters 
-https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-186.pdf
+- [NIST SP 800-186 Recommendations for Discrete Logarithm-based Cryptography: Elliptic Curve Domain Parameters](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-186.pdf) 
 
-Edwards-Curve Digital Signature Algorithm (EdDSA) 
+
+- Edwards-Curve Digital Signature Algorithm (EdDSA) 
 https://datatracker.ietf.org/doc/html/rfc8032
 
-BLS Signatures 
+- BLS Signatures 
 https://www.ietf.org/archive/id/draft-irtf-cfrg-bls-signature-05.html 
 
-Deterministic Usage of the Digital Signature Algorithm (DSA) and Elliptic Curve Digital Signature Algorithm (ECDSA) 
+- Deterministic Usage of the Digital Signature Algorithm (DSA) and Elliptic Curve Digital Signature Algorithm (ECDSA) 
 https://www.rfc-editor.org/rfc/rfc6979.html
 
-Cryptographic algorithms for UNCLASSIFIED, PROTECTED A, and PROTECTED B information - ITSP.40.111 
+- Cryptographic algorithms for UNCLASSIFIED, PROTECTED A, and PROTECTED B information - ITSP.40.111 
 https://www.cyber.gc.ca/en/guidance/cryptographic-algorithms-unclassified-protected-protected-b-information-itsp40111
 
-FIPS 186-5 - Digital Signature Standard (DSS) 
+- FIPS 186-5 - Digital Signature Standard (DSS) 
 https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.186-5.pdf
 
-The BBS Signature Scheme
+- The BBS Signature Scheme
 https://identity.foundation/bbs-signature/draft-irtf-cfrg-bbs-signatures.html
 
-Cryptographic Module Validation Program (CMVP)
+- Cryptographic Module Validation Program (CMVP)
 Canada
 https://www.cyber.gc.ca/en/tools-services/cryptographic-module-validation-program-cmvp
 E-U
@@ -469,7 +469,7 @@ BBS+ Applications, Standardization and a Bit of Theory
 https://csrc.nist.gov/csrc/media/presentations/2023/crclub-2023-10-18/images-media/20231018-crypto-club--greg-and-vasilis--slides--BBS.pdf
 
 
-***References de crypto symétrique*** 
+***Références de crypto symétrique*** 
 
 Symmetric Cryptography & Key Management: Exhaustion, Rotation, Defence
 https://www.cryptomathic.com/news-events/blog/symmetric-cryptography-and-key-management-considerations-on-key-exhaustion-rotation-and-security-models#
@@ -491,7 +491,7 @@ https://github.com/nvm-sh/nvm
 https://github.com/openwallet-foundation/credo-ts-ext/tree/main/packages/transport-ble
 
 
-***Digital Identities - Mobile Driver's License (mDL) !!!!!***   
+***Identités numériques - Mobile Driver's License (mDL) !!!!!***   
 
 https://www.nccoe.nist.gov/projects/digital-identities-mdl
 
