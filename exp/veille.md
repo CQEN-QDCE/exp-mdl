@@ -1607,7 +1607,7 @@ document AAMVA) [10](#_Ref181265638)](#_Ref181265638)
 
 # Références
 
-\[1\]
+[^1]:
 « Mobile-Drivers-Licenses-and-the-Costs-to-Privacy-Safety-Security-2023.pdf ».
 Consulté le: 9 septembre 2024. \[En ligne\]. Disponible sur:
 https://www.nilc.org/wp-content/uploads/2024/01/Mobile-Drivers-Licenses-and-the-Costs-to-Privacy-Safety-Security-2023.pdf
