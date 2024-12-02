@@ -15,7 +15,7 @@ statut : en cours
 
 # Veille sur les permis de conduire numériques
 
-# Table des matières
+## Table des matières
 
 [Synthèse](#synthèse)
 
@@ -109,8 +109,6 @@ L'analyse PESTEL des permis de conduire numériques met en lumière divers enjeu
 D'un point de vue technologique, les défis incluent la cybersécurité, amplifié par l'ingénierie sociale, ou des tactiques sophistiquées exploitent la psychologie humaine pour accéder aux informations sensibles. Ces menaces s'ajoutent aux défis liés aux deepfakes et à l'informatique quantique, qui pourraient compromettre la sécurité des systèmes existants. Sur le plan environnemental, bien que la transition réduise l'utilisation de matériaux physiques, elle accroît les déchets électroniques à cause du renouvellement des appareils mobiles. Enfin, sur le plan légal, le projet de loi 82 au Québec propose un cadre centralisé pour la gestion des données numériques, mais cette approche soulève des préoccupations en matière de protection des renseignements personnels et de cohérence avec d'autres lois comme la loi 25.
 Pour conclure, les permis de conduire numériques incarnent une avancée prometteuse vers une identification moderne et sécurisée. Malgré des défis d'interopérabilité, de sécurité et d'inclusion, leur adoption croissante témoigne de leur potentiel à simplifier l'accès aux services publics tout en répondant aux exigences de la transformation numérique. Une mise en œuvre réussie dépendra d'un équilibre entre innovation, réglementation harmonisée et inclusion sociale.
 
-# 
-
 # Introduction
 
 La direction des technologies émergentes et innovation en collaboration avec la Société de l'Assurance Automobile de Québec (SAAQ) a été mandatée pour effectuer une veille stratégique sur les permis de conduire numérique. Les permis de conduire numériques représentent une évolution signification dans la gestion et la vérification des identités des conducteurs cette transition vers le numérique permet d'améliorer la sécurité et l'efficacité administrative. Cependant, cette transition soulève également des questions importantes sur la protection de la vie privée, la sécurité des données et l'interopérabilité de ce type d'identifiant numérique. Dans un contexte ou la transition vers le numérique des services gouvernementaux s'accélère, comprendre les enjeux, les défis et les opportunités liés aux permis de conduire numériques devient crucial pour toute juridiction envisageant leur adoption.
@@ -138,15 +136,25 @@ Le mDL fonctionne grâce à un écosystème impliquant trois parties : l’émet
 ## Avantages et inconvénients des permis de conduire numériques
 
 ### Les avantages : 
+
 **Sécurité:**
+
 Les mDL assurent une sécurité accrue pour les conducteurs en intégrant un cryptage de pointe et une authentification multi-facteurs, incluant l'empreinte digitale ou la reconnaissance faciale. Ces facteurs compliquent considérablement la falsification et protègent les données personnelles des titulaires de mDL contre tout accès non autorisé, réduisant ainsi le risque de vol d’identité ou de compromission des informations. Les permis numériques se distinguent par la protection supplémentaire offerte grâce à leur haut niveau de sécurité, que les permis de conduire traditionnels ne fournissent pas \[6\], \[7\], \[8\].
+
 **Accessibilité :**
+
 La praticité des permis de conduire numériques, en étant stockés directement dans le téléphone intelligent, élimine le besoin de transporter un document physique Les vérifications d'identité peuvent alors être effectuées plus rapidement et en toute transparence lors des contrôles routiers, dans les aéroports, ou lors de l'achat de produits réglementés tels que l'alcool. De plus, le fait que les smartphones soient toujours à portée de main réduit le risque de perdre des documents importants ou de les oublier dans les situations quotidiennes.
+
 **Mises à  jour en temps réel:**
+
 L'actualisation des permis de conduire numériques se fait en temps réelle par l'organisme émetteur, contrairement au permis de conduire physique qui ne peuvent être mis à jour qu'avec des modifications physiques dans les bureaux des autorités émettrices, ce qui assure l'actualisation des informations détenues, telles que le statut légal du permis. Cela élimine presque entièrement le risque d’informations incorrectes qui peut survenir à  cause du délai entre l’émission et la vérification du permis. Ce système rend l’identification de l’individu beaucoup plus fiable pour le vérificateur \[3\].
+
 **Partage sélectif des données :**
+
 Les permis de conduire numériques permettent aux titulaires de gérer avec précision les informations qu'ils souhaitent partager avec les vérificateurs. Par exemple, le titulaire peut prouver son âge sans révéler d'autres données personnelles comme l'adresse ou le numéro de permis. Cette capacité renforce la confidentialité et réduit l'exposition non désirée des informations, tout en répondant aux exigences spécifiques de divers cas de vérification d'identité \[6\],\[8\].
+
 **Contrôle des utilisateurs :**
+
 Les permis de conduire numériques offrent aux utilisateurs un plus grand contrôle sur leurs informations personnelles, car ils peuvent les bloquer ou les désactiver en cas de perte ou de vol de leur téléphone intelligent. Contrairement aux permis de conduire physiques, cette fonctionnalité permet de sécuriser instantanément les données et de réduire l'exposition des informations sensibles, offrant ainsi une sécurité accrue et une garantie supplémentaire contre la fraude \[9\],\[10\], \[11\]â€‹.
 
 ### Les inconvénients et défis:
