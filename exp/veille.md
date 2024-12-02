@@ -1,118 +1,89 @@
-  -----------------------------------------------------------------------
-  Veille sur les permis de conduire numériques
-  -----------------------------------------------------------------------
+<!-- ENTETE -->
+[![img](https://img.shields.io/badge/Cycle%20de%20Vie-Phase%20d%C3%A9couverte-339999)](https://www.quebec.ca/gouv/politiques-orientations/vitrine-numeriqc/accompagnement-des-organismes-publics/demarche-conception-services-numeriques)
+[![License](https://img.shields.io/badge/Licence-LiLiQ--R-blue)](LICENSE)
 
-  -----------------------------------------------------------------------
+---
+
+<div>
+    <a target="_blank" href="https://www.quebec.ca/gouvernement/ministere/cybersecurite-numerique">
+      <img src="images/mcn.png" alt="Logo du Ministère de la cybersécurité et du numérique" />
+    </a>
+</div>
+<!-- FIN ENTETE -->
+
+# Veille sur les permis de conduire numériques
 
 # Table des matières {#table-des-matières .TOC-Heading}
 
-[Table des figures [3](#table-des-figures)](#table-des-figures)
+[Synthèse](#synthèse)
 
-[Synthèse [4](#synthèse)](#synthèse)
+[Introduction](#introduction)
 
-[Introduction [6](#introduction)](#introduction)
+[I. Permis de conduire numériques](#permis-de-conduire-numériques)
 
-[I. Permis de conduire numériques
-[7](#permis-de-conduire-numériques)](#permis-de-conduire-numériques)
+[II. Avantages et inconvénients des permis de conduire numériques](#avantages-et-inconvénients-des-permis-de-conduire-numériques)
 
-[II. Avantages et inconvénients des permis de conduire numériques
-[7](#avantages-et-inconvénients-des-permis-de-conduire-numériques)](#avantages-et-inconvénients-des-permis-de-conduire-numériques)
+[1. Les avantages](#les-avantages)
 
-[1. Les avantages : [7](#les-avantages)](#les-avantages)
+[2. Les inconvénients et défis](#les-inconvénients-et-défis)
 
-[2. Les inconvénients et défis:
-[8](#les-inconvénients-et-défis)](#les-inconvénients-et-défis)
+[III. Cycle de vie d'un permis de conduire numérique (inspiré du AAMVA)](#cycle-de-vie-dun-permis-de-conduire-numérique-inspiré-du-aamva)
 
-[III. Cycle de vie d'un permis de conduire numérique (inspiré du AAMVA)
-[10](#cycle-de-vie-dun-permis-de-conduire-numérique-inspiré-du-aamva)](#cycle-de-vie-dun-permis-de-conduire-numérique-inspiré-du-aamva)
+[1. Émission](#émission)
 
-[1. Émission [11](#émission)](#émission)
+[2. Validation](#validation)
 
-[2. Validation [11](#validation)](#validation)
+[3. Mise à jour ](#mise-à-jour)
 
-[3. Mise à  jour [12](#mise-à -jour)](#mise-à -jour)
+[4. Révocation](#révocation)
 
-[4. Révocation [12](#révocation)](#révocation)
+[IV. Portefeuille: portrait des initiatives à travers le monde](#portefeuille-portrait-des-initiatives-à-travers-le-monde)
 
-[IV. Portefeuille -- portrait des initiatives à  travers le monde
-[12](#portefeuille-portrait-des-initiatives-à -travers-le-monde)](#portefeuille-portrait-des-initiatives-à -travers-le-monde)
+[1. Amérique](#amérique)
 
-[1. Amérique [12](#amérique)](#amérique)
+[2. Asie-pacifique](#asie-pacifique)
 
-[2. Asie-pacifique [16](#asie-pacifique)](#asie-pacifique)
+[3. Europe](#europe)
 
-[3. Europe [18](#europe)](#europe)
+[4. Afrique](#afrique)
 
-[4. Afrique [20](#afrique)](#afrique)
+[V. Dispositifs et technologies de contrôle et vérification des mDL](#dispositifs-et-technologies-de-contrôle-et-vérification-des-mdl)
 
-[V. Dispositifs et technologies de contrôle et vérification des mDL
-[20](#dispositifs-et-technologies-de-contrôle-et-vérification-des-mdl)](#dispositifs-et-technologies-de-contrôle-et-vérification-des-mdl)
+[VI. Normes et protocoles des permis de conduire](#normes-et-protocoles-des-permis-de-conduire)
 
-[VI. Normes et protocoles des permis de conduire
-[22](#normes-et-protocoles-des-permis-de-conduire)](#normes-et-protocoles-des-permis-de-conduire)
+[1. ISO/IEC 18013-5](#isoiec-18013-5)
 
-[1. ISO/IEC 18013-5 [22](#isoiec-18013-5)](#isoiec-18013-5)
+[2. ISO/IEC 18013-7](#isoiec-18013-7)
 
-[2. ISO/IEC 18013-7 [22](#isoiec-18013-7)](#isoiec-18013-7)
+[3. ISO/IEC 23220-2 (MDoC)](#isoiec-23220-2-mdoc)
 
-[3. ISO/IEC 23220-2 (MDoC)
-[23](#isoiec-23220-2-mdoc)](#isoiec-23220-2-mdoc)
+[4. American Association of Motor Vehicle Administrators (AAMVA) Guidelines](#american-association-of-motor-vehicle-administrators-aamva-guidelines)
 
-[4. American Association of Motor Vehicle Administrators (AAMVA)
-Guidelines
-[23](#american-association-of-motor-vehicle-administrators-aamva-guidelines)](#american-association-of-motor-vehicle-administrators-aamva-guidelines)
+[5. Règlement eIDAS](#règlement-eidas)
 
-[5. Règlement eIDAS [25](#règlement-eidas)](#règlement-eidas)
+[6. World Wide Web Consortium (W3C)](#world-wide-web-consortium-w3c)
 
-[6. World Wide Web Consortium (W3C)
-[26](#world-wide-web-consortium-w3c)](#world-wide-web-consortium-w3c)
+[7. Commissariat à la protection de la vie privée au Canada](#commissariat-à-la-protection-de-la-vie-privée-au-canada)
 
-[7. Commissariat à  la protection de la vie privée à  la canada
-[26](#commissariat-à -la-protection-de-la-vie-privée-à -la-canada)](#commissariat-à -la-protection-de-la-vie-privée-à -la-canada)
+[8. Comparaison de normes](#comparaison-de-normes)
 
-[8. Comparaison de normes
-[27](#comparaison-de-normes)](#comparaison-de-normes)
+[VII. Analyse PESTEL](#analyse-pestel)
 
-[VII. Analyse PESTEL [28](#analyse-pestel)](#analyse-pestel)
+[1. Dimension politique](#dimension-politique)
 
-[1. Dimension politique
-[29](#dimension-politique)](#dimension-politique)
+[2. Dimension socio-économique](#dimension-socio-économique)
 
-[2. Dimension socio-économique
-[30](#dimension-socio-économique)](#dimension-socio-économique)
+[3. Dimension technologique](#dimension-technologique)
 
-[3. Dimension technologique
-[31](#dimension-technologique)](#dimension-technologique)
+[4. Dimension environnementale](#dimension-environnementale)
 
-[4. Dimension environnementale
-[33](#dimension-environnementale)](#dimension-environnementale)
+[5. Dimension légale](#dimension-légale)
 
-[5. Dimension légale [33](#dimension-légale)](#dimension-légale)
+[Constats et réflexions](#constats-et-réflexions)
 
-[Constats et réflexions
-[35](#constats-et-réflexions)](#constats-et-réflexions)
+[Table des figures](#table-des-figures)
 
-[Références [37](#références)](#références)
-
-# Table des figures
-
-[Figure 1: Évolution de taux d’adoption des appareils mobiles par
-groupe d’âge au Québec (extrait du rapport de l'académie de la
-transformation numérique) [9](#_Ref181953203)](#_Ref181953203)
-
-[Figure 2: Cycle de vie permis de conduire numérique (inspiré du
-document AAMVA) [10](#_Ref181265638)](#_Ref181265638)
-
-[Figure 3: Portrait des initiatives au états unis
-[13](#_Ref183183856)](#_Ref183183856)
-
-[Figure 4: Portrait des initiatives au Canada
-[15](#_Ref183793129)](#_Ref183793129)
-
-[Figure 5: CAT 2 [21](#_Toc183860747)](#_Toc183860747)
-
-[Figure 6: Analyse PESTEL des permis de conduire numériques
-[28](#_Toc183860748)](#_Toc183860748)
+[Références](#références)
 
 # Synthèse 
 
@@ -351,12 +322,12 @@ nécessitant des mises à  jour régulières. Ces mises à  jour permettent de
 vérifier que le titulaire est toujours en possession de ses droits et
 que son permis de conduire numérique n'a pas été compromis.
 
-### Mise à  jour 
+### Mise à jour 
 
 Les permis de conduire numérique, tout comme les permis physiques,
 nécessitent des mises à  jour. Ces mises à  jour peuvent être déclenchées
 par différents évènements : révocation du privilège de conduire,
-changement d'adresse, etc. Les deux méthodes principales de mise à  jour
+changement d'adresse, etc. Les deux méthodes principales de mise à jour
 sont : méthode de récupération serveur et méthode de récupération
 appareil.
 
@@ -365,9 +336,9 @@ connexion directe avec l'infrastructure de l'autorité émettrice lors de
 chaque vérification.
 
 La méthode de récupération appareil implémente trois mécanismes de mises
-à  jour : (1) mécanisme mise à  jour manuelle : ce mécanisme donne le
-privilège au titulaire la maitrise du processus de mise à  jour via une
-interface dédiée dans l'application. (2) mécanisme mise à  jour
+à  jour : (1) mécanisme mise à jour manuelle : ce mécanisme donne le
+privilège au titulaire la maitrise du processus de mise à jour via une
+interface dédiée dans l'application. (2) mécanisme mise à jour
 automatique : cette fonctionnalité permet une actualisation programmée
 des données, sous réserve du consentement explicite du titulaire.
 L'automatisation est supervisée par des paramètres de configuration
@@ -387,7 +358,7 @@ utiliser le document révoqué.
 
 La révocation technique peut être déclenchée par une compromission de
 sécurité, une incompatibilité technique majeure ou la nécessité d'une
-mise à  jour critique. Dans ce cas, le système privilégie la sécurité en
+mise à jour critique. Dans ce cas, le système privilégie la sécurité en
 bloquant l'utilisation du permis de conduire numérique jusqu'à  la
 résolution du problème.
 
@@ -395,7 +366,7 @@ La révocation d'urgence s'applique dans des situations comme le vol de
 l'appareil ou la détection d'une utilisation frauduleuse. Cette
 procédure peut être initiée rapidement pour minimiser les risques.
 
-## Portefeuille -- portrait des initiatives à  travers le monde
+## Portefeuille: portrait des initiatives à travers le monde
 
 ### Amérique
 
@@ -914,7 +885,7 @@ propose des méthodes pour :
     comme les services gouvernementaux ou financiers.
 
 -   **Fonctions supplémentaires :** Cette norme inclut également des
-    fonctionnalités optionnelles, telles que la mise à  jour des
+    fonctionnalités optionnelles, telles que la mise à jour des
     informations et la révocation des permis numériques en ligne. Ces
     fonctions permettent de maintenir les informations du permis à  jour
     sans avoir à  émettre un nouveau document physique.
@@ -1114,7 +1085,7 @@ règlement assure 3 composantes clés :
 > d'identité gouvernementaux représente un axe de développement
 > important pour l'avenir des permis de conduire numériques.
 
-### Commissariat à  la protection de la vie privée à  la canada
+### Commissariat à la protection de la vie privée au Canada
 
 En octobre 2022, les commissariats et ombudsmans à  la protection de la
 vie privée au niveaux fédéral, provincial et territorial du Canada ont
@@ -1181,7 +1152,7 @@ internationale des permis de conduire numériques.
   **ISO/IEC 18013-7**  En              Vérification des     Interopérabilité à      Cryptographie       Utilisation des
                        développement   permis de conduire   l'échelle mondiale     avancée pour les    permis dans des
                                        dans des scénarios   pour les systèmes de   transactions en     contextes en
-                                       en ligne             vérification en ligne  ligne, mise à  jour  ligne
+                                       en ligne             vérification en ligne  ligne, mise à jour  ligne
                                                                                    et révocation des   
                                                                                    mDLs                
 
@@ -1603,6 +1574,26 @@ anticiper les menaces. Pour maximiser leur potentiel, les permis de
 conduire numériques doivent s'accompagner d'une approche inclusive,
 d'une collaboration mondiale et d'une vision claire pour harmoniser les
 initiatives locales et nationales.
+
+# Table des figures
+
+[Figure 1: Évolution de taux d’adoption des appareils mobiles par
+groupe d’âge au Québec (extrait du rapport de l'académie de la
+transformation numérique) [9](#_Ref181953203)](#_Ref181953203)
+
+[Figure 2: Cycle de vie permis de conduire numérique (inspiré du
+document AAMVA) [10](#_Ref181265638)](#_Ref181265638)
+
+[Figure 3: Portrait des initiatives au états unis
+[13](#_Ref183183856)](#_Ref183183856)
+
+[Figure 4: Portrait des initiatives au Canada
+[15](#_Ref183793129)](#_Ref183793129)
+
+[Figure 5: CAT 2 [21](#_Toc183860747)](#_Toc183860747)
+
+[Figure 6: Analyse PESTEL des permis de conduire numériques
+[28](#_Toc183860748)](#_Toc183860748)
 
 # Références
 
