@@ -263,7 +263,7 @@ ce fait, une normalisation des réglementations s'avère nécessaire pour
 garantir que cette technologie devient une forme d'identification
 fiable, largement répandue et sécurisés\[10\], \[15\].
 
-## Cycle de vie d'un permis de conduire numérique (inspiré du AAMVA)
+## Cycle de vie d'un permis de conduire numérique (inspiré de l'AAMVA)
 
 Le cycle de vie d'un permis de conduire englobe plusieurs phases,
 passant de l'émission jusqu'à  la révocation éventuelle, en passant par
