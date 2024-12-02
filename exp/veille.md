@@ -1067,33 +1067,33 @@ règlement assure 3 composantes clés :
 
 ### World Wide Web Consortium (W3C)
 
-> Le world Wide Web Consortium (W3C) développe des standards et des
-> technologies qui contribuent à  l'écosystème global de l'identité
-> numérique. Dans le contexte des permis de conduire numériques, il est
-> important que la norme principale régissant leur développement est
-> l'ISO/IEC 18013-5, établie par l'organisation internationale de
-> normalisation (ISO). \[71\], \[72\], \[73\]
->
-> Les vérifiable credentials, une spécification du W3C, constituent un
-> cadre technique pour la gestion des certificats numériques
-> vérifiables. Cette technologie, bien qu'elle ne soit pas intégrée dans
-> la norme ISO/IEC 18013-5 actuelle des permis de conduire numériques,
-> propose des mécanismes innovants pour le partage sécurisé
-> d'informations d'identité numériques.
->
-> Les identifiants décentralisés (DIDs), une autre spécification du W3C,
-> définissent une architecture pour la gestion d'identités numériques
-> sans dépendance à  une autorité centrale unique. Cette approche,
-> distincte de celle adoptée par la norme mDL actuelle, illustre des
-> possibilités alternatives pour la gestion d'identités numériques.
->
-> Finalement, l'expertise du W3C dabs le développement de standards web
-> pourrait contribuer à  l'évolution future de l'écosystème mDL,
-> notamment dans les domaines de l'interopérabilité et de la
-> standardisation des échanges des données d'identité numérique. Cette
-> synergie potentielle entre les standards web et les systèmes
-> d'identité gouvernementaux représente un axe de développement
-> important pour l'avenir des permis de conduire numériques.
+Le world Wide Web Consortium (W3C) développe des standards et des
+technologies qui contribuent à  l'écosystème global de l'identité
+numérique. Dans le contexte des permis de conduire numériques, il est
+important que la norme principale régissant leur développement est
+l'ISO/IEC 18013-5, établie par l'organisation internationale de
+normalisation (ISO). \[71\], \[72\], \[73\]
+
+Les vérifiable credentials, une spécification du W3C, constituent un
+cadre technique pour la gestion des certificats numériques
+vérifiables. Cette technologie, bien qu'elle ne soit pas intégrée dans
+la norme ISO/IEC 18013-5 actuelle des permis de conduire numériques,
+propose des mécanismes innovants pour le partage sécurisé
+d'informations d'identité numériques.
+
+Les identifiants décentralisés (DIDs), une autre spécification du W3C,
+définissent une architecture pour la gestion d'identités numériques
+sans dépendance à  une autorité centrale unique. Cette approche,
+distincte de celle adoptée par la norme mDL actuelle, illustre des
+possibilités alternatives pour la gestion d'identités numériques.
+
+Finalement, l'expertise du W3C dabs le développement de standards web
+pourrait contribuer à  l'évolution future de l'écosystème mDL,
+notamment dans les domaines de l'interopérabilité et de la
+standardisation des échanges des données d'identité numérique. Cette
+synergie potentielle entre les standards web et les systèmes
+d'identité gouvernementaux représente un axe de développement
+important pour l'avenir des permis de conduire numériques.
 
 ### Commissariat à la protection de la vie privée au Canada
 
