@@ -29,7 +29,7 @@ statut : en cours
 
 [2. Les inconvénients et défis](#les-inconvénients-et-défis)
 
-[III. Cycle de vie d'un permis de conduire numérique (inspiré du AAMVA)](#cycle-de-vie-dun-permis-de-conduire-numérique-inspiré-du-aamva)
+[III. Cycle de vie d'un permis de conduire numérique (inspiré de l'AAMVA)](#cycle-de-vie-dun-permis-de-conduire-numérique-inspiré-du-aamva)
 
 [1. Émission](#émission)
 
@@ -1607,8 +1607,7 @@ document AAMVA) [10](#_Ref181265638)](#_Ref181265638)
 
 # Références
 
-[^1]:
-« Mobile-Drivers-Licenses-and-the-Costs-to-Privacy-Safety-Security-2023.pdf ».
+[^1]: « Mobile-Drivers-Licenses-and-the-Costs-to-Privacy-Safety-Security-2023.pdf ».
 Consulté le: 9 septembre 2024. \[En ligne\]. Disponible sur:
 https://www.nilc.org/wp-content/uploads/2024/01/Mobile-Drivers-Licenses-and-the-Costs-to-Privacy-Safety-Security-2023.pdf
 
