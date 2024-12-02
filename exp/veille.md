@@ -1,19 +1,21 @@
-<!-- ENTETE -->
-[![img](https://img.shields.io/badge/Cycle%20de%20Vie-Phase%20d%C3%A9couverte-339999)](https://www.quebec.ca/gouv/politiques-orientations/vitrine-numeriqc/accompagnement-des-organismes-publics/demarche-conception-services-numeriques)
-[![License](https://img.shields.io/badge/Licence-LiLiQ--R-blue)](LICENSE)
-
+---
+titre : Rapport de la veille technologique
+sous-titre : Expérimentation pour intégrer le standard (ISO 18013-5) "Mobile driver's license" ou "mDL" aux attestations vérifiables.
+auteur : Centre d'expertise appliquée en innovation
+date : 2024-12-02
+statut : en cours
 ---
 
-<div>
-    <a target="_blank" href="https://www.quebec.ca/gouvernement/ministere/cybersecurite-numerique">
-      <img src="images/mcn.png" alt="Logo du Ministère de la cybersécurité et du numérique" />
-    </a>
-</div>
+<!-- ENTETE -->
+[![img](https://img.shields.io/badge/Lifecycle-Experimental-339999)](https://www.quebec.ca/gouv/politiques-orientations/vitrine-numeriqc/accompagnement-des-organismes-publics/demarche-conception-services-numeriques)
+[![Licence](https://img.shields.io/badge/Licence-LiLiQ--P-blue)](../LICENCE)
+---
+![Logo MCN](https://github.com/CQEN-QDCE/.github/blob/main/images/mcn.png)
 <!-- FIN ENTETE -->
 
 # Veille sur les permis de conduire numériques
 
-# Table des matières {#table-des-matières .TOC-Heading}
+# Table des matières
 
 [Synthèse](#synthèse)
 
