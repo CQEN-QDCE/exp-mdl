@@ -2012,8 +2012,6 @@ https://ici.radio-canada.ca/nouvelle/2052243/fraudeurs-reprensentants-aine-domic
 
 [^6]: <https://www.ontario.ca/fr/page/identite-numerique-ontarienne>
 
-[^7]:
-
 [^8]: <https://www.forbes.com/sites/angelicamarideoliveira/2020/05/15/brazil-makes-inroads-towards-digital-id/>
 
 [^9]: <https://www.biometricupdate.com/202404/paraguay-issuing-digital-ids-and-mdls-without-adequate-regulation-ngo-argues>
