@@ -63,7 +63,7 @@ Démontrer la faisabilité technique de l'intégration du standard ISO 18013-5, 
 
 ## Architecture de la solution
 
-![Architecture de l'émetteur de permis de conduire ](https://www.plantuml.com/plantuml/proxy?cache=no&fmt=svg&src=https://raw.githubusercontent.com/CQEN-QDCE/exp-mdl/feature/architecture-diagram/documentation/Architecture/Issuer.puml)
+![Architecture de l'émetteur de permis de conduire ](https://www.plantuml.com/plantuml/proxy?cache=no&fmt=svg&src=https://raw.githubusercontent.com/CQEN-QDCE/exp-mdl/feature/documentation/documentation/Architecture/Issuer.puml)
 
 **Architecture Haut Niveau**
 
