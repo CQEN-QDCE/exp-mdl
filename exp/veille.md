@@ -105,20 +105,26 @@ En Afrique, l'adoption des permis de conduire numériques est encore émergente,
 Les normes et les protocoles encadrant les permis de conduire numériques s'articulent autour d'un écosystème complexe et en constante évolution. La norme ISO/IEC 18013-5 établit des fondements techniques, définissant les spécifications essentielles pour la sécurité, l'interopérabilité et la protection des données, tandis que la norme ISO/IEC 18013-7 en cours de développement vient potentiellement la compléter en ajoutant des fonctionnalités pour les interactions en ligne. Ces normes techniques sont soutenues par des cadres réglementaires régionaux comme le règlement eIDAS en Europe et les directives AAMVA au États-Unis, qui assurent l'harmonisation et la reconnaissance mutuelle des systèmes. Au Canada, les commissariats à  la protection de la vie privée ont établi des principes concernant la protection des données personnelles.
 
 Malgré l'existence de ces normes internationales, Il est important de noter que de nombreuses initiatives des permis de conduire mobiles identifiés dans notre analyse suivent des standards nationaux plutôt que la norme ISO. Cette divergence souligne un défi majeur de l'interopérabilité internationale future des solutions des permis de conduire mobiles. Notre analyse n'a pas permis d'identifier clairement quelle approche internationale ou nationale serait la plus approprié. Cette question reste ouverte et nécessitera une évaluation continue à fur et à mesure que ces différentes approches démontrent leur efficacité dans la pratique.
+
 L'analyse PESTEL des permis de conduire numériques met en lumière divers enjeux liés à leur adoption. Sur le plan politique, le canada fait face à des défis liés à son système fédéral, qui peut freiner l'interopérabilité. Économiquement, l'investissement initial pour la mise en place des infrastructures et la formation est élevé, mais des partenariats publics privé et l'optimisation administratives offrent un potentiel économique à long terme. Sur le plan social, l'inclusion numériques est essentielle pour éviter une fracture numérique qui pourrait exclure les populations marginalisées, comme les personnes âgées ou les communautés rurales. La sensibilisation, l'accompagnement, et le maintien des permis physiques sont cruciaux pour une adoption équitable.
+
 D'un point de vue technologique, les défis incluent la cybersécurité, amplifié par l'ingénierie sociale, ou des tactiques sophistiquées exploitent la psychologie humaine pour accéder aux informations sensibles. Ces menaces s'ajoutent aux défis liés aux deepfakes et à l'informatique quantique, qui pourraient compromettre la sécurité des systèmes existants. Sur le plan environnemental, bien que la transition réduise l'utilisation de matériaux physiques, elle accroît les déchets électroniques à cause du renouvellement des appareils mobiles. Enfin, sur le plan légal, le projet de loi 82 au Québec propose un cadre centralisé pour la gestion des données numériques, mais cette approche soulève des préoccupations en matière de protection des renseignements personnels et de cohérence avec d'autres lois comme la loi 25.
+
 Pour conclure, les permis de conduire numériques incarnent une avancée prometteuse vers une identification moderne et sécurisée. Malgré des défis d'interopérabilité, de sécurité et d'inclusion, leur adoption croissante témoigne de leur potentiel à simplifier l'accès aux services publics tout en répondant aux exigences de la transformation numérique. Une mise en œuvre réussie dépendra d'un équilibre entre innovation, réglementation harmonisée et inclusion sociale.
 
 # Introduction
 
 La direction des technologies émergentes et innovation en collaboration avec la Société de l'Assurance Automobile de Québec (SAAQ) a été mandatée pour effectuer une veille stratégique sur les permis de conduire numérique. Les permis de conduire numériques représentent une évolution signification dans la gestion et la vérification des identités des conducteurs cette transition vers le numérique permet d'améliorer la sécurité et l'efficacité administrative. Cependant, cette transition soulève également des questions importantes sur la protection de la vie privée, la sécurité des données et l'interopérabilité de ce type d'identifiant numérique. Dans un contexte ou la transition vers le numérique des services gouvernementaux s'accélère, comprendre les enjeux, les défis et les opportunités liés aux permis de conduire numériques devient crucial pour toute juridiction envisageant leur adoption.
+
 **Objectif de la veille**
+
 L'objectif principal de cette veille est de fournir un aperçu et une analyse de l'écosystème des permis de conduire numérique au niveau mondial. Cette veille servira de base pour éclairer les décisions stratégiques concernant le développement et la mise en œuvre potentiel d'un système de permis de conduire numérique.
 Objectifs spécifiques de la veille :
 -   Identifier les avantages et les inconvénients liés à la mise en œuvre des permis de conduire numériques
 -   Aperçu sur l'état actuel de l'adoption des permis de conduire numériques à l’échelle mondiale
 -   Comprendre les normes utilisées pour les permis de conduire numériques
 -   Comprendre les implications technologiques, juridiques et sociales liées de l'adoption des permis de conduire numériques
+   
 **Processus de veille et de collecte de données**
 
 Nous avons mis en place un processus pour collecter les données pertinentes pour notre veille sur les permis de conduire numériques, ayant recours à l'outil Inoreader. Voici les principales étapes que nous avons suivies :
@@ -131,7 +137,9 @@ Nous avons mis en place un processus pour collecter les données pertinentes pou
 La période de recensement des articles s'est déroulée du **8 juillet au 2 septembre**. À la fin de cette phase, nous avons commencé la synthèse des résultats de la veille qui est maintenant compilée dans ce rapport.
 ## Permis de conduire numériques 
 Un permis de conduire numérique (En anglais : Mobile Driver's License (mDL)) est une version numérique ou électronique du permis de conduire traditionnel qui est stockée et affichée sur un appareil mobile, comme un téléphone intelligent ou une tablette. Tout comme le permis de conduire traditionnel, le permis numérique permis à ses détenteurs de prouver divers aspects de leur identité, notamment son droit de conduire, son âge et son identité sans avoir à transporter de documents physiques. Les permis de conduire numériques offrent un niveau d'authenticité élevé. [^1], [^2], [^3]
+
 Le permis de conduire numérique peut être sous forme d'application ou de fichier en temps d'exécution sécurisé, délivrés par les autorités responsables. Ces permis peuvent être vérifiés par les lecteurs de permis numériques ou les dispositifs d'inspection de l'identité, conformément aux normes internationales, telles que l'ISO 18013-5. Les permis de conduire numériques servent à l’identification en ligne et hors ligne, ce qui leur permet d'être rapidement inspectés par les forces de police, les aéroports et l'accès aux services commerciaux.\[4\]
+
 Le mDL fonctionne grâce à un écosystème impliquant trois parties : l’émetteur (souvent le département des véhicules à moteur de l’État), le détenteur (la personne dont l’identité est confirmée), et le vérificateur (comme un agent de la police ou un contrôleur dans un aéroport). L’émetteur délivre le mDL via une application mobile, le signant numériquement pour en garantir l’authenticité. Le vérificateur utilise ensuite un lecteur de mDL pour scanner les informations et les vérifier, soit directement depuis le téléphone intelligent du détenteur, soit via un serveur de l’émetteur \[1\], \[5\].
 ## Avantages et inconvénients des permis de conduire numériques
 
@@ -380,7 +388,7 @@ procédure peut être initiée rapidement pour minimiser les risques.
 
 ### Amérique
 
-États-Unis :
+#### États-Unis :
 
 L'adoption des permis de conduire numériques aux États-Unis est en
 augmentation, mais elle manque d'uniformité à  travers le pays ( comme on
@@ -463,7 +471,7 @@ ces technologies, mais un soutien fédéral est crucial pour garantir une
 adoption généralisée et répondre aux préoccupations liées à  la sécurité
 et à  la confidentialité.
 
-Canada
+#### Canada
 
 Le Canada adopte une approche structure pour les permis de conduire
 numériques, appuyée par le cadre de gouvernance CANdy [^1]. Ce cadre est
@@ -528,7 +536,7 @@ Figure 4). Les efforts se concentrent encore sur la mise en place des
 bases juridiques et organisationnels pour garantir une adoption
 sécurisée, interopérable et respectueuse des droits des citoyens.
 
-Amérique de Sud :
+#### Amérique de Sud 
 
 Le Brazil est considéré comme un pionnier en Amérique du Sud dans
 l'adoption des permis de conduire numériques, bien que les normes
