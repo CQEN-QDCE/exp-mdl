@@ -163,7 +163,7 @@ Les permis de conduire numériques permettent aux titulaires de gérer avec pré
 
 **Contrôle des utilisateurs :**
 
-Les permis de conduire numériques offrent aux utilisateurs un plus grand contrôle sur leurs informations personnelles, car ils peuvent les bloquer ou les désactiver en cas de perte ou de vol de leur téléphone intelligent. Contrairement aux permis de conduire physiques, cette fonctionnalité permet de sécuriser instantanément les données et de réduire l'exposition des informations sensibles, offrant ainsi une sécurité accrue et une garantie supplémentaire contre la fraude \[9\],\[10\], \[11\]â€‹.
+Les permis de conduire numériques offrent aux utilisateurs un plus grand contrôle sur leurs informations personnelles, car ils peuvent les bloquer ou les désactiver en cas de perte ou de vol de leur téléphone intelligent. Contrairement aux permis de conduire physiques, cette fonctionnalité permet de sécuriser instantanément les données et de réduire l'exposition des informations sensibles, offrant ainsi une sécurité accrue et une garantie supplémentaire contre la fraude \[9\],\[10\], \[11\].
 
 ### Les inconvénients et défis:
 
@@ -194,14 +194,13 @@ ce qui représente un défi pour les personnes qui ne disposent pas de cet
 appareil ou qui ne les utilisent pas fréquemment. Il est possible que
 cette dépendance à  la technologie exclue certains groupes de la
 population, tels que les personnes âgées (voir Figure 1), celles à 
-faibles revenus, ou celles vivant dans des régions oà¹ l’accès à  la
+faibles revenus, ou celles vivant dans des régions où l'accès  à  la
 technologie est restreint. L'implémentation exclusive des permis de
 conduire numérique, en l'absence des solutions alternatives, pourrait
 marginaliser ces groupes et accentuer la fracture numérique.
 
 <figure>
-<img src="media/image1.png" style="width:6in;height:2.48681in"
-alt="Une image contenant texte, capture dâ€™écran, diagramme, Tracé Description générée automatiquement" />
+   <img src="./images/Image1.png" width="800" />
 <figcaption><p><span id="_Ref181953203" class="anchor"></span>Figure 1:
 Évolution de taux d'adoption des appareils mobiles par groupe d'âge au
 Québec (extrait du rapport de l'académie de la transformation
@@ -214,7 +213,7 @@ role="doc-endnotes">
 <ol>
 <li id="fn1"><p><a
 href="https://transformation-numerique.ulaval.ca/wp-content/uploads/2022/09/netendances-2020-usage-des-appareils-mobiles-au-quebec.pdf">https://transformation-numerique.ulaval.ca/wp-content/uploads/2022/09/netendances-2020-usage-des-appareils-mobiles-au-quebec.pdf</a><a
-href="#fnref1" class="footnote-back" role="doc-backlink">â†©ï¸Ž</a></p></li>
+href="#fnref1" class="footnote-back" role="doc-backlink"></a></p></li>
 </ol>
 </section>
 
@@ -282,7 +281,7 @@ numériques. Les détails de chaque phase seront expliqués dans les
 sections suivantes.
 
 <figure>
-<img src="media/image2.png" style="width:3.04827in;height:1.82153in" />
+<img src="./images/Image2.png" style="width:3.04827in;height:1.82153in" />
 <figcaption><p><span id="_Ref181265638" class="anchor"></span>Figure 2:
 Cycle de vie permis de conduire numérique (inspiré du document AAMVA)<a
 href="#fn1" class="footnote-ref" id="fnref1"
@@ -294,7 +293,7 @@ role="doc-endnotes">
 <ol>
 <li id="fn1"><p><a
 href="https://www.aamva.org/getmedia/261ed16b-3f5c-4678-a2db-cc3016934234/MobileDLImplementationGuidelines-Version1-3.pdf">https://www.aamva.org/getmedia/261ed16b-3f5c-4678-a2db-cc3016934234/MobileDLImplementationGuidelines-Version1-3.pdf</a><a
-href="#fnref1" class="footnote-back" role="doc-backlink">â†©ï¸Ž</a></p></li>
+href="#fnref1" class="footnote-back" role="doc-backlink"></a></p></li>
 </ol>
 </section>
 
@@ -405,7 +404,7 @@ d'identification, notamment dans des environnements numériques comme les
 aéroports.
 
 <figure>
-<img src="media/image3.png" style="width:6in;height:4.41875in"
+<img src="./images/Image3.png" style="width:6in;height:4.41875in"
 alt="Une image contenant texte, carte, graphisme, Graphique Description générée automatiquement" />
 <figcaption><p><span id="_Ref183183856" class="anchor"></span>Figure 3:
 Portrait des initiatives au états unis<a href="#fn1"
@@ -418,7 +417,7 @@ role="doc-endnotes">
 <ol>
 <li id="fn1"><p><a
 href="https://www.aamva.org/jurisdiction-data-maps#anchorformdlmap">https://www.aamva.org/jurisdiction-data-maps#anchorformdlmap</a><a
-href="#fnref1" class="footnote-back" role="doc-backlink">â†©ï¸Ž</a></p></li>
+href="#fnref1" class="footnote-back" role="doc-backlink"></a></p></li>
 </ol>
 </section>
 
@@ -498,7 +497,7 @@ de cybersécurité et Numérique, ce qui pourrait faciliter le
 développement futur des permis numériques.
 
 <figure>
-<img src="media/image4.png" style="width:5.39398in;height:4.13476in"
+<img src="./images/Image4.png" style="width:5.39398in;height:4.13476in"
 alt="Une image contenant carte, texte Description générée automatiquement" />
 <figcaption><p><span id="_Ref183793129" class="anchor"></span>Figure 4:
 Portrait des initiatives au Canada<a href="#fn1" class="footnote-ref"
@@ -512,7 +511,7 @@ role="doc-endnotes">
 href="https://www.aamva.org/jurisdiction-data-maps#anchorformdlmap">Jurisdiction
 Data Maps - American Association of Motor Vehicle Administrators -
 AAMVA</a><a href="#fnref1" class="footnote-back"
-role="doc-backlink">â†©ï¸Ž</a></p></li>
+role="doc-backlink"></a></p></li>
 </ol>
 </section>
 
@@ -815,8 +814,8 @@ aéroports comme Salt Lake City International, facilitant la vérification
 des identités des voyageurs en quelques secondes \[62\].
 
 <figure>
-<img src="media/image5.jpeg" style="width:2.76351in;height:1.72688in"
-alt="Une image contenant texte, ordinateur, écran dâ€™ordinateur, intérieur" />
+<img src="./images/Image5.jpg" style="width:2.76351in;height:1.72688in"
+alt="Une image contenant texte, ordinateur, écran d'ordinateur, intérieur" />
 <figcaption><p><span id="_Toc183860747" class="anchor"></span>Figure 5:
 CAT 2</p></figcaption>
 </figure>
@@ -1155,56 +1154,14 @@ mondiale. Bien que ces normes soient distinctes, elles partagent toutes
 le même objectif : assurer la sécurité et la reconnaissance
 internationale des permis de conduire numériques.
 
-  ----------------------------------------------------------------------------------------------------------------------
-  **Norme/standard**   **Date de       **Objectif           **Interopérabilité**   **Sécurité et       **Utilisation**
-                       publication**   principal**                                 confidentialité**   
-  -------------------- --------------- -------------------- ---------------------- ------------------- -----------------
-  **ISO/IEC 18013-5**  Septembre 2021  Spécifications       Interopérabilité à      Mécanismes          Présentation de
-                                       techniques pour les  l'échelle mondiale     cryptographiques    proximité
-                                       permis de conduire                          pour protéger les   (physique)
-                                       numérique                                   informations        
-                                                                                   personnelles, accès 
-                                                                                   limité aux parties  
-                                                                                   autorisées          
-
-  **ISO/IEC 18013-7**  En              Vérification des     Interopérabilité à      Cryptographie       Utilisation des
-                       développement   permis de conduire   l'échelle mondiale     avancée pour les    permis dans des
-                                       dans des scénarios   pour les systèmes de   transactions en     contextes en
-                                       en ligne             vérification en ligne  ligne, mise à jour  ligne
-                                                                                   et révocation des   
-                                                                                   mDLs                
-
-  **ISO/IEC 23220**    ISO/IEC         Cadre global pour    Interopérabilité avec  Sécurité des        Identité
-                       23220-1 :2023   l'identité numérique divers systèmes        identités           numérique pour
-                                                            d'identification       numériques à  grande divers cas
-                                                            numérique              échelle             d'utilisations,
-                                                                                                       au-delà  des
-                                                                                                       permis numérique
-
-  **Guide AAMVA**      Mise à  jour     Directives pour les  Interopérabilité entre Signature           Transactions
-                       régulière       permis de conduire   juridictions           numérique,          assistées et non
-                                       numérique aux États  américaines            cryptographie,      assistées des
-                                       unis                                        protection contre   permis numériques
-                                                                                   le suivi            
-
-  **Règlement eIDAS**  Mise à  jour     Cadre juridique pour Interopérabilité entre Conformité avec     Permis de
-                       régulière       l'interopérabilité   les états membres de   ISO/IEC et sécurité conduire
-                                       des permis numérique l'union européenne     des données         numérique dans le
-                                       dans l'union                                personnelles        cadre de
-                                       européenne                                                      portefeuille
-                                                                                                       d'identité
-                                                                                                       européen
-  ----------------------------------------------------------------------------------------------------------------------
-
-  : Tableau 1: Tableau comparatif des normes
-
-1.  
-2.  
-3.  
-4.  
-5.  
-6.  
-
+ 
+Norme/standard|Date de publication  | Objectif  principal |Interopérabilité | Sécurité et confidentialité |  Utilisation|                                
+-----------------|----------------------|-------------------------------------------------------------------------|----------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|----------------------------------------------------|
+ ISO/IEC 18013-5 | Septembre 2021       | Spécifications techniques pour les permis de conduire numérique<br><br> | Interopérabilité à l’échelle mondiale                                            | Mécanismes cryptographiques pour protéger les informations personnelles, accès limité aux parties autorisées | Présentation de proximité (physique)               
+ ISO/IEC 18013-7 | En développement     | Vérification des permis de conduire dans des scénarios en ligne         | Interopérabilité à l’échelle mondiale pour les systèmes de vérification en ligne | Cryptographie avancée pour les transactions en ligne, mise à jour et révocation des mDLs                     | Utilisation des permis dans des contextes en ligne | 
+ ISO/IEC 23220<br><br> | ISO/IEC 23220\-1 :2023<br><br> | Cadre global pour l’identité numérique<br><br>                                       | Interopérabilité avec divers systèmes d’identification numérique                 | Sécurité des identités numériques à grande échelle                                                           | Identité numérique pour divers cas d’utilisations, au\-delà des permis numérique 
+ Guide AAMVA<br>       | Mise à jour régulière <br>     | Directives pour les permis de conduire numérique aux États unis<br>                  | Interopérabilité entre juridictions américaines                                  | Signature numérique, cryptographie, protection contre le suivi                                               | Transactions assistées et non assistées des permis numériques                    
+ Règlement eIDAS       | Mise à jour régulière          | Cadre juridique pour l’interopérabilité des permis numérique dans l’union européenne | Interopérabilité entre les états membres de l’union européenne                   | Conformité avec ISO/IEC et sécurité des données personnelles                                                 | conduire numérique dans le cadre de portefeuille d’identité européen| 
 ## Analyse PESTEL
 
 Les permis de conduire numériques sont des documents d'identité
@@ -1215,7 +1172,7 @@ implique divers enjeux politiques, économiques, sociaux, technologiques,
 et légaux, qu'il est essentiel de comprendre pour leur adoption.
 
 <figure>
-<img src="media/image6.png" style="width:6.92445in;height:4.47879in" />
+<img src="./images/Image6.png" style="width:6.92445in;height:4.47879in" />
 <figcaption><p><span id="_Toc183860748" class="anchor"></span>Figure 6:
 Analyse PESTEL des permis de conduire numériques</p></figcaption>
 </figure>
