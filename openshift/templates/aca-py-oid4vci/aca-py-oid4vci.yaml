@@ -180,7 +180,7 @@ objects:
       contextDir: aca-py-oid4vci
       git:
         uri: ${GITHUB_REPOSITORY_URI}
-        ref: dev
+        ref: ${GITHUB_REPOSITORY_REF}
       type: Git
     strategy:
       dockerStrategy:
@@ -482,7 +482,7 @@ parameters:
   displayName: Application name
   description: Used to group components together in the OpenShift console.
   required: true
-  value: 'exp-mdl-agent'
+  value: 'exp-mdl-bi-agent'
 - name: APP_GROUP
   displayName: Application group
   description: The name assigned to all of the deployments in this project.
@@ -557,6 +557,11 @@ parameters:
   description: URI of the GitHub repository.
   required: true
   value: "https://github.com/CQEN-QDCE/exp-mdl.git"
+- name: GITHUB_REPOSITORY_REF
+  displayName: Git Reference  
+  description: Set this to a branch name, tag or other ref of your repository if you
+    are not using the default branch.  
+  value: "feature/addAnonCreds"  
 - name: CPU_REQUEST
   displayName: Resources CPU Request
   description: The resources CPU request (in cores) for this build.
