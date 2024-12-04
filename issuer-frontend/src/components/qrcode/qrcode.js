@@ -18,7 +18,7 @@ const Qrcode = () => {
   const urlOffer = `openid-credential-offer://?credential_offer=${encodedJson}`;  
   let tmpDemoTimer = 0;
 
-  const API_BASE_URL = process.env.REACT_APP_ISSUER_API_BASE_URL;
+  const API_BASE_URL = process.env.REACT_APP_MDL_ISSUER_API_BASE_URL;
 
   const headers = {
     withCredentials: true,

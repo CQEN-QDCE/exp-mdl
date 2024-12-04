@@ -1,43 +1,51 @@
 import React, { useState } from 'react';
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useHistory } from "react-router-dom";
 import './form.css';
 import '../../css/quebec_ca.css';
 import { FormattedMessage } from 'react-intl';
 import flechedroite from '../../assets/piv/fleche-droite.svg';
 import flechegauche from '../../assets/piv/fleche-gauche.svg';
+import flechedroitesecondary from '../../assets/piv/fleche-droite-secondary.svg'
 
 export default function Form(props) {
 
   const navigate = useNavigate();
 
   // States for registration
-  const [name, setName] = useState("Melissa");
+  const [name, setName] = useState("Alain");
   const [lastName, setLastName] = useState("Tremblay");
-  const [licenseNumber, setLicenseNumber] = useState("A0A 1B1");
-  const [birthDate, setBirthDate] = useState(new Date().toLocaleDateString("en-CA"));
-  const [gender, setGender] = useState("");
-  const [height, setHeight] = useState("");
-  const [heightUnit, setHeightUnit] = useState("");
-  const [eyeColor, setEyeColor] = useState("");
-  const [streetAddress, setStreetAddress] = useState("");
-  const [doorNumber, setDoorNumber] = useState("");
-  const [streetNumber, setStreetNumver] = useState("");
-  const [city, setCity] = useState("");
-  const [province, setProvince] = useState("");
-  const [postalCode, setPostalCode] = useState("");
+  const [licenseNumber, setLicenseNumber] = useState("L123456789123");
+  const [birthDate, setBirthDate] = useState(new Date("01-01-1999").toLocaleDateString("en-CA"));
+  const [gender, setGender] = useState("M");
+  const [height, setHeight] = useState("1.75");
+  const [heightUnit, setHeightUnit] = useState("75");
+  const [eyeColor, setEyeColor] = useState("brown");
+  const [streetAddress, setStreetAddress] = useState("Rue des Amériques");
+  const [doorNumber, setDoorNumber] = useState("123");
+  const [streetNumber, setStreetNumver] = useState("123");
+  const [city, setCity] = useState("Montréal");
+  const [province, setProvince] = useState("QC");
+  const [postalCode, setPostalCode] = useState("H3R 0J6");
   const addressRegion = "Province";
-  const [licenseClass, setLicenseClass] = useState("");
-  const [associatedConditions, setAssociatedConditions] = useState("");
-  const [referenceNumber, setReferenceNumber] = useState("");      
+  const [licenseClass, setLicenseClass] = useState("5");
+  const [associatedConditions, setAssociatedConditions] = useState("A");
+  const [referenceNumber, setReferenceNumber] = useState("A2BC445D6");      
+  const [issueDate, setIssueDate] = useState(new Date("01-01-2024").toLocaleDateString("en-CA"));
+  const [expiryDate, setExpiryDate] = useState(new Date("01-01-2034").toLocaleDateString("en-CA"));
+
         
   const [fields, setFields] = useState({});
   const [errors, setErrors] = useState({});      
 
-  const API_BASE_URL = process.env.REACT_APP_ISSUER_API_BASE_URL;
-  const createDidUrl = () => `${API_BASE_URL}/wallet/did/create`;
-  const exchangeCreateUrl = `${API_BASE_URL}/oid4vci/exchange/create`;
-  const credentialOfferUrl = `${API_BASE_URL}/oid4vci/credential-offer`;
+  const MDL_ISSUER_API_URL = process.env.REACT_APP_MDL_ISSUER_API_BASE_URL;
+  const createDidUrl = () => `${MDL_ISSUER_API_URL}/wallet/did/create`;
+  const exchangeCreateUrl = `${MDL_ISSUER_API_URL}/oid4vci/exchange/create`;
+  const credentialOfferUrl = `${MDL_ISSUER_API_URL}/oid4vci/credential-offer`;
+
+  const ANONCREDS_ISSUER_API_URL = process.env.REACT_APP_ANONCREDS_ISSUER_API_BASE_URL;
+  const createInvitation = ()=> `${ANONCREDS_ISSUER_API_URL}/connections/create-invitation`;
+
 
   const API_KEY = "thisistheplace";  
   const headers = {
@@ -47,6 +55,11 @@ export default function Form(props) {
     accept: "application/json",
     "X-API-KEY": API_KEY,
     "Content-Type": "application/json",
+    // ONLY for development! TODO remove it when deploying to Openshift!
+    'Access-Control-Allow-Origin'  : '*', 
+    'Access-Control-Allow-Methods' : 'GET, POST, PUT, PATCH, POST, DELETE, OPTIONS', 
+    'Access-Control-Allow-Headers' : 'Content-Type', 
+    'Access-Control-Max-Age'       : '86400'    
   };        
 
   // States for checking the errors
@@ -142,7 +155,19 @@ export default function Form(props) {
   const handleReferenceNumber = (e) => {
     setReferenceNumber(e.target.value);
     setSubmitted(false);
-  };  
+  }; 
+  
+  const handleIssueDate = (e) => {
+    setIssueDate(e.target.value);
+    setSubmitted(false);
+    errors["issueDate"] = null;
+  };
+
+  const handleExpiryDate = (e) => {
+    setExpiryDate(e.target.value);
+    setSubmitted(false);
+    errors["expiryDate"] = null;
+  };
 
   const handleValidation = () => {
     const formErrors = {};
@@ -157,15 +182,7 @@ export default function Form(props) {
     }
     else {
       formIsValid = true;
-    }
-  
-    //TODO: Add more validation
-    // if(typeof formFields["licenseNumber"] !== "undefined"){
-    //   if(!formFields["licenseNumber"].match(/(A|D)?R?(B|C|E|F)?(G[12]?)?L?S?(M[12]?)?/)){
-    //     formIsValid = false;
-    //     formErrors["name"] = "Only letters";
-    //   }       
-    // }     
+    }   
     
     setErrors(formErrors);        
 
@@ -189,6 +206,11 @@ export default function Form(props) {
     }),
   });
 
+  const createInvitationOptions = () => ({
+    method: "POST",
+    headers: commonHeaders,
+  });  
+
   async function fetchApiData(url, options) {
     console.log("fetchApiData: ", url, options);
     const response = await fetch(url, options);
@@ -198,9 +220,15 @@ export default function Form(props) {
   const getAddress = () => {
     return (isEmpty(doorNumber) ? "" : doorNumber) + (isEmpty(streetNumber) ? "" : " " + streetNumber) + (isEmpty(streetAddress) ? "" : ", " + streetAddress) + (isEmpty(city) ? "" : ", " + city);
   }
+
+  const formatDate = (date) => {
+    const formattedDate = new Date(date).toLocaleDateString('en-GB').split('/').reverse().join(''); // '20211124'
+    console.log("format date, input: ", date, " formatted date: ", formattedDate);
+    return formattedDate;
+  }
   
-  const handleRegistration = async () => {
-    console.log("handleRegistration, api base url: ", API_BASE_URL);
+  const handleRegistrationIsoMdl = async () => {
+    console.log("handleRegistration, api base url: ", MDL_ISSUER_API_URL);
     if(handleValidation()) {
       try {
         console.log("call to createDidUrl: ", createDidUrl());
@@ -210,7 +238,7 @@ export default function Form(props) {
         const did = didData.result.did;            
 
         axios.defaults.withCredentials = true;
-        axios.defaults.headers.common["Access-Control-Allow-Origin"] = API_BASE_URL;   
+        axios.defaults.headers.common["Access-Control-Allow-Origin"] = MDL_ISSUER_API_URL;   
           
         console.log("about to call exchangeCreateUrl: ", exchangeCreateUrl, did, process.env.REACT_APP_OID4VCI_SUPPORTED_CREDENTIAL_ID, name, lastName, birthDate);
         const address = getAddress();
@@ -265,25 +293,74 @@ export default function Form(props) {
 
     }
   }   
+
+  const handleRegistrationAnonCreds = async () => {
+    console.log("handleRegistration AnonCreds, api base url: ", ANONCREDS_ISSUER_API_URL);
+
+    if(handleValidation()) {
+      try {
+        console.log("call to createInvitation: ", createInvitation());
+        const address = getAddress();
+
+        const invitationData = await fetchApiData(createInvitation(), createInvitationOptions());        
+        console.log("invitationData", invitationData);  
+
+        const userData = {
+          "name": name,
+          "referenceNumber": referenceNumber,
+          "height": height,
+          "lastName": lastName,
+          "birthDate": formatDate(birthDate),
+          "portrait": 'non disponible',
+          "gender": gender,
+          "licenseNumber": licenseNumber,
+          "conditions": associatedConditions,
+          "address": address,
+          "eyeColor": eyeColor,
+          "weight": '85',
+          "licenseClass": licenseClass,
+          "issueDate": formatDate(issueDate),
+          "expiryDate": formatDate(expiryDate),    
+        }  
+        console.log("userData: ", userData);
+  
+        navigate(`/qrcodeAnoncreds`, { state: { userData, invitationData } });            
+
+      } catch (error) {
+        console.error("Error during API call:", error);
+      }
+
+    }
+  }    
   
   const handleBack = () => {
     navigate(`/conditions`, { });
-  }
+  } 
 
-  // Handling the form submission
-  const handleSubmit = (e) => {
-      e.preventDefault();       
-      if (!handleValidation()) {
-        setError(true);
-      }
-      else {
-        handleRegistration();
-        setSubmitted(true);
-        setError(false);
-        window.localStorage.setItem("name", name);
-        window.localStorage.setItem("lastName", lastName);
-      }            
-  };
+const handleSubmit = (e) => {
+  e.preventDefault();  
+  console.log("in handleSubmit");
+  console.log("button: "+e.target.id);
+  
+  if (!handleValidation()) {
+    setError(true);
+  }
+  else {
+    if (e.target.id === 'isomdl') {
+      console.log("will try to request the mDL");
+      handleRegistrationIsoMdl();
+    }
+    else {
+      // default: anoncreds      
+      console.log("will try to request the anoncreds mobile license number");
+      handleRegistrationAnonCreds();
+    }
+    setSubmitted(true);
+    setError(false);
+    window.localStorage.setItem("name", name);
+    window.localStorage.setItem("lastName", lastName);    
+  }  
+}
 
   // Showing success message
   const successMessage = () => {
@@ -566,8 +643,37 @@ export default function Form(props) {
                         <option value='C'>C</option>
                       </select>                  
                   </div>                                    
-                </div>                
-              </div>
+                </div> 
+                <br />
+                <div className='row'>
+                  <div className='col'>
+                    <label className='font-weight-lighter' style={{color: "gray"}}>
+                      <FormattedMessage id="app.form.issuedate.driver.license.reference" />                      
+                    </label>                     
+                    <label htmlFor='issueDate' className='control-label'>
+                      <FormattedMessage id="app.form.issuedate" defaultMessage={"Issuedate"} />
+                      <span className="required">*</span>
+                    </label>
+                    <input type='date' id='issueDate' value={issueDate} onChange={handleIssueDate} className='service-input form-control'/>
+                    <label htmlFor='issueDate' className='control-label' style={{fontWeight: "normal"}}>
+                      <FormattedMessage id="app.form.issuedate.format"/>
+                    </label>                  
+                  </div>            
+                  <div className='col'>
+                    <label className='font-weight-lighter' style={{color: "gray"}}>
+                        <FormattedMessage id="app.form.expirydate.driver.license.reference" />                      
+                      </label>                     
+                      <label htmlFor='expiryDate' className='control-label'>
+                        <FormattedMessage id="app.form.expirydate" defaultMessage={"Expirydate"} />
+                        <span className="required">*</span>
+                      </label>
+                      <input type='date' id='expiryDate' value={expiryDate} onChange={handleExpiryDate} className='service-input form-control'/>
+                      <label htmlFor='expiryDate' className='control-label' style={{fontWeight: "normal"}}>
+                        <FormattedMessage id="app.form.expirydate.format"/>
+                      </label>                 
+                  </div>                                    
+              </div> 
+              </div>              
               <div className='row'>
                 <div className="col">
                     <button type="submit" onClick={handleBack} className="service_submit btn btn-secondary">
@@ -576,11 +682,17 @@ export default function Form(props) {
                     </button>
                 </div>  
                 <div className='col'>
-                  <button type="submit" className="service_submit btn btn-primary">
-                    <FormattedMessage id="app.form.submit" defaultMessage={"Submit"} />
+                  <button type="submit" onClick={handleSubmit} id='isomdl' className="service_submit btn btn-secondary">
+                    <FormattedMessage id="app.form.submit.format2.isomdl" defaultMessage={"Submit"} />
+                    <img className='mr-1' src={flechedroitesecondary} alt=''/>
+                  </button>            
+                </div>                  
+                <div className='col'>
+                  <button type="submit" onClick={handleSubmit} id='anoncreds' className="service_submit btn btn-primary">
+                    <FormattedMessage id="app.form.submit.format1.anoncreds" defaultMessage={"Submit"} />
                     <img className='ml-1' src={flechedroite} alt=''/>
                   </button>            
-                </div>            
+                </div>                            
               </div>                                   
             
             </form> 

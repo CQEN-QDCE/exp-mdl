@@ -3,6 +3,7 @@ import Footer from './components/footer/footer';
 import Form from './components/form/form';
 import Header from './components/header/header';
 import Qrcode from './components/qrcode/qrcode';
+import QRCodeAnoncreds from './components/qrcode/qrcodeAnoncreds';
 import Home from './components/home/home';
 import Conditions from './components/conditions/conditions';
 import Result from './components/result/result';
@@ -19,6 +20,7 @@ function App() {
           <Route path="/conditions" exact element={<Conditions />} />
           <Route path="/forms" exact element={<Form />} />
           <Route path="/qrcode" element={<Qrcode />} />
+          <Route path="/qrcodeAnoncreds" element={<QRCodeAnoncreds />} />
           <Route path="/result" element={<Result />} />
         </Routes>
         <Footer />
