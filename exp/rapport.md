@@ -54,18 +54,20 @@ La période de recensement des articles s’est déroulée du 8 juillet au 2 sep
 
 L'objectif principal de cette expérimentation est d’explorer la faisabilité et la mise en oeuvre d'un permis de conduire numérique, en s'assurant de sa comptabilité avec les orientations nationales en matière d’identité numérique et les normes internationales. Cet objectif ce décline en plusieurs sous objeectifs: 
 
-1. **Démontrer la faisabilité technique**
+. **Démontrer la faisabilité technique**
 - Démontrer la compatibilité technique d’un permis de conduire numérique avec les orientations nationales et internationales.
 
 - Créer une attestation vérifiable et un registre d’attestation; 
 
-2.  **Mécanismes de vérification et enregistrement**
+.  **Mécanismes de vérification et enregistrement**
 - Créer un registre de consommateurs et expliciter les étapes de vérification du permis de conduire mobile; 
 
 - Créer un environnement représentatif du portefeuille numérique sur appareil mobile et assurer l’acheminement sécurisé du permis de conduire numérique;
-3.  **Mécanismes de vérification et enregistrement**
+  
+.  **Mécanismes de vérification et enregistrement**
 - Créer un environnement représentatif du registre de preuves permettant de valider l’interopérabilité à l’échelle nord-américaine;
-4.  **Expérience utilisateur**
+
+.  **Expérience utilisateur**
 - Évaluer l'expérience utilisateur des utilisateurs finaux (propriétaire du permis et contrôleurs routiers).
 
 Pour atteindre ces objectifs, les étapes clés de la démarche à suivre sont les suivantes: 
