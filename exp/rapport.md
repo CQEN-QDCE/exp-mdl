@@ -23,15 +23,21 @@ Le document est structuré en quatre parties. La première présente les objecti
 
 ### 1. Objectifs et méthodologie
 #### 1.1. Objectifs et méthodologie de la veille
+
 Les permis de conduire numériques représentent une évolution signification dans la gestion et la vérification des identités des conducteurs cette transition vers le numérique permet d’améliorer la sécurité et l’efficacité administrative. Cependant, cette transition soulève également des questions importantes sur la protection de la vie privée, la sécurité des données et l’interopérabilité de ce type d’identifiant numérique. Dans un contexte ou la transition vers le numérique des services gouvernementaux s’accélère, comprendre les enjeux, les défis et les opportunités liés aux permis de conduire numériques devient crucial pour toute juridiction envisageant leur adoption. 
 
 **Objectif de la veille**  
+
 L’objectif principal de cette veille est de fournir un aperçu et une analyse de l’écosystème des permis de conduire numérique au niveau mondial. Cette veille servira de base pour éclairer les décisions stratégiques concernant le développement et la mise en œuvre potentiel d’un système de permis de conduire numérique.
 Objectifs spécifiques de la veille :
+
 •	Identifier les avantages et les inconvénients liés à la mise en œuvre des permis de conduire numériques
+
 •	Aperçu sur l’état actuel de l’adoption des permis de conduire numériques à l’échelle mondiale
-•	Comprendre les normes utilisées pour les permis de conduire numériques
+
 •	Comprendre les implications technologiques, juridiques et sociales liées de l’adoption des permis de conduire numériques
+
+•	Comprendre les normes utilisées pour les permis de conduire numériques
 
 **Méthodologie et processus de veille et de collecte de données**
 
@@ -45,6 +51,7 @@ La période de recensement des articles s’est déroulée du 8 juillet au 2 sep
 #### 1.2. Objectifs et méthodologie de l'exprémentation
 
 **Objectif de l'exprémentation**  
+
 L'objectif principal de cette expérimentation est d’explorer la faisabilité et la mise en oeuvre d'un permis de conduire numérique, en s'assurant de sa comptabilité avec les orientations nationales en matière d’identité numérique et les normes internationales. Cet objectif ce décline en plusieurs sous objeectifs: 
 
 1. **Démontrer la faisabilité technique**
@@ -73,18 +80,119 @@ Pour atteindre ces objectifs, les étapes clés de la démarche à suivre sont l
 - Participation des équipes spécialisées en recherche d'expérience client;  
 
 - Collaboration avec spécialistes d'autres provinces lors de certains moments clés des expérimentations.
+
+Au terme de cette expérimentation, nous souhaitions matérialiser l’entièreté du cycle de vie d’un permis de conduire mobile. En cas de succès, nous pourrions obtenir des informations utiles sur le fonctionnement du permis de conduire mobile, ainsi que sur l’expérience des différents utilisateurs finaux. Ces informations devraient constituer un substrat de qualité pour des initiatives futurs sur le développement d’un permis de conduire mobile au Québec et en Amérique du Nord. 
 ### 2. Synthèse de la veille
+La veille sur les permis de conduire numériques vise répondre à quatre objectifs principaux : (1) identifier les avantages et les inconvénients liés à  la mise en œuvre des permis de conduire numériques, (2) aperçu sur l'état actuel de l'adoption des permis de conduire numériques à  l'échelle mondiale, (3) comprendre les implications technologiques, juridiques et sociales liées de l'adoption des permis de conduire numériques et, (4) comprendre les normes et bibliothèques utilisées pour les permis de conduire numériques.
+
+Les permis de conduire numériques représentent une avancée majeure dans la transformation numérique des documents d'identité. Ces permis, stockées sur des appareils mobiles tels que les smartphones, permettent aux utilisateurs de prouver leur identité et leur droit de conduire sans dépendre de documents physiques. Le permis de conduire numériques se distinguent par:
+
+- Sécurité grâce au chiffrement avancé et à l'authentification biométrique
+  
+- Praticité en supprimant la nécessité de transporter des documents papier
+  
+- Mises à  jour en temps réel des informations par les autorités émettrices
+  
+- Partage sélectif des données pour protéger la vie privées des utilisateurs
+
+Toutefois, leur adoption grande échelle fait face à  des défis tels que :
+- Poblèmes d'infrastructure et dépendance à la technologie: l'absence d'une infrastructure aséquate, comme les lecteurs numériques, frine l'adoption des permis numériques et peut exclure des groupes sans accès réguliers aux téléphones intelligents
+
+- Interopérabilité: le manque de standardisation mondile des permis de conduire numériques limite leur reconnaissance homogène entre juridictions
+
+- Gestion des données perosnelles:  Les préoccupations liées à la protection des informations sensibles, au piratage, et à la collecte excessive de données freinent l’adoption des permis numériques
+
+- Acceptation et adoption: La reconnaissance des permis de conduire numériques dépend d'une sensibilisation aux avantages et d'un soutien gouvernmental solide pour garantir leur déploiment et leur utilisation
+
+
+ ####  Portrait des initiatives
+L'adoption des permis de conduire numériques progresse de manière inégale à  travers le monde, reflétant des disparités dans les priorités, les infrastructures et les cadres réglementaire. 
+
+**Amérique**
+
+L’adoption des permis de conduire numériques progresse aux **États-Unis**, avec des États pionniers comme la Californie et l’Arizona qui collaborent avec des entreprises privées pour intégrer ces permis dans des applications telles qu’Apple Wallet, renforçant la sécurité grâce à la biométrie et à la cryptographie. Cependant, l’absence de politique fédérale unifiée limite l’interopérabilité entre les juridictions. Soutenue par la TSA pour une utilisation dans les aéroports via des technologies avancées comme CAT-2, cette innovation bénéficie d’un appui partiel à l’échelle nationale. Malgré ces avancées, des préoccupations liées à la protection des données personnelles et à l’utilisation de la biométrie soulignent la nécessité de cadres législatifs et d’un soutien fédéral accru pour une adoption généralisée et sécurisée.
+
+Le **Canada** adopte une approche structurée pour le développement des permis de conduire numériques, s'appuyant sur le cadre de gouvernance CANdy, élaboré en collaboration avec les gouvernements provinciaux et IBM Consulting pour renforcer l'interopérabilité et la confiance numérique. Bien que des initiatives comme les nouveaux services en ligne de la SAAQ et le programme d'identité numérique de l’Ontario aient progressé, les permis numériques ne sont pas encore opérationnels. Les efforts actuels se concentrent sur l’élaboration de bases juridiques et organisationnelles, comme le projet de loi 82 au Québec, afin de garantir une adoption sécurisée et interopérable dans l’avenir.
+
+En Amérique du Sud, le **Brésil** se distingue comme pionnier avec l’adoption de permis de conduire numériques disponibles depuis 2019 pour 60 millions de conducteurs, permettant un usage pratique sous format mobile ou PDF pour des contrôles et des transactions comme la location de voitures. Le **Paraguay**, quant à lui, a récemment légalisé les permis numériques avec la loi n° 7177/2023, mais leur mise en œuvre est limitée par l’absence de cadre de protection des données et des réglementations adaptées, nécessitant des réformes pour assurer leur fiabilité et le respect des droits des citoyens.
+
+**Asie-Pacifique et moyen orient**
+
+L’adoption des permis de conduire numériques progresse rapidement dans la région Asie-Pacifique et au Moyen-Orient, bien que les approches varient selon les pays. La **Corée du Sud** a lancé ses permis numériques à l’échelle nationale dès 2022, s’appuyant sur la blockchain et des technologies cryptographiques avancées pour garantir la sécurité, tandis que **Singapour** intègre ces permis dans sa plateforme numérique Singpass pour simplifier l’accès aux services publics. Aux **Philippines**, le système LTMS permet l’accès sécurisé à un permis numérique (eDL) reconnu légalement, intégrant des normes ISO pour renforcer l’interopérabilité. De même, **Dubaï** et l’**Arabie Saoudite** ont introduit des permis numériques, combinant biométrie et QR codes pour moderniser leurs services publics.
+
+En Océanie, l’**Australie** enregistre une adoption rapide dans des États comme le Queensland, aligné avec la norme ISO/IEC 18013-5, et la Nouvelle-Galles du Sud, qui investit massivement dans des solutions numériques. La **Nouvelle-Zélande** expérimente également des permis numériques à travers une application pilote visant à simplifier l’accès aux services administratifs. Cette adoption régionale met en évidence une tendance croissante vers des systèmes modernes et interopérables, tout en adaptant les solutions aux priorités nationales.
+
+**Europe**
+
+L’Europe progresse rapidement dans le déploiement des permis de conduire numériques, avec des initiatives variées selon les pays. L’**Autriche**, la **France** et le **Portugal** ont déjà intégré ces permis dans leurs systèmes numériques, les rendant juridiquement équivalents aux documents physiques et permettant leur utilisation pour des contrôles d’identité et des transactions administratives. L’**Estonie**, pionnière en services numériques, a intégré les permis dans sa plateforme eesti.ee, tandis que la **Macédoine du Nord** et la **République tchèque** modernisent leurs services publics avec des applications comme ELI et eDokladovska, malgré des défis tels que les compétences numériques limitées.
+
+Le **Royaume-Uni** prévoit de lancer le développement des permis numériques en 2024, combinant innovation et maintien des options physiques pour une adoption inclusive. L’**Ukraine**, malgré la guerre, continue d’innover avec son application Diia, offrant des permis numériques et d’autres services administratifs, illustrant la résilience numérique en temps de crise. Au niveau européen, l’Union européenne travaille à l’harmonisation des permis numériques via les normes eIDAS, visant l’interopérabilité et la sécurité à travers ses États membres, tout en renforçant la sécurité routière et les contrôles administratifs.
+
+**Afrique**
+
+L’adoption des permis de conduire numériques en Afrique est en phase émergente, avec des initiatives notables en **Afrique du Sud** et au **Nigeria**. **En Afrique du Sud**, un système de permis numériques sera lancé d'ici 2024/2025, avec une application mobile complémentaire aux cartes physiques, intégrant des fonctionnalités biométriques pour renforcer la sécurité et réduire la fraude. Parallèlement, le **Nigeria** a déjà introduit des permis numériques téléchargeables via une application mobile, offrant une solution moderne qui simplifie l’accès et réduit les risques de falsification. Ces initiatives illustrent une volonté croissante de moderniser les services gouvernementaux à travers le continent.
+
+####  Analyse PESTEL 
+a completer
+
+####  Normes et bibliothèques
+Les normes et les protocoles encadrant les permis de conduire numériques s'articulent autour d'un écosystème complexe et en constante évolution. Bien que plusieurs normes existent, nous nous concentrons sur la présentation de la norme ISO/IEC 18013-5, qui a été choisie pour notre exprémentation, tout en notant que d'autres normes comme l'ISO/IEC 18013-7, le règlement eIDAS en Europe et les directives AAMVA aux états unis sont détaillées dans le document de veille (**ajouter référence**). 
+
+##### Étude de la norme ISO/IEC 18013-5
+L'ISO/IEC 18013-5 est une norme internationale qui définit les spécifications des permis de conduire mobiles (mobile Driver's License - mDL). L'étude de la norme était un prérequis à la réalisation de cette expérimentation. Nous devions rapidement comprendre sa structure générale, le modèle de données, les protocoles de communication, les mécanismes de sécurité, les fonctionnalités de confidentialité, l'interopérabilité et les cas d'utilisation qu'elle supporte.
+
+#### Composants principaux
+Comme pour l'infrastructure d'identité numérique, l'éco-système mDL se compose de trois éléments principaux (le fameux triangle de confiance):
+
+1. L'infrastructure de l'autorité émettrice;
+2. Le mDL lui-même, enregistré sur l'appareil mobile du détenteur du permis;
+3. Le lecteur mDL, utilisé pour vérifier un mDL.
+
+#### Caractéristiques clés
+
+##### Éléments de données et sécurité
+Le mDL contient des éléments de données spécifiques sur le détenteur du permis, tels que son nom, sa date de naissance ainsi que ses privilèges de conduite. Ces éléments de données sont protégés par des mécanismes cryptographiques et des certificats numériques gérés par une infrastructure à clé publique (PKI) sous le contrôle d'une autorité émettrice.
+
+##### Intégrité des données et authentification
+Le mDL inclut un objet de sécurité mobile (MSO) qui contient un condensé des éléments de données. Ce dernier est signé numériquement par l'autorité émettrice. Cela permet aux lecteurs mDL de vérifier l'intégrité et l'authenticité des éléments données, en plus de permettre l'authentification de l'autorité émettrice par l'utilisation de la liste vérifiée des autorités émettrices de certificats (VICAL).
+
+##### Protection de la vie privée
+Une des caractéristiques clés offerte par un mDL est la divulgation sélective, permettant aux détenteurs de partager uniquement le sous-ensemble nécessaire de leurs informations personnelles. Les éléments de données divulgés varient en fonction du cas d'utilisation.
+
+##### Processus d'utilisation du mDL
+
+- **Initialisation** : Le détenteur présente son mDL à un lecteur mDL pour vérification.
+- **Demande de preuve** : Le lecteur mDL demande les éléments de données à valider à l'appareil du détenteur.
+- **Consentement** : Le détenteur reçoit une invite montrant les éléments de données demandés et doit consentir à les partager.
+- **Transmission** : Après consentement, les éléments de données du mDL, y compris l'objet de sécurité mobile (MSO), sont partagées via une communication sécurisée avec le lecteur.
+- **Vérification** : Le lecteur mDL valide l'intégrité des éléments de données reçues en vérifiant la signature de l'objet de sécurité mobile (MSO) et en contrôlant le hachage de chaque élément de données individuellement.
+
+##### Technologies de communication
+Le mDL peut échanger des données avec les lecteurs en utilisant la communication en champ proche (NFC), le Bluetooth Low Energy (BLE) ou le Wi-Fi Aware1.
+Modèle de confiance
+L'ISO/IEC 18013-5 utilise un modèle de confiance d'infrastructure à clé publique (PKI) décentralisé2. Les lecteurs mDL doivent posséder la chaîne de certificats de signature mDL de l'autorité émettrice pour vérifier l'authenticité du mDL.
+
+En normalisant ces aspects, l'ISO/IEC 18013-5 vise à assurer l'interopérabilité, la sécurité et la confidentialité dans la mise en œuvre et l'utilisation des permis de conduire mobiles à travers différentes juridictions et cas d'utilisation.
+
+Il est important de noter que malgré l'existence de cette norme internationale, de nombreuses initiatives nationales suivent leurs propres standards. cette divergence souligne un défi majeur pour l'interopérabilité internationale future des permis de conduire numériques.
+
+
+##### Analyse des bibliothèques et outils techniques
+
+Tout au long de cette expérimentation, une analyse des applications/bibliothèques existantes nécessaires à l'implémentation de la norme ISO/IEC 18013-5 mDL a été menée. Dans le cadre de cette exprémentation, des bibliothèqyes et outils compatibles avec la norme ISO/IEC 18013-5 mDL ont été explorés(NB: La pile technologique utilisé dans nos expérimentations précédentes sur l'identité numérique était principalement basé sur les languages Python ([ACA-Py](https://github.com/openwallet-foundation/acapy)) et TypeScript ([Portefeuille-mobile-qc](https://github.com/MCN-ING/Portefeuille-mobile-qc))). Voici la decription des principaux: 
+
+1. [Kotlin Multiplatform mdoc library](https://github.com/walt-id/waltid-mdoc): Une librairie mdoc multi-platforme en langage Kotlin qui permet de créer des attestations au format mdoc conforme à la norme ISO/IEC 18013-5 mDL.
+
+2. [Google identity-credential](https://github.com/openwallet-foundation-labs/identity-credential): Un dépôt qui contient des bibliothèques et des applications (détenteur et vérificateur) pour travailler avec des identités du monde réelles. L'objectif initial était d'implémenter les mdoc/mDL conformes à la norme ISO/IEC 18013-5 et aux normes associées (principalement la série ISO 23220 et ISO 18013-7), mais la portée actuelle inclut également d'autres formats d'attestation.
+
+3. [pyMDOC-CBOR](https://github.com/IdentityPython/pyMDOC-CBOR): Un analyseur/générateur en Python pour les attestations de Type 1 et également pour les cas d'usage mDL. Ce projet est une proposition expérimentale née d'un projet éducatif.
+
+À l'exception de l'application de vérification disponible dans le projet [Google identity-credential](https://github.com/openwallet-foundation-labs/identity-credential), nous n'avons pas trouvé d'autres implémentation en code source ouvert. 
+
+Au cours de cette expérimentation, les implémentations disponibles de la norme ISO/IEC 18013-5 ont évolués. Un acteur majeur du monde SSI, la bibliothèque [credo-ts](https://github.com/openwallet-foundation/credo-ts), a ajouté le support du mDL. Au moment d'écrire ce rapport, le code n'était pas complété mais cet ajout est intéressant pour le développement d'un portefeuille multi-formats. En plus de supporter les [AnonCreds](https://hyperledger.github.io/anoncreds-spec/), la bibliothèque credo-ts supportent les [attestations vérifiables W3C](https://www.w3.org/TR/vc-data-model/), les [attestations vérifiables SD-JWT](https://www.ietf.org/archive/id/draft-ietf-oauth-sd-jwt-vc-01.html), le protocol OID4VC et prochainement, le mDL. Ainsi, le [Portfeuille mobile QC](https://github.com/MCN-ING/Portefeuille-mobile-qc) pourra devenir un portefeuille multi-formats.
+Pour conclure, les permis de conduire numériques incarnent une avancée prometteuse vers une identification moderne et sécurisée. Malgré des défis d'interopérabilité, de sécurité et d'inclusion, leur adoption croissante témoigne de leur potentiel à simplifier l'accès aux services publics tout en répondant aux exigences de la transformation numérique. Une mise en œuvre réussie dépendra d'un équilibre entre innovation, réglementation harmonisée et inclusion sociale.
+
 ### 3.Mise en oeuvre et résultats de l'exprémentation
-### 4.Enjeux et limites de la solution
-
-## Conclusion
-
-
-
-
-
-
-
 Au terme de cette expérimentation, nous souhaitions matérialiser l’entièreté du cycle de vie d’un permis de conduire mobile. En cas de succès, nous pourrions obtenir des informations utiles sur le fonctionnement du permis de conduire mobile, ainsi que sur l’expérience des différents utilisateurs finaux. Ces informations devraient constituer un substrat de qualité pour des initiatives futurs sur le développement d’un permis de conduire mobile au Québec et en Amérique du Nord. 
 
 ## 2. Contexte 
@@ -152,40 +260,7 @@ Nous privilégions le scénario 2 avec pour objectif principal la conformité av
 
 ### 3.1 Étude de la norme ISO/IEC 18013-5
 
-L'ISO/IEC 18013-5 est une norme internationale qui définit les spécifications des permis de conduire mobiles (mobile Driver's License - mDL). L'étude de la norme était un prérequis à la réalisation de cette expérimentation. Nous devions rapidement comprendre sa structure générale, le modèle de données, les protocoles de communication, les mécanismes de sécurité, les fonctionnalités de confidentialité, l'interopérabilité et les cas d'utilisation qu'elle supporte.
 
-#### Composants principaux
-Comme pour l'infrastructure d'identité numérique, l'éco-système mDL se compose de trois éléments principaux (le fameux triangle de confiance):
-
-1. L'infrastructure de l'autorité émettrice;
-2. Le mDL lui-même, enregistré sur l'appareil mobile du détenteur du permis;
-3. Le lecteur mDL, utilisé pour vérifier un mDL.
-
-#### Caractéristiques clés
-
-##### Éléments de données et sécurité
-Le mDL contient des éléments de données spécifiques sur le détenteur du permis, tels que son nom, sa date de naissance ainsi que ses privilèges de conduite. Ces éléments de données sont protégés par des mécanismes cryptographiques et des certificats numériques gérés par une infrastructure à clé publique (PKI) sous le contrôle d'une autorité émettrice.
-
-##### Intégrité des données et authentification
-Le mDL inclut un objet de sécurité mobile (MSO) qui contient un condensé des éléments de données. Ce dernier est signé numériquement par l'autorité émettrice. Cela permet aux lecteurs mDL de vérifier l'intégrité et l'authenticité des éléments données, en plus de permettre l'authentification de l'autorité émettrice par l'utilisation de la liste vérifiée des autorités émettrices de certificats (VICAL).
-
-##### Protection de la vie privée
-Une des caractéristiques clés offerte par un mDL est la divulgation sélective, permettant aux détenteurs de partager uniquement le sous-ensemble nécessaire de leurs informations personnelles. Les éléments de données divulgés varient en fonction du cas d'utilisation.
-
-##### Processus d'utilisation du mDL
-
-- **Initialisation** : Le détenteur présente son mDL à un lecteur mDL pour vérification.
-- **Demande de preuve** : Le lecteur mDL demande les éléments de données à valider à l'appareil du détenteur.
-- **Consentement** : Le détenteur reçoit une invite montrant les éléments de données demandés et doit consentir à les partager.
-- **Transmission** : Après consentement, les éléments de données du mDL, y compris l'objet de sécurité mobile (MSO), sont partagées via une communication sécurisée avec le lecteur.
-- **Vérification** : Le lecteur mDL valide l'intégrité des éléments de données reçues en vérifiant la signature de l'objet de sécurité mobile (MSO) et en contrôlant le hachage de chaque élément de données individuellement.
-
-##### Technologies de communication
-Le mDL peut échanger des données avec les lecteurs en utilisant la communication en champ proche (NFC), le Bluetooth Low Energy (BLE) ou le Wi-Fi Aware1.
-Modèle de confiance
-L'ISO/IEC 18013-5 utilise un modèle de confiance d'infrastructure à clé publique (PKI) décentralisé2. Les lecteurs mDL doivent posséder la chaîne de certificats de signature mDL de l'autorité émettrice pour vérifier l'authenticité du mDL.
-
-En normalisant ces aspects, l'ISO/IEC 18013-5 vise à assurer l'interopérabilité, la sécurité et la confidentialité dans la mise en œuvre et l'utilisation des permis de conduire mobiles à travers différentes juridictions et cas d'utilisation.
 
 ### 3.2 Analyse de l'existant
 Tout au long de cette expérimentation, une analyse des applications/bibliothèques existantes nécessaires à l'implémentation de la norme ISO/IEC 18013-5 mDL a été menée.
@@ -322,6 +397,17 @@ L'Exploration et l'analyse de l'ecosystème du permis de conduire est un succès
 
 - ✅ L'ICP a été deployé dans un environnement infonuagique (Openshift).
 - ⚠️ L'intégration à l'ecosystème du permis de conduire n'a pas été completé. Il reste à travailler l'ajout des certificats dans la liste de confiance VICAL ("Verifiable Issuing Certificate Authority List).
+
+### 4.Enjeux et limites de la solution
+
+## Conclusion
+
+
+
+
+
+
+
 
 
 ## 6. Conclusion
