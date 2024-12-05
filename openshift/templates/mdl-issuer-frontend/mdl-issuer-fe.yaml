@@ -44,16 +44,41 @@ objects:
           kind: ImageStreamTag
           name: nginx:latest
         env:
-          - name: REACT_APP_ISSUER_API_BASE_URL
+          - name: REACT_APP_MDL_ISSUER_API_BASE_URL
             valueFrom:
               secretKeyRef:
                 name: ${APP_NAME}
-                key: REACT_APP_ISSUER_API_BASE_URL
+                key: REACT_APP_MDL_ISSUER_API_BASE_URL
           - name: REACT_APP_OID4VCI_SUPPORTED_CREDENTIAL_ID
             valueFrom:
               secretKeyRef:
                 name: ${APP_NAME}
                 key: REACT_APP_OID4VCI_SUPPORTED_CREDENTIAL_ID
+          - name: REACT_APP_ANONCREDS_ISSUER_API_BASE_URL
+            valueFrom:
+              secretKeyRef:
+                name: ${APP_NAME}
+                key: REACT_APP_ANONCREDS_ISSUER_API_BASE_URL
+          - name: REACT_APP_SCHEMA_NAME_PERMIS_CONDUIRE
+            valueFrom:
+              secretKeyRef:
+                name: ${APP_NAME}
+                key: REACT_APP_SCHEMA_NAME_PERMIS_CONDUIRE
+          - name: REACT_APP_SCHEMA_VERSION_PERMIS_CONDUIRE
+            valueFrom:
+              secretKeyRef:
+                name: ${APP_NAME}
+                key: REACT_APP_SCHEMA_VERSION_PERMIS_CONDUIRE
+          - name: REACT_APP_SCHEMA_ISSUER_DID_PERMIS_CONDUIRE
+            valueFrom:
+              secretKeyRef:
+                name: ${APP_NAME}
+                key: REACT_APP_SCHEMA_ISSUER_DID_PERMIS_CONDUIRE
+          - name: REACT_APP_CRED_DEF_PERMIS_CONDUIRE
+            valueFrom:
+              secretKeyRef:
+                name: ${APP_NAME}
+                key: REACT_APP_CRED_DEF_PERMIS_CONDUIRE                                                                                
       type: Docker
     triggers:
     - type: ConfigChange
@@ -92,16 +117,41 @@ objects:
           env:
             - name: WEBHOOK_URL
               value: ${WEBHOOK_URL}
-            - name: REACT_APP_ISSUER_API_BASE_URL
+            - name: REACT_APP_MDL_ISSUER_API_BASE_URL
               valueFrom:
                   secretKeyRef:
                     name: ${APP_NAME}
-                    key: REACT_APP_ISSUER_API_BASE_URL
+                    key: REACT_APP_MDL_ISSUER_API_BASE_URL
             - name: REACT_APP_OID4VCI_SUPPORTED_CREDENTIAL_ID
               valueFrom:
                   secretKeyRef:
                     name: ${APP_NAME}
                     key: REACT_APP_OID4VCI_SUPPORTED_CREDENTIAL_ID
+            - name: REACT_APP_ANONCREDS_ISSUER_API_BASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: ${APP_NAME}
+                  key: REACT_APP_ANONCREDS_ISSUER_API_BASE_URL
+            - name: REACT_APP_SCHEMA_NAME_PERMIS_CONDUIRE
+              valueFrom:
+                secretKeyRef:
+                  name: ${APP_NAME}
+                  key: REACT_APP_SCHEMA_NAME_PERMIS_CONDUIRE
+            - name: REACT_APP_SCHEMA_VERSION_PERMIS_CONDUIRE
+              valueFrom:
+                secretKeyRef:
+                  name: ${APP_NAME}
+                  key: REACT_APP_SCHEMA_VERSION_PERMIS_CONDUIRE
+            - name: REACT_APP_SCHEMA_ISSUER_DID_PERMIS_CONDUIRE
+              valueFrom:
+                secretKeyRef:
+                  name: ${APP_NAME}
+                  key: REACT_APP_SCHEMA_ISSUER_DID_PERMIS_CONDUIRE
+            - name: REACT_APP_CRED_DEF_PERMIS_CONDUIRE
+              valueFrom:
+                secretKeyRef:
+                  name: ${APP_NAME}
+                  key: REACT_APP_CRED_DEF_PERMIS_CONDUIRE   
           ports:
           - containerPort: 8080
             protocol: TCP
@@ -202,12 +252,23 @@ objects:
     labels:
       name: ${APP_NAME}
     annotations:
-      template.openshift.io/expose-REACT_APP_ISSUER_API_BASE_URL: "{.data['REACT_APP_ISSUER_API_BASE_URL']}"
+      template.openshift.io/expose-REACT_APP_MDL_ISSUER_API_BASE_URL: "{.data['REACT_APP_MDL_ISSUER_API_BASE_URL']}"
       template.openshift.io/expose-REACT_APP_OID4VCI_SUPPORTED_CREDENTIAL_ID: "{.data['REACT_APP_OID4VCI_SUPPORTED_CREDENTIAL_ID']}"
+      template.openshift.io/expose-REACT_APP_ANONCREDS_ISSUER_API_BASE_URL: "{.data['REACT_APP_ANONCREDS_ISSUER_API_BASE_URL']}"
+      template.openshift.io/expose-REACT_APP_SCHEMA_NAME_PERMIS_CONDUIRE: "{.data['REACT_APP_SCHEMA_NAME_PERMIS_CONDUIRE']}"
+      template.openshift.io/expose-REACT_APP_SCHEMA_VERSION_PERMIS_CONDUIRE: "{.data['REACT_APP_SCHEMA_VERSION_PERMIS_CONDUIRE']}"
+      template.openshift.io/expose-REACT_APP_SCHEMA_ISSUER_DID_PERMIS_CONDUIRE: "{.data['REACT_APP_SCHEMA_ISSUER_DID_PERMIS_CONDUIRE']}"
+      template.openshift.io/expose-REACT_APP_CRED_DEF_PERMIS_CONDUIRE: "{.data['REACT_APP_CRED_DEF_PERMIS_CONDUIRE']}"
+
       template.openshift.io/expose-webhook-url: "{.data['webhook-url']}"
   stringData:
-    REACT_APP_ISSUER_API_BASE_URL: "${REACT_APP_ISSUER_API_BASE_URL}"
+    REACT_APP_MDL_ISSUER_API_BASE_URL: "${REACT_APP_MDL_ISSUER_API_BASE_URL}"
     REACT_APP_OID4VCI_SUPPORTED_CREDENTIAL_ID: "${REACT_APP_OID4VCI_SUPPORTED_CREDENTIAL_ID}"
+    REACT_APP_ANONCREDS_ISSUER_API_BASE_URL: "${REACT_APP_ANONCREDS_ISSUER_API_BASE_URL}"
+    REACT_APP_SCHEMA_NAME_PERMIS_CONDUIRE: "${REACT_APP_SCHEMA_NAME_PERMIS_CONDUIRE}"
+    REACT_APP_SCHEMA_VERSION_PERMIS_CONDUIRE: "${REACT_APP_SCHEMA_VERSION_PERMIS_CONDUIRE}"
+    REACT_APP_SCHEMA_ISSUER_DID_PERMIS_CONDUIRE: "${REACT_APP_SCHEMA_ISSUER_DID_PERMIS_CONDUIRE}"
+    REACT_APP_CRED_DEF_PERMIS_CONDUIRE: "${REACT_APP_CRED_DEF_PERMIS_CONDUIRE}"    
     webhook-url: "${WEBHOOK_URL}"
   type: Opaque
 ######################################################################
@@ -232,19 +293,39 @@ parameters:
   displayName: Git Reference  
   description: Set this to a branch name, tag or other ref of your repository if you
     are not using the default branch.  
-  value: "feature/issuer-fe"
+  value: "feature/addAnonCreds"
 - name: CONTEXT_DIR
   displayName: Context Directory
   description: Set this to the relative path to your project if it is not in the root
     of your repository.  
   value: "issuer-frontend"
-- name: REACT_APP_ISSUER_API_BASE_URL
-  displayName: URL for the issuer API
-  description: The URL for the issuer API.
-  value: https://mdl-issuer-agent-admin.apps.exp.openshift.cqen.ca
+- name: REACT_APP_MDL_ISSUER_API_BASE_URL
+  displayName: URL for the mDL issuer API
+  description: The URL for the mDL issuer API.
+  value: env-value
 - name: REACT_APP_OID4VCI_SUPPORTED_CREDENTIAL_ID
   displayName: OID4VCI supported credential ID
   description: The OID4VCI supported credential ID.
+  value: env-value
+- name: REACT_APP_ANONCREDS_ISSUER_API_BASE_URL
+  displayName: URL for the AnonCreds issuer API
+  description: URL for the AnonCreds issuer API.
+  value: env-value
+- name: REACT_APP_SCHEMA_NAME_PERMIS_CONDUIRE
+  displayName: Schema name for the Driver's License
+  description: Schema name for the Driver's License.
+  value: env-value
+- name: REACT_APP_SCHEMA_VERSION_PERMIS_CONDUIRE
+  displayName: Schame version for the Driver's License
+  description: Schame version for the Driver's License.
+  value: env-value
+- name: REACT_APP_SCHEMA_ISSUER_DID_PERMIS_CONDUIRE
+  displayName: Schame issuer did for the Driver's License
+  description: Schame issuer did for the Driver's License.
+  value: env-value
+- name: REACT_APP_CRED_DEF_PERMIS_CONDUIRE
+  displayName: Credential definition for the Driver's License
+  description: Credential definition for the Driver's License.
   value: env-value
 - name: ISSUER_AGENT
   displayName: The name of the issuer agent
