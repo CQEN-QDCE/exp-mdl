@@ -1,8 +1,8 @@
 ---
-titre : Rapport d'expérimentation
-sous-titre : Expérimentation pour intégrer le standard (ISO 18013-5) "Mobile driver's license" ou "mDL" aux attestations vérifiables.
+titre : Rapport  veille et expérimentation
+sous-titre : Veille et expérimentation sur les permis de conduire numériques
 auteur : Centre d'expertise appliquée en innovation
-date : 2024-10-01
+date : 2024-12-04
 statut : en cours
 ---
 
@@ -13,9 +13,20 @@ statut : en cours
 ![Logo MCN](https://github.com/CQEN-QDCE/.github/blob/main/images/mcn.png)
 <!-- FIN ENTETE -->
 
-# Expérimentation pour intégrer le standard (ISO 18013-5) "Mobile driver's license" ou "mDL" aux attestations vérifiables.
+# Veille et expérimentation sur les permis de conduire numériques
+## Introduction
+A l'ère de la transformation numérique, les permis de conduire numériques (mobile driver's licence (mDL) émergnet comme une nouvelle solution pour moderniser les systèmes d'identification et d'autorisation de conduite. En tant qu'alternatives aux permis physiques, les permis de conduire numériques offrent des avantages en matière de sécurité, de praticité et d'interopérabilité. Toutefois, leur mise en oeuvre soulève des défis technologiques, juridiques et organisationnels, nécessitant une démarche robuste pour garantir leur succés et adoption à large échelle.
 
-## 1. Objectifs 
+l'objectif de ce document est de présenter une approche combiné de veille stratégique et expémentation. La veille stratégique a permis de dresser un panorama des initiatives internationales, les tendances émergentes, offrant ainsi un cadre de référence et alimenter les développeurs et les décideurs dans leur réflexion et choix techniques. En parralèle, l'exprémentation a été un levier essetiel, pour tester, valider et adapter des solutions spécifiques dans des conditions réelles, permettant ainsi de valider la faisabilité et l'impact des permis de conduire numérique.  Ces deux approches, bien qu'utiles individuellement, relèvent tout leur potentielles lorsqu'elles sont intégrées dans un processus robuste et itératif.
+
+Le document est structuré en quatre parties. La première présente les objectifs et les méthodologies respectives à  la veille et l'exprémentation. La deuxième partie synthétise les résultats de la veille. La troisième partie se concentre la mise en place du prototype et les résultats obtenus lors des tests. Enfin, la dernière partie présente une description des enjeux et limites de la solution, tant du point de vue technique que stratégique. 
+
+### 1. Objectifs et méthodologie
+### 2. Synthèse de la veille
+### 3.Mise en oeuvre et résultats de l'exprémentation
+### 4.Enjeux et limites de la solution
+
+## Conclusion
 
 L'objectif principal de cette expérimentation est d’explorer la création d’un permis de conduire mobile. Cet objectif se décline en plusieurs sous-objectifs tels que : 
 
