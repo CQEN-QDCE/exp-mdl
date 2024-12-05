@@ -22,28 +22,46 @@ l'objectif de ce document est de présenter une approche combiné de veille stra
 Le document est structuré en quatre parties. La première présente les objectifs et les méthodologies respectives à  la veille et l'exprémentation. La deuxième partie synthétise les résultats de la veille. La troisième partie se concentre la mise en place du prototype et les résultats obtenus lors des tests. Enfin, la dernière partie présente une description des enjeux et limites de la solution, tant du point de vue technique que stratégique. 
 
 ### 1. Objectifs et méthodologie
-### 2. Synthèse de la veille
-### 3.Mise en oeuvre et résultats de l'exprémentation
-### 4.Enjeux et limites de la solution
+#### 1.1. Objectifs et méthodologie de la veille
+Les permis de conduire numériques représentent une évolution signification dans la gestion et la vérification des identités des conducteurs cette transition vers le numérique permet d’améliorer la sécurité et l’efficacité administrative. Cependant, cette transition soulève également des questions importantes sur la protection de la vie privée, la sécurité des données et l’interopérabilité de ce type d’identifiant numérique. Dans un contexte ou la transition vers le numérique des services gouvernementaux s’accélère, comprendre les enjeux, les défis et les opportunités liés aux permis de conduire numériques devient crucial pour toute juridiction envisageant leur adoption. 
 
-## Conclusion
+**Objectif de la veille**  
+L’objectif principal de cette veille est de fournir un aperçu et une analyse de l’écosystème des permis de conduire numérique au niveau mondial. Cette veille servira de base pour éclairer les décisions stratégiques concernant le développement et la mise en œuvre potentiel d’un système de permis de conduire numérique.
+Objectifs spécifiques de la veille :
+•	Identifier les avantages et les inconvénients liés à la mise en œuvre des permis de conduire numériques
+•	Aperçu sur l’état actuel de l’adoption des permis de conduire numériques à l’échelle mondiale
+•	Comprendre les normes utilisées pour les permis de conduire numériques
+•	Comprendre les implications technologiques, juridiques et sociales liées de l’adoption des permis de conduire numériques
 
-L'objectif principal de cette expérimentation est d’explorer la création d’un permis de conduire mobile. Cet objectif se décline en plusieurs sous-objectifs tels que : 
+**Méthodologie et processus de veille et de collecte de données**
 
-- Démontrer la faisabilité technique d’un permis de conduire numérique compatible à la fois aux orientations nationales en matière d’identité numérique et aux normes internationales en lien avec le permis de conduire numérique;  
+Nous avons mis en place un processus pour collecter les données pertinentes pour notre veille sur les permis de conduire numériques, ayant recours à l’outil Inoreader. Voici les principales étapes que nous avons suivies :
+1. Identification des mots clés : nous avons défini les mots clés à explorer avec les collaborateurs du projet.
+2. Recensement manuel des sources : nous avons identifié les sites, les blogs et les sources d’information pertinentes pour notre veille. Cela nous a permis de constituer une base de données initiale des sources pertinentes à surveiller.
+3. Intégration dans Inoreader : après l’identification des sources, elles ont été intégrées dans l’outil Inoreader, qui permet d’agréger et de filtrer les nouvelles informations en fonction des mots clés prédéfinis.
+4. 	Analyse des articles : nous analysons les articles collectés par Inoreader en fonction de leur pertinence et nous les intégrons dans une fiche d’analyse hebdomadaire.
+5. 	Synthèse hebdomadaire : les articles recensés durant la semaine sont résumés pour avoir les principaux faits et tendances observées.
+La période de recensement des articles s’est déroulée du 8 juillet au 2 septembre. À la fin de cette phase, nous avons commencé la synthèse des résultats de la veille qui est maintenant compilée dans ce rapport.
+#### 1.2. Objectifs et méthodologie de l'exprémentation
+
+**Objectif de l'exprémentation**  
+L'objectif principal de cette expérimentation est d’explorer la faisabilité et la mise en oeuvre d'un permis de conduire numérique, en s'assurant de sa comptabilité avec les orientations nationales en matière d’identité numérique et les normes internationales. Cet objectif ce décline en plusieurs sous objeectifs: 
+
+1. **Démontrer la faisabilité technique**
+- Démontrer la compatibilité technique d’un permis de conduire numérique avec les orientations nationales et internationales.
 
 - Créer une attestation vérifiable et un registre d’attestation; 
 
+2.  **Mécanismes de vérification et enregistrement**
 - Créer un registre de consommateurs et expliciter les étapes de vérification du permis de conduire mobile; 
 
-- Créer un environnement représentatif du portefeuille numérique sur appareil mobile et assurer l’acheminement sécurisé du permis de conduire numérique;  
-
+- Créer un environnement représentatif du portefeuille numérique sur appareil mobile et assurer l’acheminement sécurisé du permis de conduire numérique;
+3.  **Mécanismes de vérification et enregistrement**
 - Créer un environnement représentatif du registre de preuves permettant de valider l’interopérabilité à l’échelle nord-américaine;
+4.  **Expérience utilisateur**
+- Évaluer l'expérience utilisateur des utilisateurs finaux (propriétaire du permis et contrôleurs routiers).
 
-- Évaluer l'expérience utilisateur des utilisateurs finaux (propriétaire du permis et contrôleurs routiers).   
-
-Ainsi, cette expérimentation vise à tester et essayer les normes et règles statuées pour la création et utilisation de permis de conduire numériques (mDL - Mobile Driver's Licence). On établi comme buts à atteindre lors de cette expérimentation les facteurs suivants: 
-
+Pour atteindre ces objectifs, les étapes clés de la démarche à suivre sont les suivantes: 
 - Durant la phase préparatoire, obtenir des formations permettant une mise à niveau des connaissances technologiques requises pour mener à bien les activités de prototypage et d’expérimentations​;
 
 - Obtenir l’appui d’experts du domaine à certains moments clé des expérimentations (ex. permis, technologies mDL, technologies chaînes de blocs);
@@ -55,6 +73,17 @@ Ainsi, cette expérimentation vise à tester et essayer les normes et règles st
 - Participation des équipes spécialisées en recherche d'expérience client;  
 
 - Collaboration avec spécialistes d'autres provinces lors de certains moments clés des expérimentations.
+### 2. Synthèse de la veille
+### 3.Mise en oeuvre et résultats de l'exprémentation
+### 4.Enjeux et limites de la solution
+
+## Conclusion
+
+
+
+
+
+
 
 Au terme de cette expérimentation, nous souhaitions matérialiser l’entièreté du cycle de vie d’un permis de conduire mobile. En cas de succès, nous pourrions obtenir des informations utiles sur le fonctionnement du permis de conduire mobile, ainsi que sur l’expérience des différents utilisateurs finaux. Ces informations devraient constituer un substrat de qualité pour des initiatives futurs sur le développement d’un permis de conduire mobile au Québec et en Amérique du Nord. 
 
