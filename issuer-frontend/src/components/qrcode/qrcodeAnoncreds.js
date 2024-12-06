@@ -37,7 +37,7 @@ const Qrcode = ( ) => {
   const licenseNumber = userData.licenseNumber ? userData.licenseNumber : "L123456789123";
   const licenseClass = userData.licenseClass ? userData.licenseClass : "5";
   const address = userData.address ? userData.address : "Some address 123";
-  const conditions = userData.associatedConditions ? userData.associatedConditions : "None";
+  const conditions = userData.associatedConditions ? userData.associatedConditions : "A";
   const birthDate = userData.birthDate ? userData.birthDate : "20000101";
   const gender = userData.gender ? userData.gender : "M";
   const expiryDate = userData.expiryDate ? userData.expiryDate : "20300101";
