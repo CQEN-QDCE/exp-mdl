@@ -15,75 +15,70 @@ statut : en cours
 
 # Veille et expérimentation sur les permis de conduire numériques
 ## Introduction
-A l'ère de la transformation numérique, les permis de conduire numériques (mobile driver's licence (mDL) émergnet comme une nouvelle solution pour moderniser les systèmes d'identification et d'autorisation de conduite. En tant qu'alternatives aux permis physiques, les permis de conduire numériques offrent des avantages en matière de sécurité, de praticité et d'interopérabilité. Toutefois, leur mise en oeuvre soulève des défis technologiques, juridiques et organisationnels, nécessitant une démarche robuste pour garantir leur succés et adoption à large échelle.
+À l'ère de la transformation numérique, les permis de conduire numériques (mobile driver's licence, ou mDL) émergent comme une solution novatrice pour moderniser les systèmes d'identification et d'autorisation de conduite. En tant qu'alternatives aux permis physiques, les permis de conduire numériques offrent des avantages en matière de sécurité, de praticité et d'interopérabilité. Toutefois, leur mise en œuvre soulève des défis technologiques, juridiques et organisationnels, nécessitant une démarche robuste pour garantir leur succès et leur adoption à grande échelle.
 
-l'objectif de ce document est de présenter une approche combiné de veille stratégique et expémentation. La veille stratégique a permis de dresser un panorama des initiatives internationales, les tendances émergentes, offrant ainsi un cadre de référence et alimenter les développeurs et les décideurs dans leur réflexion et choix techniques. En parralèle, l'exprémentation a été un levier essetiel, pour tester, valider et adapter des solutions spécifiques dans des conditions réelles, permettant ainsi de valider la faisabilité et l'impact des permis de conduire numérique.  Ces deux approches, bien qu'utiles individuellement, relèvent tout leur potentielles lorsqu'elles sont intégrées dans un processus robuste et itératif.
+L'objectif de ce document est de présenter une approche combinée de veille stratégique et d'expérimentation. La veille stratégique a permis de dresser un panorama des initiatives internationales et des tendances émergentes, offrant ainsi un cadre de référence pour alimenter un futur développement et soutenir les décideurs dans leur réflexion ainsi que dans leurs choix stratégiques et techniques. En parallèle, l'expérimentation a été un levier essentiel pour tester, valider et adapter des solutions spécifiques dans des conditions réelles, permettant ainsi de confirmer la faisabilité et l'impact des permis de conduire numériques. Ces deux approches, bien qu'utiles individuellement, révèlent tout leur potentiel lorsqu'elles sont intégrées dans un processus robuste et itératif.
 
-Le document est structuré en quatre parties. La première présente les objectifs et les méthodologies respectives à  la veille et l'exprémentation. La deuxième partie synthétise les résultats de la veille. La troisième partie se concentre la mise en place du prototype et les résultats obtenus lors des tests. Enfin, la dernière partie présente une description des enjeux et limites de la solution, tant du point de vue technique que stratégique. 
+Le document est structuré en quatre parties. La première présente les objectifs et les méthodologies respectifs à la veille et à l'expérimentation. La deuxième partie synthétise les résultats de la veille. La troisième partie se concentre sur la mise en place du prototype et les résultats obtenus lors des tests. Enfin, la dernière partie propose une description des enjeux et des limites de la solution, tant du point de vue technique que stratégique. 
 
 ### 1. Objectifs et méthodologie
 #### 1.1. Objectifs et méthodologie de la veille
 
-Les permis de conduire numériques représentent une évolution signification dans la gestion et la vérification des identités des conducteurs cette transition vers le numérique permet d’améliorer la sécurité et l’efficacité administrative. Cependant, cette transition soulève également des questions importantes sur la protection de la vie privée, la sécurité des données et l’interopérabilité de ce type d’identifiant numérique. Dans un contexte ou la transition vers le numérique des services gouvernementaux s’accélère, comprendre les enjeux, les défis et les opportunités liés aux permis de conduire numériques devient crucial pour toute juridiction envisageant leur adoption. 
+Les permis de conduire numériques représentent une évolution significative dans la gestion et la vérification des identités des conducteurs. Cette transition vers le numérique permet d’améliorer la sécurité et l’efficacité administrative. Cependant, elle soulève également des questions importantes sur la protection de la vie privée, la sécurité des données et l’interopérabilité de ce type d’identifiant numérique. Dans un contexte où la transition vers le numérique des services gouvernementaux s’accélère, comprendre les enjeux, les défis et les opportunités liés aux permis de conduire numériques devient crucial pour toute juridiction envisageant leur adoption. 
 
 **Objectif de la veille**  
 
-L’objectif principal de cette veille est de fournir un aperçu et une analyse de l’écosystème des permis de conduire numérique au niveau mondial. Cette veille servira de base pour éclairer les décisions stratégiques concernant le développement et la mise en œuvre potentiel d’un système de permis de conduire numérique.
-Objectifs spécifiques de la veille :
+L’objectif principal de cette veille est de fournir un aperçu et une analyse de l’écosystème des permis de conduire numériques au niveau mondial. Cette veille servira de base pour éclairer les décisions stratégiques concernant le développement et la mise en œuvre potentielle d’un système de permis de conduire numérique.
 
-•	Identifier les avantages et les inconvénients liés à la mise en œuvre des permis de conduire numériques
+**Objectifs spécifiques de la veille :**
 
-•	Aperçu sur l’état actuel de l’adoption des permis de conduire numériques à l’échelle mondiale
+•	Identifier les avantages et les inconvénients liés à la mise en œuvre des permis de conduire numériques.
 
-•	Comprendre les implications technologiques, juridiques et sociales liées de l’adoption des permis de conduire numériques
+•	Aperçu sur l’état actuel de l’adoption des permis de conduire numériques à l’échelle mondiale.
 
-•	Comprendre les normes utilisées pour les permis de conduire numériques
+•	Comprendre les implications technologiques, juridiques et sociales liées à l’adoption des permis de conduire numériques.
+
+•	Analyser les normes utilisées pour les permis de conduire numériques.
 
 **Méthodologie et processus de veille et de collecte de données**
 
-Nous avons mis en place un processus pour collecter les données pertinentes pour notre veille sur les permis de conduire numériques, ayant recours à l’outil Inoreader. Voici les principales étapes que nous avons suivies :
-1. Identification des mots clés : nous avons défini les mots clés à explorer avec les collaborateurs du projet.
-2. Recensement manuel des sources : nous avons identifié les sites, les blogs et les sources d’information pertinentes pour notre veille. Cela nous a permis de constituer une base de données initiale des sources pertinentes à surveiller.
-3. Intégration dans Inoreader : après l’identification des sources, elles ont été intégrées dans l’outil Inoreader, qui permet d’agréger et de filtrer les nouvelles informations en fonction des mots clés prédéfinis.
-4. 	Analyse des articles : nous analysons les articles collectés par Inoreader en fonction de leur pertinence et nous les intégrons dans une fiche d’analyse hebdomadaire.
-5. 	Synthèse hebdomadaire : les articles recensés durant la semaine sont résumés pour avoir les principaux faits et tendances observées.
-La période de recensement des articles s’est déroulée du 8 juillet au 2 septembre. À la fin de cette phase, nous avons commencé la synthèse des résultats de la veille qui est maintenant compilée dans ce rapport.
-#### 1.2. Objectifs et méthodologie de l'exprémentation
+Nous avons mis en place un processus structuré pour collecter les données pertinentes pour notre veille sur les permis de conduire numériques, en ayant recours à l’outil Inoreader. Voici les principales étapes que nous avons suivies :
 
-**Objectif de l'exprémentation**  
+1. Identification des mots-clés : Nous avons défini les mots clés à explorer avec les membres de l'expérimentation.
+2. Recensement manuel des sources : Nous avons identifié les sites, blogs et autres sources d’information pertinentes pour notre veille, ce qui nous a permis de constituer une base de données initiale des sources à surveiller.
+3. Intégration dans Inoreader : Après l’identification des sources, celles-ci ont été intégrées dans l’outil Inoreader, permettant d’agréger et de filtrer les nouvelles informations en fonction des mots-clés prédéfinis.
+4. Analyse des articles : Nous analysons les articles collectés par Inoreader en fonction de leur pertinence, puis les intégrons dans une fiche d’analyse hebdomadaire.
+5. Synthèse hebdomadaire : Les articles recensés durant la semaine sont résumés afin d’extraire les principaux faits et tendances observés.
 
-L'objectif principal de cette expérimentation est d’explorer la faisabilité et la mise en oeuvre d'un permis de conduire numérique, en s'assurant de sa comptabilité avec les orientations nationales en matière d’identité numérique et les normes internationales. Cet objectif ce décline en plusieurs sous objeectifs: 
+La période de recensement des articles s’est déroulée du 8 juillet au 2 septembre. À l’issue de cette phase, nous avons entamé la synthèse des résultats de la veille, qui est maintenant compilée dans ce rapport.
 
-. **Démontrer la faisabilité technique**
-- Démontrer la compatibilité technique d’un permis de conduire numérique avec les orientations nationales et internationales.
+#### 1.2. Objectifs et méthodologie de l'expérimentation
 
-- Créer une attestation vérifiable et un registre d’attestation; 
+**Objectif de l'expérimentation**  
 
-.  **Mécanismes de vérification et enregistrement**
-- Créer un registre de consommateurs et expliciter les étapes de vérification du permis de conduire mobile; 
+L'objectif principal de cette expérimentation est d’explorer la faisabilité et la mise en œuvre d'un permis de conduire numérique, tout en s'assurant de sa compatibilité avec les orientations du Québec en matière d’identité numérique et les normes internationales. Cet objectif se décline en plusieurs sous-objectifs :
 
-- Créer un environnement représentatif du portefeuille numérique sur appareil mobile et assurer l’acheminement sécurisé du permis de conduire numérique;
-  
-.  **Mécanismes de vérification et enregistrement**
-- Créer un environnement représentatif du registre de preuves permettant de valider l’interopérabilité à l’échelle nord-américaine;
+**Démontrer la faisabilité technique**
+- Démontrer la compatibilité technique d’un permis de conduire numérique avec les orientations provinciales et internationales.
+- Créer une attestation vérifiable et un registre d’attestation.
 
-.  **Expérience utilisateur**
-- Évaluer l'expérience utilisateur des utilisateurs finaux (propriétaire du permis et contrôleurs routiers).
+**Mécanismes de vérification et d'enregistrement**
+- Créer un registre de consommateurs et expliciter les étapes de vérification du permis de conduire mobile.
+- Créer un environnement représentatif du portefeuille numérique sur appareil mobile et assurer l’acheminement sécurisé du permis de conduire numérique.
+- Créer un environnement représentatif du registre de preuves permettant de valider l’interopérabilité à l’échelle nord-américaine.
 
-Pour atteindre ces objectifs, les étapes clés de la démarche à suivre sont les suivantes: 
-- Durant la phase préparatoire, obtenir des formations permettant une mise à niveau des connaissances technologiques requises pour mener à bien les activités de prototypage et d’expérimentations​;
+**Expérience utilisateur**
+- Évaluer l'expérience des utilisateurs finaux (propriétaires du permis et contrôleurs routiers).
 
-- Obtenir l’appui d’experts du domaine à certains moments clé des expérimentations (ex. permis, technologies mDL, technologies chaînes de blocs);
+Pour atteindre ces objectifs, les étapes clés de la démarche sont les suivantes :
 
-- Partage de l’état d’avancement de nos expérimentations avec les communautés open source des technologies impliqués et obtenir des rétroactions (ex. JEDI, employés de différentes juridictions canadiennes);
+- Durant la phase préparatoire, suivre des formations pour mettre à niveau les connaissances technologiques requises afin de mener à bien les activités de prototypage et d’expérimentation.
+- Obtenir l’appui d’experts du domaine à certains moments clés des expérimentations (ex. permis, technologies mDL, technologies chaînes de blocs).
+- Partager l’état d’avancement des expérimentations avec les communautés open source impliquées et obtenir des rétroactions.
+- Impliquer des équipes spécialisées en recherche d’expérience client.
 
-- Accès aux outils dont dispose les contrôleurs routiers dans le cadre de leur travail (ex. cellulaires, tablettes);
+Au terme de cette expérimentation, nous souhaitons avoir exploré la faisabilité technologique de la majorité des composants impliqués dans le cycle de vie complet d’un permis de conduire numérique. En cas de succès, cette démarche permettra de recueillir des informations précieuses sur le fonctionnement de ces composants, ainsi que sur l’expérience des différents utilisateurs finaux. Ces informations devraient constituer une base de connaissance solide pour orienter de potentielles initiatives futures.
 
-- Participation des équipes spécialisées en recherche d'expérience client;  
-
-- Collaboration avec spécialistes d'autres provinces lors de certains moments clés des expérimentations.
-
-Au terme de cette expérimentation, nous souhaitions matérialiser l’entièreté du cycle de vie d’un permis de conduire mobile. En cas de succès, nous pourrions obtenir des informations utiles sur le fonctionnement du permis de conduire mobile, ainsi que sur l’expérience des différents utilisateurs finaux. Ces informations devraient constituer un substrat de qualité pour des initiatives futurs sur le développement d’un permis de conduire mobile au Québec et en Amérique du Nord. 
 ### 2. Synthèse de la veille
 La veille sur les permis de conduire numériques vise répondre à quatre objectifs principaux : (1) identifier les avantages et les inconvénients liés à  la mise en œuvre des permis de conduire numériques, (2) aperçu sur l'état actuel de l'adoption des permis de conduire numériques à  l'échelle mondiale, (3) comprendre les implications technologiques, juridiques et sociales liées de l'adoption des permis de conduire numériques et, (4) comprendre les normes et bibliothèques utilisées pour les permis de conduire numériques.
 
@@ -154,7 +149,7 @@ L’émergence des permis de conduire numériques s’inscrit dans un contexte t
 
 Les expériences internationales, telles que Login.gov aux États-Unis et la transition de myGOVID à myID en Australie, illustrent l’importance d’une communication claire pour prévenir la fraude et les erreurs d’adoption. Ces exemples mettent également en lumière la nécessité de combiner des solutions techniques robustes avec des stratégies d’accompagnement et de sensibilisation pour instaurer la confiance des citoyens. Au Québec, l’expérience des fraudes bancaires démontre l’urgence de renforcer la sécurité face à l’ingénierie sociale et de planifier méthodiquement le déploiement des permis numériques pour garantir une adoption sécurisée et inclusive.
 ####  Normes et bibliothèques
-Les normes et les protocoles encadrant les permis de conduire numériques s'articulent autour d'un écosystème complexe et en constante évolution. Bien que plusieurs normes existent, nous nous concentrons sur la présentation de la norme ISO/IEC 18013-5, qui a été choisie pour notre exprémentation, tout en notant que d'autres normes comme l'ISO/IEC 18013-7, le règlement eIDAS en Europe et les directives AAMVA aux états unis sont détaillées dans le document de veille (**ajouter référence**). 
+Les normes et les protocoles encadrant les permis de conduire numériques s'articulent autour d'un écosystème complexe et en constante évolution. Bien que plusieurs normes existent, nous nous concentrons sur la présentation de la norme ISO/IEC 18013-5, qui a été choisie pour notre expérimentation, tout en notant que d'autres normes comme l'ISO/IEC 18013-7, le règlement eIDAS en Europe et les directives AAMVA aux états unis sont détaillées dans le document de veille (**ajouter référence**). 
 
 ##### Étude de la norme ISO/IEC 18013-5
 L'ISO/IEC 18013-5 est une norme internationale qui définit les spécifications des permis de conduire mobiles (mobile Driver's License - mDL). L'étude de la norme était un prérequis à la réalisation de cette expérimentation. Nous devions rapidement comprendre sa structure générale, le modèle de données, les protocoles de communication, les mécanismes de sécurité, les fonctionnalités de confidentialité, l'interopérabilité et les cas d'utilisation qu'elle supporte.
@@ -197,7 +192,7 @@ Il est important de noter que malgré l'existence de cette norme internationale,
 
 ##### Analyse des bibliothèques et outils techniques
 
-Tout au long de cette expérimentation, une analyse des applications/bibliothèques existantes nécessaires à l'implémentation de la norme ISO/IEC 18013-5 mDL a été menée. Dans le cadre de cette exprémentation, des bibliothèqyes et outils compatibles avec la norme ISO/IEC 18013-5 mDL ont été explorés(NB: La pile technologique utilisé dans nos expérimentations précédentes sur l'identité numérique était principalement basé sur les languages Python ([ACA-Py](https://github.com/openwallet-foundation/acapy)) et TypeScript ([Portefeuille-mobile-qc](https://github.com/MCN-ING/Portefeuille-mobile-qc))). Voici la decription des principaux: 
+Tout au long de cette expérimentation, une analyse des applications/bibliothèques existantes nécessaires à l'implémentation de la norme ISO/IEC 18013-5 mDL a été menée. Dans le cadre de cette expérimentation, des bibliothèqyes et outils compatibles avec la norme ISO/IEC 18013-5 mDL ont été explorés(NB: La pile technologique utilisé dans nos expérimentations précédentes sur l'identité numérique était principalement basé sur les languages Python ([ACA-Py](https://github.com/openwallet-foundation/acapy)) et TypeScript ([Portefeuille-mobile-qc](https://github.com/MCN-ING/Portefeuille-mobile-qc))). Voici la decription des principaux: 
 
 1. [Kotlin Multiplatform mdoc library](https://github.com/walt-id/waltid-mdoc): Une librairie mdoc multi-platforme en langage Kotlin qui permet de créer des attestations au format mdoc conforme à la norme ISO/IEC 18013-5 mDL.
 
@@ -210,7 +205,7 @@ Tout au long de cette expérimentation, une analyse des applications/bibliothèq
 Au cours de cette expérimentation, les implémentations disponibles de la norme ISO/IEC 18013-5 ont évolués. Un acteur majeur du monde SSI, la bibliothèque [credo-ts](https://github.com/openwallet-foundation/credo-ts), a ajouté le support du mDL. Au moment d'écrire ce rapport, le code n'était pas complété mais cet ajout est intéressant pour le développement d'un portefeuille multi-formats. En plus de supporter les [AnonCreds](https://hyperledger.github.io/anoncreds-spec/), la bibliothèque credo-ts supportent les [attestations vérifiables W3C](https://www.w3.org/TR/vc-data-model/), les [attestations vérifiables SD-JWT](https://www.ietf.org/archive/id/draft-ietf-oauth-sd-jwt-vc-01.html), le protocol OID4VC et prochainement, le mDL. Ainsi, le [Portfeuille mobile QC](https://github.com/MCN-ING/Portefeuille-mobile-qc) pourra devenir un portefeuille multi-formats.
 Pour conclure, les permis de conduire numériques incarnent une avancée prometteuse vers une identification moderne et sécurisée. Malgré des défis d'interopérabilité, de sécurité et d'inclusion, leur adoption croissante témoigne de leur potentiel à simplifier l'accès aux services publics tout en répondant aux exigences de la transformation numérique. Une mise en œuvre réussie dépendra d'un équilibre entre innovation, réglementation harmonisée et inclusion sociale.
 
-### 3.Mise en oeuvre et résultats de l'exprémentation
+### 3.Mise en oeuvre et résultats de l'expérimentation
 L'expérimentation vise à matérialiser l’ensemble du cycle de vie d’un permis de conduire mobile. En cas de succès, nous pourrions obtenir des informations utiles sur le fonctionnement du permis de conduire mobile, ainsi que sur l’expérience des différents utilisateurs finaux. Ces informations devraient constituer un substrat de qualité pour des initiatives futurs sur le développement d’un permis de conduire mobile au Québec et en Amérique du Nord. 
 
 #### 3.1. Contexte
