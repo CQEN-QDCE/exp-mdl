@@ -150,7 +150,7 @@ Il est important de noter que même si le schéma de signature BBS n'est pas act
 
 ## Configuration du plugin 
 
-### Pré-requis 
+### Prérequis 
 
 Assurez-vous d'avoir installé :
 - Python
@@ -239,7 +239,7 @@ oid4vci = { path = "~/CQEN-MCN/code/ongoing/merging/aries-acapy-plugins/oid4vci/
 
 ***Lancement de l'application*** 
 
-Ensuite, il faut configurer l'environnement virtuel via `poetry`. À la première démarrage, vous devez installer les packages de poetry. Aux démarrages suivantes, vous n'avez qu'à lancer l'environnement. 
+Ensuite, il faut configurer l'environnement virtuel via `poetry`. Au premier démarrage, vous devez installer les packages de poetry. Aux démarrages suivants, vous n'avez qu'à lancer l'environnement. 
 
 ```bash 
 poetry install --extras="askar bbs ecdsa-x509"
@@ -247,7 +247,7 @@ poetry shell
 code . 
 ```
 
-Dans la dépendence `askar` il faut aussi ajouter du code pour supporter l'émission de clés avec les nouveaux algorithmes. 
+Dans la dépendance `askar` il faut aussi ajouter du code pour supporter l'émission de clés avec les nouveaux algorithmes. 
 
 `aries-askar/types.py` il faut rajouter les lignes suivantes dans la classe `KeyAlg`:
 ```python 
@@ -256,11 +256,11 @@ ECDSAP384 = "p384"
 ECDSAP521 = "p521"
 ```
 
-Un fois VSCode lancé, l'environnement et le degub sont prêts. 
+Un fois VSCode lancé, l'environnement et le debug sont prêts. 
 
 ***Reconfiguration*** 
 
-Si l'installation est faite sur une ancienne installation, et que vous voulez repartir le répositoire à nouveau, alors il faudrait faire la suppréssion du cache de poetry. Dans un système Linux, ce cache se situe dans le repertoire `~/.cache/pypoetry/virtualenv/aries*`. Exécutez la commande ci-dessous pour supprimer le répertoire du cache: 
+Si l'installation est faite sur une ancienne installation, et que vous voulez repartir le projet à nouveau, alors il faudrait faire la suppression du cache de poetry. Dans un système Linux, ce cache se situe dans le répertoire `~/.cache/pypoetry/virtualenv/aries*`. Exécutez la commande ci-dessous pour supprimer le répertoire du cache: 
 
 ```bash 
 sudo rm -rf ~/.cache/pypoetry/virtualenv/aries*
@@ -291,7 +291,7 @@ Utilisez le JSON suivant pour tester, en remplaçant `keyType` par `p256`, `p384
 }
 ```
 
-Note : L'OID d'ed25519 est `{iso(1) identified-organization(3) thawte(101) id-Ed25519(112)}`
+Note: L'OID d'ed25519 est `{iso(1) identified-organization(3) thawte(101) id-Ed25519(112)}`
 
 ### Outil auxiliaire de génération de clés et CSR
 
