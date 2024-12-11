@@ -15,59 +15,57 @@
 
 ## Ajustement de l'aca-py pour mDL 
 
-Ajoute des keys pour les algorithmes ECDSA
+Ajoute des clés pour les algorithmes ECDSA
 
-- ECDSA with SHA-256
-- ECDSA with SHA-384
-- ECDSA with SHA-512
+- ECDSA avec SHA-256
+- ECDSA avec SHA-384
+- ECDSA avec SHA-512
 
-Algorithmes admis par la AAMVA: 
+Algorithmes admis par l'AAMVA : 
 
-|Algorithme|Curve|Appelation|Py-Crypto class|
-|----------|-----|----------|---------------|
-|ES256     |P256 |NIST P-256|SECP256R1      |
-|ES384     |P384 |NIST P-384|SECP384R1      |
-|ES512     |P521 |NIST P-521|SECP521R1      |
+| Algorithme | Courbe | Appellation | Classe Py-Crypto |
+|------------|--------|-------------|------------------|
+| ES256      | P256   | NIST P-256  | SECP256R1        |
+| ES384      | P384   | NIST P-384  | SECP384R1        |
+| ES512      | P521   | NIST P-521  | SECP521R1        |
 
 *AAMVA Implementation Guidelines, p. 22*
 
 ## Algorithmes 
 
-La liste des algorithmes de crypto qui sont utilisés dans aca-py et credo-ts.
+La liste des algorithmes de cryptographie utilisés dans aca-py et credo-ts.
 
-Ensuite vérifie auprès du NIST/FIPS s'ils sont homologés. 
+Ensuite, vérifiez auprès du NIST/FIPS s'ils sont homologués. 
 
-Les algorithmes utilisés dans aca-py sont: 
+Les algorithmes utilisés dans aca-py sont : 
 
-EdDSA: Edwards-curve Digital Signature Algorithm: c'est un algorithme de signature numérique qui utilise une variante de la Schnorr signature, basée sur les twisted Edwards curves. Les clés EdDSA sont définies avec exactement 256 bits de longueur. 
+EdDSA : Edwards-curve Digital Signature Algorithm : c'est un algorithme de signature numérique qui utilise une variante de la signature Schnorr, basée sur les `twisted Edwards curves`. Les clés EdDSA sont définies avec exactement 256 bits de longueur. 
 
-	Courbes utilisées: 
-		Ed25519 : c'est le schema de signature EdDSA qui utlise SHA-512 et la Curve25519
-		 x25519 : c'est une curve elliptique d'exchange de clés de Diffie-Hellman qui utilise la Curve25519
+Courbes utilisées : 
+- Ed25519 : c'est le schéma de signature EdDSA qui utilise SHA-512 et la Curve25519
+- x25519 : c'est une courbe elliptique d'échange de clés de Diffie-Hellman qui utilise la Curve25519
 
-BLS Signature Algorithm : A BLS digital signature, also known as Boneh–Lynn–Shacham[1] (BLS), is a cryptographic signature scheme which allows a user to verify that a signer is authentic. 
+BLS Signature Algorithm : Une signature numérique BLS, également connue sous le nom de Boneh–Lynn–Shacham (BLS), est un schéma de signature cryptographique qui permet à un utilisateur de vérifier qu'un signataire est authentique. 
 
-	Courbes utilisées: 
-		BLS12381G1, BLS12381G2, BLS12381G1G2 : famille de courbes elliptiques appelées Barreto-Lynn-Scott, pour des signatures numériques performantes 
+Courbes utilisées : 
+- BLS12381G1, BLS12381G2, BLS12381G1G2 : famille de courbes elliptiques appelées Barreto-Lynn-Scott, pour des signatures numériques performantes 
 
+Après les vérifications des algorithmes disponibles et du besoin en tant que l'intégration à une ICP exige, nous avons inclus les algorithmes suivants : 
 
-Après les vérifications des algorithmes disponibles et du besoin en tant que l'intégration à une ICP exige, on a inclut les algorithmes qui s'en suivent: 
+ECDSA : c'est une variante de l'algorithme DSA (Digital Signature Algorithm) qui utilise des courbes elliptiques pour la génération de signatures numériques. 
 
-ECDSA: c'est une variante de l'algorithme DSA (Digital Signature Algorithm) qui utilise courbes elliptiques pour la génération de signatures numériques. 
+Courbes utilisées : 
+- Curve P-256  
+- Curve P-384  
+- Curve P-521  
 
-	Courbes utilisées: 
-		Curve P-256  
-		Curve P-381  
-		Curve P-521  
+Le `Centre canadien pour la cybersécurité` admet encore l'utilisation de la courbe `Curve P-224`, mais elle doit être éliminée progressivement d'ici 2030, alors aucun nouveau produit ne doit être créé en utilisant cette courbe. 
 
-Le `Canadian Centre for Cyber Security` admet encore l'utilisation de la courbe `Curve P-224`, mais elle doit être éliminé progressivement d'ici 2030, alors aucun nouveau produit doit être crée en utilisant cette courbe. 
+Le document `NIST SP 800-186 Recommendations for Discrete Logarithm-based Cryptography: Elliptic Curve Domain Parameters` homologue les courbes `Ed25519 (Curve 25519)`, `Curve P-256`, `Curve P-384`, `Curve P-521`. Les courbes de la famille `Barreto-Lynn-Scott` n'ont pas pu être trouvées dans la liste d'homologation du `NIST` ni du `Centre canadien pour la cybersécurité`. 
 
-Le document `NIST SP 800-186 Recommendations for Discrete Logarithm-based Cryptography: Elliptic Curve Domain Parameters ` homologue les courbes `Ed25519 (Curve 25519)`, courbes `Curve P-256`, `Curve P-381`, `Curve P-521`. Les courbes de la famille `Barreto-Lynn-Scott` n'ont pas pu être trouvées dans la liste d'homologation du `NIST` ni de la `Canadian Centre for Cyber Security`. 
+Dans CREDO, je n'ai pas trouvé de documentation qui spécifie quel algorithme de signature est utilisé dans le framework. Peut-être parce que le service est déjà fourni par des librairies externes, comme aca-py ? 
 
-Dans CREDO, je n'ai pas trouvé de documentation qui spécifie quel algorithme de signature qui est utilisé dans le framework. Peut-être parce que le service est déjà fourni par des librairies externes, comme aca-py? 
-
-
-### Quelle est la différence entre`les algorithmes EdDSA et ECDSA ?
+### Quelle est la différence entre les algorithmes EdDSA et ECDSA ?
 
 `EdDSA (Edwards-curve Digital Signature Algorithm)` et `ECDSA (Elliptic Curve Digital Signature Algorithm)` sont tous deux des algorithmes de signature numérique qui utilisent la cryptographie à courbe elliptique, mais ils présentent plusieurs différences :
 
@@ -75,14 +73,13 @@ Dans CREDO, je n'ai pas trouvé de documentation qui spécifie quel algorithme d
 
 - **Vitesse de signature** : le processus de génération de signature de l'EdDSA est plus rapide que celui de l'ECDSA en raison des calculs plus simples qu'il implique.
 
-- **Sécurité** : EdDSA est conçu pour résister aux attaques side-channel. L'ECDSA, quant à lui, nécessite un bon générateur de nombres aléatoires pour chaque signature; s'il n'est pas correctement mis en œuvre, il peut entraîner une fuite de la clé privée.
+- **Sécurité** : EdDSA est conçu pour résister aux attaques side-channel. L'ECDSA, quant à lui, nécessite un bon générateur de nombres aléatoires pour chaque signature ; s'il n'est pas correctement mis en œuvre, il peut entraîner une fuite de la clé privée.
 
 - **Signatures déterministes** : EdDSA génère des signatures déterministes (le même message signé plusieurs fois produira toujours la même signature), ce qui n'est pas le cas avec ECDSA, à moins qu'il ne soit implémenté avec la RFC 6979.
 
 - **Adoption** : L'ECDSA est plus largement adopté et existe depuis plus longtemps que l'EdDSA. L'ECDSA est utilisé dans les certificats SSL/TLS, Bitcoin et Ethereum. EdDSA est utilisé dans des systèmes plus récents comme Signal, Tor, et est la valeur par défaut de SSH.
 
 - **Implémentations spécifiques** : Une implémentation courante d'EdDSA est Ed25519, qui utilise Curve25519. L'ECDSA est souvent utilisé avec une variété de courbes, les plus courantes étant secp256k1 (utilisée par Bitcoin), secp256r1 (également connue sous le nom de P-256), et secp384r1 (également connue sous le nom de P-384).
-
 
 ### Quels sont les avantages et les inconvénients de l'utilisation de Ed25519 par rapport à ECDSA pour les signatures numériques ?
 
@@ -92,7 +89,7 @@ Ed25519 est une implémentation spécifique de l'EdDSA (Edwards-curve Digital Si
 
 - **Vitesse :** Ed25519 a un processus de génération et de vérification de signature plus rapide que la plupart des implémentations ECDSA.
 
-- **Sécurité :** Ed25519 est conçu pour résister aux attaques side channel. L'ECDSA, quant à lui, nécessite un bon générateur de nombres aléatoires pour chaque signature ; s'il n'est pas correctement implémenté, il peut entraîner une fuite de la clé privée.
+- **Sécurité :** Ed25519 est conçu pour résister aux attaques side-channel. L'ECDSA, quant à lui, nécessite un bon générateur de nombres aléatoires pour chaque signature ; s'il n'est pas correctement implémenté, il peut entraîner une fuite de la clé privée.
 
 - **Signatures déterministes :** Ed25519 génère des signatures déterministes (le même message signé plusieurs fois produira toujours la même signature), ce qui n'est pas le cas avec ECDSA, à moins qu'il ne soit implémenté avec la RFC 6979.
 
@@ -110,13 +107,13 @@ N'oubliez pas que le choix entre Ed25519 et ECDSA dépendra de votre cas d'utili
 
 ### Quels sont les cas d'utilisation courants dans lesquels Ed25519 est préféré à ECDSA pour les signatures numériques ?
 
-Ed25519 est souvent préférée à l'ECDSA (Elliptic Curve Digital Signature Algorithm) dans les cas d'utilisation suivants :
+Ed25519 est souvent préféré à l'ECDSA (Elliptic Curve Digital Signature Algorithm) dans les cas d'utilisation suivants :
 
 - **Messagerie sécurisée :** Les applications de messagerie sécurisée comme Signal utilisent Ed25519 pour sa vitesse et ses fortes propriétés de sécurité.
 
 - **Authentification SSH :** OpenSSH prend en charge les clés Ed25519. Elles sont plus rapides et plus sûres que les clés ECDSA.
 
-- **TLS :** certaines implémentations de TLS (Transport Layer Security) prennent en charge la clé Ed25519. Il est utilisé dans les certificats pour HTTPS et d'autres protocoles de communication sécurisés.
+- **TLS :** Certaines implémentations de TLS (Transport Layer Security) prennent en charge la clé Ed25519. Il est utilisé dans les certificats pour HTTPS et d'autres protocoles de communication sécurisés.
 
 - **Signature de logiciels :** Ed25519 est utilisé pour signer les paquets de logiciels dans certains systèmes de gestion des paquets en raison de ses signatures déterministes et de sa résistance à certains types d'attaques.
 
@@ -141,16 +138,15 @@ Il est important de noter que si le NIST n'a homologué aucune courbe pour l'EdD
 **Réf:** FIPS 186-5 - Digital Signature Standard (DSS)
 https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.186-5.pdf
 
-## Le schema BBS (Boneh-Boyen-Schachman)
+## Le schéma BBS (Boneh-Boyen-Schacham)
 
-Le schema de signature numérique BBS (Boneh-Boyen-Shacham) est un protocole de signature numérique multi-messages sécurisé qui permet le selective disclosure, l'Unlinkable Proofs et la Proof of Possession d'une signature dans un sous-ensemble des messages signés. 
+Le schéma de signature numérique BBS (Boneh-Boyen-Shacham) est un protocole de signature numérique multi-messages sécurisé qui permet le selective disclosure, l'Unlinkable Proofs et la Proof of Possession d'une signature dans un sous-ensemble des messages signés. 
 
-Pour dire qu'un produit qui traite des informations sensibles peut être utilisé dans le context du gouverment fédéral canadien ou dans le gouvernement des E-U, il faut faire la validation de ce produit par le Cryptographic Module Validation Program (CMVP). Ce programme valide le produit selon le standard NIST-FIPS-140-3, qui normatise les algorithmes, tailles de clés, les courbes, etc..., bien comme l'utiilisation des bonnes pratiques preconisées par la CSE. 
+Pour dire qu'un produit qui traite des informations sensibles peut être utilisé dans le contexte du gouvernement fédéral canadien ou dans le gouvernement des E-U, il faut faire la validation de ce produit par le Cryptographic Module Validation Program (CMVP). Ce programme valide le produit selon le standard NIST-FIPS-140-3, qui normalise les algorithmes, tailles de clés, les courbes, etc., ainsi que l'utilisation des bonnes pratiques préconisées par la CSE. 
 
-L'utilisation du schema de signature BBS peut se montrer un empêchement lors de la validation du produit dans la CMVP. Un produit non homologué est potentiellement non utilisable dans des applications qui traitent de l'information sensible, dans le cadre gouvernemental (fédéral et américain). 
+L'utilisation du schéma de signature BBS peut se montrer un empêchement lors de la validation du produit dans la CMVP. Un produit non homologué est potentiellement non utilisable dans des applications qui traitent de l'information sensible, dans le cadre gouvernemental (fédéral et américain). 
 
-Il est important de noter que même si le schema de signature BBS n'est pas actuellement homologué par le NIST, il possède les fonctionnalités de selective disclosure et de proof-of-knowledge requises par les applications qui préservent la privacité, comme la blockchain d'identité, et il est utilisé dans diverses applications qui sont en cours de normalisation dans d'autres organisations telles que le W3C.
-
+Il est important de noter que même si le schéma de signature BBS n'est pas actuellement homologué par le NIST, il possède les fonctionnalités de selective disclosure et de proof-of-knowledge requises par les applications qui préservent la confidentialité, comme la blockchain d'identité, et il est utilisé dans diverses applications qui sont en cours de normalisation dans d'autres organisations telles que le W3C.
 
 ## Configuration du plugin 
 
@@ -162,7 +158,7 @@ Assurez-vous d'avoir installé :
 
 ### Étapes d'installation
 
-Pour préparer l'environnement de développement, il faut s'assurer d'avoir `python` et son package manager `poetry` dûment installés. Le projet d'aca-py est forké dans le repo du CQEN sous le nom `aries-cloudagent-python`. Clonez-le à la machine locale, puis créez et changez dans une nouvelle branche pour votre fonctionalité. 
+Pour préparer l'environnement de développement, il faut s'assurer d'avoir `python` et son package manager `poetry` dûment installés. Le projet d'aca-py est forké dans le repo du CQEN sous le nom `aries-cloudagent-python`. Clonez-le sur la machine locale, puis créez et changez dans une nouvelle branche pour votre fonctionnalité. 
 
 ```bash
 git clone https://github.com/CQEN-QDCE/aries-cloudagent-python.git 
