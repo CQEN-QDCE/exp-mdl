@@ -181,11 +181,12 @@ Une des caractéristiques clés offerte par un mDL est la divulgation sélective
 - **Vérification** : Le lecteur mDL valide l'intégrité des éléments de données reçues en vérifiant la signature de l'objet de sécurité mobile (MSO) et en contrôlant le hachage de chaque élément de données individuellement.
 
 ##### Technologies de communication
-Le mDL peut échanger des données avec les lecteurs en utilisant la communication en champ proche (NFC), le Bluetooth Low Energy (BLE) ou le Wi-Fi Aware1.
-Modèle de confiance
-L'ISO/IEC 18013-5 utilise un modèle de confiance d'infrastructure à clé publique (PKI) décentralisé2. Les lecteurs mDL doivent posséder la chaîne de certificats de signature mDL de l'autorité émettrice pour vérifier l'authenticité du mDL.
+Le détenteur d'un mDL peut échanger des informations avec les lecteurs en utilisant la communication en champ proche (Near Field Communication ou NFC), le Bluetooth Low Energy (BLE) ou le Wi-Fi Aware.
 
-En normalisant ces aspects, l'ISO/IEC 18013-5 vise à assurer l'interopérabilité, la sécurité et la confidentialité dans la mise en œuvre et l'utilisation des permis de conduire mobiles à travers différentes juridictions et cas d'utilisation.
+##### Modèle de confiance
+Pour mettre en place un modèle de confiance, la norme ISO/IEC 18013-5 définit une infrastructure à clé publique (PKI) décentralisé. Les lecteurs mDL doivent posséder la chaîne de certificats de signature mDL de l'autorité émettrice pour vérifier son authenticité.
+
+En normalisant ces aspects, la norme ISO/IEC 18013-5 vise à assurer l'interopérabilité, la sécurité et la confidentialité dans la mise en œuvre et l'utilisation des permis de conduire mobiles à travers différentes juridictions et cas d'utilisation.
 
 Il est important de noter que malgré l'existence de cette norme internationale, de nombreuses initiatives nationales suivent leurs propres standards. cette divergence souligne un défi majeur pour l'interopérabilité internationale future des permis de conduire numériques.
 
