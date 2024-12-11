@@ -330,77 +330,75 @@ L'application émettrice est un ensemble de deux composants : une API (backend) 
 #### 3.3.4 Portefeuille mobile mDL
 Pour être en mesure de tester l'émission d'un mDL, une application mobile de type portefeuille numérique a été développée. Pour l'utiliser, [Consulter son dépôt](https://github.com/CQEN-QDCE/portefeuille-mobile-mdl/) et suivre la procédure d'installation.
 
-### 4.Forces et limites de la solution
-L'hypothèse d'expérimentation avait comme objectif de démontrer qu'un permis de conduire numérique peut être conservé dans un portefeuille numérique; tout en respectant les normes de l'indentité numérique ainsi que les normes du permis de conduire numérique (ISO 18013-5 - mDL et l'AAMVA).
+### 4. Forces et limites de la solution
+L'hypothèse d'expérimentation avait comme objectif de démontrer qu'un permis de conduire numérique peut être conservé dans un portefeuille numérique, tout en respectant les normes de l'identité numérique ainsi que les normes du permis de conduire numérique (ISO 18013-5 - mDL et l'AAMVA).
 
-Nous avons structuré l'expérimentation en deux phases:
-- Phase d'exploration et d'analyse de l'ecosystème du permis de conduire mobile.
-- Phase d'implémentation du cycle de vie complet d'un permis de conduire numérique dans le contexte des attestations vérifiables:
+Nous avons structuré l'expérimentation en deux phases :
+- Phase d'exploration et d'analyse de l'écosystème du permis de conduire mobile.
+- Phase d'implémentation du cycle de vie complet d'un permis de conduire numérique dans le contexte des attestations vérifiables :
 
     ![Triangle émetteur - détenteur - vérificateur](images/triangle_issuer_holder_verifier.png)
 
+  - Émetteur : Mettre en place une solution émettrice du permis de conduire numérique
+  - Détenteur : Mettre en place un portefeuille numérique qui supporte le permis de conduire numérique
+  - Vérificateur : Mettre en place la vérification du permis de conduire numérique
+  - Infrastructure de Clés Publiques (ICP) : Mettre en place une ICP pour l'intégrer à l'écosystème du permis de conduire numérique.
 
-  - Émetteur: Mettre en place une solution émettrice du permis de conduire numérique
-  - Détenteur: Mettre en place un portefeuille numérique qui supporte le permis de conduire numérique
-  - Vérificateur: Mettre en place la vérification du permis de conduire numérique
-  - Infrastructure de Clés Publique (ICP): Mettre en place une ICP pour l'intégrer à l'ecosystème du permis de conduire numérique.
+### 4.1 Exploration et analyse de l'écosystème du permis de conduire
 
-### 4.1 Exploration et analyse de l'ecosystème du permis de conduire
-
-L'Exploration et l'analyse de l'ecosystème du permis de conduire est un succès:
+L'exploration et l'analyse de l'écosystème du permis de conduire est un succès :
 
 - ✅ Détermination de quatre possibles scénarios de solution
-  - Sélection du scénario 2 (mDL) qui réprésentait le scénario moins connu.
-- ✅ Comprehénsion et apprentissage de la norme ISO 18013-5
-- ✅ Comprehénsion des contraintes imposées par le Guide d'Implementation de l'AAMVA et son impact sur l'architecture du projet. 
+  - Sélection du scénario 2 (mDL) qui représentait le scénario moins connu.
+- ✅ Compréhension et apprentissage de la norme ISO 18013-5
+- ✅ Compréhension des contraintes imposées par le Guide d'Implémentation de l'AAMVA et son impact sur l'architecture du projet.
 
 ### 4.2 Implémentation du cycle de vie complet d'un permis de conduire numérique dans le contexte des attestations vérifiables
 
+#### 4.2.1 Émetteur : Mettre en place une solution émettrice du permis de conduire numérique
 
-#### 4.2.1 Émetteur: Mettre en place une solution émettrice du permis de conduire numérique
-
-- ✅ Un agent ACA-Py avec les plugins OID4VCI ("OpenID for Verifiable Credential Issuance") et mso-mdoc ("Mobile Security Object") a été deployé pour l'émission d'un permis de conduire mobile au format mDL.
+- ✅ Un agent ACA-Py avec les plugins OID4VCI ("OpenID for Verifiable Credential Issuance") et mso-mdoc ("Mobile Security Object") a été déployé pour l'émission d'un permis de conduire mobile au format mDL.
   - Le plugin OID4VCI pour l'émission d'une attestation vérifiable.
-  - Le plugin mso-doc pour l'authentication (signature) de l'émission.
-- ✅ Un prototype d'application web frontend (contrôller) a été associé à l'agent ACA-Py pour la saisie des informations du permis de conduire numérique.
+  - Le plugin mso-doc pour l'authentification (signature) de l'émission.
+- ✅ Un prototype d'application web frontend (contrôleur) a été associé à l'agent ACA-Py pour la saisie des informations du permis de conduire numérique.
 - ✅ Un permis de conduire numérique au format mDL a été émis.
 
-#### 4.2.2 Détenteur: Mettre en place un portefeuille numérique qui supporte le permis de conduire numérique
+#### 4.2.2 Détenteur : Mettre en place un portefeuille numérique qui supporte le permis de conduire numérique
 
-- ✅ Une application portefeuille numérique a été mis en place avec la librairie [mdl-ts](https://github.com/CQEN-QDCE/mdl-ts) pour supporter le format mdoc conforme à la norme ISO/IEC 18013-5 (mDL)
-- ✅ L'application de portefeuille numérique a été publié en phase de test interne dans Google Play Console pour être capable de l'installer dans un appareil Android.
-- ⚠️ Il reste à publier l'application de portefeuille numérique pour un appareil iOS. 
+- ✅ Une application portefeuille numérique a été mise en place avec la librairie [mdl-ts](https://github.com/CQEN-QDCE/mdl-ts) pour supporter le format mdoc conforme à la norme ISO/IEC 18013-5 (mDL)
+- ✅ L'application de portefeuille numérique a été publiée en phase de test interne dans Google Play Console pour être capable de l'installer sur un appareil Android.
+- ⚠️ Il reste à publier l'application de portefeuille numérique pour un appareil iOS.
 
-#### 4.2.3 Vérificateur: Mettre en place la vérification du permis de conduire numérique
+#### 4.2.3 Vérificateur : Mettre en place la vérification du permis de conduire numérique
 
-- ⚠️ L'application de vérification n'a pas été développée par manque de temps. Il sera probablement assez rapide d'en mettre une en place lorsque la bibliothèque credo-ts aura complétée son implémentation de la norme mDL.
+- ⚠️ L'application de vérification n'a pas été développée par manque de temps. Il sera probablement assez rapide d'en mettre une en place lorsque la bibliothèque credo-ts aura complété son implémentation de la norme mDL.
 
-#### 4.2.4 Infrastructure de Clés Publique (ICP): Mettre en place une ICP pour l'intégrer à l'ecosystème du permis de conduire numérique.
+#### 4.2.4 Infrastructure de Clés Publiques (ICP) : Mettre en place une ICP pour l'intégrer à l'écosystème du permis de conduire numérique.
 
-- ✅ L'ICP a été deployé dans un environnement infonuagique (Openshift).
-- ⚠️ L'intégration à l'ecosystème du permis de conduire n'a pas été completé. Il reste à travailler l'ajout des certificats dans la liste de confiance VICAL ("Verifiable Issuing Certificate Authority List).
+- ✅ L'ICP a été déployée dans un environnement infonuagique (Openshift).
+- ⚠️ L'intégration à l'écosystème du permis de conduire n'a pas été complétée. Il reste à travailler l'ajout des certificats dans la liste de confiance VICAL ("Verifiable Issuing Certificate Authority List").
 
 ## Conclusion
 
-Les résultats de  l'expérimentation et les observations issues de la veille mettent en lumière plusieurs dimensions de l'adoption des permis numériques, ainsi que les défis inhérents à la mise en oeuvre. Bien que l'intégration technique du standard ISO-18013-5 aux attestations vérifiables a prouvé sa faisabilité, les implications en termes de coûts et de complexité technique constituent un frein significatif pour un déploiement à grande échelle en environnement de production. Face à ce constat, une **approche hybride** plus pragmatique se dessine : le déploiement de deux identités numériques complémentaires, chacune présentant ses propres avantages et limitations spécifiques. Cette approche repose sur l'utilisation des attestations numériques au format **ANONCREDS** pour les besoins locaux dans la province (et par extension, dans le pays), en raison de son alignement avec la stratégie gouvernementale d'identité numérique, et les attestations mDL ISO-18013-5 pour les usages internationaux, grâce à leur potentiel d'interopérabilité.
+Les résultats de l'expérimentation et les observations issues de la veille mettent en lumière plusieurs dimensions de l'adoption des permis numériques, ainsi que les défis inhérents à la mise en œuvre. Bien que l'intégration technique du standard ISO-18013-5 aux attestations vérifiables ait prouvé sa faisabilité, les implications en termes de coûts et de complexité technique constituent un frein significatif pour un déploiement à grande échelle en environnement de production. Face à ce constat, une **approche hybride** plus pragmatique se dessine : le déploiement de deux identités numériques complémentaires, chacune présentant ses propres avantages et limitations spécifiques. Cette approche repose sur l'utilisation des attestations numériques au format **ANONCREDS** pour les besoins locaux dans la province (et par extension, dans le pays), en raison de son alignement avec la stratégie gouvernementale d'identité numérique, et les attestations mDL ISO-18013-5 pour les usages internationaux, grâce à leur potentiel d'interopérabilité.
 
-Cependant, cette double approche ne peut ignorer les enjeux identifiées. Sur le plan local, l'absence de déploiements à grande échelle en environnement de production et le manque d'études de charge approfondies soulèvent des questions quant à sa viabilité pour couvrir l'ensemble des besoins provinciaux. En parallèle, bien que la norme mDL ISO-18013-5 offrent des perspectives prometteuses, leur adoption n'est pas uniforme au sein de l'AAMVA, et leur non-conformité avec la stratégie canadienne d'identité numérique complique leur intégration.
+Cependant, cette double approche ne peut ignorer les enjeux identifiés. Sur le plan local, l'absence de déploiements à grande échelle en environnement de production et le manque d'études de charge approfondies soulèvent des questions quant à sa viabilité pour couvrir l'ensemble des besoins provinciaux. En parallèle, bien que la norme mDL ISO-18013-5 offre des perspectives prometteuses, leur adoption n'est pas uniforme au sein de l'AAMVA, et leur non-conformité avec la stratégie canadienne d'identité numérique complique leur intégration.
 
 Sur le plan plus large, les permis numériques doivent faire face à des défis transversaux, notamment :
 
-- Interopérabilité internationale : bien que soutenue par des standards comme ISO/IEC 18013-5, elle reste thèorique sans accords garantissant une reconnaissance mutuelle
-- Cybersécurité : les risques liés à l’usurpation d’identité (exemple: deepfakes) et à l’émergence de l’informatique quantique nécessitent des stratégies anticipatives robustes
-- Accessibilité : Une inclusion numérique est nécessaire pour ne pas marginaliser certaines populations, comme les communaautés éloignées ou les personnes âgées
+- Interopérabilité internationale : bien que soutenue par des standards comme ISO/IEC 18013-5, elle reste théorique sans accords garantissant une reconnaissance mutuelle
+- Cybersécurité : les risques liés à l’usurpation d’identité (exemple : deepfakes) et à l’émergence de l’informatique quantique nécessitent des stratégies anticipatives robustes
+- Accessibilité : une inclusion numérique est nécessaire pour ne pas marginaliser certaines populations, comme les communautés éloignées ou les personnes âgées
 - Cadre juridique : au Québec, la coexistence de la loi 25 et du projet de loi 82 pourrait créer des tensions législatives entre centralisation et décentralisation des données, soulignant la nécessité d’une harmonisation
 
-Pour maximiser leur potentiel, les permis de conduire numériques doivent s’accompagner d’une vision claire, d’une collaboration mondiale et d’un cadre inclusif qui harmonise les initiatives locales et nationales. bien que les défis soient nombreux, cette transformation offre une opportunité unique d’améliorer l’expérience utilisateur et de moderniser les systèmes d’identification à différentes échelles.
+Pour maximiser leur potentiel, les permis de conduire numériques doivent s’accompagner d’une vision claire, d’une collaboration mondiale et d’un cadre inclusif qui harmonise les initiatives locales et nationales. Bien que les défis soient nombreux, cette transformation offre une opportunité unique d’améliorer l’expérience utilisateur et de moderniser les systèmes d’identification à différentes échelles.
 
-Un tableau synthétisant les avantages et inconvénients des deux solutions sera présenté ci-dessous:
+Un tableau synthétisant les avantages et inconvénients des deux solutions sera présenté ci-dessous :
 
-| Scénario |Attestation Type | Avantages | Inconvénients 
+| Scénario | Attestation Type | Avantages | Inconvénients |
 |---|---|---|---|
-| 1.- Identité Numérique | AnonCreds | - Intégration avec la stratégie gouvernementale d'indetité numérique <br />- S'arrime facilement avec les travaux et l'infrastruture qui seront fournies par le programme provincial de l'identité numérique <br>- Il s'agit d'une technologie qui a une adoption et traction considerable à l'échélle canadienne <br>- Technologie connue, avec forte communauté de développeurs et de support | - On n'a pas encore eu de déploiement en large échelle, en environnement de production, des attestations numériques Anoncred <br>- Il manque des études et testes de charges pour s'assurer que l'infrastructure sera capable de répondre à la demande d'utilisation à la largeur de la province |
-| 2.- ISO 18013-5 (mDL) | mDL ISO-18013-5 | - Standard final publié par l'ISO <br>- Adoption par l'association nord-américaine des autorités de transit (AAMVA) <br>- Potentielle interoperabilité avec les EEUU | - Le nouveau standard propose l'utilisation de plusieurs technologies et stacks technologiques qui sont très nouveaux, alors sans beaucoup d'adoption, de documentation, et de support <br>- N'est pas en conformance avec la stratégie canadienne d'identité numérique <br>- Parmi les participants de l'AAMVA, son adoption n'est pas prise pour acquis par tous. |
+| 1.- Identité Numérique | AnonCreds | - Intégration avec la stratégie gouvernementale d'identité numérique <br />- S'arrime facilement avec les travaux et l'infrastructure qui seront fournies par le programme provincial de l'identité numérique <br>- Il s'agit d'une technologie qui a une adoption et traction considérable à l'échelle canadienne <br>- Technologie connue, avec forte communauté de développeurs et de support | - On n'a pas encore eu de déploiement à grande échelle, en environnement de production, des attestations numériques AnonCreds <br>- Il manque des études et tests de charge pour s'assurer que l'infrastructure sera capable de répondre à la demande d'utilisation à l'échelle de la province |
+| 2.- ISO 18013-5 (mDL) | mDL ISO-18013-5 | - Standard final publié par l'ISO <br>- Adoption par l'association nord-américaine des autorités de transit (AAMVA) <br>- Potentielle interopérabilité avec les États-Unis | - Le nouveau standard propose l'utilisation de plusieurs technologies et stacks technologiques qui sont très nouveaux, alors sans beaucoup d'adoption, de documentation, et de support <br>- N'est pas en conformité avec la stratégie canadienne d'identité numérique <br>- Parmi les participants de l'AAMVA, son adoption n'est pas prise pour acquise par tous. |
 
 
 ## Références 
