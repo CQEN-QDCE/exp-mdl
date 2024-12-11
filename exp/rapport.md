@@ -206,134 +206,129 @@ Tout au long de cette expérimentation, une analyse des applications/bibliothèq
 Au cours de cette expérimentation, les implémentations disponibles de la norme ISO/IEC 18013-5 ont évolués. Un acteur majeur du monde SSI, la bibliothèque [credo-ts](https://github.com/openwallet-foundation/credo-ts), a ajouté le support du mDL. Au moment d'écrire ce rapport, le code n'était pas complété mais cet ajout est intéressant pour le développement d'un portefeuille multi-formats. En plus de supporter les [AnonCreds](https://hyperledger.github.io/anoncreds-spec/), la bibliothèque credo-ts supportent les [attestations vérifiables W3C](https://www.w3.org/TR/vc-data-model/), les [attestations vérifiables SD-JWT](https://www.ietf.org/archive/id/draft-ietf-oauth-sd-jwt-vc-01.html), le protocol OID4VC et prochainement, le mDL. Ainsi, le [Portfeuille mobile QC](https://github.com/MCN-ING/Portefeuille-mobile-qc) pourra devenir un portefeuille multi-formats.
 Pour conclure, les permis de conduire numériques incarnent une avancée prometteuse vers une identification moderne et sécurisée. Malgré des défis d'interopérabilité, de sécurité et d'inclusion, leur adoption croissante témoigne de leur potentiel à simplifier l'accès aux services publics tout en répondant aux exigences de la transformation numérique. Une mise en œuvre réussie dépendra d'un équilibre entre innovation, réglementation harmonisée et inclusion sociale.
 
-### 3.Mise en oeuvre et résultats de l'expérimentation
-L'expérimentation vise à matérialiser l’ensemble du cycle de vie d’un permis de conduire mobile. En cas de succès, nous pourrions obtenir des informations utiles sur le fonctionnement du permis de conduire mobile, ainsi que sur l’expérience des différents utilisateurs finaux. Ces informations devraient constituer un substrat de qualité pour des initiatives futurs sur le développement d’un permis de conduire mobile au Québec et en Amérique du Nord. 
+### 3. Mise en œuvre et résultats de l'expérimentation
+L'expérimentation vise à matérialiser l’ensemble du cycle de vie d’un permis de conduire mobile. En cas de succès, nous pourrions obtenir des informations utiles sur le fonctionnement du permis de conduire mobile, ainsi que sur l’expérience des différents utilisateurs finaux. Ces informations devraient constituer un substrat de qualité pour des initiatives futures sur le développement d’un permis de conduire mobile au Québec et en Amérique du Nord.
 
 #### 3.1. Contexte
 
-Le déploiement des **permis de conduire numériques (Mobile Driver’s License – mDL)**  repose sur un ensemble de normes et de standards nationaux, tel que la norme **ISO 18013-5 (mDL)**ainsi que de **l’identité numérique (Digital Identity – eID)** et les recommendations de  **l’American Association of Motor Vehicle Administrators (AAMVA)** pour l'amérique. À l'échelle canadien, le  **Pan-Canadian Trust Framework (PCTF)** du **Digital Identity and Authentication Council of Canada (DIACC)** viennent établir les grandes orientations et balises pour le déploiement de l’identité numérique. ​
+Le déploiement des **permis de conduire numériques (Mobile Driver’s License – mDL)** repose sur un ensemble de normes et de standards nationaux, tels que la norme **ISO 18013-5 (mDL)** ainsi que de **l’identité numérique (Digital Identity – eID)** et les recommandations de **l’American Association of Motor Vehicle Administrators (AAMVA)** pour l'Amérique. À l'échelle canadienne, le **Pan-Canadian Trust Framework (PCTF)** du **Digital Identity and Authentication Council of Canada (DIACC)** vient établir les grandes orientations et balises pour le déploiement de l’identité numérique.
 
-Cependant ces cadres présentent des lacunes en matière d’interopérabilité et de compatibilité, limitant leur viabilité dans le monde réel. ​Afin de garantir une expérience utilisateur intuitive et acceptabilité auprés des parties prenantes( les forces de l’ordre, les contrôleurs routiers et les usagers de la route), le **`Centre Québécois d’Excellence numérique (CQEN)`** a développé un prototype québécois du permis de conduire numérique. Ce dernier s'aligne avec les orientations gouvernementales en matière d’identité numérique ainsi que le cadre mDL établi par ISO et l’AAMVA. 
+Cependant, ces cadres présentent des lacunes en matière d’interopérabilité et de compatibilité, limitant leur viabilité dans le monde réel. Afin de garantir une expérience utilisateur intuitive et une acceptabilité auprès des parties prenantes (les forces de l’ordre, les contrôleurs routiers et les usagers de la route), le **Centre Québécois d’Excellence numérique (CQEN)** a développé un prototype québécois du permis de conduire numérique. Ce dernier s'aligne avec les orientations gouvernementales en matière d’identité numérique ainsi que le cadre mDL établi par ISO et l’AAMVA.
 
-Bien que l’expérimentation a été amené de manière autonome, elle s'inscrit dans un contexte ou permis de conduire identité numérique sont étroitement liés. Il est donc essentiel de prendre en compte les principes de cadre de confiance édictés par le `Conseil d’identification et d’authentification numériques du Canada (CCIAN)` et les orientations du programme gouvernemental québécois d’identité numérique dans la réalisation de l’expérimentation. 
+Bien que l’expérimentation ait été menée de manière autonome, elle s'inscrit dans un contexte où permis de conduire et identité numérique sont étroitement liés. Il est donc essentiel de prendre en compte les principes du cadre de confiance édictés par le `Conseil d’identification et d’authentification numériques du Canada (CCIAN)` et les orientations du programme gouvernemental québécois d’identité numérique dans la réalisation de l’expérimentation.
 
-Dans ce contexte, quatre scénarios potentiels ont été identifiés :  
+Dans ce contexte, quatre scénarios potentiels ont été identifiés :
 
-1. La création d’un permis de conduire mobile reposant uniquement sur l’expérience et l’infrastructure développée pour l’identité numérique, notamment sur la blockchain pancanadienne d’identité numérique CANDY. 
-   1. S’appuie sur le travail effectué par le Joint Council – Jurisdictional Experts on Digital Identity (JC-JEDI)​
+1. La création d’un permis de conduire mobile reposant uniquement sur l’expérience et l’infrastructure développée pour l’identité numérique, notamment sur la blockchain pancanadienne d’identité numérique CANDY.
+   1. S’appuie sur le travail effectué par le Joint Council – Jurisdictional Experts on Digital Identity (JC-JEDI)
 
-2. La création d’un permis de conduire numérique reposant uniquement sur les normes de l’ISO 18013-5 complétées par les lignes directrices de l’AAMVA.  
+2. La création d’un permis de conduire numérique reposant uniquement sur les normes de l’ISO 18013-5 complétées par les lignes directrices de l’AAMVA.
 
-3. La création d’un permis de conduire mobile reposant sur l’infrastructure de l’identité numérique existante conforme aux spécificités techniques de la norme ISO 18013-5. 
+3. La création d’un permis de conduire mobile reposant sur l’infrastructure de l’identité numérique existante conforme aux spécificités techniques de la norme ISO 18013-5.
 
-4. La dérivation d’un permis de conduire numérique à partir de l’identité numérique.  
+4. La dérivation d’un permis de conduire numérique à partir de l’identité numérique.
 
-Nous privilégions le scénario 2 avec pour objectif principal la conformité avec les standards de l’ISO complétés par les lignes directrices de l’AAMVA. En conséquence, nous avons poursuivi la réalisation de quatre prototypes touchant l’émission du document, la création et la gestion du registre de preuves, la détention et la vérification du document.  
+Nous privilégions le scénario 2 avec pour objectif principal la conformité avec les standards de l’ISO complétés par les lignes directrices de l’AAMVA. En conséquence, nous avons poursuivi la réalisation de quatre prototypes touchant l’émission du document, la création et la gestion du registre de preuves, la détention et la vérification du document.
 
 <img src="./images/HighLevelmDLOverview.png" width="800" />
 
-**Vision général de l'écosystème du mDL** 
+**Vision générale de l'écosystème du mDL**
 
-Bien que l’expérimentation a permis de poser des bases solides pour le développement d’un permis de conduire numérique conforme aux standards internationaux, plusieurs enjeux stratégiques et opérationnels ont été identifiés, influençant la portée et les résultats de cette première phase. Voici les principaux enjeux et exclusions qui ont émergé au cours de cette phase d’expérimentation.
+Bien que l’expérimentation ait permis de poser des bases solides pour le développement d’un permis de conduire numérique conforme aux standards internationaux, plusieurs enjeux stratégiques et opérationnels ont été identifiés, influençant la portée et les résultats de cette première phase. Voici les principaux enjeux et exclusions qui ont émergé au cours de cette phase d’expérimentation.
 
-####  Enjeux identifiés 
+#### Enjeux identifiés
 
-- Marché peu mature en matière de mDL et expertises/solutions silotés par fournisseurs. Rend plus difficile la prise de connaissances et la formation; 
+- Marché peu mature en matière de mDL et expertises/solutions silotées par fournisseurs. Rend plus difficile la prise de connaissances et la formation;
 
 - Il faudra discuter des modalités de publication de nos résultats auprès de la communauté de pratique Open Source;
 
-- La participation des équipes de recherche ne sera pas requise si nous ne pouvons pas aller auprès des utilisateurs. Notamment, nous ne pourrons pas connaître s’il y  a une perception positive vis-à-vis le permis numérique; 
+- La participation des équipes de recherche ne sera pas requise si nous ne pouvons pas aller auprès des utilisateurs. Notamment, nous ne pourrons pas connaître s’il y a une perception positive vis-à-vis du permis numérique;
 
-- Disponibilité des ressources stratégiques (ex. Experts permis, Experts de certaines technologies); 
+- Disponibilité des ressources stratégiques (ex. Experts permis, Experts de certaines technologies);
 
-- Caractère innovant de la solution: La solution, par son caractère novateur, impose des efforts accrus pour tester et valider les approches;
+- Caractère innovant de la solution : La solution, par son caractère novateur, impose des efforts accrus pour tester et valider les approches;
 
-- Nécessité d’interopérabilité avec l’écosystème mDL et eID canadien et américain; 
+- Nécessité d’interopérabilité avec l’écosystème mDL et eID canadien et américain;
 
-- La disponibilité des membres de l’équipe noyau a été un enjeu depuis le début du projet d’expérimentation. La planification a été ajustée pour tenir compte de cet enjeu; 
+- La disponibilité des membres de l’équipe noyau a été un enjeu depuis le début du projet d’expérimentation. La planification a été ajustée pour tenir compte de cet enjeu;
 
-- L’équipe partenaire rencontre des bloquants pour la consultation des experts et spécialistes en lien avec le permis;
+- L’équipe partenaire rencontre des blocages pour la consultation des experts et spécialistes en lien avec le permis;
 
+#### Exclusions de la portée du projet
 
-####  Exclusions de la portée du projet 
+- Cette première phase d’expérimentation a couvert l’interopérabilité dans l’écosystème nord-américain. L’interopérabilité à l’échelle internationale, et plus spécifiquement avec le territoire européen, sera déterminée dans une deuxième phase, le cas échéant;
 
-- Cette première phase d’expérimentation a couvert l’interopérabilité dans l’écosystème nord-américain. L’interopérabilité à l’échelle international, et plus spécifiquement avec le territoire européen, sera déterminé dans une deuxième phase, le cas échéant;
-
-- Cette phase d’expérimentation n'a pas couvert les parties prenantes du secteur privé qui pourraient devoir utiliser un éventuel permis numérique québécois (ex. concessionnaires automobiles, entreprises de location de voitures/camions, etc);
+- Cette phase d’expérimentation n'a pas couvert les parties prenantes du secteur privé qui pourraient devoir utiliser un éventuel permis numérique québécois (ex. concessionnaires automobiles, entreprises de location de voitures/camions, etc.);
 
 - Les prototypes finaux ne seront pas des fondations réutilisables dans l’écosystème d’identité numérique et de permis numérique québécois. Si les résultats s’avèrent concluants, il faudra prévoir une phase projet pour détailler la solution d’affaires cible, et ce, conformément aux exigences de la LGGRI.
 
-
 ### 3.2 Mise en place d'un prototype
-Afin de comprendre le cycle de vie complet d'un permis de conduire mobile dans le contexte des attestations vérifiables, nous avons décidé de créer un prototype qui implémente les composantes majeures suivantes: Émetteur, détenteur, vérificateur et Infrastructure à Clés Publique (ICP). Ces 
+Afin de comprendre le cycle de vie complet d'un permis de conduire mobile dans le contexte des attestations vérifiables, nous avons décidé de créer un prototype qui implémente les composantes majeures suivantes : Émetteur, détenteur, vérificateur et Infrastructure à Clés Publiques (ICP).
 
-- **Émetteur:** Il est responsable de l'émission du permis de conduire mobile. Comme nous avions déjà un émetteur ([ACA-Py](https://github.com/openwallet-foundation/acapy)) utilisé dans le projet d'identité numérique et que ce dernier supporte un système d'extensions, nous avons décidé de l'utiliser comme émetteur. Une extension supportant le protocole d'émission OID4VCI était déjà disponible. Le code de la bibliothèque [pyMDOC-CBOR](https://github.com/IdentityPython/pyMDOC-CBOR) pouvait être utilisé pour permettre à [ACA-Py](https://github.com/openwallet-foundation/acapy) d'émettre un permis de conduire mobile au format mDL. 
+- **Émetteur :** Il est responsable de l'émission du permis de conduire mobile. Comme nous avions déjà un émetteur ([ACA-Py](https://github.com/openwallet-foundation/acapy)) utilisé dans le projet d'identité numérique et que ce dernier supporte un système d'extensions, nous avons décidé de l'utiliser comme émetteur. Une extension supportant le protocole d'émission OID4VCI était déjà disponible. Le code de la bibliothèque [pyMDOC-CBOR](https://github.com/IdentityPython/pyMDOC-CBOR) pouvait être utilisé pour permettre à [ACA-Py](https://github.com/openwallet-foundation/acapy) d'émettre un permis de conduire mobile au format mDL.
 
-- **Détenteur:** Le projet d'identité numérique utilise le [Portfeuille mobile QC](https://github.com/MCN-ING/Portefeuille-mobile-qc). Ce dernier est développé en React Native (Typescript). Au moment où l'expérimentation a commencé, nous n'avions pas de bibliothèque assez avancé en Typescript qui implémentait la norme ISO 18013-5 mDL. Nous avons décidé de convertir le code de la bibliothèque [Kotlin Multiplatform mdoc library](https://github.com/walt-id/waltid-mdoc) en TypeScript.
+- **Détenteur :** Le projet d'identité numérique utilise le [Portefeuille mobile QC](https://github.com/MCN-ING/Portefeuille-mobile-qc). Ce dernier est développé en React Native (Typescript). Au moment où l'expérimentation a commencé, nous n'avions pas de bibliothèque assez avancée en Typescript qui implémentait la norme ISO 18013-5 mDL. Nous avons décidé de convertir le code de la bibliothèque [Kotlin Multiplatform mdoc library](https://github.com/walt-id/waltid-mdoc) en TypeScript.
 
-- **Vérificateur:** Il est responsable des demandes de vérification d'un permis de conduire mobile. Comme il n'existait pas d'application de vérification en code source ouvert au moment où l'expérimentation a commencé, nous avons décidé d'en développer une en React Native (Typescript). Il était requis que cette dernière supporte. au minimum, les demandes de preuve sans connexion via le protocol BLE (exigence de la norme ISO 18013-5 MDL).
+- **Vérificateur :** Il est responsable des demandes de vérification d'un permis de conduire mobile. Comme il n'existait pas d'application de vérification en code source ouvert au moment où l'expérimentation a commencé, nous avons décidé d'en développer une en React Native (Typescript). Il était requis que cette dernière supporte, au minimum, les demandes de preuve sans connexion via le protocole BLE (exigence de la norme ISO 18013-5 mDL).
 
-- **Infrastructure à Clés Publiques:** L'ICP joue le rôle de registre de confiance central dans l'architecture de l'application mDL. Elle crée et gère les paires de clés (publiques et privées) ainsi que les certificats numériques attribués aux autorités émettrices de permis de conduire. Cette infrastructure permet de vérifier de manière cryptographique et sans équivoque qu'un document a été émis par une autorité légitime à travers des signatures numériques. Cette infrastructure est essentielle pour garantir la sécurité, l'authenticité et la fiabilité du système mDL dans son ensemble. 
+- **Infrastructure à Clés Publiques :** L'ICP joue le rôle de registre de confiance central dans l'architecture de l'application mDL. Elle crée et gère les paires de clés (publiques et privées) ainsi que les certificats numériques attribués aux autorités émettrices de permis de conduire. Cette infrastructure permet de vérifier de manière cryptographique et sans équivoque qu'un document a été émis par une autorité légitime à travers des signatures numériques. Cette infrastructure est essentielle pour garantir la sécurité, l'authenticité et la fiabilité du système mDL dans son ensemble.
 
 ### 3.3. Configuration et installation 
 
-#### 3.3.1 ICP / PKI (Infrastructure à clé publiques / Public Key Infrastructure)
+#### 3.3.1 ICP / PKI (Infrastructure à clé publique / Public Key Infrastructure)
 
-La PKI Interne de Développement CQEN Dev V1 est créé pour donner support aux activités de développement dans un contexte d'expérimentation qui ont besoin d'une PKI fonctionnelle. 
+La PKI Interne de Développement CQEN Dev V1 est créée pour donner support aux activités de développement dans un contexte d'expérimentation qui ont besoin d'une PKI fonctionnelle. 
 
-Dans un premier temps, elle servira à fournir la infrastructure de certification nécessaire pour l'éxpérimentation du permis de conduire mobile (Mobile  Driver's Licence mDL), et permettre l'émission des certificats numériques qui seront ajoutés à la `VICAL - verified issuer certificate authority list` (Liste des autorités de certification des émetteurs vérifiés) de l'AAMVA.   
+Dans un premier temps, elle servira à fournir l'infrastructure de certification nécessaire pour l'expérimentation du permis de conduire mobile (Mobile Driver's Licence mDL), et permettre l'émission des certificats numériques qui seront ajoutés à la `VICAL - verified issuer certificate authority list` (Liste des autorités de certification des émetteurs vérifiés) de l'AAMVA.   
 
-Information détaillé sur la structure de la PKI Interne de développement est disponible sur le document [ICP Interne de Développement CQEN Dev V1](./pki.md). 
+Des informations détaillées sur la structure de la PKI Interne de Développement sont disponibles dans le document [ICP Interne de Développement CQEN Dev V1](./pki.md). 
 
-### Configuration de la ICP Expérimentale du Gouvernement du Québec
+### Configuration de l'ICP Expérimentale du Gouvernement du Québec
 
 #### Configuration des fichiers de paramètres dans le répertoire de scripts
 
-La configuration de l'ICP se fait à partir de l'édition d'un fichier de paramètre général, appelé `base.params`, et d'un fichier de paramètres par AC crée (p. ex. `cqen.params`, etc). 
+La configuration de l'ICP se fait à partir de l'édition d'un fichier de paramètres général, appelé `base.params`, et d'un fichier de paramètres par AC créé (p. ex. `cqen.params`, etc). 
 
-La configuration du fichier général doit prendre en consideration les paramètres suivants: 
+La configuration du fichier général doit prendre en considération les paramètres suivants : 
 
-|Nom du paramètre | Obligatoirité | Valeur | Exemple | 
+| Nom du paramètre | Obligatoirité | Valeur | Exemple | 
 |---|---|---|---|
-|PROJECT_HOME|O|Répertoire dans lequel les sources du projet github ont été clonés et à partir duquel l'ICP sera compilée et construite.|/home/usu/code-source/pkiCloneGithub|
-|PROJECT_BKP_HOME|O|Répertoire de bkp des scripts et des fichiers de configuration des sources de l'ICP. Référer comme un sous répertoire de `$PROJECT_HOME`.|/bkp|
-|PROJECT_SRC_HOME|O|Répertoire des sources des scripts et de configuration de l'ICP. |/sources|
-|PKI_HOME|O|Répertoire cible où l'installation de l'ICP sera faite.|/pki-gouvernementale|
+| PROJECT_HOME | O | Répertoire dans lequel les sources du projet GitHub ont été clonées et à partir duquel l'ICP sera compilée et construite. | /home/usu/code-source/pkiCloneGithub |
+| PROJECT_BKP_HOME | O | Répertoire de sauvegarde des scripts et des fichiers de configuration des sources de l'ICP. Référer comme un sous-répertoire de `$PROJECT_HOME`. | /bkp |
+| PROJECT_SRC_HOME | O | Répertoire des sources des scripts et de configuration de l'ICP. | /sources |
+| PKI_HOME | O | Répertoire cible où l'installation de l'ICP sera faite. | /pki-gouvernementale |
 ||||
 
-Ensuite, il faut conofigurer le fichier des autorités de certification qui seront créés. 
+Ensuite, il faut configurer le fichier des autorités de certification qui seront créées. 
 
-|Nom du paramètre | Obligatoirité | Valeur | Exemple | 
+| Nom du paramètre | Obligatoirité | Valeur | Exemple | 
 |---|---|---|---|
-|CQEN_ROOT|O|Répertoire racine de l'autorité de certification. `$PROJECT_HOME/ca`.|$PKI_HOME/ca/cqen|
-|CQEN_CONF|O|Fichier de configuration d'Openssl de l'autorité.|$CQEN_ROOT/config/openssl.conf|
-|CQEN_PASSWORD_FILE|O|Fichier de mot de passe. Ce fichier est déposé dans un répertoire protegé, et le mot de passe sera généré automatiquement par le generateur de chiffres randominque d'Openssl. |$CQEN_ROOT/private/ca_password.txt|
-|CQEN_CN|O|Identificateur au format de `distinguished name`, qui servira à identifier l'autorité dans l'arborensence de l'ICP. |/C=CA/ST=QC/O=Gouvernement du Quebec/CN=Autorite de Certification Intermediaire CQEN Dev v1|
-|CQEN_OCSP_URL|O|Adresse qui disponibilisera l'endpoint de consultation à l'OCSP. |http://ocsp.icpgourvernementaleqc.apps.exp.openshift.cqen.ca|
-|CQEN_CRL_URL|O|Adresse qui disponibilisera la liste ce certificats revoqués (CRL). |http://crl.icpgourvernementaleqc.apps.exp.openshift.cqen.ca/cqen/dev/v1/ca.crl|
-|OCSP_CONF|O|Fichier de configuration d'Openssl de l'OCSP. |$CQEN_ROOT/config/ocsp.conf|
-|CQEN_OCSP_PASSWORD_FILE|O|Fichier de mot de passe du serveur de l'OCSP. Ce fichier est déposé dans un répertoire protegé, et le mot de passe sera généré automatiquement par le generateur de chiffres randominque d'Openssl. |$CQEN_ROOT/private/ocsp_password.txt|
+| CQEN_ROOT | O | Répertoire racine de l'autorité de certification. `$PROJECT_HOME/ca`. | $PKI_HOME/ca/cqen |
+| CQEN_CONF | O | Fichier de configuration d'OpenSSL de l'autorité. | $CQEN_ROOT/config/openssl.conf |
+| CQEN_PASSWORD_FILE | O | Fichier de mot de passe. Ce fichier est déposé dans un répertoire protégé, et le mot de passe sera généré automatiquement par le générateur de chiffres aléatoires d'OpenSSL. | $CQEN_ROOT/private/ca_password.txt |
+| CQEN_CN | O | Identificateur au format de `distinguished name`, qui servira à identifier l'autorité dans l'arborescence de l'ICP. | /C=CA/ST=QC/O=Gouvernement du Quebec/CN=Autorite de Certification Intermediaire CQEN Dev v1 |
+| CQEN_OCSP_URL | O | Adresse qui rendra disponible l'endpoint de consultation à l'OCSP. | http://ocsp.icpgouvernementaleqc.apps.exp.openshift.cqen.ca |
+| CQEN_CRL_URL | O | Adresse qui rendra disponible la liste des certificats révoqués (CRL). | http://crl.icpgouvernementaleqc.apps.exp.openshift.cqen.ca/cqen/dev/v1/ca.crl |
+| OCSP_CONF | O | Fichier de configuration d'OpenSSL de l'OCSP. | $CQEN_ROOT/config/ocsp.conf |
+| CQEN_OCSP_PASSWORD_FILE | O | Fichier de mot de passe du serveur de l'OCSP. Ce fichier est déposé dans un répertoire protégé, et le mot de passe sera généré automatiquement par le générateur de chiffres aléatoires d'OpenSSL. | $CQEN_ROOT/private/ocsp_password.txt |
 ||||
 
-Finalement, il suffit de lancer le script de déploiement, `$PROJECT_SRC_HOME/deploy.sh`, l'ICP sera installée sour le répertoire `$PKI_HOME` en déployant l'Autoritée Racine' et toutes les Autorités Intermediaires et finales configurés. 
-
+Finalement, il suffit de lancer le script de déploiement, `$PROJECT_SRC_HOME/deploy.sh`, l'ICP sera installée sous le répertoire `$PKI_HOME` en déployant l'Autorité Racine et toutes les Autorités Intermédiaires et finales configurées. 
 
 #### 3.3.2 Plugin aca-py 
 
 Le plugin aca-py pour ajouter du support aux clés ECDSA et aux certificats numériques X509 peut être configuré en suivant la documentation à la page de [configuration du plugin aca-py](./plugin-acapy.md).
 
-
 #### 3.3.3 Application émettrice 
 
-L'application émettrice est un ensemble de deux composants: une API (backend) et une application web (frontend):
-- "backend": API d'un agent ACA-Py (Hyperledger Aries Cloud Agent Python) qui gère l'offre de l'attestation (accepter, refuser, etc.).
+L'application émettrice est un ensemble de deux composants : une API (backend) et une application web (frontend) :
+- "backend" : API d'un agent ACA-Py (Hyperledger Aries Cloud Agent Python) qui gère l'offre de l'attestation (accepter, refuser, etc.).
   - [Consulter la procédure d'installation](../aca-py-oid4vci/README.md)
-- "frontend": Application web qui permet à l'utilisateur de fournir ses informations pour le permis de conduire mobile et aussi de faire les appels à l'API ACA-Py pour l'émission du permis.
+- "frontend" : Application web qui permet à l'utilisateur de fournir ses informations pour le permis de conduire mobile et aussi de faire les appels à l'API ACA-Py pour l'émission du permis.
   - [Consulter la procédure d'installation](../issuer-frontend/README.md)
 
 #### 3.3.4 Portefeuille mobile mDL
-Pour être en mesure de tester l'émission d'un mDL, une application mobile de type portefeuille numérique a été développé. Pour l'utiliser, [Consulter son dépôt](https://github.com/CQEN-QDCE/portefeuille-mobile-mdl/) et suivre la procédure d'installation.
-
+Pour être en mesure de tester l'émission d'un mDL, une application mobile de type portefeuille numérique a été développée. Pour l'utiliser, [Consulter son dépôt](https://github.com/CQEN-QDCE/portefeuille-mobile-mdl/) et suivre la procédure d'installation.
 
 ### 4.Forces et limites de la solution
 L'hypothèse d'expérimentation avait comme objectif de démontrer qu'un permis de conduire numérique peut être conservé dans un portefeuille numérique; tout en respectant les normes de l'indentité numérique ainsi que les normes du permis de conduire numérique (ISO 18013-5 - mDL et l'AAMVA).
