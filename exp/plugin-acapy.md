@@ -291,7 +291,7 @@ Utilisez le JSON suivant pour tester, en remplaçant `keyType` par `p256`, `p384
 }
 ```
 
-Note: L'OID d'ed25519 est `{iso(1) identified-organization(3) thawte(101) id-Ed25519(112)}`
+Note: L'OID d'Ed25519 est `{iso(1) identified-organization(3) thawte(101) id-Ed25519(112)}`
 
 ### Outil auxiliaire de génération de clés et CSR
 
@@ -329,9 +329,9 @@ Les clés seront générées dans le répertoire `/keys` et la CSR dans le répe
 
 ### Méthodes équivalents en OpenSSL
 
-Les commandes OpenSSL qui suivent ont été utilisées pour faire la validation des objets crées par l'exécution des méthodes implementées dans le plugin. 
+Les commandes OpenSSL qui suivent ont été utilisées pour faire la validation des objets crées par l'exécution des méthodes implémentées dans le plugin. 
 
-Malgré que les objets crées ne se constituent pas exactement des mêmes données, parce que les algorithmes des courbes elliptiques sont principalement `non-deterministes`, ces objets peuvent être comparés en termes de structure et de codification, ainsi qu'utilisés de façon inter-opérable, pour démontrer leur validité.  
+Malgré que les objets crées ne se constituent pas exactement des mêmes données, parce que les algorithmes des courbes elliptiques sont principalement `non-déterministes`, ces objets peuvent être comparés en termes de structure et de codification, ainsi qu'utilisés de façon inter-opérable, pour démontrer leur validité.  
 
 **Générer une clé privée pour une courbe elliptique en utilisant l'algorithme EdDSA25519**
 ```bash
@@ -402,9 +402,9 @@ Ceci est une liste extensive des références qui ont été consultées et servi
 - [Bienvenue à l'ASN.1 et au DER](https://letsencrypt.org/fr/docs/a-warm-welcome-to-asn1-and-der/)
 - [JSON Web Key (JWK)](https://jwcrypto.readthedocs.io/en/latest/jwk.html)
 
-### Outils et libraries
+### Outils et librairies
 
-- [Repositorio pydid](https://github.com/Indicio-tech/pydid/tree/main)
+- [Dépôt pydid](https://github.com/Indicio-tech/pydid/tree/main)
 - [PyCose](https://github.com/TimothyClaeys/pycose)
 - [starkbank/ecdsa-python](https://github.com/starkbank/ecdsa-python)
 - [AntonKueltz/fastecdsa](https://github.com/AntonKueltz/fastecdsa)
