@@ -43,7 +43,7 @@ statut : en cours
 
 [1. Amérique](#amérique)
 
-[2. Asie-pacifique](#asie-pacifique)
+[2. Asie-Pacifique](#asie-pacifique)
 
 [3. Europe](#europe)
 
@@ -89,36 +89,36 @@ statut : en cours
 
 # Synthèse 
 
-La veille sur les permis de conduire numériques vise répondre à quatre objectifs principaux : (1) identifier les avantages et les inconvénients liés à  la mise en œuvre des permis de conduire numériques, (2) aperçu sur l'état actuel de l'adoption des permis de conduire numériques à  l'échelle mondiale, (3) comprendre les normes utilisées pour les permis de conduire numériques et, (4) comprendre les implications technologiques, juridiques et sociales liées de l'adoption des permis de conduire numériques.
+La veille sur les permis de conduire numériques vise répondre à quatre objectifs principaux : (1) identifier les avantages et les inconvénients liés à  la mise en œuvre des permis de conduire numériques (2) aperçu sur l'état actuel de l'adoption des permis de conduire numériques à  l'échelle mondiale (3) comprendre les normes utilisées pour les permis de conduire numériques et, (4) comprendre les implications technologiques, juridiques et sociales liées de l'adoption des permis de conduire numériques.
 
-Les permis de conduire numériques représentent une avancée majeure dans la transformation numérique des documents d'identité. Ces permis, stockées sur des appareils mobiles tels que les smartphones, permettent aux utilisateurs de prouver leur identité et leur droit de conduire sans dépendre de documents physiques. Le permis de conduire numériques se distinguent par leur sécurité, grâce au chiffrement avancé et a l'authentification biométrique, ainsi que la capacité offrir des mises à  jour en temps réel et un partage sélectif des données personnelles.
+Les permis de conduire numériques représentent une avancée majeure dans la transformation numérique des documents d'identité. Ces permis, stockés sur des appareils mobiles tels que les smartphones, permettent aux utilisateurs de prouver leur identité et leur droit de conduire sans dépendre de documents physiques. Les permis de conduire numériques se distinguent par leur sécurité, grâce au chiffrement avancé et à l'authentification biométrique, ainsi que la capacité offrir des mises à  jour en temps réel et un partage sélectif des données personnelles.
 
-Toutefois, leur adoption grande échelle fait face à  des défis tels que l'infrastructure technologique, les préoccupations liées à  la protection des données personnelles et les besoins d'interopérabilité entre les juridictions. Malgré ces défis, les permis de conduire numériques s'imposent comme une solution innovante pour moderniser les systèmes d'identification et s'simplifier l'accès aux services publics.
+Toutefois, leur adoption grande échelle fait face à  des défis tels que l'infrastructure technologique, les préoccupations liées à  la protection des données personnelles et les besoins d'interopérabilité entre les juridictions. Malgré ces défis, les permis de conduire numériques s'imposent comme une solution innovante pour moderniser les systèmes d'identification et pour simplifier l'accès aux services publics.
 
-L'adoption des permis de conduire numériques progresse de manière inégale à  travers le monde, reflétant des disparités dans les priorités, les infrastructures et les cadres réglementaire. En Amérique, les États-Unis font figure de pionniers, avec des initiatives soutenues par des partenariats public privé et l'intégration des outils comme Apple Wallet. Cependant, des défis liés à  l'interopérabilité et aux infrastructures freinent une adoption homogène. Au canada les efforts sont axés sur la mise en place des cadres de gouvernance pour assurer une adoption sécurisée et respectueuse des droits des citoyens, bien que les permis numériques ne soient pas encore opérationnels. En Amérique de sud, le Brésil se démarque par sa large adoption tandis que le Paraguay rencontre des défis réglementaires malgré la reconnaissance légale récente des permis numériques.
-Dans la région Asie-Pacifique et moyen orient, Le déploiement des permis de conduire numériques progressent rapidement. En Asie, la Corée de sud a déployé cette technologie l'échelle nationale en 2022, en s'appuyant sur la chaine des blocs et des technologies cryptographiques avancées pour garantir la sécurité. Le Singapour intègre les permis numériques dans la plateforme singapass, facilitant l'accès sécurisé aux services publics. L'Australie voit une adoption rapide des permis numériques dans les états comme Queensland, alignées sur les standards ISO. La Nouvelle Zélande expérimente une application pilote pour simplifier l'accès aux services publics. Pour la région de moyen orient, Dubaï et l'Arabie saoudite ont lancé des initiatives pour les permis de conduite numérique intégrant des technologies comme la biométrie, permettant un accès en ligne et hors ligne pour moderniser les services publics.
+L'adoption des permis de conduire numériques progresse de manière inégale à  travers le monde, reflétant des disparités dans les priorités, les infrastructures et les cadres réglementaires. En Amérique, les États-Unis font figure de pionniers, avec des initiatives soutenues par des partenariats public-privé et l'intégration des outils comme Apple Wallet. Cependant, des défis liés à  l'interopérabilité et aux infrastructures freinent une adoption homogène. Au Canada les efforts sont axés sur la mise en place des cadres de gouvernance pour assurer une adoption sécurisée et respectueuse des droits des citoyens, bien que les permis numériques ne soient pas encore opérationnels. En Amérique de sud, le Brésil se démarque par sa large adoption tandis que le Paraguay rencontre des défis réglementaires malgré la reconnaissance légale récente des permis numériques.
+Dans la région Asie-Pacifique et Moyen-Orient, le déploiement des permis de conduire numériques progresse rapidement. En Asie, la Corée du Sud a déployé cette technologie l'échelle nationale en 2022, en s'appuyant sur la chaine des blocs et des technologies cryptographiques avancées pour garantir la sécurité. Le Singapour intègre les permis numériques dans la plateforme "singapass", facilitant l'accès sécurisé aux services publics. L'Australie voit une adoption rapide des permis numériques dans les états comme Queensland, alignées sur les standards ISO. La Nouvelle-Zélande expérimente une application pilote pour simplifier l'accès aux services publics. Pour la région de moyen orient, Dubai et l'Arabie saoudite ont lancé des initiatives pour les permis de conduite numérique intégrant des technologies comme la biométrie, permettant un accès en ligne et hors ligne pour moderniser les services publics.
 
-En Europe, l'union européenne travaille sur l'interopérabilité et sécurité des permis de conduire numérique grâce aux normes eIDAS, harmonisant leur utilisation dans ses états membres. Des pays comme la France et le Portugal ont déployé des solutions juridiquement équivalentes aux documents physiques. L'Ukraine, malgré la guerre, se distingue avec son application Diia, qui centralise plusieurs documents numériques, dont les permis de conduire. Tandis que, des pays comme République tchèque et Royaume uni développent activement leurs solutions nationales.
+En Europe, l'Union européenne travaille sur l'interopérabilité et sécurité des permis de conduire numérique grâce aux normes eIDAS, harmonisant leur utilisation dans ses états membres. Des pays comme la France et le Portugal ont déployé des solutions juridiquement équivalentes aux documents physiques. L'Ukraine, malgré la guerre, se distingue avec son application Diia, qui centralise plusieurs documents numériques, dont les permis de conduire. Tandis que, des pays comme République tchèque et Royaume uni développent activement leurs solutions nationales.
 
 En Afrique, l'adoption des permis de conduire numériques est encore émergente, avec des initiatives comme celle de l'Afrique du Sud, qui prévoit de lancer des mDL intégrant des fonctionnalités biométriques pour renforcer la sécurité et réduire la fraude d'ici 2025. Le Nigeria a également introduit des permis numériques via une application mobile, facilitant leur accessibilité tout en modernisant les services gouvernementaux.
 
-Les normes et les protocoles encadrant les permis de conduire numériques s'articulent autour d'un écosystème complexe et en constante évolution. La norme ISO/IEC 18013-5 établit des fondements techniques, définissant les spécifications essentielles pour la sécurité, l'interopérabilité et la protection des données, tandis que la norme ISO/IEC 18013-7 en cours de développement vient potentiellement la compléter en ajoutant des fonctionnalités pour les interactions en ligne. Ces normes techniques sont soutenues par des cadres réglementaires régionaux comme le règlement eIDAS en Europe et les directives AAMVA au États-Unis, qui assurent l'harmonisation et la reconnaissance mutuelle des systèmes. Au Canada, les commissariats à  la protection de la vie privée ont établi des principes concernant la protection des données personnelles.
+Les normes et les protocoles encadrant les permis de conduire numériques s'articulent autour d'un écosystème complexe et en constante évolution. La norme ISO/IEC 18013-5 établit des fondements techniques, définissant les spécifications essentielles pour la sécurité, l'interopérabilité et la protection des données, tandis que la norme ISO/IEC 18013-7 en cours de développement vient potentiellement la compléter en ajoutant des fonctionnalités pour les interactions en ligne. Ces normes techniques sont soutenues par des cadres réglementaires régionaux comme le règlement eIDAS en Europe et les directives AAMVA aux États-Unis, qui assurent l'harmonisation et la reconnaissance mutuelle des systèmes. Au Canada, les commissariats à  la protection de la vie privée ont établi des principes concernant la protection des données personnelles.
 
-Malgré l'existence de ces normes internationales, Il est important de noter que de nombreuses initiatives des permis de conduire mobiles identifiés dans notre analyse suivent des standards nationaux plutôt que la norme ISO. Cette divergence souligne un défi majeur de l'interopérabilité internationale future des solutions des permis de conduire mobiles. Notre analyse n'a pas permis d'identifier clairement quelle approche internationale ou nationale serait la plus approprié. Cette question reste ouverte et nécessitera une évaluation continue à fur et à mesure que ces différentes approches démontrent leur efficacité dans la pratique.
+Malgré l'existence de ces normes internationales, il est important de noter que de nombreuses initiatives des permis de conduire mobiles identifiés dans notre analyse suivent des standards nationaux plutôt que la norme ISO. Cette divergence souligne un défi majeur de l'interopérabilité internationale future des solutions des permis de conduire mobiles. Notre analyse n'a pas permis d'identifier clairement quelle approche internationale ou nationale serait la plus appropriée. Cette question reste ouverte et nécessitera une évaluation continue au fur et à mesure que ces différentes approches démontrent leur efficacité dans la pratique.
 
-L'analyse PESTEL des permis de conduire numériques met en lumière divers enjeux liés à leur adoption. Sur le plan politique, le canada fait face à des défis liés à son système fédéral, qui peut freiner l'interopérabilité. Économiquement, l'investissement initial pour la mise en place des infrastructures et la formation est élevé, mais des partenariats publics privé et l'optimisation administratives offrent un potentiel économique à long terme. Sur le plan social, l'inclusion numériques est essentielle pour éviter une fracture numérique qui pourrait exclure les populations marginalisées, comme les personnes âgées ou les communautés rurales. La sensibilisation, l'accompagnement, et le maintien des permis physiques sont cruciaux pour une adoption équitable.
+L'analyse PESTEL des permis de conduire numériques met en lumière divers enjeux liés à leur adoption. Sur le plan politique, le Canada fait face à des défis liés à son système fédéral, qui peut freiner l'interopérabilité. Économiquement, l'investissement initial pour la mise en place des infrastructures et la formation est élevé, mais des partenariats public-privé et l'optimisation administrative offrent un potentiel économique à long terme. Sur le plan social, l'inclusion numérique est essentielle pour éviter une fracture numérique qui pourrait exclure les populations marginalisées, comme les personnes âgées ou les communautés rurales. La sensibilisation, l'accompagnement, et le maintien des permis physiques sont cruciaux pour une adoption équitable.
 
-D'un point de vue technologique, les défis incluent la cybersécurité, amplifié par l'ingénierie sociale, ou des tactiques sophistiquées exploitent la psychologie humaine pour accéder aux informations sensibles. Ces menaces s'ajoutent aux défis liés aux deepfakes et à l'informatique quantique, qui pourraient compromettre la sécurité des systèmes existants. Sur le plan environnemental, bien que la transition réduise l'utilisation de matériaux physiques, elle accroît les déchets électroniques à cause du renouvellement des appareils mobiles. Enfin, sur le plan légal, le projet de loi 82 au Québec propose un cadre centralisé pour la gestion des données numériques, mais cette approche soulève des préoccupations en matière de protection des renseignements personnels et de cohérence avec d'autres lois comme la loi 25.
+D'un point de vue technologique, les défis incluent la cybersécurité, amplifiée par l'ingénierie sociale, où des tactiques sophistiquées exploitent la psychologie humaine pour accéder aux informations sensibles. Ces menaces s'ajoutent aux défis liés aux deepfakes et à l'informatique quantique, qui pourraient compromettre la sécurité des systèmes existants. Sur le plan environnemental, bien que la transition réduise l'utilisation de matériaux physiques, elle accroît les déchets électroniques à cause du renouvellement des appareils mobiles. Enfin, sur le plan légal, le projet de loi 82 au Québec propose un cadre centralisé pour la gestion des données numériques, mais cette approche soulève des préoccupations en matière de protection des renseignements personnels et de cohérence avec d'autres lois comme la loi 25.
 
 Pour conclure, les permis de conduire numériques incarnent une avancée prometteuse vers une identification moderne et sécurisée. Malgré des défis d'interopérabilité, de sécurité et d'inclusion, leur adoption croissante témoigne de leur potentiel à simplifier l'accès aux services publics tout en répondant aux exigences de la transformation numérique. Une mise en œuvre réussie dépendra d'un équilibre entre innovation, réglementation harmonisée et inclusion sociale.
 
 # Introduction
 
-La direction des technologies émergentes et innovation a été mandatée pour effectuer une veille stratégique sur les permis de conduire numérique. Les permis de conduire numériques représentent une évolution signification dans la gestion et la vérification des identités des conducteurs cette transition vers le numérique permet d'améliorer la sécurité et l'efficacité administrative. Cependant, cette transition soulève également des questions importantes sur la protection de la vie privée, la sécurité des données et l'interopérabilité de ce type d'identifiant numérique. Dans un contexte ou la transition vers le numérique des services gouvernementaux s'accélère, comprendre les enjeux, les défis et les opportunités liés aux permis de conduire numériques devient crucial pour toute juridiction envisageant leur adoption.
+La direction des technologies émergentes et innovation a été mandatée pour effectuer une veille stratégique sur les permis de conduire numériques. Les permis de conduire numériques représentent une évolution signification dans la gestion et la vérification des identités des conducteurs cette transition vers le numérique permet d'améliorer la sécurité et l'efficacité administrative. Cependant, cette transition soulève également des questions importantes sur la protection de la vie privée, la sécurité des données et l'interopérabilité de ce type d'identifiant numérique. Dans un contexte où la transition vers le numérique des services gouvernementaux s'accélère, comprendre les enjeux, les défis et les opportunités liés aux permis de conduire numériques devient crucial pour toute juridiction envisageant leur adoption.
 
 **Objectif de la veille**
 
-L'objectif principal de cette veille est de fournir un aperçu et une analyse de l'écosystème des permis de conduire numérique au niveau mondial. Cette veille servira de base pour éclairer les décisions stratégiques concernant le développement et la mise en œuvre potentiel d'un système de permis de conduire numérique.
+L'objectif principal de cette veille est de fournir un aperçu et une analyse de l'écosystème des permis de conduire numérique au niveau mondial. Cette veille servira de base pour éclairer les décisions stratégiques concernant le développement et la mise en œuvre potentielle d'un système de permis de conduire numérique.
 Objectifs spécifiques de la veille :
 -   Identifier les avantages et les inconvénients liés à la mise en œuvre des permis de conduire numériques
 -   Aperçu sur l'état actuel de l'adoption des permis de conduire numériques à l’échelle mondiale
@@ -136,7 +136,7 @@ Nous avons mis en place un processus pour collecter les données pertinentes pou
 5.  Synthèse hebdomadaire : les articles recensés durant la semaine sont résumés pour avoir les principaux faits et tendances observées.
 La période de recensement des articles s'est déroulée du **8 juillet au 2 septembre**. À la fin de cette phase, nous avons commencé la synthèse des résultats de la veille qui est maintenant compilée dans ce rapport.
 ## Permis de conduire numériques 
-Un permis de conduire numérique (En anglais : Mobile Driver's License (mDL)) est une version numérique ou électronique du permis de conduire traditionnel qui est stockée et affichée sur un appareil mobile, comme un téléphone intelligent ou une tablette. Tout comme le permis de conduire traditionnel, le permis numérique permis à ses détenteurs de prouver divers aspects de leur identité, notamment son droit de conduire, son âge et son identité sans avoir à transporter de documents physiques. Les permis de conduire numériques offrent un niveau d'authenticité élevé. [^1], [^2], [^3]
+Un permis de conduire numérique (en anglais : Mobile Driver's License (mDL)) est une version numérique ou électronique du permis de conduire traditionnel qui est stockée et affichée sur un appareil mobile, comme un téléphone intelligent ou une tablette. Tout comme le permis de conduire traditionnel, le permis numérique permis à ses détenteurs de prouver divers aspects de leur identité, notamment son droit de conduire, son âge et son identité sans avoir à transporter de documents physiques. Les permis de conduire numériques offrent un niveau d'authenticité élevé. [^1], [^2], [^3]
 
 Le permis de conduire numérique peut être sous forme d'application ou de fichier en temps d'exécution sécurisé, délivrés par les autorités responsables. Ces permis peuvent être vérifiés par les lecteurs de permis numériques ou les dispositifs d'inspection de l'identité, conformément aux normes internationales, telles que l'ISO 18013-5. Les permis de conduire numériques servent à l’identification en ligne et hors ligne, ce qui leur permet d'être rapidement inspectés par les forces de police, les aéroports et l'accès aux services commerciaux.\[4\]
 
@@ -147,15 +147,15 @@ Le mDL fonctionne grâce à un écosystème impliquant trois parties : l’émet
 
 **Sécurité:**
 
-Les mDL assurent une sécurité accrue pour les conducteurs en intégrant un cryptage de pointe et une authentification multi-facteurs, incluant l'empreinte digitale ou la reconnaissance faciale. Ces facteurs compliquent considérablement la falsification et protègent les données personnelles des titulaires de mDL contre tout accès non autorisé, réduisant ainsi le risque de vol d’identité ou de compromission des informations. Les permis numériques se distinguent par la protection supplémentaire offerte grâce à leur haut niveau de sécurité, que les permis de conduire traditionnels ne fournissent pas \[6\], \[7\], \[8\].
+Les mDL assurent une sécurité accrue pour les conducteurs en intégrant un cryptage de pointe et une authentification multifacteurs, incluant l'empreinte digitale ou la reconnaissance faciale. Ces facteurs compliquent considérablement la falsification et protègent les données personnelles des titulaires de mDL contre tout accès non autorisé, réduisant ainsi le risque de vol d’identité ou de compromission des informations. Les permis numériques se distinguent par la protection supplémentaire offerte grâce à leur haut niveau de sécurité, que les permis de conduire traditionnels ne fournissent pas \[6\], \[7\], \[8\].
 
 **Accessibilité :**
 
-La praticité des permis de conduire numériques, en étant stockés directement dans le téléphone intelligent, élimine le besoin de transporter un document physique Les vérifications d'identité peuvent alors être effectuées plus rapidement et en toute transparence lors des contrôles routiers, dans les aéroports, ou lors de l'achat de produits réglementés tels que l'alcool. De plus, le fait que les smartphones soient toujours à portée de main réduit le risque de perdre des documents importants ou de les oublier dans les situations quotidiennes.
+La praticité des permis de conduire numériques, en étant stockés directement dans le téléphone intelligent, élimine le besoin de transporter un document physique. Les vérifications d'identité peuvent alors être effectuées plus rapidement et en toute transparence lors des contrôles routiers, dans les aéroports, ou lors de l'achat de produits réglementés tels que l'alcool. De plus, le fait que les smartphones soient toujours à portée de main réduit le risque de perdre des documents importants ou de les oublier dans les situations quotidiennes.
 
 **Mises à  jour en temps réel:**
 
-L'actualisation des permis de conduire numériques se fait en temps réelle par l'organisme émetteur, contrairement au permis de conduire physique qui ne peuvent être mis à jour qu'avec des modifications physiques dans les bureaux des autorités émettrices, ce qui assure l'actualisation des informations détenues, telles que le statut légal du permis. Cela élimine presque entièrement le risque d’informations incorrectes qui peut survenir à  cause du délai entre l’émission et la vérification du permis. Ce système rend l’identification de l’individu beaucoup plus fiable pour le vérificateur \[3\].
+L'actualisation des permis de conduire numériques se fait en temps réel par l'organisme émetteur, contrairement au permis de conduire physique qui ne peuvent être mis à jour qu'avec des modifications physiques dans les bureaux des autorités émettrices, ce qui assure l'actualisation des informations détenues, telles que le statut légal du permis. Cela élimine presque entièrement le risque d’informations incorrectes qui peut survenir à  cause du délai entre l’émission et la vérification du permis. Ce système rend l’identification de l’individu beaucoup plus fiable pour le vérificateur \[3\].
 
 **Partage sélectif des données :**
 
@@ -170,7 +170,7 @@ Les permis de conduire numériques offrent aux utilisateurs un plus grand contr�
 **Problème de sécurité:**
 
 Bien que les permis de conduire numériques soient basés sur des
-protocoles de d'identité et à  d'autres menaces, telles que la
+protocoles d'identité et à  d'autres menaces, telles que la
 vulnérabilité aux attaques de type « man in the middle» ou le piratage
 des bases de données \[1\], \[8\], \[12\]. Par exemple, la cyberattaque
 de 2023 a entraîné la divulgation des données personnelles de tous les
@@ -196,7 +196,7 @@ cette dépendance à  la technologie exclue certains groupes de la
 population, tels que les personnes âgées (voir Figure 1), celles à 
 faibles revenus, ou celles vivant dans des régions où l'accès  à  la
 technologie est restreint. L'implémentation exclusive des permis de
-conduire numérique, en l'absence des solutions alternatives, pourrait
+conduire numériques, en l'absence des solutions alternatives, pourrait
 marginaliser ces groupes et accentuer la fracture numérique.
 
 <figure>
@@ -221,7 +221,7 @@ href="#fnref1" class="footnote-back" role="doc-backlink"></a></p></li>
 
 L'un des principaux enjeux des permis de conduire numériques est
 l'interopérabilité, ce qui signifie que les mDL doivent être reconnus et
-vérifiés de manière homogène dans différentes juridictions, états et
+vérifiés de manière homogène dans des différentes juridictions, états et
 pays. Cela est réalisé en rendant les mDL compatibles avec divers
 systèmes et équipements de vérification à  l'aide de protocoles
 standardisés et conformes aux normes internationales. Le recours à  des
@@ -251,7 +251,7 @@ Les permis de conduire numériques peuvent être largement acceptés si les
 citoyens, les entreprises, les agences gouvernementales et les forces de
 l'ordre les reconnaissent pour valider l’identification. Cependant, des
 inquiétudes subsistent quant à  l'utilisation des données personnelles et
-a la capacité accrue de surveillance. Le succès de déploiement national
+à la capacité accrue de surveillance. Le succès de déploiement national
 des permis numériques repose sur des piliers essentiels : une campagne
 efficace de sensibilisation aux avantages et à  la sécurité du système,
 ainsi qu'un soutien gouvernemental concret, a l'image de l'approche
@@ -260,7 +260,7 @@ américaine combinant législation et allocation des ressources \[15\],
 
 **Problèmes légaux :**
 
-Étant donné que les permis de conduire numérique est une technologie
+Étant donné que le permis de conduire numérique est une technologie
 émergente, la législation concernant son utilisation et vérification est
 encore en développement. Ainsi, les conditions d'utilisation, la
 validité légale ainsi que les protections légales offertes nécessitent
@@ -268,7 +268,7 @@ toujours des analyses et des réponses. Les incertitudes concernant ces
 éléments soulignent la complexité d'un déploiement à  grande échelle. De
 ce fait, une normalisation des réglementations s'avère nécessaire pour
 garantir que cette technologie devient une forme d'identification
-fiable, largement répandue et sécurisés\[10\], \[15\].
+fiable, largement répandue et sécurisée\[10\], \[15\].
 
 ## Cycle de vie d'un permis de conduire numérique (inspiré de l'AAMVA)
 
@@ -277,7 +277,7 @@ passant de l'émission jusqu'à  la révocation éventuelle, en passant par
 la gestion de validité et ses mécanismes de mises à  jour, pour garantir
 l'intégrité et la sécurité du permis de conduire numérique. La Figure 1
 illustre les 4 phases de cycle de vie d'un permis de conduire
-numériques. Les détails de chaque phase seront expliqués dans les
+numérique. Les détails de chaque phase seront expliqués dans les
 sections suivantes.
 
 <figure>
@@ -307,7 +307,7 @@ seulement de l'identité du demandeur, mais également la sécurité et
 l'adaptabilité du dispositif qui accueillera le permis de conduire
 numérique.
 
-La vérification de l'identité repose sur une approche multi facteurs. Le
+La vérification de l'identité repose sur une approche multifacteurs. Le
 facteur incontournable est la biométrie. En fait, le demandeur doit
 correspondre aux données biométriques déjà  enregistrées dans le système
 d'autorité émettrice. Cette étape est renforcée grâce à  au moins un
@@ -316,7 +316,7 @@ autre facteur de vérification, qui peut être soit la possession d'un
 connaissance d'informations spécifiques vérifiables.
 
 L'émission, étape technique, s'effectue via un canal de communication
-sécurisé. Cette phase est cruciale car elle doit garantir que les
+sécurisé. Cette phase est cruciale, car elle doit garantir que les
 informations sensibles arrivent sur l'appareil du bon titulaire. Lors du
 provisionnement, l'autorité émettrice doit notifier la personne via un
 moyen autre que l'appareil concerné, comme par courriel, lettre, pour
@@ -324,7 +324,7 @@ confirmer l'émission du mDL.
 
 ### Validation
 
-Les permis de conduire numérique se distinguent des permis de conduire
+Les permis de conduire numériques se distinguent des permis de conduire
 traditionnels par leur innovation en matière de gestion de validité des
 permis. IL existe deux types de validité : la validité technique et la
 validité légale. Cette dualité offre un meilleur contrôle ainsi qu'une
@@ -333,7 +333,7 @@ carte physique, qui peut être une ou plusieurs années. Cette durée
 reflète les droits effectifs du conducteur.
 
 En revanche, la validité technique, qui est sous le contrôle de l'objet
-de sécurité mobile (MSO), fonctionne en cycle beaucoup plus courts :
+de sécurité mobile (MSO), fonctionne en cycle beaucoup plus court :
 typiquement 30 jours. Ce mécanisme assure une sécurité accrue en
 nécessitant des mises à  jour régulières. Ces mises à  jour permettent de
 vérifier que le titulaire est toujours en possession de ses droits et
@@ -341,12 +341,11 @@ que son permis de conduire numérique n'a pas été compromis.
 
 ### Mise à jour 
 
-Les permis de conduire numérique, tout comme les permis physiques,
+Les permis de conduire numériques, tout comme les permis physiques,
 nécessitent des mises à  jour. Ces mises à  jour peuvent être déclenchées
 par différents évènements : révocation du privilège de conduire,
 changement d'adresse, etc. Les deux méthodes principales de mise à jour
-sont : méthode de récupération serveur et méthode de récupération
-appareil.
+sont : méthode de récupération serveur et méthode de récupération de l'appareil.
 
 La méthode de récupération serveur, une méthode optionnelle, établit une
 connexion directe avec l'infrastructure de l'autorité émettrice lors de
@@ -355,12 +354,12 @@ chaque vérification.
 La méthode de récupération appareil implémente trois mécanismes de mises
 à  jour : (1) mécanisme mise à jour manuelle : ce mécanisme donne le
 privilège au titulaire la maitrise du processus de mise à jour via une
-interface dédiée dans l'application. (2) mécanisme mise à jour
+interface dédiée dans l'application. (2) mécanisme de mise à jour
 automatique : cette fonctionnalité permet une actualisation programmée
 des données, sous réserve du consentement explicite du titulaire.
 L'automatisation est supervisée par des paramètres de configuration
 définis. (3) mécanisme Push : ce mécanisme permet à  l'autorité émettrice
-d'exercer un contrôle direct sur le mdl dans des *situations* critiques.
+d'exercer un contrôle direct sur le mDL dans des *situations* critiques.
 Dans ce cas, le titulaire doit être informé de cette action.
 
 ### Révocation
@@ -391,7 +390,7 @@ procédure peut être initiée rapidement pour minimiser les risques.
 
 L'adoption des permis de conduire numériques aux États-Unis est en
 augmentation, mais elle manque d'uniformité à  travers le pays ( comme on
-peut le remarqué dans la Figure 3) \[13\], \[15\], \[22\], \[23\],
+peut le remarquer dans la Figure 3) \[13\], \[15\], \[22\], \[23\],
 \[24\], \[25\]. La Californie, l'Arizona, la Géorgie et la Virginie font
 figure de pionniers en collaborant avec des entreprises privées comme
 Apple et Idemia pour intégrer les permis de conduire numériques dans des
@@ -407,7 +406,7 @@ aéroports.
 <img src="./images/Image3.png" style="width:6in;height:4.41875in"
 alt="Une image contenant texte, carte, graphisme, Graphique Description générée automatiquement" />
 <figcaption><p><span id="_Ref183183856" class="anchor"></span>Figure 3:
-Portrait des initiatives au états unis<a href="#fn1"
+Portrait des initiatives aux États-Unis<a href="#fn1"
 class="footnote-ref" id="fnref1"
 role="doc-noteref"><sup>1</sup></a></p></figcaption>
 </figure>
@@ -430,7 +429,7 @@ pour faciliter l'interopérabilité n'a pas encore résolu tous les défis
 liés à  la standardisation et à  la reconnaissance mutuelle entre les
 états.
 
-L'adoption des permis numériques est fortement soutenue par L'adoption
+L'adoption des permis numériques est fortement soutenue par l'adoption
 des permis numériques est fortement soutenue par l'agence nationale
 américaine de sécurité dans les transports (Transportation Security
 Administration (TSA)), en intégrant leur utilisation dans les aéroports
@@ -447,9 +446,8 @@ vérification. Cette innovation facilite aujourd'hui les déplacements de
 
 Les avancées dans le domaine des permis numériques ne dissipent pas
 toutes les inquiétudes. L'utilisation de la biométrie suscite notamment
-des préoccupations, Par exemple, l'Electronic Frontier Foundation (EFF)
-mettent en garde contre les risques de la collecte excessive de
-informations personnelles, soulignant la nécessité d’une réglementation
+des préoccupations, par exemple, l'Electronic Frontier Foundation (EFF)
+mettent en garde contre les risques de la collecte excessive d’informations personnelles, soulignant la nécessité d’une réglementation
 stricte pour protéger la vie privée des utilisateurs \[18\].
 
 Le soutien fédéral, promis par la Maison-Blanche \[21\], pourrait
@@ -472,16 +470,16 @@ et à  la confidentialité.
 
 #### Canada
 
-Le Canada adopte une approche structure pour les permis de conduire
+Le Canada adopte une approche structurée pour les permis de conduire
 numériques, appuyée par le cadre de gouvernance CANdy [^1]. Ce cadre est
-élaboré par les gouvernements de Québec, de la Colombie Britannique et
-de l'Ontario en collaboration avec IBM consulting. Ce cadre établit les
+élaboré par les gouvernements de Québec, de la Colombie-Britannique et
+de l'Ontario en collaboration avec IBM Consulting. Ce cadre établit les
 principes et les politiques pour gérer un registre distribué commun,
-visant a renforcé la confiance numérique et l'interopérabilité.
+visant à renforcer la confiance numérique et l'interopérabilité.
 
-L'entente entre la Colombie Britannique en 2023 illustre cette
+L'entente entre la Colombie-Britannique en 2023 illustre cette
 collaboration en rendant leurs services d'identité interopérables[^2].
-D'ailleurs un colloque fédéral provincial de 2024 a souligné
+D'ailleurs un colloque fédéral-provincial de 2024 a souligné
 l'importance de moderniser les services publics tout en garantissant la
 cybersécurité[^3], ce qui souligne l'engagement collectif pour un
 écosystème numérique harmonisé.
@@ -492,8 +490,8 @@ renouveler leur permis de conduire et d'effectuer d'autres transactions
 numériquement [^4][^5]. Toutefois, la version électronique officielle de
 permis de conduire n'est pas encore disponible. Par ailleurs, le projet
 de loi 82 vise à  encadrer la gestion de l'identité numérique au Québec
-en établissant un registre centralisé sous la gouvernance de ministère
-de cybersécurité et Numérique, ce qui pourrait faciliter le
+en établissant un registre centralisé sous la gouvernance de Ministère
+de la Cybersécurité et du Numérique, ce qui pourrait faciliter le
 développement futur des permis numériques.
 
 <figure>
@@ -518,29 +516,29 @@ role="doc-backlink"></a></p></li>
 L'Ontario a introduit le programme d'identité numérique ontarienne qui
 propose une version numérique sécurisée des documents d'identité émis
 par le gouvernement, incluant éventuellement les permis de conduire. Ces
-documents peuvent être enregistrée dans un portefeuille numérique sur
+documents peuvent être enregistrés dans un portefeuille numérique sur
 des dispositifs personnels, comme les téléphones. Cette solution offre
 la possibilité de prouver son identité tout en protégeant la vie privée
 grâce à  un chiffrement et au contrôle total des utilisateurs sur les
-informations partagées. Depuis son annonce en 2021, La province a fait
+informations partagées. Depuis son annonce en 2021, la province a fait
 des avancées en diffusant des outils techniques, en menant des
 consultations publiques et en lançant des projets pilotes, notamment
 dans le domaine de la santé [^6]. Cependant, il est important de noter
 qu'à  ce jour la province ne dispose pas encore de permis de conduire
 numérique en phase production.
 
-Pour résumer, malgré ces progrès, les permis de conduire n'est pas
-encore en phase opérationnelles dans les provinces canadiennes (voir
+Pour résumer, malgré ces progrès, le permis de conduire n'est pas
+encore en phase opérationnelle dans les provinces canadiennes (voir
 Figure 4). Les efforts se concentrent encore sur la mise en place des
-bases juridiques et organisationnels pour garantir une adoption
+bases juridiques et organisationnelles pour garantir une adoption
 sécurisée, interopérable et respectueuse des droits des citoyens.
 
 #### Amérique de Sud 
 
-Le Brazil est considéré comme un pionnier en Amérique du Sud dans
+Le Brésil est considéré comme un pionnier en Amérique du Sud dans
 l'adoption des permis de conduire numériques, bien que les normes
-utilisé restent inconnues [^7] [^8]. Depuis 2019, la version mobile est
-disponible pour 60 millions de conducteur brésiliens. Cette initiative
+utilisées restent inconnues [^7] [^8]. Depuis 2019, la version mobile est
+disponible pour 60 millions de conducteurs brésiliens. Cette initiative
 vise à  accélérer les contrôles des autorités. Il est aussi possible de
 télécharger le permis sous format PDF et l'utiliser comme moyen
 d'identification valable dans endroits comme les banques et les agences
@@ -559,7 +557,7 @@ policières. Bien que promoteurs, les permis de conduire numériques au
 Paraguay nécessitent des réformes pour garantir leur fiabilité et le
 respect des droits des citoyens.
 
-### Asie-pacifique
+### Asie-Pacifique
 
 L'adoption des permis de conduire numériques progresse rapidement dans
 la région Asie-Pacifique, bien que la mise en œuvre varie d'un pays à 
@@ -579,9 +577,9 @@ Le Japan prépare le déploiement de son permis de conduire numérique,
 marquant une avancée dans sa transition numérique [^10]. Bien qu'aucun
 calendrier précis n'était annoncé, le gouvernement a exprimé son
 ambition de mettre en œuvre cette technologie rapidement. Cette
-initiative d'appuie sur la carte d'identité nationale MY Number, qui
-deviendra également un permis de conduire a partie de 24 mars 2025, avec
-des informations intégr.es sur sa puce électronique.
+initiative s'appuie sur la carte d'identité nationale MY Number, qui
+deviendra également un permis de conduire à partir de 24 mars 2025, avec
+des informations intégrées sur sa puce électronique.
 
 Le Singapour a démarré l'intégration des permis de conduire numériques
 dans sa plateforme numérique gouvernementale, Singpass \[30\].
@@ -591,7 +589,7 @@ renforcer l’inclusion numérique et la sécurité des données, tout en
 facilitant l'accès des citoyens aux services gouvernementaux.
 
 Le LTMS (Land Transportation Management System) des Philippines
-représente une avancés dans la dématérialisation des permis de conduire.
+représente une avancée dans la dématérialisation des permis de conduire.
 Cette solution permet aux citoyens d'accéder directement à  leur permis
 numérique (eDL) via leur téléphone \[31\], \[32\]. Ce système simplifie
 la vérification des permis par les forces de l’ordre, qui peuvent
@@ -620,10 +618,10 @@ productivité gouvernementale et la satisfaction des citoyens, tout en
 offrant une alternative sécurisée aux documents physiques.
 
 Plusieurs États australiens s'inscrivent dans cette tendance de
-numérisation des services gouvernementales. Le Queensland a enregistré
+numérisation des services gouvernementaux. Le Queensland a enregistré
 plus de 500 000 téléchargements de permis de conduire numériques en sept
 mois, ce qui représente une adoption rapide et une forte demande de la
-part des citoyens \[6\]. Le permis de conduire numérique de Queensland
+part des citoyens \[6\]. Le permis de conduire numérique du Queensland
 est le premier permis numérique en Australie aligné avec la norme
 ISO/IEC18013-5 [^11]. En ce qui concerne la Nouvelle-Galles du Sud, elle
 a investi 62,5 millions de dollars dans une plateforme de gestion
@@ -682,7 +680,7 @@ activement à  l’initiative européenne d’identité numérique en proposant
 des solutions sécurisées et interopérables pour harmoniser l’identité
 numérique à  travers l’UE \[46\].
 
-La macédoine du Nord accélère sa transformation numérique avec le
+La Macédoine du Nord accélère sa transformation numérique avec le
 lancement de l'application ELI, un portefeuille numérique permettant de
 stocker cartes d'identité et permis de conduire numériques. Développée
 dans le cadre du programme Digital Europe Programme, l'application est
@@ -690,7 +688,7 @@ reliée au portail portal.gov.mk, en cours de modernisation. Cependant,
 des défis subsistent notamment un manque de compétences numériques chez
 la population (32% de compétence de base malgré une connectivité de
 80%). Pour répondre à  ces enjeux un nouveau ministre de la
-transformation numérique a été créée en 2024, illustrant la volonté du
+transformation numérique a été créé en 2024, illustrant la volonté du
 pays à  moderniser ses services publics et de renforcer son économie
 numérique.
 
@@ -700,7 +698,7 @@ plan est de convertir tous les documents d'identité, comme les permis de
 conduire ou les cartes d'identité, en versions électroniques
 téléchargeables sur les téléphones intelligents. L'application permet
 des transferts de données sécurisés et non connectés basés sur des codes
-QR et le Bluetooth. Même sans connexion Internet, les citoyens peuvent
+QR et le Bluetooth. Même sans connexion internet, les citoyens peuvent
 vérifier l'identité des autres parties en quelques minutes. Le but
 ultime est de rendre la gestion de documents plus efficace pour les
 citoyens, tout en gardant un œil vigilant sur la sécurité et la
@@ -719,17 +717,17 @@ expériences comme celle de Surrey montrent un grand intérêt pour cette
 solution, car 90 % des utilisateurs les trouvent plus pratiques que les
 documents traditionnels \[52\].
 
-L'Ukraine est considéré comme un leader mondial en numérisation grâce à 
-l'application Diia, lancé en 2019, qui permet d'accéder à  plusieurs
-documents numériques, comme les permis de conduire numérique, avec la
+L'Ukraine est considérée comme un leader mondial en numérisation grâce à 
+l'application Diia, lancée en 2019, qui permet d'accéder à  plusieurs
+documents numériques, comme les permis de conduire numériques, avec la
 même valeur légale que leurs équivalents physiques [^12]. L'application
 continue à  se développer en offrant de nouvelles fonctionnalités comme
 les documents d'évacuation numérique pour faciliter les déplacements
 pendant la guerre. Le secteur informatique continue à  se développer dans
 ce pays et représente 4% de PIB et environ 40% des exportations de
 services du pays [^13]. Il est important aussi de souligner que
-l'Ukraine repose sur des infrastructures héritées faciles restaurer en
-cas d'attaque physiques et cybernétiques, ce qui permet de continuer à 
+l'Ukraine repose sur des infrastructures héritées faciles à restaurer en
+cas d'attaques physiques et cybernétiques, ce qui permet de continuer à 
 innover malgré les défis. Pour conclure, l'Ukraine montre que même en
 période de crise, une stratégie numérique bien conçue peut transformer
 l'accès aux services publics et renforcer la résilience économique.
@@ -781,7 +779,7 @@ sécurisée, en intégrant des options comme les lecteurs NFC, Bluetooth et
 biométriques. Voici une vue d’ensemble de ces technologies et des
 exemples d’utilisation.
 
-**Lecteur mDL sur téléphone intelligent :** Les lecteurs mDL sur
+**Lecteur mDL sur téléphone intelligent :** les lecteurs mDL sur
 téléphone intelligent sont utilisés par les forces de l'ordre et les
 entreprises pour vérifier les informations dans un permis de conduire
 numérique sans nécessiter de lecteur spécialisé. Un exemple populaire
@@ -797,15 +795,13 @@ efficacement les permis de conduire numériques dans des environnements à
 connectivité limitée. Ces lecteurs sont utilisés dans des points de
 contrôle comme les aéroports, les kiosques de libre-service, et les
 boutiques. Ils permettent une vérification sécurisée des identifiants
-sans l'utilisation d'équipement lourd et coà»teux. Grâce à  la technologie
+sans l'utilisation d'équipement lourd et couteux. Grâce à  la technologie
 NFC, ces lecteurs peuvent extraire les données du mDL, vérifier les
 informations, puis effacer les données après utilisation.
 
-**Credential Authentication Technology (CAT-2) :** Utilisé par la
-‘Administration de la Sécurité des Transports (TSA) dans des aéroports
+**Credential Authentication Technology (CAT-2) :** utilisé par l’Administration de la Sécurité des Transports (TSA) dans des aéroports
 américains, le CAT-2 est conçu pour vérifier les permis de conduire
-numériques en comparant la photo du permis avec une photo en temps réel
-prise à  un point de contrôle. Cette technologie offre une vérification
+numériques en comparant la photo du permis avec une photo prise en temps réel à un point de contrôle. Cette technologie offre une vérification
 rapide sans nécessiter de contact physique avec le document. Le CAT-2
 utilise le NFC et le Bluetooth pour lire les mDLs, et est intégré aux
 systèmes de sécurité de l’aéroport pour améliorer la fluidité des
@@ -820,7 +816,7 @@ alt="Une image contenant texte, ordinateur, écran d'ordinateur, intérieur" />
 CAT 2</p></figcaption>
 </figure>
 
-**Lecteurs biométriques :** Pour garantir une plus grande sécurité, des
+**Lecteurs biométriques :** pour garantir une plus grande sécurité, des
 entreprises telles que HID Global et IDScan.net intègrent des lecteurs
 biométriques dans leurs systèmes de permis de conduire numériques
 \[63\], \[64\]. Ces dispositifs effectuent une double vérification via
@@ -828,7 +824,7 @@ empreintes digitales ou reconnaissance faciale, confirmant que le
 titulaire est bien celui qu’il prétend être. Par exemple, le HID Signo
 Biometric Reader combine l'authentification biométrique avec les options
 NFC des permis de conduire numériques pour des applications sécurisées
-dans des lieux à  haute sécurité tels que les aéroports \[64\].
+dans des lieux à  haute sécurité tel que les aéroports \[64\].
 
 ## Normes et protocoles des permis de conduire
 
@@ -841,28 +837,28 @@ techniques pour les permis de conduire mobiles, qui permettent de
 stocker et de vérifier les informations d’identité à  partir de
 dispositifs mobiles. Voici quelques éléments importants de cette norme :
 
--   **Modèle de données :** Cette norme spécifie le modèle de données
+-   **Modèle de données :** cette norme spécifie le modèle de données
     pour les permis de conduire mobiles. Le modèle de données détermine
     la manière dont les informations d’identité, telles que les
     informations de permis de conduire, sont stockées, sécurisées et
     transférées sur les appareils mobiles.
 
--   **Présence de proximité :** Un aspect important de cette norme est
+-   **Présence de proximité :** un aspect important de cette norme est
     la définition d’un mécanisme de présentation des informations du
     permis de conduire à  proximité. Cela permet à  un utilisateur de
-    présenter son permis de conduire numérique en personne, par exemple
+présenter son permis de conduire numérique en personne, par exemple
     à  un agent de police, sans avoir à  fournir son téléphone
     physiquement. Les technologies comme le NFC ou les codes QR
-    sécurisés sont généralement utilisés pour ces échanges.
+sécurisés sont généralement utilisés pour ces échanges.
 
--   **Sécurité et confidentialité :** La norme aborde la sécurisation
+-   **Sécurité et confidentialité :** la norme aborde la sécurisation
     des données du permis de conduire en précisant les mécanismes de
     cryptographie qui protègent les informations sensibles lors de leur
     transfert ou leur stockage. La confidentialité des utilisateurs est
     également un point central, garantissant que les informations
     personnelles ne sont accessibles que par les parties autorisées.
 
--   **Interopérabilité :** L’un des objectifs majeurs de la norme est
+-   **Interopérabilité :** l’un des objectifs majeurs de la norme est
     d’assurer l’interopérabilité entre différentes solutions de permis
     de conduire mobile à  travers divers systèmes de vérification. Cela
     permet aux permis d’être reconnus et vérifiés dans plusieurs
@@ -886,14 +882,14 @@ parties précédentes, en particulier la vérification des permis de
 conduire numériques dans des scénarios en ligne et à  distance. Elle
 propose des méthodes pour :
 
--   **Vérification en ligne:** Contrairement à  la norme ISO/IEC 18013-5
+-   **Vérification en ligne:** contrairement à  la norme ISO/IEC 18013-5
     qui se concentre sur la vérification de proximité (physique), cette
     nouvelle norme introduit des mécanismes pour l'utilisation des
     permis de conduire numériques dans des contextes en ligne. Cela
     permet aux détenteurs de permis de prouver leur identité à  distance,
     sans avoir à  être physiquement présents.
 
--   **Utilisation de standards ouverts :** L’un des objectifs
+-   **Utilisation de standards ouverts :** l’un des objectifs
     principaux de cette norme est de permettre l’intégration avec des
     standards ouverts tels que OpenID for Verifiable Credentials et REST
     API pour la vérification des mDL en ligne. Ces intégrations
@@ -901,15 +897,14 @@ propose des méthodes pour :
     l’adoption des permis de conduire numériques dans divers secteurs,
     comme les services gouvernementaux ou financiers.
 
--   **Fonctions supplémentaires :** Cette norme inclut également des
-    fonctionnalités optionnelles, telles que la mise à jour des
+-   **Fonctions supplémentaires :** cette norme inclut également des fonctionnalités optionnelles, telles que la mise à jour des
     informations et la révocation des permis numériques en ligne. Ces
     fonctions permettent de maintenir les informations du permis à  jour
-    sans avoir à  émettre un nouveau document physique.
+sans avoir à émettre un nouveau document physique.
 
 <!-- -->
 
--   **Publication et Développement :** La première ébauche de la norme
+-   **Publication et Développement :** la première ébauche de la norme
     ISO/IEC 18013-7 a été publiée pour examen, et la version finale est
     attendue d’ici 2024 ou 2025. Elle complète ainsi les lacunes des
     précédentes normes en couvrant des aspects plus larges du cycle de
@@ -938,9 +933,9 @@ l’interopérabilité entre différents systèmes et juridictions.
 
 ### American Association of Motor Vehicle Administrators (AAMVA) Guidelines
 
-La guideline de l'AAMVA fournit un cadre détaillé pour la création, la
+La guide de l'AAMVA fournit un cadre détaillé pour la création, la
 gestion et l'utilisation des permis de conduire mobiles, en respectant
-les normes internationales telles que ISO/IEC 18013-5. Ces lignes
+les normes internationales telles qu’ISO/IEC 18013-5. Ces lignes
 directrices visent à  assurer l'interopérabilité, la sécurité et la
 confidentialité des permis de conduire mobiles à  travers différentes
 juridictions aux États-Unis et au Canada.
@@ -949,48 +944,46 @@ juridictions aux États-Unis et au Canada.
 
 Les principales priorités de ces directives sont :
 
--   **Interopérabilité technique :** Garantir que les permis de conduire
+-   **Interopérabilité technique :** garantir que les permis de conduire
     mobiles (mDL) émis par une juridiction puissent être vérifiés et lus
     par d’autres juridictions.
 
--   **Sécurité et confidentialité :** Assurer une implémentation
+-   **Sécurité et confidentialité :** assurer une implémentation
     respectant la confidentialité des détenteurs de mDL, tout en
     garantissant la sécurité des échanges de données.
 
--   **Confiance entre les juridictions :** Instaurer un modèle de
-    confiance oà¹ les permis émis par différentes autorités sont traités
-    de manière sécurisée et standardisée.
+-   **Confiance entre les juridictions :** instaurer un modèle de
+confiance où les permis émis par différentes autorités sont traités de manière sécurisée et standardisée.
 
-**Types de Transactions : assistées vs non assistées**
+**Types de Transactions : assistées vs non-assistées**
 
 Les transactions des permis numériques peuvent être divisées en deux
 types :
 
--   **Transactions assistées (attended transactions) :** Le détenteur du
+-   **Transactions assistées (attended transactions) :** le détenteur du
     permis et le vérificateur sont en proximité physique. Cette
     interaction est facilitée par des technologies comme NFC ou QR codes
     sécurisés.
 
--   **Transactions non assistées (unattended transactions) :** Celles-ci
-    se déroulent à  distance, par exemple lors de transactions en ligne.
-    ISO/IEC 18013-5 ne supporte pas encore entièrement ces transactions,
-    mais des travaux sont en cours pour leur standardisation.
+-   **Transactions non assistées (unattended transactions) :** celles-ci
+se déroulent à  distance, par exemple lors de transactions en ligne.
+    ISO/IEC 18013-5 ne supporte pas encore entièrement ces transactions, mais des travaux sont en cours pour leur standardisation.
 
 **Sécurité et Protection des Données**
 
 Les lignes directrices AAMVA mettent l’accent sur la sécurité et la
 confidentialité des données du permis numérique :
 
--   **Minimisation des données :** Le permis numérique doit permettre de
+-   **Minimisation des données :** le permis numérique doit permettre de
     partager uniquement les informations nécessaires pour la
     vérification (par exemple, prouver l’âge sans révéler l’adresse).
 
--   **Cryptographie :** Les informations échangées via permis numérique
+-   **Cryptographie :** les informations échangées via permis numérique
     sont protégées par des signatures numériques et des certificats
     cryptographiques, garantissant l’intégrité et l’authenticité des
     données.
 
--   **Protection contre le suivi :** Les lignes directrices précisent
+-   **Protection contre le suivi :** les lignes directrices précisent
     qu’aucune donnée ne doit permettre de suivre ou de surveiller les
     déplacements des détenteurs de permis numérique.
 
@@ -1010,11 +1003,11 @@ valides et proviennent d’une autorité fiable.
 Les permis numériques doivent pouvoir être mis à  jour et révoqués via
 des méthodes standardisées :
 
--   **Mise à  jour :** Les informations du permis numérique peuvent être
+-   **Mise à  jour :** les informations du permis numérique peuvent être
     mises à  jour via des serveurs distants ou des connexions avec
     l’autorité émettrice.
 
--   **Révocation :** En cas de révocation, des mécanismes sont prévus
+-   **Révocation :** en cas de révocation, des mécanismes sont prévus
     pour informer toutes les juridictions concernées et révoquer
     l’accès au permis numérique dans l’ensemble du réseau.
 
@@ -1034,7 +1027,7 @@ citoyens de stocker et de gérer leurs permis dans un format numérique
 sécurisé, tout en assurant leur interopérabilité au sein de l’UE. Ce
 règlement assure 3 composantes clés :
 
-1.  **Interopérabilité et Sécurité :** Le règlement eIDAS assure que les
+1.  **Interopérabilité et Sécurité :** le règlement eIDAS assure que les
     permis mobiles respecteront des normes strictes en matière
     d’authentification et de protection des données. Ces permis seront
     délivrés via un système sécurisé, et leur utilisation sera soumise
@@ -1042,11 +1035,11 @@ règlement assure 3 composantes clés :
     États membres est ainsi garantie, tout comme la protection contre la
     fraude et la falsification.
 
-2.  **Mesures de Sécurité :** Les permis de conduire mobiles seront
+2.  **Mesures de Sécurité :** les permis de conduire mobiles seront
     soumis à  des mesures de sécurité spécifiques pour garantir leur
     fiabilité et leur protection contre les abus :
 
--   *Sécurité des données et interopérabilité :* Les permis mobiles
+-   *Sécurité des données et interopérabilité :* les permis mobiles
     doivent être conformes aux normes ISO/IEC et eIDAS. Cela permet de
     garantir une vérification sécurisée et interopérable de l’identité
     électronique à  travers l’UE.
@@ -1065,7 +1058,7 @@ règlement assure 3 composantes clés :
     visuelle, les fonctionnalités d'interopérabilité, ainsi que les
     standards de sécurité pour la gestion et la protection des données.
 
-3.  **Délivrance Gratuite et Accès Électronique :** Les États membres
+3.  **Délivrance Gratuite et Accès Électronique :** les États membres
     devront fournir aux citoyens un accès électronique gratuit à  leur
     permis de conduire mobile, qui pourra être récupéré via des systèmes
     sécurisés conformes aux exigences du cadre eIDAS. Cela simplifie
@@ -1074,10 +1067,10 @@ règlement assure 3 composantes clés :
 
 ### World Wide Web Consortium (W3C)
 
-Le world Wide Web Consortium (W3C) développe des standards et des
+Le "World Wide Web Consortium" (W3C) développe des standards et des
 technologies qui contribuent à  l'écosystème global de l'identité
 numérique. Dans le contexte des permis de conduire numériques, il est
-important que la norme principale régissant leur développement est
+important que la norme principale régissant leur développement soit
 l'ISO/IEC 18013-5, établie par l'organisation internationale de
 normalisation (ISO). \[71\], \[72\], \[73\]
 
@@ -1105,10 +1098,10 @@ important pour l'avenir des permis de conduire numériques.
 ### Commissariat à la protection de la vie privée au Canada
 
 En octobre 2022, les commissariats et ombudsmans à  la protection de la
-vie privée au niveaux fédéral, provincial et territorial du Canada ont
+vie privée aux niveaux fédéral, provincial et territorial du Canada ont
 publié une résolution concernant l'identité numérique \[74\], \[75\].
 Cette résolution vise à  faciliter la confirmation d'identité et les
-transactions en ligne sécurisés.
+transactions en ligne sécurisées.
 
 Cette résolution souligne que, malgré les avantages potentiels de cette
 technologie, sa mise en place doit respecter des standards élevés en
@@ -1134,7 +1127,7 @@ utilisateurs.
 
 ### Comparaison de normes 
 
-Le tableau comparatif présente les principales normes et protocoles
+Le tableau comparatif présente les principaux normes et protocoles
 relatifs aux permis de conduire numériques, en mettant en lumière leurs
 objectifs communs : sécurité, interopérabilité et protection des données
 personnelles \[76\], \[77\]. La norme ISO/IEC 18013-5, publiée en 2021,
@@ -1159,9 +1152,9 @@ Norme/standard|Date de publication  | Objectif  principal |Interopérabilité | 
 -----------------|----------------------|-------------------------------------------------------------------------|----------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|----------------------------------------------------|
  ISO/IEC 18013-5 | Septembre 2021       | Spécifications techniques pour les permis de conduire numérique<br><br> | Interopérabilité à l’échelle mondiale                                            | Mécanismes cryptographiques pour protéger les informations personnelles, accès limité aux parties autorisées | Présentation de proximité (physique)               
  ISO/IEC 18013-7 | En développement     | Vérification des permis de conduire dans des scénarios en ligne         | Interopérabilité à l’échelle mondiale pour les systèmes de vérification en ligne | Cryptographie avancée pour les transactions en ligne, mise à jour et révocation des mDLs                     | Utilisation des permis dans des contextes en ligne | 
- ISO/IEC 23220<br><br> | ISO/IEC 23220\-1 :2023<br><br> | Cadre global pour l’identité numérique<br><br>                                       | Interopérabilité avec divers systèmes d’identification numérique                 | Sécurité des identités numériques à grande échelle                                                           | Identité numérique pour divers cas d’utilisations, au\-delà des permis numérique 
- Guide AAMVA<br>       | Mise à jour régulière <br>     | Directives pour les permis de conduire numérique aux États unis<br>                  | Interopérabilité entre juridictions américaines                                  | Signature numérique, cryptographie, protection contre le suivi                                               | Transactions assistées et non assistées des permis numériques                    
- Règlement eIDAS       | Mise à jour régulière          | Cadre juridique pour l’interopérabilité des permis numérique dans l’union européenne | Interopérabilité entre les états membres de l’union européenne                   | Conformité avec ISO/IEC et sécurité des données personnelles                                                 | conduire numérique dans le cadre de portefeuille d’identité européen| 
+ ISO/IEC 23220<br><br> | ISO/IEC 23220\-1 :2023<br><br> | Cadre global pour l’identité numérique<br><br>                                       | Interopérabilité avec divers systèmes d’identification numérique                 | Sécurité des identités numériques à grande échelle                                                           | Identité numérique pour divers cas d’utilisations, au\-delà des permis numériques 
+ Guide AAMVA<br>       | Mise à jour régulière <br>     | Directives pour les permis de conduire numériques aux États-Unis<br>                  | Interopérabilité entre juridictions américaines                                  | Signature numérique, cryptographie, protection contre le suivi                                               | Transactions assistées et non assistées des permis numériques                    
+ Règlement eIDAS       | Mise à jour régulière          | Cadre juridique pour l’interopérabilité des permis numériques dans l’Union européenne | Interopérabilité entre les états membres de l’Union européenne                   | Conformité avec ISO/IEC et sécurité des données personnelles                                                 | conduire numérique dans le cadre de portefeuille d’identité européen| 
 ## Analyse PESTEL
 
 Les permis de conduire numériques sont des documents d'identité
@@ -1182,23 +1175,23 @@ Analyse PESTEL des permis de conduire numériques</p></figcaption>
 Les caractéristiques uniques du contexte politique canadien influencent
 directement la mise en œuvre des permis de conduire numériques. Le
 contexte canadien crée une dynamique complexe, similaire aux États-Unis,
-quant donnée de la structure fédérale du pays. Dans ce contexte,
+quand donnée de la structure fédérale du pays. Dans ce contexte,
 l'absence d'une politique fédérale unifiée peut entraver
 l'interopérabilité entre les provinces.
 
--   **Coordination interprovinciale :** Au Canada, les permis de
+-   **Coordination interprovinciale :** au Canada, les permis de
     conduire sont délivrés par les provinces, qui détiennent le contrôle
     législatif. De ce fait, il est essentiel d'établir une coordination
     interprovinciale pour les permis de conduire numériques afin
     d'assurer l'interopérabilité de ces pièces à  l'échelle nationale.
-    Dans ce contexte, la résolution commune des commissaires a la
-    protection de la vie privée (2022) marque une étape importante en
+    Dans ce contexte, la résolution commune des commissaires à la
+protection de la vie privée (2022) marque une étape importante en
     établissant des lignes directrices pour le développement des
     identités numériques au Canada. Cette résolution souligne la
     nécessité d'un cadre législatif harmonisé, incluant des exigences
     strictes en matière de protection des données et de transparence.
 
--   **Harmonisation internationale :** La dimension internationale de
+-   **Harmonisation internationale :** la dimension internationale de
     l'implémentation des permis de conduire numériques représente un
     enjeu stratégique majeur pour le Canada. Au-delà  de la coordination
     interprovinciale, le pays doit s'inscrire dans une dynamique
@@ -1208,22 +1201,21 @@ l'interopérabilité entre les provinces.
     l'interopérabilité transfrontalière.
 
     -   **L'harmonisation internationale** des permis de conduire
-        canadiens restent théorique et soulève plusieurs questions. Si
+        canadiens reste théorique et soulève plusieurs questions. Si
         la conformité à  des normes comme ISO/IEC 18013-5 établit une
-        base technique commune, elle n'apporte aucune garantit quant à 
+        base technique commune, elle n'apporte aucune garantie quant à 
         la reconnaissance internationale effective des permis de
-        conduire numérique canadiens. Cette standardisation technique,
+        conduire numériques canadiens. Cette standardisation technique,
         bien que nécessaire, ne résout pas les enjeux fondamentaux de
-        reconnaissance mutuelle entre pays. La situation aux états unis,
-        similaire dans sa politique au Canada, illustre cette
+        reconnaissance mutuelle entre pays. La situation aux États-Unis, similaire dans sa politique au Canada illustre cette
         complexité. Malgré l'existence des directives établies par
         AAMVA, la reconnaissance des permis numériques entre états
         américains reste fragmentée.
 
-    -   **Valeur juridique à  l'étranger :** La valeur juridique des
+    -   **Valeur juridique à  l'étranger :** la valeur juridique des
         permis de conduire numériques, comme pièce d'identité,
         représente un autre défi majeur. Les contextes d'utilisation et
-        les exigences règlementaires varient considérablement selon les
+        les exigences réglementaires varient considérablement selon les
         pays. Un permis de conduire techniquement conforme pourrait se
         voir refuser toute valeur légale dans certaines juridictions,
         limitant significativement son utilité pour les Canadiens à 
@@ -1234,13 +1226,13 @@ l'interopérabilité entre les provinces.
 ### Dimension socio-économique
 
 **L'aspect économique** des permis de conduire numériques représente un
-investissement conséquent mais stratégique à  long terme. La canada doit
-être prête à  dépenser des coà»ts élevés qui concernent non seulement
+investissement conséquent, mais stratégique à  long terme. Le Canada doit
+être prêt à dépenser des couts élevés qui concernent non seulement
 l'infrastructure technologique, mais également d'autres couts connexes
 comme la formation du personnel et la mise à  niveau des systèmes
-existants qui peuvent être désuet pour accueillir cette nouvelle
-technologie. A titre d'exemple, en Australie, 62,5 millions de dollars
-ont été investi par la nouvelle Galles de sud pour la gestion de
+existants qui peuvent être désuets pour accueillir cette nouvelle
+technologie. À titre d'exemple, en Australie, 62,5 millions de dollars
+ont été investis par la Nouvelle-Galles-du-Sud pour la gestion de
 l'identité numérique.
 
 Malgré l'ampleur des investissements nécessaires, le lancement des
@@ -1250,29 +1242,29 @@ privé, similaire à  celle établie entre les états américains et le géant
 Apple. Ce type de partenariat pourrait stimuler l'innovation et
 favoriser un écosystème numérique dynamique. De plus, la numérisation
 des permis de conduire promet une réduction, sur le long terme, des
-coà»ts liés à  la production des permis de conduire physiques et
+couts liés à  la production des permis de conduire physiques et
 l'optimisation des processus administratifs.
 
 **Sur le plan social,** l'expérience des états comme en Australie et aux
-états unis, avec des nombres de téléchargement élevés des permis de
-conduire numérique, suggère un potentiel d'adoption rapide et favorable
-de cette technologie pour une société comme la canada. Cependant, il est
+États-Unis, avec des nombres de téléchargements élevés des permis de
+conduire numériques, suggère un potentiel d'adoption rapide et favorable
+de cette technologie pour une société comme le Canada. Cependant, il est
 primordial de veiller l'inclusion numérique. Le premier point a
-considéré est l'attention aux populations marginalisés ou éloignées,
-exemple les communautés autochtones, les personnes âgés, etc. Il est
+considéré est l'attention aux populations marginalisées ou éloignées,
+exemple les communautés autochtones, les personnes âgées, etc. Il est
 nécessaire de maintenir par exemple l'option des permis physiques en
 parallèle avec les solutions numériques afin de ne pas exclure les
 populations marginalisées [^16]. De plus, des services d'accompagnement
-adaptées doivent être mise en place pour accompagner, aider et soutenir
+adaptés doivent être mis en place pour accompagner, aider et soutenir
 les citoyens à  l'utilisation et l'adoption de cette solution numérique.
 Finalement, les Canadiens, tout comme les Américains et les populations
-des autres pays, sont sensible aux questions de protection de la vie
+des autres pays, sont sensibles aux questions de protection de la vie
 privée. Ainsi, il est impératif d'avoir une approche transparente par
 rapport à  la gestion des données personnelles.
 
 **La fracture numérique** désigne les inégalités dans l'accès, l'usage
 et la compréhension des technologies de l'information au sein d'une
-société. Ce phénomènes se manifeste à  plusieurs niveaux : **(1) accès
+société. Ce phénomène se manifeste à  plusieurs niveaux : **(1) accès
 aux technologies :** variation géographique dans l'accès à  la
 technologie, disparité dans la connexion internet, et inégalités dans
 l'accès au matériel informatique; **(2) compétences numériques :**
@@ -1281,14 +1273,14 @@ processus numériques; **(3) usage et appropriation :** niveau
 d'autonomie dans l'utilisation, et confiance dans les outils
 technologiques;\[78\], \[79\], \[80\], \[81\].
 
-Au Québec, la transformation numérique des services gouvernementaux,
-notamment la mise en place des permis de conduire numérique, met en
+Au Québec, la transformation numérique des services gouvernementaux, 
+notamment la mise en place des permis de conduire numériques, met en
 lumière une fracture numérique significative. D'après les données de
 l'Académie de Transformation numérique, seuls 44% des utilisateurs
 d'internet au Québec ont une compréhension du concept d'identité
 numérique, et 45% celui de portefeuille numérique gouvernemental. Cette
 méconnaissance souligne un premier niveau de fracture : celle de l'usage
-et l'appropriation. De plus, 80% des québécois expriment des craintes
+et l'appropriation. De plus, 80% des Québécois expriment des craintes
 concernant l'identité numérique, permis de conduire compris. Ces
 craintes se concentrent sur: le vol des données personnelles,
 impossibilité de prouver son identité, difficulté de démarches en cas de
@@ -1308,18 +1300,18 @@ que les avancées technologiques ne doivent pas créer d'exclusion sociale
 ### Dimension technologique
 
 L'émergence des permis de conduire numériques s'inscrit dans le contexte
-technologique en mutation rapide, ou les défis de sécurité et
+technologique en mutation rapide, où les défis de sécurité et
 d'infrastructure s'intensifient à  mesure que les technologies évoluent.
 Cette transformation soulève plusieurs questions :
 
 La sécurité des infrastructures numériques gouvernementales constitue un
 enjeu critique, comme le met en évidence de manière dramatique
-l'expérience récente du canada \[82\]. La compromission de vingt réseaux
+l'expérience récente du Canada \[82\]. La compromission de vingt réseaux
 gouvernementaux sur une période de cinq ans par des acteurs étatiques
 chinois met en lumière la vulnérabilité des systèmes gouvernementaux.
 Ces attaques qui ont pour but l'espionnage et le vol de propriété
-intellectuelle, prennent de l'ampleur avec l'apparition de nouveaux
-acteurs tels que l'Inde, ce qui élargit la gamme des menaces. Cette
+intellectuelle prennent de l'ampleur avec l'apparition de nouveaux
+acteurs telles que l'Inde, ce qui élargit la gamme des menaces. Cette
 situation souligne la nécessité pressante de mettre en place des
 dispositifs de protection solides pour les identités numériques.
 
@@ -1339,15 +1331,15 @@ De plus, l'avènement de l'informatique quantique amplifie les défis
 sécuritaires \[88\], \[89\]. D'ici quelques années, la puissance de
 calcul des ordinateurs quantiques pourra compromettre les systèmes de
 chiffrement actuels, menaçant ainsi l'intégrité des identités
-numériques. Pour ce, les systèmes d'identités numérique doivent
+numériques. Pour ce, les systèmes d'identités numériques doivent
 anticiper les menaces quantiques futures tout en répondant aux exigences
 actuelles. La transition vers des technologies post-quantiques nécessite
-une approche proactive. Par exemple, la solution IDnomic PKI démontrent
+une approche proactive. Par exemple, la solution IDnomic PKI démontre
 qu'il est possible d'assurer une migration fluide en mettant des
 certificats hybrides, permettant aux systèmes existants de continuer de
 fonctionner tout en intégrant les nouvelles protections quantiques
-\[89\]. Cette approche double garanti la continuité des services tout en
-se préparant pout des éventuels changements ou attaques.
+\[89\]. Cette approche double garantit la continuité des services tout en
+se préparant pour des éventuels changements ou attaques.
 
 D'autre part, l'accessibilité numérique au Québec présente actuellement
 des disparités significatives entre les zones urbaines et rurales [^17]
@@ -1361,7 +1353,7 @@ Pour répondre à  ces enjeux, l'infrastructure technique des permis
 numériques doit être conçue avec une architecture hybride robuste. Elle
 doit supporter à  la fois les modes on et hors ligne, et assurer une
 synchronisation fiable des données. L'équité d'accès doit être garantie
-par des solutions adaptée aux différents contextes territoriales.
+par des solutions adaptées aux différents contextes territoriaux.
 
 De plus, la transition vers cette nouvelle technologie nécessite une
 approche méthodique [^20], débutant par une évaluation approfondie des
@@ -1372,7 +1364,7 @@ interruption de service. Des mécanismes de reprit doit être prévue pour
 garantir la continuité des opérations en cas d'incident.
 
 Finalement, les expériences internationales peuvent offrir aussi des
-enseignements importants. Aux états unis, Login.gov illustre les
+enseignements importants. Aux États-Unis, Login.gov illustre les
 bénéfices potentiels d'un système national unifié. Avec plus de 80
 millions d'utilisateurs, cette plateforme a montré des avantages
 significatifs : seize agences fédérales rapportent une amélioration de
@@ -1386,7 +1378,7 @@ numériques \[91\]. Bien que cette transition vise à  clarifier la
 distinction entre l'application d'identité numérique et la plateforme de
 services gouvernementaux myGOV, elle a créé des opportunités pour les
 fraudeurs. Les tentatives d'hameçonnage exploitent ce changement
-soulignent l'importance d'une communication claire et d'une stratégue de
+soulignent l'importance d'une communication claire et d'une stratégie de
 sécurité lors des transitions majeures. Au-delà  des attaques techniques,
 les systèmes d'identité numérique doivent faire face à  des méthodes
 d'ingénierie sociale de plus en plus élaborées. L'expérience québécoise
@@ -1403,33 +1395,33 @@ La transformation numérique, notamment le lancement de permis de
 conduire, fait partie de la démarche plus large du développement
 durable. L'émission des permis de conduire numériques réduit
 considérablement l'utilisation de plastique et du papier qui sont
-actuellement indispensable pour la production des permis de conduire
+actuellement indispensables pour la production des permis de conduire
 physiques. Cette transformation numérique s'aligne parfaitement avec les
 objectifs environnementaux du Canada et du Québec en matière de
 réduction des déchets [^21].
 
 Au Québec, Poste Canada assure la délivrance des permis de conduire aux
-titulaires de permis en leurs permettant de le recevoir directement à 
-domicile. La transition vers les permis numérique permet un gain
+titulaires de permis en leur permettant de le recevoir directement à 
+domicile. La transition vers les permis numériques permet un gain
 environnemental considérable en réduisant les besoins de production et
 d'expédition des permis physiques. Ainsi, la réduction du processus de
 transport et de distribution permet de diminuer les émissions de gaz
 associés à  ce processus.
 
-Toutefois, il est important de souligner l'impact environnemental des
-infrastructures nécessaires non négligeable nécessaire au stockage et à 
+Toutefois, il est important de souligner l'impact environnemental non négligeable des
+infrastructures nécessaires au stockage et à 
 la gestion des permis de conduire numériques. Afin de minimiser cet
 impact, il sera important de privilégier par exemple l'utilisation des
 sources d'énergie renouvelables, de manière à  réduire l'empreinte
-carbone associé aux opérations numériques.
+carbone associée aux opérations numériques.
 
 Finalement, l'adoption des permis de conduire numériques requiert
 l'utilisation des téléphones intelligents, ce qui amène les utilisateurs
 à  renouveler leurs appareils pour suivre les tendances et les exigences
 technologiques. Cette tendance contribue à  l'augmentation des déchets
-électroniques qui sont composés de matériaux toxiques et non recyclable.
+électroniques qui sont composés de matériaux toxiques et non recyclables.
 Selon l'article de Basta[^22], le remplacement fréquent des téléphones
-intelligents engendrent une importante empreinte écologique. Cette
+intelligents engendre une importante empreinte écologique. Cette
 dynamique d'obsolescence des appareils mobiles va à  l'encontre des
 objectifs environnementaux en termes de gestion durable des ressources.
 
@@ -1437,13 +1429,12 @@ objectifs environnementaux en termes de gestion durable des ressources.
 
 La mise en place d'un cadre juridique entourant l'utilisation des permis
 de conduire numériques est indispensable pour soutenir cette initiative
-technologique. Plusieurs pays ont apporté des modifications ou des
+technologique. Plusieurs pays ont apporté des modifications ou de
 nouveaux cadres juridiques afin de soutenir les initiatives et
 l'adoption des permis de conduire numériques, notamment la France, le
 Portugal, etc. Au Canada, le cadre légal devrait prendre en compte la
-structure fédéral complexe, ou les différentes juridictions provinciales
-et fédérales ont chacune des responsabilités spécifiques. Ainsi, une
-harmonisation et alignement des lois concernant les permis de conduire
+structure fédérale complexe, où les différentes juridictions provinciales
+et fédérales ont chacune des responsabilités spécifiques. Ainsi, l'harmonisation et alignement des lois concernant les permis de conduire
 numériques devient primordial afin d'assurer une reconnaissance uniforme
 des permis numériques à  l'échelle nationale.
 
@@ -1455,7 +1446,7 @@ cybersécurité et numérique la gouvernance de l'identité numérique. Bien
 que le projet ne soit pas encore adopté, il propose des mesures qui
 pourraient avoir un impact majeur sur la gestion des permis de conduire
 numérique : (1) création d'un registre d'identité numérique nationale
-centralisé sous la responsabilité du ministère, (2) établissement d'un
+centralisé sous la responsabilité du ministère (2) établissement d'un
 cadre pour garantir la cohérence, la qualité et la sécurité des données
 utilisées, et (3) interdiction de profilage des citoyens à  partir des
 données numériques. Ces propositions offrent une infrastructure
@@ -1464,7 +1455,7 @@ conduire numériques. Cependant, l'implémentation de ce cadre peut
 soulever des enjeux liés à  la coexistence avec les législations
 existantes.
 
-A titre d'exemple, la loi 25 et le projet de loi 82 visent à  moderniser
+À titre d'exemple, la loi 25 et le projet de loi 82 visent à  moderniser
 la gestion des renseignements personnels et l'identité numérique au
 Québec, mais présentent des divergences potentielles. La loi 25 [^24]
 [^25] impose une gestion décentralisée ou chaque organisme est
@@ -1480,16 +1471,16 @@ centralisé. Une harmonisation législative est essentielle pour éviter
 des incohérences entre ces deux cadres.
 
 L'acceptation et la reconnaissance des permis de conduire numériques par
-les différentes autorités soulève un enjeu crucial. En fait, l'adoption
+les différentes autorités soulèvent un enjeu crucial. En fait, l'adoption
 d'une solution technologique ne garantit pas son acceptation par
 l'ensemble des parties prenantes, en particulier les forces de l'ordre.
 Au niveau canadien, cet enjeu pourrait être amplifié par la structure
 fédérale du pays, avec des cadres légales propres à  chaque province.
 Cette situation pourrait créer des disparités dans la reconnaissance et
-l'adoption des permis numérique à  travers le pays. Au états unis,
+l'adoption des permis numérique à  travers le pays. Aux États-Unis,
 l'exemple de la Géorgie illustre cette problématique. Alors que l'état a
 déployé la solution des permis numériques, disponible dans plusieurs
-portefeuille numériques (Samsung, Apple, Google) et acceptés par
+portefeuilles numériques (Samsung, Apple, Google) et acceptés par
 certaines autorités officielles par exemple les contrôles TSA, les
 forces de l'ordre refusent d'accepter les permis de numérique comme une
 pièce d'identité et exigent les permis physiques lors des contrôles
@@ -1501,8 +1492,7 @@ permis numériques au Canada :
 -   Comment garantir une transition qui prend en compte les besoins et
     les craintes des parties prenantes, notamment les forces de l'ordre?
 
--   Comment le Canada pourrait gérer la période de coexistence des
-    permis numériques et physiques?
+-   Comment le Canada pourrait-il gérer la période de coexistence des permis numériques et physiques?
 
 -   Comment assurer l'accompagnement et la formation nécessaire aux
     différentes parties prenantes afin de garantir une adoption
@@ -1511,12 +1501,12 @@ permis numériques au Canada :
 Finalement, la protection des données personnelles reste une
 préoccupation par rapport à  l'utilisation de l'identité numérique de
 façon générale, et les permis de conduire de façon spécifique. La
-protection des données personnelles au canada est régie par la loi sur
+protection des données personnelles au Canada est régie par la loi sur
 la protection des renseignements personnels et les documents
 électroniques (LPRPDE). Toutefois, cette loi devrait être revue et mise
 à  jour afin de supporter et répondre aux risques spécifiques de
-l'identité numériques. Pour ce, les initiatives en Europe comme le
-règlement eIDAS ou au états unis pourrait être utilisé au Canada pour
+l'identité numérique. Pour ce, les initiatives en Europe comme le
+règlement eIDAS ou aux États-Unis pourrait être utilisé au Canada pour
 alimenter et mettre à  jour la cadre légale de protection des données.
 Finalement, la transparence par rapport aux responsabilités des
 différents acteurs est essentielle, ainsi de prévision des mécanismes de
@@ -1524,16 +1514,16 @@ recours en cas des incidents de sécurité ou de protection des données.
 
 # Constats et réflexions
 
-A mon avis, l'évolution des permis de conduire numériques de la théorie
+À mon avis, l'évolution des permis de conduire numériques de la théorie
 à  la pratique soulève des enjeux importants. Si la vérification et
 l'implémentation des permis numériques progressent, leur adoption reste
 entravée par des défis pratiques liés à  l'interopérabilité et la
 sécurité [^27]. L'accessibilité pour les personnes en situation
-d'handicap demeure également sous-évaluée, bien que des initiatives
+de handicap demeure également sous-évaluée, bien que des initiatives
 comme celle de la Géorgie montrent qu'il est possible d'améliorer
 l'inclusion numérique [^28]. Avec le projet de loi 82, le Québec vise à 
 établir un registre centralisé de l'identité numérique sous la
-gouvernance de ministère de cybersécurité et numériques. Bien que ce
+gouvernance de Ministère de la Cybersécurité et du Numérique. Bien que ce
 cadre promette une infrastructure robuste pour le déploiement des permis
 numérique, il soulève des questions de cohérence avec la loi 25, qui
 favorise une gestion décentralisée des données et une responsabilité
@@ -1542,8 +1532,8 @@ créer des tensions dans la mise en œuvre. Par ailleurs,
 l'interopérabilité mondiale des permis numériques, bien que soutenue par
 des normes comme ISO/IEC 18013-5, reste largement théorique sans accords
 garantissant leur reconnaissance effective à  l'étranger. Enfin, les
-défis techniques liés à  la cybersécurité, a l'adaptation des
-infrastructure existantes et à  l'émergence de technologies comme
+défis techniques liés à  la cybersécurité, à l'adaptation des
+infrastructures existantes et à  l'émergence de technologies comme
 l'informatique quantique nécessitent une stratégie proactive pour
 anticiper les menaces. Pour maximiser leur potentiel, les permis de
 conduire numériques doivent s'accompagner d'une approche inclusive,
@@ -1559,7 +1549,7 @@ transformation numérique) [9](#_Ref181953203)](#_Ref181953203)
 [Figure 2: Cycle de vie permis de conduire numérique (inspiré du
 document AAMVA) [10](#_Ref181265638)](#_Ref181265638)
 
-[Figure 3: Portrait des initiatives au états unis
+[Figure 3: Portrait des initiatives aux États-Unis
 [13](#_Ref183183856)](#_Ref183183856)
 
 [Figure 4: Portrait des initiatives au Canada
