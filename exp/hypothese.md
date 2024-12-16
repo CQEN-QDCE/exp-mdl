@@ -32,7 +32,7 @@ L’enjeu actuel majeur est le fait que les orientations, les cadres et les tech
 
 **Ceci sera prouvé si :** 
 
-- Nous démontrerons qu’il est faisable d’utiliser un lecteur standardisé conforme à la norme mDL et pouvant être utilisé par n’importe quelle force de l’ordre nord-américaine; 
+- Nous démontrerons qu’il est faisable d’utiliser un lecteur standardisé conforme à la norme mDL, et pouvant être utilisé par n’importe quelle force de l’ordre nord-américaine; 
 
 - À travers une recherche utilisateur auprès des parties prenantes essentielles telles que le citoyen, les forces de l’ordre, les contrôleurs routiers et le secteur privé:
   - Nous arriverons à mesurer une réelle augmentation de la productivité sur les tâches des contrôleurs routiers et du privé; 
@@ -53,7 +53,7 @@ Finalement, l’utilisation d’une recherche utilisateur permettra d’aider à
 
 **Déroulement** : L’élaboration du prototype se déroulera en grandes phases :  
 - Établissement de l’entente de co-création / partenariat entre le CQEN et les organismes impliqués; 
-- Définition de la portée et des exigences affaires et technologiques des expérimentations; 
+- Définition de la portée et des exigences affaires et technologique des expérimentations; 
 - Préparation de l’environnement et des scénarios d’essais permettant de valider l’atteinte de l’hypothèse de la preuve de concept ainsi que le développement du prototype; 
 - Réalisation du prototype; 
 - Mise à l’épreuve du prototype avec les parties prenantes essentielles; 
