@@ -44,7 +44,7 @@ L’objectif principal de cette veille est de fournir un aperçu et une analyse 
 
 Nous avons mis en place un processus structuré pour collecter les données pertinentes pour notre veille sur les permis de conduire numériques, en ayant recours à l’outil Inoreader. Voici les principales étapes que nous avons suivies :
 
-1. Identification des mots-clés : Nous avons défini les mots clés à explorer avec les membres de l'expérimentation.
+1. Identification des mots-clés : Nous avons défini les mots-clés à explorer avec les membres de l'expérimentation.
 2. Recensement manuel des sources : Nous avons identifié les sites, blogs et autres sources d’information pertinentes pour notre veille, ce qui nous a permis de constituer une base de données initiale des sources à surveiller.
 3. Intégration dans Inoreader : Après l’identification des sources, celles-ci ont été intégrées dans l’outil Inoreader, permettant d’agréger et de filtrer les nouvelles informations en fonction des mots-clés prédéfinis.
 4. Analyse des articles : Nous analysons les articles collectés par Inoreader en fonction de leur pertinence, puis les intégrons dans une fiche d’analyse hebdomadaire.
@@ -80,9 +80,9 @@ Pour atteindre ces objectifs, les étapes clés de la démarche sont les suivant
 Au terme de cette expérimentation, nous souhaitons avoir exploré la faisabilité technologique de la majorité des composants impliqués dans le cycle de vie complet d’un permis de conduire numérique. En cas de succès, cette démarche permettra de recueillir des informations précieuses sur le fonctionnement de ces composants, ainsi que sur l’expérience des différents utilisateurs finaux. Ces informations devraient constituer une base de connaissance solide pour orienter de potentielles initiatives futures.
 
 ### 2. Synthèse de la veille
-La veille sur les permis de conduire numériques vise répondre à quatre objectifs principaux : (1) identifier les avantages et les inconvénients liés à  la mise en œuvre des permis de conduire numériques, (2) aperçu sur l'état actuel de l'adoption des permis de conduire numériques à  l'échelle mondiale, (3) comprendre les implications technologiques, juridiques et sociales liées de l'adoption des permis de conduire numériques et, (4) comprendre les normes et bibliothèques utilisées pour les permis de conduire numériques.
+La veille sur les permis de conduire numériques vise répondre à quatre objectifs principaux : (1) identifier les avantages et les inconvénients liés à  la mise en œuvre des permis de conduire numériques, (2) aperçu sur l'état actuel de l'adoption des permis de conduire numériques à l'échelle mondiale, (3) comprendre les implications technologiques, juridiques et sociales liées de l'adoption des permis de conduire numériques et, (4) comprendre les normes et bibliothèques utilisées pour les permis de conduire numériques.
 
-Les permis de conduire numériques représentent une avancée majeure dans la transformation numérique des documents d'identité. Ces permis, stockées sur des appareils mobiles tels que les smartphones, permettent aux utilisateurs de prouver leur identité et leur droit de conduire sans dépendre de documents physiques. Le permis de conduire numériques se distinguent par:
+Les permis de conduire numériques représentent une avancée majeure dans la transformation numérique des documents d'identité. Ces permis, stockées sur des appareils mobiles tels que les smartphones, permettent aux utilisateurs de prouver leur identité et leur droit de conduire sans dépendre de documents physiques. Les permis de conduire numériques se distinguent par:
 
 - Sécurité grâce au chiffrement avancé et à l'authentification biométrique
   
@@ -90,20 +90,20 @@ Les permis de conduire numériques représentent une avancée majeure dans la tr
   
 - Mises à  jour en temps réel des informations par les autorités émettrices
   
-- Partage sélectif des données pour protéger la vie privées des utilisateurs
+- Partage sélectif des données pour protéger la vie privée des utilisateurs
 
-Toutefois, leur adoption grande échelle fait face à  des défis tels que :
-- Poblèmes d'infrastructure et dépendance à la technologie: l'absence d'une infrastructure aséquate, comme les lecteurs numériques, frine l'adoption des permis numériques et peut exclure des groupes sans accès réguliers aux téléphones intelligents
+Toutefois, leur adoption grande échelle fait face à des défis tels que :
+- Problèmes d'infrastructure et dépendance à la technologie: l'absence d'une infrastructure adéquate, comme les lecteurs numériques, freine l'adoption des permis numériques et peut exclure des groupes sans accès régulier aux téléphones intelligents
 
-- Interopérabilité: le manque de standardisation mondile des permis de conduire numériques limite leur reconnaissance homogène entre juridictions
+- Interopérabilité: le manque de standardisation mondiale des permis de conduire numériques limite leur reconnaissance homogène entre juridictions
 
-- Gestion des données perosnelles:  Les préoccupations liées à la protection des informations sensibles, au piratage, et à la collecte excessive de données freinent l’adoption des permis numériques
+- Gestion des données personnelles:  Les préoccupations liées à la protection des informations sensibles, au piratage, et à la collecte excessive de données freinent l’adoption des permis numériques
 
-- Acceptation et adoption: La reconnaissance des permis de conduire numériques dépend d'une sensibilisation aux avantages et d'un soutien gouvernmental solide pour garantir leur déploiment et leur utilisation
+- Acceptation et adoption: La reconnaissance des permis de conduire numériques dépend d'une sensibilisation aux avantages et d'un soutien gouvernemental solide pour garantir leur déploiement et leur utilisation
 
 
  ####  Portrait des initiatives
-L'adoption des permis de conduire numériques progresse de manière inégale à  travers le monde, reflétant des disparités dans les priorités, les infrastructures et les cadres réglementaire. 
+L'adoption des permis de conduire numériques progresse de manière inégale à  travers le monde, reflétant des disparités dans les priorités, les infrastructures et les cadres réglementaires. 
 
 **Amérique**
 
@@ -113,7 +113,7 @@ Le **Canada** adopte une approche structurée pour le développement des permis 
 
 En Amérique du Sud, le **Brésil** se distingue comme pionnier avec l’adoption de permis de conduire numériques disponibles depuis 2019 pour 60 millions de conducteurs, permettant un usage pratique sous format mobile ou PDF pour des contrôles et des transactions comme la location de voitures. Le **Paraguay**, quant à lui, a récemment légalisé les permis numériques avec la loi n° 7177/2023, mais leur mise en œuvre est limitée par l’absence de cadre de protection des données et des réglementations adaptées, nécessitant des réformes pour assurer leur fiabilité et le respect des droits des citoyens.
 
-**Asie-Pacifique et moyen orient**
+**Asie-Pacifique et Moyen-Orient**
 
 L’adoption des permis de conduire numériques progresse rapidement dans la région Asie-Pacifique et au Moyen-Orient, bien que les approches varient selon les pays. La **Corée du Sud** a lancé ses permis numériques à l’échelle nationale dès 2022, s’appuyant sur la blockchain et des technologies cryptographiques avancées pour garantir la sécurité, tandis que **Singapour** intègre ces permis dans sa plateforme numérique Singpass pour simplifier l’accès aux services publics. Aux **Philippines**, le système LTMS permet l’accès sécurisé à un permis numérique (eDL) reconnu légalement, intégrant des normes ISO pour renforcer l’interopérabilité. De même, **Dubaï** et l’**Arabie Saoudite** ont introduit des permis numériques, combinant biométrie et QR codes pour moderniser leurs services publics.
 
@@ -131,19 +131,19 @@ L’adoption des permis de conduire numériques en Afrique est en phase émergen
 
 ####  Implications sociales, légales et technologiques
 ##### Implications sociales 
-Les expériences internationales, notamment en Australie et aux États Unis, montrent un fort potentiel d'adoption des permis de conduire numériques, comme le témoignent les millions des téléchargements enregistrés. Ce succès  laisse présager  une adoption  favorable de cette technologie dans une société comme le canada. Cependant, pour garantir une transition inclusive, plusieurs aspects doivent être pris en compte: 
-- **Inclusion numérique**: Pour éviter les exclusions des populations marginalisées, comme les autochtones et les personnes âgées, il est important de maintenir des permis physiques parallèllement aux solutions numériques. Cela garntira un accès équitable àntous les citoyens, indéopendamment de leurs compétences numériques ou de leur localisation géographique. De plus, des services d'accompogneent devraient être mise en place pour aider les citoyens et les parties prenantes (corps policiers, commerce, etc.) dasns l'adoption et l'utilisation de la technologie.
-- **La fracture numérique** au Canada, et plus particulièrement au Québec, se manifeste à plusieurs niveaux: **accés auux technologies** (inégalité dans la disponibilité des outils numériques et de la connexion internet), **compétences numériques** (méconnaissance des concepts comme l'identité numérique et les portefeuilles numériques, avec seulement **44%** des Québecois ayant une compréhension de ces notions), et **usage et appropriation** (une large proportion des citoyens exprime des craintes liées au vol de données personnelles ou à des difficultés en cas de vol d’identité, freinant leur adoption des technologies numériques).
-- **Protection de la vie privée**: Tout comme d'autres populations, les canadiens sont sensibles aux questions de gestion des données personnelles. Aini, une gestion transparente des données sensibles, associé à des garnties solides de sécurit., est essentielle pour instaurer la confiance et encourager une adoption généralisée.
+Les expériences internationales, notamment en Australie et aux États-Unis, montrent un fort potentiel d'adoption des permis de conduire numériques, comme le témoignent les millions des téléchargements enregistrés. Ce succès  laisse présager  une adoption  favorable de cette technologie dans une société comme le Canada. Cependant, pour garantir une transition inclusive, plusieurs aspects doivent être pris en compte: 
+- **Inclusion numérique**: Pour éviter les exclusions des populations marginalisées, comme les autochtones et les personnes âgées, il est important de maintenir des permis physiques parallèlement aux solutions numériques. Cela garantira un accès équitable à tous les citoyens, indépendamment de leurs compétences numériques ou de leur localisation géographique. De plus, des services d'accompagnent devraient être mise en place pour aider les citoyens et les parties prenantes (corps policiers, commerce, etc.) dans l'adoption et l'utilisation de la technologie.
+- **La fracture numérique** au Canada, et plus particulièrement au Québec, se manifeste à plusieurs niveaux: **accès aux technologies** (inégalité dans la disponibilité des outils numériques et de la connexion internet), **compétences numériques** (méconnaissance des concepts comme l'identité numérique et les portefeuilles numériques, avec seulement **44%** des Québécois ayant une compréhension de ces notions), et **usage et appropriation** (une large proportion des citoyens exprime des craintes liées au vol de données personnelles ou à des difficultés en cas de vol d’identité, freinant leur adoption des technologies numériques).
+- **Protection de la vie privée**: Tout comme d'autres populations, les Canadiens sont sensibles aux questions de gestion des données personnelles. Aini, une gestion transparente des données sensibles, associées à des garanties solides de sécurité, est essentielle pour instaurer la confiance et encourager une adoption généralisée.
 
 ##### Implications légales et juridiques 
 Le contexte politique et juridique canadien joue un rôle déterminant dans la mise en œuvre des permis de conduire numériques, particulièrement en raison de la structure fédérale du pays. Bien que les provinces soient responsables de la délivrance des permis, l’absence d’une politique fédérale unifiée peut freiner leur interopérabilité, tant au niveau national qu’international.
 
-- **Coordination interprovinciale:** Au Canada, les permis de conduire sont délivrés et gérés par les provinces, ce qui rend indispensable une coordination interprovinciale pour assurer une reconnaissance nationale uniforme des permis numériques. La résolution commune des commissaires à la protection de la vie privée en 2022 a marqué une étape clé en appelant à l’élaboration d’un cadre législatif harmonisé. Ce cadre doit inclure des règles strictes en matière de protection des données, de transparence et d’interopérabilité, tout en favorisant la collaboration entre provinces.
+- **Coordination interprovinciale:** au Canada, les permis de conduire sont délivrés et gérés par les provinces, ce qui rend indispensable une coordination interprovinciale pour assurer une reconnaissance nationale uniforme des permis numériques. La résolution commune des commissaires à la protection de la vie privée en 2022 a marqué une étape clé en appelant à l’élaboration d’un cadre législatif harmonisé. Ce cadre doit inclure des règles strictes en matière de protection des données, de transparence et d’interopérabilité, tout en favorisant la collaboration entre provinces.
 - **Harmonisation internationale:** L’harmonisation internationale représente un autre défi stratégique pour le Canada, notamment dans le cadre nord-américain. L’adoption de normes comme l’ISO/IEC 18013-5 établit une base technique commune, mais ne garantit pas une reconnaissance juridique effective à l’étranger. À titre d’exemple, malgré les directives de l’AAMVA aux États-Unis, la reconnaissance des permis numériques reste fragmentée entre les États. De plus, la valeur juridique des permis numériques comme pièce d’identité varie considérablement selon les juridictions. Au Canada, une stratégie juridique claire est essentielle pour assurer la reconnaissance des permis numériques à l’étranger et soutenir leur adoption nationale.
--  **Cadre légal au Québec:** Au Québec, le projet de loi 82 propose un cadre centralisé pour l’identité numérique, confiant au ministère de la Cybersécurité et du Numérique la gestion des permis numériques. Ce cadre comprend : (1)la création d’un registre d’identité numérique national, (2)l’établissement de normes garantissant la sécurité, la qualité et la transparence des données, et l’interdiction du profilage des citoyens à partir des données numériques. Cependant, des divergences avec la loi 25, qui privilégie une gestion décentralisée des données, pourraient poser problème. Une harmonisation législative est donc nécessaire pour éviter des incohérences entre ces cadres, tout en minimisant les risques associés à un registre centralisé.
+-  **Cadre légal au Québec:** au Québec, le projet de loi 82 propose un cadre centralisé pour l’identité numérique, confiant au ministère de la Cybersécurité et du Numérique la gestion des permis numériques. Ce cadre comprend : (1)la création d’un registre d’identité numérique national (2)l’établissement de normes garantissant la sécurité, la qualité et la transparence des données, et l’interdiction du profilage des citoyens à partir des données numériques. Cependant, des divergences avec la loi 25, qui privilégie une gestion décentralisée des données, pourraient poser problème. Une harmonisation législative est donc nécessaire pour éviter des incohérences entre ces cadres, tout en minimisant les risques associés à un registre centralisé.
 - **Acceptation par les parties prenantes:** L’acceptation des permis numériques par les forces de l’ordre et d’autres parties prenantes représente un défi majeur. L’exemple de la Géorgie aux États-Unis illustre cette problématique : bien que les permis numériques soient disponibles dans des portefeuilles numériques comme Apple Wallet, certaines forces de l’ordre refusent de les reconnaître, exigeant les versions physiques. Au Canada, une période de coexistence entre permis physiques et numériques sera nécessaire, accompagnée de formations et d’un soutien adapté pour garantir une adoption pratique.
-- **Protection des données personnelles**: La protection des données personnelles est une préoccupation centrale. Bien que la LPRPDE régisse actuellement ces questions au Canada, elle nécessite une mise à jour pour répondre aux défis spécifiques de l’identité numérique. Les initiatives européennes, comme le règlement eIDAS, ou américaines, pourraient inspirer l’évolution de ce cadre législatif. La transparence sur les responsabilités des acteurs, ainsi que des mécanismes clairs de recours en cas d’incident, seront essentiels pour instaurer la confiance des citoyens.
+- **Protection des données personnelles**: La protection des données personnelles est une préoccupation centrale. Bien que la LPRPDE régisse actuellement ces questions au Canada, elle nécessite une mise à jour pour répondre aux défis spécifiques de l’identité numérique. Les initiatives européennes, comme le règlement eIDAS, ou Américaines pourraient inspirer l’évolution de ce cadre législatif. La transparence sur les responsabilités des acteurs, ainsi que des mécanismes clairs de recours en cas d’incident, seront essentiels pour instaurer la confiance des citoyens.
 ##### Implications technologiques
 L’émergence des permis de conduire numériques s’inscrit dans un contexte technologique en rapide mutation, où la sécurité des infrastructures numériques, l’accessibilité et l’adoption équitable représentent des défis majeurs. Au Canada, les cyberattaques récentes sur des réseaux gouvernementaux soulignent la vulnérabilité des systèmes existants et la nécessité d’anticiper les menaces futures, notamment avec l’arrivée de l’informatique quantique. Des solutions comme les certificats hybrides post-quantiques permettent d’assurer une transition fluide tout en renforçant la sécurité. Par ailleurs, les inégalités d’accès au numérique entre zones urbaines et rurales, particulièrement au Québec, nécessitent une infrastructure hybride capable de fonctionner en modes en ligne et hors ligne, avec des tests pilotes pour garantir une migration inclusive.
 
@@ -155,7 +155,7 @@ Les normes et les protocoles encadrant les permis de conduire numériques s'arti
 L'ISO/IEC 18013-5 est une norme internationale qui définit les spécifications des permis de conduire mobiles (mobile Driver's License - mDL). L'étude de la norme était un prérequis à la réalisation de cette expérimentation. Nous devions rapidement comprendre sa structure générale, le modèle de données, les protocoles de communication, les mécanismes de sécurité, les fonctionnalités de confidentialité, l'interopérabilité et les cas d'utilisation qu'elle supporte.
 
 #### Composants principaux
-Comme pour l'infrastructure d'identité numérique, l'éco-système mDL se compose de trois éléments principaux (le fameux triangle de confiance):
+Comme pour l'infrastructure d'identité numérique, l'écosystème mDL se compose de trois éléments principaux (le fameux triangle de confiance):
 
 1. L'infrastructure de l'autorité émettrice;
 2. Le mDL lui-même, enregistré sur l'appareil mobile du détenteur du permis;
@@ -170,40 +170,40 @@ Le mDL contient des éléments de données spécifiques sur le détenteur du per
 Le mDL inclut un objet de sécurité mobile (MSO) qui contient un condensé des éléments de données. Ce dernier est signé numériquement par l'autorité émettrice. Cela permet aux lecteurs mDL de vérifier l'intégrité et l'authenticité des éléments données, en plus de permettre l'authentification de l'autorité émettrice par l'utilisation de la liste vérifiée des autorités émettrices de certificats (VICAL).
 
 ##### Protection de la vie privée
-Une des caractéristiques clés offerte par un mDL est la divulgation sélective, permettant aux détenteurs de partager uniquement le sous-ensemble nécessaire de leurs informations personnelles. Les éléments de données divulgés varient en fonction du cas d'utilisation.
+Une des caractéristiques clés offertes par un mDL est la divulgation sélective, permettant aux détenteurs de partager uniquement le sous-ensemble nécessaire de leurs informations personnelles. Les éléments de données divulgués varient en fonction du cas d'utilisation.
 
 ##### Processus d'utilisation du mDL
 
 - **Initialisation** : Le détenteur présente son mDL à un lecteur mDL pour vérification.
 - **Demande de preuve** : Le lecteur mDL demande les éléments de données à valider à l'appareil du détenteur.
 - **Consentement** : Le détenteur reçoit une invite montrant les éléments de données demandés et doit consentir à les partager.
-- **Transmission** : Après consentement, les éléments de données du mDL, y compris l'objet de sécurité mobile (MSO), sont partagées via une communication sécurisée avec le lecteur.
+- **Transmission** : Après consentement, les éléments de données du mDL, y compris l'objet de sécurité mobile (MSO), sont partagés via une communication sécurisée avec le lecteur.
 - **Vérification** : Le lecteur mDL valide l'intégrité des éléments de données reçues en vérifiant la signature de l'objet de sécurité mobile (MSO) et en contrôlant le hachage de chaque élément de données individuellement.
 
 ##### Technologies de communication
 Le détenteur d'un mDL peut échanger des informations avec les lecteurs en utilisant la communication en champ proche (Near Field Communication ou NFC), le Bluetooth Low Energy (BLE) ou le Wi-Fi Aware.
 
 ##### Modèle de confiance
-Pour mettre en place un modèle de confiance, la norme ISO/IEC 18013-5 définit une infrastructure à clé publique (PKI) décentralisé. Les lecteurs mDL doivent posséder la chaîne de certificats de signature mDL de l'autorité émettrice pour vérifier son authenticité.
+Pour mettre en place un modèle de confiance, la norme ISO/IEC 18013-5 définit une infrastructure à clé publique (PKI) décentralisée. Les lecteurs mDL doivent posséder la chaîne de certificats de signature mDL de l'autorité émettrice pour vérifier son authenticité.
 
 En normalisant ces aspects, la norme ISO/IEC 18013-5 vise à assurer l'interopérabilité, la sécurité et la confidentialité dans la mise en œuvre et l'utilisation des permis de conduire mobiles à travers différentes juridictions et cas d'utilisation.
 
-Il est important de noter que malgré l'existence de cette norme internationale, de nombreuses initiatives nationales suivent leurs propres standards. cette divergence souligne un défi majeur pour l'interopérabilité internationale future des permis de conduire numériques.
+Il est important de noter que malgré l'existence de cette norme internationale, de nombreuses initiatives nationales suivent leurs propres standards. Cette divergence souligne un défi majeur pour l'interopérabilité internationale future des permis de conduire numériques.
 
 
 ##### Analyse des bibliothèques et outils techniques
 
-Tout au long de cette expérimentation, une analyse des applications/bibliothèques existantes nécessaires à l'implémentation de la norme ISO/IEC 18013-5 mDL a été menée. Dans le cadre de cette expérimentation, des bibliothèqyes et outils compatibles avec la norme ISO/IEC 18013-5 mDL ont été explorés(NB: La pile technologique utilisé dans nos expérimentations précédentes sur l'identité numérique était principalement basé sur les languages Python ([ACA-Py](https://github.com/openwallet-foundation/acapy)) et TypeScript ([Portefeuille-mobile-qc](https://github.com/MCN-ING/Portefeuille-mobile-qc))). Voici la decription des principaux: 
+Tout au long de cette expérimentation, une analyse des applications/bibliothèques existantes nécessaires à l'implémentation de la norme ISO/IEC 18013-5 mDL a été menée. Dans le cadre de cette expérimentation, des bibliothèques et outils compatibles avec la norme ISO/IEC 18013-5 mDL ont été explorés(NB: La pile technologique utilisée dans nos expérimentations précédentes sur l'identité numérique était principalement basée sur les langages Python ([ACA-Py](https://github.com/openwallet-foundation/acapy)) et TypeScript ([Portefeuille-mobile-qc](https://github.com/MCN-ING/Portefeuille-mobile-qc))). Voici la description des principaux: 
 
-1. [Kotlin Multiplatform mdoc library](https://github.com/walt-id/waltid-mdoc): Une librairie mdoc multi-platforme en langage Kotlin qui permet de créer des attestations au format mdoc conforme à la norme ISO/IEC 18013-5 mDL.
+1. [Kotlin Multiplatform mdoc library](https://github.com/walt-id/waltid-mdoc): Une librairie mdoc multi-plateforme en langage Kotlin qui permet de créer des attestations au format mdoc conforme à la norme ISO/IEC 18013-5 mDL.
 
 2. [Google identity-credential](https://github.com/openwallet-foundation-labs/identity-credential): Un dépôt qui contient des bibliothèques et des applications (détenteur et vérificateur) pour travailler avec des identités du monde réelles. L'objectif initial était d'implémenter les mdoc/mDL conformes à la norme ISO/IEC 18013-5 et aux normes associées (principalement la série ISO 23220 et ISO 18013-7), mais la portée actuelle inclut également d'autres formats d'attestation.
 
 3. [pyMDOC-CBOR](https://github.com/IdentityPython/pyMDOC-CBOR): Un analyseur/générateur en Python pour les attestations de Type 1 et également pour les cas d'usage mDL. Ce projet est une proposition expérimentale née d'un projet éducatif.
 
-À l'exception de l'application de vérification disponible dans le projet [Google identity-credential](https://github.com/openwallet-foundation-labs/identity-credential), nous n'avons pas trouvé d'autres implémentation en code source ouvert. 
+À l'exception de l'application de vérification disponible dans le projet [Google identity-credential](https://github.com/openwallet-foundation-labs/identity-credential), nous n'avons pas trouvé d'autre implémentation en code source ouvert. 
 
-Au cours de cette expérimentation, les implémentations disponibles de la norme ISO/IEC 18013-5 ont évolués. Un acteur majeur du monde SSI, la bibliothèque [credo-ts](https://github.com/openwallet-foundation/credo-ts), a ajouté le support du mDL. Au moment d'écrire ce rapport, le code n'était pas complété mais cet ajout est intéressant pour le développement d'un portefeuille multi-formats. En plus de supporter les [AnonCreds](https://hyperledger.github.io/anoncreds-spec/), la bibliothèque credo-ts supportent les [attestations vérifiables W3C](https://www.w3.org/TR/vc-data-model/), les [attestations vérifiables SD-JWT](https://www.ietf.org/archive/id/draft-ietf-oauth-sd-jwt-vc-01.html), le protocol OID4VC et prochainement, le mDL. Ainsi, le [Portfeuille mobile QC](https://github.com/MCN-ING/Portefeuille-mobile-qc) pourra devenir un portefeuille multi-formats.
+Au cours de cette expérimentation, les implémentations disponibles de la norme ISO/IEC 18013-5 ont évolué. Un acteur majeur du monde SSI, la bibliothèque [credo-ts](https://github.com/openwallet-foundation/credo-ts), a ajouté le support du mDL. Au moment d'écrire ce rapport, le code n'était pas complété, mais cet ajout est intéressant pour le développement d'un portefeuille multiformats. En plus de supporter les [AnonCreds](https://hyperledger.github.io/anoncreds-spec/), la bibliothèque credo-ts supportent les [attestations vérifiables W3C](https://www.w3.org/TR/vc-data-model/), les [attestations vérifiables SD-JWT](https://www.ietf.org/archive/id/draft-ietf-oauth-sd-jwt-vc-01.html), le protocole OID4VC et prochainement, le mDL. Ainsi, le [Portfeuille mobile QC](https://github.com/MCN-ING/Portefeuille-mobile-qc) pourra devenir un portefeuille multiformats.
 Pour conclure, les permis de conduire numériques incarnent une avancée prometteuse vers une identification moderne et sécurisée. Malgré des défis d'interopérabilité, de sécurité et d'inclusion, leur adoption croissante témoigne de leur potentiel à simplifier l'accès aux services publics tout en répondant aux exigences de la transformation numérique. Une mise en œuvre réussie dépendra d'un équilibre entre innovation, réglementation harmonisée et inclusion sociale.
 
 ### 3. Mise en œuvre et résultats de l'expérimentation
@@ -238,7 +238,7 @@ Bien que l’expérimentation ait permis de poser des bases solides pour le dév
 
 #### Enjeux identifiés
 
-- Marché peu mature en matière de mDL et expertises/solutions silotées par fournisseurs. Rend plus difficile la prise de connaissances et la formation;
+- Marché peu mature en matière de mDL et expertises/solutions silotées par fournisseurs rendent plus difficiles la prise de connaissances et la formation;
 
 - Il faudra discuter des modalités de publication de nos résultats auprès de la communauté de pratique Open Source;
 
@@ -313,7 +313,7 @@ Ensuite, il faut configurer le fichier des autorités de certification qui seron
 | CQEN_OCSP_PASSWORD_FILE | O | Fichier de mot de passe du serveur de l'OCSP. Ce fichier est déposé dans un répertoire protégé, et le mot de passe sera généré automatiquement par le générateur de chiffres aléatoires d'OpenSSL. | $CQEN_ROOT/private/ocsp_password.txt |
 ||||
 
-Finalement, il suffit de lancer le script de déploiement, `$PROJECT_SRC_HOME/deploy.sh`, l'ICP sera installée sous le répertoire `$PKI_HOME` en déployant l'Autorité Racine et toutes les Autorités Intermédiaires et finales configurées. 
+Finalement, il suffit de lancer le script de déploiement, `$PROJECT_SRC_HOME/deploy.sh`, l'ICP sera installée sous le répertoire `$PKI_HOME` en déployant l'Autorité Racine et toutes les Autorités intermédiaires et finales configurées. 
 
 #### 3.3.2 Plugin aca-py 
 
@@ -328,7 +328,7 @@ L'application émettrice est un ensemble de deux composants : une API (backend) 
   - [Consulter la procédure d'installation](../issuer-frontend/README.md)
 
 #### 3.3.4 Portefeuille mobile mDL
-Pour être en mesure de tester l'émission d'un mDL, une application mobile de type portefeuille numérique a été développée. Pour l'utiliser, [Consulter son dépôt](https://github.com/CQEN-QDCE/portefeuille-mobile-mdl/) et suivre la procédure d'installation.
+Pour être en mesure de tester l'émission d'un mDL, une application mobile de type portefeuille numérique a été développée. Pour l'utiliser [Consulter son dépôt](https://github.com/CQEN-QDCE/portefeuille-mobile-mdl/) et suivre la procédure d'installation.
 
 ### 4. Forces et limites de la solution
 L'hypothèse d'expérimentation avait comme objectif de démontrer qu'un permis de conduire numérique peut être conservé dans un portefeuille numérique, tout en respectant les normes de l'identité numérique ainsi que les normes du permis de conduire numérique (ISO 18013-5 - mDL et l'AAMVA).
@@ -346,7 +346,7 @@ Nous avons structuré l'expérimentation en deux phases :
 
 ### 4.1 Exploration et analyse de l'écosystème du permis de conduire
 
-L'exploration et l'analyse de l'écosystème du permis de conduire est un succès :
+L'exploration et l'analyse de l'écosystème du permis de conduire sont un succès :
 
 - ✅ Détermination de quatre possibles scénarios de solution
   - Sélection du scénario 2 (mDL) qui représentait le scénario moins connu.
@@ -397,8 +397,8 @@ Un tableau synthétisant les avantages et inconvénients des deux solutions sera
 
 | Scénario | Attestation Type | Avantages | Inconvénients |
 |---|---|---|---|
-| 1.- Identité Numérique | AnonCreds | - Intégration avec la stratégie gouvernementale d'identité numérique <br />- S'arrime facilement avec les travaux et l'infrastructure qui seront fournies par le programme provincial de l'identité numérique <br>- Il s'agit d'une technologie qui a une adoption et traction considérable à l'échelle canadienne <br>- Technologie connue, avec forte communauté de développeurs et de support | - On n'a pas encore eu de déploiement à grande échelle, en environnement de production, des attestations numériques AnonCreds <br>- Il manque des études et tests de charge pour s'assurer que l'infrastructure sera capable de répondre à la demande d'utilisation à l'échelle de la province |
-| 2.- ISO 18013-5 (mDL) | mDL ISO-18013-5 | - Standard final publié par l'ISO <br>- Adoption par l'association nord-américaine des autorités de transit (AAMVA) <br>- Potentielle interopérabilité avec les États-Unis | - Le nouveau standard propose l'utilisation de plusieurs technologies et stacks technologiques qui sont très nouveaux, alors sans beaucoup d'adoption, de documentation, et de support <br>- N'est pas en conformité avec la stratégie canadienne d'identité numérique <br>- Parmi les participants de l'AAMVA, son adoption n'est pas prise pour acquise par tous. |
+| 1.- Identité Numérique | AnonCreds | - Intégration avec la stratégie gouvernementale d'identité numérique <br />- s'arrime facilement avec les travaux et l'infrastructure qui seront fournies par le programme provincial de l'identité numérique <br>- Il s'agit d'une technologie qui a une adoption et traction considérable à l'échelle canadienne <br>- Technologie connue, avec forte communauté de développeurs et de support | - On n'a pas encore eu de déploiement à grande échelle, en environnement de production, des attestations numériques AnonCreds <br>- Il manque des études et tests de charge pour s'assurer que l'infrastructure sera capable de répondre à la demande d'utilisation à l'échelle de la province |
+| 2.- ISO 18013-5 (mDL) | mDL ISO-18013-5 | - Standard final publié par l'ISO <br>- Adoption par l'association nord-américaine des autorités de transit (AAMVA) <br>- potentielle interopérabilité avec les États-Unis | - Le nouveau standard propose l'utilisation de plusieurs technologies et stacks technologiques qui sont très nouveaux, alors sans beaucoup d'adoption, de documentation, et de support <br>- N'est pas en conformité avec la stratégie canadienne d'identité numérique <br>- parmi les participants de l'AAMVA, son adoption n'est pas prise pour acquise par tous. |
 
 
 ## Références 
@@ -414,13 +414,13 @@ Un tableau synthétisant les avantages et inconvénients des deux solutions sera
 **FIPS 140-2 : Security Requirements for Cryptographic Modules**  
 https://csrc.nist.rip/publications/detail/fips/140/2/final
 
-Cette norme fédérale de traitement de l'information (FIPS 140-2) spécifie les exigences de sécurité qui doivent être satisfaites par un module cryptographique, en fournissant quatre niveaux qualitatifs croissants destinés à couvrir une large gamme d'applications et d'environnements potentiels. Les domaines couverts, liés à la conception et à la mise en œuvre sécurisées d'un module cryptographique, comprennent la spécification ; les ports et les interfaces ; les rôles, les services et l'authentification ; le modèle à états finis ; la sécurité physique ; l'environnement opérationnel ; la gestion des clés cryptographiques ; les interférences électromagnétiques/compatibilité électromagnétique (EMI/EMC) ; les auto-tests ; l'assurance de la conception ; et l'atténuation des autres attaques.
+Cette norme fédérale de traitement de l'information (FIPS 140-2) spécifie les exigences de sécurité qui doivent être satisfaites par un module cryptographique, en fournissant quatre niveaux qualitatifs croissants destinés à couvrir une large gamme d'applications et d'environnements potentiels. Les domaines couverts, liés à la conception et à la mise en œuvre sécurisées d'un module cryptographique, comprennent la spécification ; les ports et les interfaces ; les rôles, les services et l'authentification ; le modèle à états finis ; la sécurité physique ; l'environnement opérationnel ; la gestion des clés cryptographiques ; les interférences électromagnétiques/compatibilité électromagnétiques (EMI/EMC) ; les autotests ; l'assurance de la conception ; et l'atténuation des autres attaques.
 
 **Cryptographic Module Validation Program**  
 https://csrc.nist.rip/projects/cryptographic-module-validation-program
 
 Le 17 juillet 1995, le NIST a mis en place le programme de validation des modules cryptographiques (CMVP) qui valide les modules cryptographiques conformément aux normes FIPS (Federal Information Processing Standards) 140-1, Security Requirements for Cryptographic Modules, et à d'autres normes FIPS basées sur la cryptographie. La norme FIPS 140-2, Security Requirements for Cryptographic Modules, a été publiée le 25 mai 2001 et remplace la norme FIPS 140-1. Le CMVP est un effort conjoint du NIST et du Centre canadien pour la cybersécurité (CCCS), une branche du Centre de la sécurité des télécommunications (CST).
 
-Les modules validés comme étant conformes à la norme FIPS 140-2 sont acceptés par les agences fédérales des deux pays pour la protection des informations sensibles.
+Les modules validés comme étant conforme à la norme FIPS 140-2 sont acceptés par les agences fédérales des deux pays pour la protection des informations sensibles.
 
 Les fournisseurs de modules cryptographiques font appel à des laboratoires indépendants et accrédités de tests de cryptographie et de sécurité (CST) pour tester leurs modules. Les laboratoires du CST utilisent les exigences de test dérivées (DTR), les directives de mise en œuvre (IG) et les directives programmatiques CMVP applicables pour tester les modules cryptographiques par rapport aux normes applicables. La division de sécurité informatique (CSD) du NIST et le CCCS servent conjointement d'autorités de validation pour le programme, validant les résultats des tests et délivrant des certificats.
