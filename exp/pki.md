@@ -13,7 +13,7 @@ statut : en cours
 ![Logo MCN](https://github.com/CQEN-QDCE/.github/blob/main/images/mcn.png) 
 <!-- FIN ENTETE -->
 
-# Infrastructure à Clé Publique (ICP) pour le Permis de Conduire Mobile (mDL) : Contexte, Mise en œuvre et Considérations Techniques
+# Infrastructure à Clé Publique (ICP) pour le Permis de Conduire mobile (mDL) : Contexte, Mise en œuvre et Considérations Techniques
 
 ## Introduction
 Dans le monde numérique d'aujourd'hui, la confiance est un élément fondamental des interactions électroniques. Cette confiance repose principalement sur les infrastructures à clé publique (ICP), qui constituent le socle technologique permettant d'établir et de maintenir des relations de confiance numériques sécurisées.
@@ -24,7 +24,7 @@ Une Infrastructure à Clé Publique est constituée de trois piliers essentiels:
 2. Une technologie cryptographique;
 3. Une infrastructure de gestion des transactions.
 
-Le principe fondamental de cette méthodologie repose sur l'utilisation de certificats numériques entre les parties prenantes d'une transaction. La relation de confiance s'établit de manière transitive: si une entité A dispose d'un certificat auquel une entité B fait confiance, alors B peut également faire confiance à A. Cette chaîne de confiance est ancrée dans des autorités de certification (AC), qui agissent comme sources primaires de confiance, aussi connus comme tiers de confiance.
+Le principe fondamental de cette méthodologie repose sur l'utilisation de certificats numériques entre les parties prenantes d'une transaction. La relation de confiance s'établit de manière transitive: si une entité A dispose d'un certificat auquel une entité B fait confiance, alors B peut également faire confiance à A. Cette chaîne de confiance est ancrée dans des autorités de certification (AC), qui agissent comme sources primaires de confiance, aussi connues comme tiers de confiance.
 
 ### Architecture et Composants de l'ICP
 L'ICP s'appuie sur plusieurs composants clés.
@@ -33,7 +33,7 @@ L'ICP s'appuie sur plusieurs composants clés.
    - Émet les certificats pour les autorités de certification intermédiaires;
    - Sa clé privée est strictement protégée.
 
-2. Les Autorités de Certification Intermédiaires:
+2. Les Autorités de Certification intermédiaires:
    - Émettent les certificats pour les entités finales;
    - Permettent une meilleure gestion des risques;
    - Facilitent la révocation en cas de compromission.
@@ -42,25 +42,25 @@ L'ICP s'appuie sur plusieurs composants clés.
    - Vérifie l'identité des demandeurs de certificats;
    - Applique les politiques de certification.
 
-### Mesures de Sécurité Critiques
+### Mesures de Sécurité critiques
 Pour garantir la fiabilité du système, plusieurs mesures sont essentielles.
-1. Protection Physique:
+1. Protection physique:
    - Hébergement dans des centres de données sécurisés;
    - Contrôle d'accès strict aux installations;
    - Redondance des systèmes critiques.
 
-2. Sécurité Logique:
+2. Sécurité logique:
    - Chiffrement fort des communications;
-   - Authentification multi-facteurs;
+   - Authentification multifacteurs;
    - Journalisation et audit des opérations;
    - Surveillance continue des systèmes.
 
-3. Procédures Opérationnelles:
+3. Procédures opérationnelles:
    - Séparation des rôles et responsabilités;
-   - Procédures de sauvegarde et de récupération (backups, key escrow ou autorité de séquestre);
+   - Procédures de sauvegarde et de récupération (sauvegardes, key escrow ou autorité de séquestre);
    - Plans de continuité d'activité.
 
-## Application au Permis de Conduire Mobile (mDL)
+## Application au Permis de conduire mobile (mDL)
 Dans le contexte spécifique du `permis de conduire mobile (mDL)`, l'intégrité et l'authenticité des données des permis de conduire enregistrés sous le `MSO (Mobile Security Object)` sont garanties par des mécanismes cryptographiques et des certificats numériques. Ces éléments sont gérés par une ICP placée sous le contrôle de l'autorité émettrice `(IA - Issuing Authority)` concernée. Au cœur de ce système se trouve l'autorité de certification de l'autorité émettrice `(IACA - Issuing Authority Certification Authority)`, qui constitue la pierre angulaire de la confiance pour tous les vérificateurs de mDL. 
 
 L'IACA est une autorité de certification spécifique au contexte des permis de conduire mobiles (mDL). Elle représente l'autorité émettrice de mDL au sein de l'infrastructure à clé publique et est responsable de:
@@ -86,9 +86,9 @@ L'autorité de certification de l'autorité émettrice (IACA) joue un rôle cent
 
 ### L'ICP Interne de Développement CQEN Dev V1 
 
-Dans ce contexte, l'`ICP Interne de Développement CQEN Dev V1` a été créé pour donner support aux activités de développement dans un environnemet d'expérimentation qui a besoin d'une ICP fonctionnelle.
+Dans ce contexte, l'`ICP interne de Développement CQEN Dev V1` a été créé pour donner support aux activités de développement dans un environnement d'expérimentation qui a besoin d'une ICP fonctionnelle.
 
-Dans un premier temps, elle aura spécifiquement le rôle d'une IACA et servira à fournir l'infrastructure de certification nécessaire pour l'éxpérimentation du permis de conduire mobile et permettre l'émission des certificats numériques qui seront ajoutés à la VICAL de l'AAMVA.
+Dans un premier temps, elle aura spécifiquement le rôle d'une IACA et servira à fournir l'infrastructure de certification nécessaire pour l'expérimentation du permis de conduire mobile et permettre l'émission des certificats numériques qui seront ajoutés à la VICAL de l'AAMVA.
 
 L'ICP Interne de Développement CQEN Dev V1 a été créée avec des objectifs spécifiques:
 
@@ -107,7 +107,7 @@ L'ICP Interne de Développement CQEN Dev V1 a été créée avec des objectifs s
    - la conformité aux exigences de l'AAMVA;
    - la participation à l'écosystème international du mDL. 
 
-Alors, la structure initialle de l'ICP est la suivante: 
+Alors, la structure initiale de l'ICP est la suivante: 
 
 ```
      IDENTIFICATEUR DES NIVEAUX                                     DÉLAIS DE VALIDITÉ
@@ -145,7 +145,7 @@ Alors, la structure initialle de l'ICP est la suivante:
 |       |                                          |
 |-------|------------------------------------------|
 |Nom    | **Autorité de Certification mDL Exp V1** |
-|Niveau | 2eme                                     |
+|Niveau | 2e                                     |
 |Prefix | ACmDLExpV1                               |  
 |Dir    | /ACmDL                                   |
 
@@ -162,7 +162,7 @@ Le système est conçu pour évoluer et s'adapter aux:
 - nouvelles menaces de sécurité;
 - évolutions des standards;
 - besoins émergents des utilisateurs;
-- éxigences réglementaires futures.
+- exigences réglementaires futures.
 
 Cette implémentation constitue une étape cruciale vers un système de permis de conduire mobile robuste et sécurisé, qui peut s'intégrer dans l'écosystème international des documents d'identité numériques.
 
@@ -172,7 +172,7 @@ Cette implémentation constitue une étape cruciale vers un système de permis d
 
 [AAMVA Digital Trust Service (VICAL)](https://www.aamva.org/identity/mobile-driver-license-digital-trust-service)
 
-["Write down you passwords"](https://www.schneier.com/blog/archives/2005/06/write_down_your.html)
+["Write down your passwords"](https://www.schneier.com/blog/archives/2005/06/write_down_your.html)
 
 ### Requests for Comments 
 
