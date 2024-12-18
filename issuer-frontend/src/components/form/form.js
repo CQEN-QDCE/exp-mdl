@@ -334,7 +334,7 @@ export default function Form(props) {
   }    
   
   const handleBack = () => {
-    navigate(`/conditions`, { });
+    navigate(`/warning`, { });
   } 
 
 const handleSubmit = (e) => {
