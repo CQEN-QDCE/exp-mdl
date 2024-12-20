@@ -40,7 +40,7 @@ export default function Conditions(props) {
   useEffect(() => canBeSubmitted());
 
   const handleContinue = (e) => {
-    navigate(`/forms`, { });
+    navigate(`/warning`, { });
   }
   const handleBack = (e) => {
     navigate(`/`, { });
