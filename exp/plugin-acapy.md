@@ -91,9 +91,9 @@ Ed25519 est une implémentation spécifique de l'EdDSA (Edwards-curve Digital Si
 
 - **Sécurité :** Ed25519 est conçu pour résister aux attaques side-channel. L'ECDSA, quant à lui, nécessite un bon générateur de nombres aléatoires pour chaque signature ; s'il n'est pas correctement implémenté, il peut entraîner une fuite de la clé privée.
 
-- **Signatures déterministes :** Ed25519 génère des signatures déterministes (le même message signé plusieurs fois produira toujours la même signature), ce qui n'est pas le cas avec ECDSA, à moins qu'il ne soit implémenté avec la RFC 6979.
+- **Signatures déterministes :** l'Ed25519 génère des signatures déterministes (le même message signé plusieurs fois produira toujours la même signature), ce qui n'est pas le cas avec ECDSA, à moins qu'il ne soit implémenté avec le RFC 6979.
 
-- **Petite taille de clé :** Les clés Ed25519 ne font que 256 bits, ce qui est plus court que les 384 bits souvent utilisés avec ECDSA pour atteindre le même niveau de sécurité.
+- **Petite taille de clé :** les clés Ed25519 ne font que 256 bits, ce qui est plus court que les 384 bits souvent utilisés avec ECDSA pour atteindre le même niveau de sécurité.
 
 **Inconvénients du Ed25519 par rapport à l'ECDSA :**
 
@@ -101,7 +101,7 @@ Ed25519 est une implémentation spécifique de l'EdDSA (Edwards-curve Digital Si
 
 - **Normalisation :** ECDSA est spécifié dans plus de normes que Ed25519. Par exemple, l'ECDSA est spécifié dans les normes `ANSI X9.62` et `IEEE 1363`.
 
-- **Support matériel :** La prise en charge matérielle de l'ECDSA est plus courante que celle de l'Ed25519. De nombreux modules de sécurité matériels (HSM) et cartes à puce prennent en charge l'ECDSA, mais pas l'Ed25519.
+- **Support matériel :** la prise en charge matérielle de l'ECDSA est plus courante que celle de l'Ed25519. De nombreux modules de sécurité matériels (HSM) et cartes à puce prennent en charge l'ECDSA, mais pas l'Ed25519.
 
 N'oubliez pas que le choix entre Ed25519 et ECDSA dépendra de votre cas d'utilisation spécifique, notamment des systèmes avec lesquels vous interagissez, de vos besoins en termes de performances et de vos exigences en matière de sécurité.
 
@@ -109,17 +109,17 @@ N'oubliez pas que le choix entre Ed25519 et ECDSA dépendra de votre cas d'utili
 
 Ed25519 est souvent préféré à l'ECDSA (Elliptic Curve Digital Signature Algorithm) dans les cas d'utilisation suivants :
 
-- **Messagerie sécurisée :** Les applications de messagerie sécurisée comme Signal utilisent Ed25519 pour sa vitesse et ses fortes propriétés de sécurité.
+- **Messagerie sécurisée :** les applications de messagerie sécurisée comme Signal utilisent Ed25519 pour sa vitesse et ses fortes propriétés de sécurité.
 
 - **Authentification SSH :** OpenSSH prend en charge les clés Ed25519. Elles sont plus rapides et plus sûres que les clés ECDSA.
 
-- **TLS :** Certaines implémentations de TLS (Transport Layer Security) prennent en charge la clé Ed25519. Il est utilisé dans les certificats pour HTTPS et d'autres protocoles de communication sécurisés.
+- **TLS :** certaines implémentations de TLS (Transport Layer Security) prennent en charge la clé Ed25519. Il est utilisé dans les certificats pour HTTPS et d'autres protocoles de communication sécurisés.
 
 - **Signature de logiciels :** Ed25519 est utilisé pour signer les paquets de logiciels dans certains systèmes de gestion des paquets en raison de ses signatures déterministes et de sa résistance à certains types d'attaques.
 
-- **Réseau Tor :** Le réseau d'anonymat Tor utilise Ed25519 pour authentifier ses serveurs relais.
+- **Réseau Tor :** le réseau d'anonymat Tor utilise Ed25519 pour authentifier ses serveurs relais.
 
-- **Cryptomonnaies :** Certaines crypto-monnaies récentes préfèrent Ed25519 à ECDSA en raison de ses avantages en termes de sécurité et de performance. Par exemple, Stellar et Nano utilisent Ed25519.
+- **Cryptomonnaies :** certaines cryptomonnaies récentes préfèrent Ed25519 à ECDSA en raison de ses avantages en termes de sécurité et de performance. Par exemple, Stellar et Nano utilisent Ed25519.
 
 ### Quelles sont les courbes homologuées par le NIST pour les algorithmes EdDSA et ECDSA ?
 
@@ -140,7 +140,7 @@ https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.186-5.pdf
 
 ## Le schéma BBS (Boneh-Boyen-Schacham)
 
-Le schéma de signature numérique BBS (Boneh-Boyen-Shacham) est un protocole de signature numérique multi-messages sécurisé qui permet le selective disclosure, l'Unlinkable Proofs et la Proof of Possession d'une signature dans un sous-ensemble des messages signés. 
+Le schéma de signature numérique BBS (Boneh-Boyen-Shacham) est un protocole de signature numérique multimessages sécurisés qui permet le selective disclosure, l'Unlinkable Proofs et la Proof of Possession d'une signature dans un sous-ensemble des messages signés. 
 
 Pour dire qu'un produit qui traite des informations sensibles peut être utilisé dans le contexte du gouvernement fédéral canadien ou dans le gouvernement des E-U, il faut faire la validation de ce produit par le Cryptographic Module Validation Program (CMVP). Ce programme valide le produit selon le standard NIST-FIPS-140-3, qui normalise les algorithmes, tailles de clés, les courbes, etc., ainsi que l'utilisation des bonnes pratiques préconisées par la CSE. 
 
