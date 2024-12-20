@@ -16,9 +16,9 @@ export default function Form(props) {
   const [name, setName] = useState("Alain");
   const [lastName, setLastName] = useState("Tremblay");
   const [licenseNumber, setLicenseNumber] = useState("L123456789123");
-  const [birthDate, setBirthDate] = useState(new Date("01-01-1999").toLocaleDateString("en-CA"));
+  const [birthDate, setBirthDate] = useState((new Date("01-01-1999").toLocaleDateString('en-CA')));
   const [gender, setGender] = useState("M");
-  const [height, setHeight] = useState("1.75");
+  const [height, setHeight] = useState("175");
   const [heightUnit, setHeightUnit] = useState("75");
   const [eyeColor, setEyeColor] = useState("brown");
   const [streetAddress, setStreetAddress] = useState("Rue des Amériques");
@@ -514,10 +514,7 @@ const handleSubmit = (e) => {
                       <FormattedMessage id="app.form.birthdate" defaultMessage={"Birthdate"} />
                       <span className="required">*</span>
                     </label>
-                    <input type='date' id='birthDate' value={birthDate} onChange={handleBirthDate} className='service-input form-control'/>
-                    <label htmlFor='birthDate' className='control-label' style={{fontWeight: "normal"}}>
-                      <FormattedMessage id="app.form.birthdate.format"/>
-                    </label>                    
+                    <input type='date' id='birthDate' value={birthDate} onChange={handleBirthDate} className='service-input form-control'/>                  
                     {errors["birthDate"] && 
                       <span style={{ color: "red" }}>
                         <FormattedMessage id="app.form.validation.not.empty" defaultMessage={"Cannot be empty"} />
@@ -654,10 +651,7 @@ const handleSubmit = (e) => {
                       <FormattedMessage id="app.form.issuedate" defaultMessage={"Issuedate"} />
                       <span className="required">*</span>
                     </label>
-                    <input type='date' id='issueDate' value={issueDate} onChange={handleIssueDate} className='service-input form-control'/>
-                    <label htmlFor='issueDate' className='control-label' style={{fontWeight: "normal"}}>
-                      <FormattedMessage id="app.form.issuedate.format"/>
-                    </label>                  
+                    <input type='date' id='issueDate' value={issueDate} onChange={handleIssueDate} className='service-input form-control'/>               
                   </div>            
                   <div className='col'>
                     <label className='font-weight-lighter' style={{color: "gray"}}>
@@ -667,10 +661,7 @@ const handleSubmit = (e) => {
                         <FormattedMessage id="app.form.expirydate" defaultMessage={"Expirydate"} />
                         <span className="required">*</span>
                       </label>
-                      <input type='date' id='expiryDate' value={expiryDate} onChange={handleExpiryDate} className='service-input form-control'/>
-                      <label htmlFor='expiryDate' className='control-label' style={{fontWeight: "normal"}}>
-                        <FormattedMessage id="app.form.expirydate.format"/>
-                      </label>                 
+                      <input type='date' id='expiryDate' value={expiryDate} onChange={handleExpiryDate} className='service-input form-control'/>              
                   </div>                                    
               </div> 
               </div>              
