@@ -1,0 +1,12 @@
+# Variables d'environnement de l'Autorité X-Road
+export XROAD_ROOT="$PKI_HOME/ca/xroad"
+
+export XROAD_CONF="$XROAD_ROOT/config/openssl.conf"
+export XROAD_PASSWORD_FILE="$XROAD_ROOT/private/ca_password.txt"
+
+export XROAD_CN="/C=CA/ST=QC/O=Gouvernement du Quebec/CN=Autorite de Certification Intermediaire X-Road Dev v1"
+export XROAD_OCSP_URL="http://ocsp.icpgourvernementaleqc.apps.exp.openshift.cqen.ca"
+export XROAD_CRL_URL="http://crl.icpgourvernementaleqc.apps.exp.openshift.cqen.ca/cqen/dev/v1/ca.crl"
+
+export OCSP_CONF="$XROAD_ROOT/config/ocsp.conf"
+export XROAD_OCSP_PASSWORD_FILE="$XROAD_ROOT/private/ocsp_password.txt"

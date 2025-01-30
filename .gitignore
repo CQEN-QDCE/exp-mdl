@@ -32,7 +32,4 @@ yarn.lock
 # Local History for Visual Studio Code
 .history/
 
-# openshift templates params
-*.params
-
 __pycache__/
