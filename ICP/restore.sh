@@ -14,10 +14,12 @@ echo "PKI Home:     $PKI_HOME"
 cp -r $PROJECT_HOME$PROJECT_BKP_HOME/ca/root/config/* $PKI_HOME/ca/root/config/.
 cp -r $PROJECT_HOME$PROJECT_BKP_HOME/ca/cqen/config/* $PKI_HOME/ca/cqen/config/.
 cp -r $PROJECT_HOME$PROJECT_BKP_HOME/ca/saaq/config/* $PKI_HOME/ca/saaq/config/.
+cp -r $PROJECT_HOME$PROJECT_BKP_HOME/ca/xroad/config/* $PKI_HOME/ca/xroad/config/.
 
 cp -r $PROJECT_HOME$PROJECT_BKP_HOME/ca/root/scripts/* $PKI_HOME/ca/root/scripts/.
 cp -r $PROJECT_HOME$PROJECT_BKP_HOME/ca/cqen/scripts/* $PKI_HOME/ca/cqen/scripts/.
 cp -r $PROJECT_HOME$PROJECT_BKP_HOME/ca/saaq/scripts/* $PKI_HOME/ca/saaq/scripts/.
+cp -r $PROJECT_HOME$PROJECT_BKP_HOME/ca/xroad/scripts/* $PKI_HOME/ca/xroad/scripts/.
 
 # cp -r $PROJECT_HOME$PROJECT_BKP_HOME/scripts/* $PKI_HOME/scripts/.
 

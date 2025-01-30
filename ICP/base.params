@@ -1,10 +1,10 @@
 # References le repertoire home du projet, tel comme il a été cloné du repo github. 
-export PROJECT_HOME="/pki/data"
+export PROJECT_HOME="/pki/data"    # "/Users/juliocesartorres/CQEN-QDCE/ICP"     # L'adresse du répertoire cloné à partir de github
 export PROJECT_BKP_HOME="/bkp"
 export PROJECT_SRC_HOME="/sources"
 
 # Reference au repertoire d'installation de la PKI dans le système. 
-export PKI_HOME="/icpGouv"
+export PKI_HOME="/icpGouv"  # "/Users/juliocesartorres/CQEN-QDCE/ICP/ICP-XRoad"    # Repertoire d'installation de l'ICP
 
 # NE PAS CHANGER LES CONFIGS C-DESSOUS
 # Colors pour utilisation dans les messages des scripts 

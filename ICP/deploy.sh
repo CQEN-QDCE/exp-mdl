@@ -3,6 +3,9 @@
 source ./base.params
 source ./utils.sh
 
+echo "Suppression de deploiement précédent"
+# rm -rf $PKI_HOME
+
 echolor $COLOR_GREEN "Création de la structure de la ICP du Gouvernement du Quebec"
 ./createPKIStruct.sh
 echo " "
@@ -21,8 +24,13 @@ echolor $COLOR_GREEN ">>>>[Émission du certificat de l'Autorité de Certificati
 echo " "
 sleep 1
 
-echolor $COLOR_GREEN ">>>>[Émission du certificat de l'Autorité de Certification SAAQ Dev V1"
-./createSAAQ.sh
+#echolor $COLOR_GREEN ">>>>[Émission du certificat de l'Autorité de Certification SAAQ Dev V1"
+#./createSAAQ.sh
+#echo " "
+#sleep 1
+
+echolor $COLOR_GREEN ">>>>[Émission du certificat de l'Autorité de Certification XRoad Dev V1"
+./createXRoad.sh
 echo " "
 sleep 1
 

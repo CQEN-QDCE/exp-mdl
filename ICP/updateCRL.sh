@@ -3,7 +3,7 @@
 source base.params
 source root.params 
 source cqen.params
-source saaq.params
+source xroad.params
 source utils.sh
 
 echo -e "\033[32m===== Configurations actives pour le script: [${0##*/}] =====\033[0m" 
@@ -27,12 +27,12 @@ echo "    CQEN_CN:              $CQEN_CN"
 echo "    CQEN_OCSP_URL:        $CQEN_OCSP_URL"
 echo "    CQEN_CRL_URL:         $CQEN_CRL_URL"
 echo "Vars du fichier saaq.params.env" 
-echo "    SAAQ_ROOT:            $SAAQ_ROOT"
-echo "    SAAQ_CONF:            $SAAQ_CONF"
-echo "    SAAQ_PASSWORD_FILE:   $SAAQ_PASSWORD_FILE"
-echo "    SAAQ_CN:              $SAAQ_CN"
-echo "    SAAQ_OCSP_URL:        $SAAQ_OCSP_URL"
-echo "    SAAQ_CRL_URL:         $SAAQ_CRL_URL"
+echo "    XROAD_ROOT:            $XROAD_ROOT"
+echo "    XROAD_CONF:            $XROAD_CONF"
+echo "    XROAD_PASSWORD_FILE:   $XROAD_PASSWORD_FILE"
+echo "    XROAD_CN:              $XROAD_CN"
+echo "    XROAD_OCSP_URL:        $XROAD_OCSP_URL"
+echo "    XROAD_CRL_URL:         $XROAD_CRL_URL"
 echo " " 
 
 # Update Root CA CRL
@@ -45,7 +45,7 @@ if [ $retVal -ne 0 ]; then
     exit 1
 fi
 
-# Update IntermeCQENdiate CA CRL
+# Update Intermediate CQEN CA CRL
 echolor $COLOR_BLUE "Update IntermeCQENdiate CA CRL"
 openssl ca -config $CQEN_CONF -gencrl -out $CQEN_ROOT/crl/cqen.crl -passin file:$CQEN_PASSWORD_FILE
 retVal=$?
@@ -55,14 +55,24 @@ if [ $retVal -ne 0 ]; then
     exit 2
 fi
 
-# Update SAAQ CA CRL
-echolor $COLOR_BLUE "Update SAAQ CA CRL"
-openssl ca -config $SAAQ_CONF -gencrl -out $SAAQ_ROOT/crl/saaq.crl -passin file:$SAAQ_PASSWORD_FILE
+# Update Intermediate XROAD CA CRL
+echolor $COLOR_BLUE "Update XROAD CA CRL"
+openssl ca -config $XROAD_CONF -gencrl -out $XROAD_ROOT/crl/cqen.crl -passin file:$XROAD_PASSWORD_FILE
 retVal=$?
 
 if [ $retVal -ne 0 ]; then
-    echo -e "\033[31m Error: update SAAQ crl \033[0m"
-    exit 3
+    echo -e "\033[31m Error: update XROAD crl \033[0m"
+    exit 2
 fi
+
+# Update SAAQ CA CRL
+#echolor $COLOR_BLUE "Update SAAQ CA CRL"
+#openssl ca -config $SAAQ_CONF -gencrl -out $SAAQ_ROOT/crl/saaq.crl -passin file:$SAAQ_PASSWORD_FILE
+#retVal=$?
+
+#if [ $retVal -ne 0 ]; then
+#    echo -e "\033[31m Error: update SAAQ crl \033[0m"
+#    exit 3
+#fi
 
 echo -e "\033[32mToutes les CRLs ont été mises èà jour avec succès.\033[0m"

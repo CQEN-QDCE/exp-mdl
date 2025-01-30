@@ -2,7 +2,7 @@
 
 source base.params
 
-echo -e "\033[32m===== Configurations actives pour le script: [${0##*/}] =====\033[0m" bas
+echo -e "\033[32m===== Configurations actives pour le script: [${0##*/}] =====\033[0m"
 echo "Project Home: $PROJECT_HOME"
 echo "Project BKP:  $PROJECT_HOME$PROJECT_BKP_HOME"
 echo "Project SRC:  $PROJECT_HOME$PROJECT_SRC_HOME"
@@ -12,7 +12,7 @@ echo "PKI Home:     $PKI_HOME"
 mkdir -p $PKI_HOME
 
 # Create CA directories
-for ca in root cqen saaq 
+for ca in root cqen saaq xroad
 do
     mkdir -p $PKI_HOME/ca/$ca/{db,private,certs,newcerts,crl,config,scripts,csr}
 
@@ -29,6 +29,7 @@ done
 
 # Create the OCSP password file
 echo $(openssl rand -base64 64) > $PKI_HOME/ca/cqen/private/ocsp_password.txt
+echo $(openssl rand -base64 64) > $PKI_HOME/ca/xroad/private/ocsp_password.txt
 
 # Create other directories
 mkdir -p $PKI_HOME/{cacerts,csr,issued,revoked,scripts,ocsp,db}

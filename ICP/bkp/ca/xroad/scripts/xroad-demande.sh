@@ -1,7 +1,7 @@
 #!/bin/bash
 
 source ../../../scripts/base.params
-source ../../../scripts/cqen.params
+source ../../../scripts/xroad.params
 
 echo -e "\033[32m===== Configurations actives pour le script: [${0##*/}] =====\033[0m" 
 echo -e "\033[34mVars du fichier base.params.env\033[0m" 
@@ -9,13 +9,13 @@ echo "    PROJECT_HOME:         $PROJECT_HOME"
 echo "    PROJECT_BKP_HOME:     $PROJECT_BKP_HOME"
 echo "    PROJECT_SRC_HOME:     $PROJECT_SRC_HOME" 
 echo "    PKI_HOME:             $PKI_HOME"
-echo -e "\033[34mVars du fichier cqen.params.env\033[0m" 
-echo "    CQEN_ROOT:            $CQEN_ROOT"
-echo "    CQEN_CONF:            $CQEN_CONF"
-echo "    CQEN_PASSWORD_FILE:   $CQEN_PASSWORD_FILE"
-echo "    CQEN_CN:              $CQEN_CN"
-echo "    CQEN_OCSP_URL:        $CQEN_OCSP_URL"
-echo "    CQEN_CRL_URL:         $CQEN_CRL_URL"
+echo -e "\033[34mVars du fichier xroad.params.env\033[0m" 
+echo "    XROAD_ROOT:            $XROAD_ROOT"
+echo "    XROAD_CONF:            $XROAD_CONF"
+echo "    XROAD_PASSWORD_FILE:   $XROAD_PASSWORD_FILE"
+echo "    XROAD_CN:              $XROAD_CN"
+echo "    XROAD_OCSP_URL:        $XROAD_OCSP_URL"
+echo "    XROAD_CRL_URL:         $XROAD_CRL_URL"
 echo " " 
 
 # Check if a username was provided
@@ -27,8 +27,8 @@ fi
 USERNAME=$1
 
 # Generate a new ECDSA key pair for the user using the P-256 curve
-openssl ecparam -name prime256v1 -genkey -noout -out ${CQEN_ROOT}/private/${USERNAME}.pem
-openssl ec -in ${CQEN_ROOT}/private/${USERNAME}.pem -out ${CQEN_ROOT}/private/${USERNAME}.key -aes256
+openssl ecparam -name prime256v1 -genkey -noout -out ${XROAD_ROOT}/private/${USERNAME}.pem
+openssl ec -in ${XROAD_ROOT}/private/${USERNAME}.pem -out ${XROAD_ROOT}/private/${USERNAME}.key -aes256
 
 retVal=$?
 if [ $retVal -ne 0 ]; then
@@ -37,7 +37,7 @@ if [ $retVal -ne 0 ]; then
 fi
 
 # Create a certificate signing request (CSR)
-openssl req -new -key ${CQEN_ROOT}/private/${USERNAME}.key -out ${CQEN_ROOT}/csr/${USERNAME}.csr -config ${CQEN_ROOT}/config/user-cert.conf
+openssl req -new -key ${XROAD_ROOT}/private/${USERNAME}.key -out ${XROAD_ROOT}/csr/${USERNAME}.csr -config ${XROAD_ROOT}/config/user-cert.conf
 
 retVal=$?
 if [ $retVal -ne 0 ]; then
@@ -46,10 +46,10 @@ if [ $retVal -ne 0 ]; then
 fi
 
 # Clean up
-rm ${CQEN_ROOT}/private/${USERNAME}.pem
+rm ${XROAD_ROOT}/private/${USERNAME}.pem
 
-echo -e "\033[32mGenerated ECDSA private key (P-256 curve): ${CQEN_ROOT}/private/${USERNAME}.key"
-echo -e "Generated CSR: ${CQEN_ROOT}/csr/${USERNAME}.csr\033[0m"
+echo -e "\033[32mGenerated ECDSA private key (P-256 curve): ${XROAD_ROOT}/private/${USERNAME}.key"
+echo -e "Generated CSR: ${XROAD_ROOT}/csr/${USERNAME}.csr\033[0m"
 echo -e "\033[32mCSR générée avec succès.\033[0m"
 
 #EOF

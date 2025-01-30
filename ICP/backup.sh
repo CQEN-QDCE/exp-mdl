@@ -15,14 +15,17 @@ exit 1
 mkdir -p $BKP_HOME/ca/root/config
 mkdir -p $BKP_HOME/ca/cqen/config
 mkdir -p $BKP_HOME/ca/saaq/config
+mkdir -p $BKP_HOME/ca/xroad/config
 mkdir -p $BKP_HOME/scripts
 
 cp -r $PKI_HOME/ca/root/config  $BKP_HOME/ca/root/
 cp -r $PKI_HOME/ca/cqen/config  $BKP_HOME/ca/cqen/
 cp -r $PKI_HOME/ca/saaq/config  $BKP_HOME/ca/saaq/
+cp -r $PKI_HOME/ca/xroad/config  $BKP_HOME/ca/xroad/
 cp -r $PKI_HOME/ca/root/scripts $BKP_HOME/ca/root/
 cp -r $PKI_HOME/ca/cqen/scripts $BKP_HOME/ca/cqen/
 cp -r $PKI_HOME/ca/saaq/scripts $BKP_HOME/ca/saaq/
+cp -r $PKI_HOME/ca/xroad/scripts $BKP_HOME/ca/xroad/
 cp -r $PKI_HOME/scripts         $BKP_HOME
 
 #EOF
